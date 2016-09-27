@@ -123,7 +123,7 @@
         <nav role="navigation" class="navbar-menu pull-right collapse navbar-collapse">
             <!-- #section:basics/navbar.form -->
             <div id="nav-search" class="nav-search">
-                <form class="form-search" action="http://dev.bmbets.com/search/">
+                <form class="form-search" action="#">
                         <span class="input-icon">
                             <input type="search" class="nav-search-input" id="search" name="query" autocomplete="off" placeholder="Search ..." />
                             <i class="ace-icon fa fa-search nav-search-icon"></i>
