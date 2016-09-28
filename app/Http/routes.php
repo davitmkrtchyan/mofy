@@ -18,3 +18,6 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/game/{p1}-{p2}', 'HomeController@game');
+Route::get('/serie/{s1}', 'HomeController@serie');
+Route::get('/today/{t1}', 'HomeController@today');

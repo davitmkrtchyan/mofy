@@ -26,4 +26,19 @@ class HomeController extends Controller
     {
         return view('welcome');
     }
+
+    public function game($p1, $p2)
+    {
+        return view('pages.main_content', compact('p1', 'p2'));
+    }
+
+    public function serie($s1)
+    {
+        return view('pages.serie', compact('s1'));
+    }
+
+    public function today($t1)
+    {
+        return view('pages.today_matches', compact('t1'));
+    }
 }
