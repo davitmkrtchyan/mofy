@@ -1177,6 +1177,9 @@ pre.prettyprint {
     background: #ffe18c !important;
     border-radius: 10px;
     margin-left: 20px;
+    height: 40px;
+    width: 70px;
+    border: 0;
 }
 .sign-in > a{
     background: #ffe18c !important;
@@ -1189,6 +1192,16 @@ pre.prettyprint {
 .sign-up{
    background: #ffe18c !important;
     border-radius: 10px;
+  width: 70px;
+  display: block;
+  height: 40px;
+  line-height: 42px;
+  padding-left: 10px;
+  color: black;
+  text-decoration: none !important;
+}
+.sign-up:hover{
+  color: black;
 }
 .sign-up > a {
     background: #ffe18c !important;
