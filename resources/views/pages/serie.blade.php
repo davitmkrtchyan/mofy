@@ -9,15 +9,15 @@
     <div class="row">
         <div class="col-xs-12 col-md-9 widget-container-col ui-sortable">
 
-            <a class="btn btn-sm btn-primary" href="http://dev.bmbets.com/sports/League">
+            <a class="btn btn-sm btn-primary" href="/">
                 <i class="ace-icon fa fa-book"></i>
                 <span class="hidden-580">Beting Odds</span>
             </a>
-            <a class="btn btn-sm btn-danger disabled" href="http://dev.bmbets.com/football/brazil/serie-a/tables">
+            <a class="btn btn-sm btn-danger disabled" href="/">
                 <i class="ace-icon fa fa-sitemap"></i>
                 <span class="hidden-580">Standings</span>
             </a>
-            <a class="btn btn-sm btn-success disabled" href="http://dev.bmbets.com/football/brazil/serie-a/results-fixtures">
+            <a class="btn btn-sm btn-success disabled" href="/">
                 <i class="ace-icon fa fa-calendar"></i>
                 <span class="hidden-580">Results/Fixtures</span>
             </a>

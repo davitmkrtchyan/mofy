@@ -11,7 +11,7 @@
                 <i class="ace-icon fa fa-book white bigger-125"></i>
             </button>
             <!-- #section:basics/navbar.layout.brand -->
-            <a href="index.html" class="navbar-brand">
+            <a href="/" class="navbar-brand">
                 <small>
                     <img src="{{ URL::asset('assets/images/logo.png') }}" alt="MoreOddsForYou">
                 </small>

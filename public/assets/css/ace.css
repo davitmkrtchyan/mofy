@@ -6828,7 +6828,7 @@ fieldset[disabled] .btn-white.btn-grey.active {
 .btn.btn-link {
   border-width: 0 !important;
   background: transparent none !important;
-  color: #0088cc !important;
+  color: #0088cc;
   text-shadow: none !important;
   padding: 4px 12px !important;
   line-height: 20px !important;
@@ -20056,4 +20056,7 @@ background: #70accf;
   .label[class*=arrowed]:after {
     display: none !important;
   }
+}
+.white-text{
+  color: white !important;
 }

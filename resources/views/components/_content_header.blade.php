@@ -16,7 +16,7 @@
             <b class="arrow"></b>
             <ul class="submenu">
                 <li class="hover">
-                    <a href="../../../../matches/index.html">
+                    <a href="/">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Matches
                     </a>
@@ -24,7 +24,7 @@
                 </li>
 
                 <li class="hover">
-                    <a href="../../../../blocked-matches.1">
+                    <a href="/">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Blocked Matches
                     </a>
@@ -32,7 +32,7 @@
                 </li>
 
                 <li class="hover">
-                    <a href="../../../../moving-margins.1">
+                    <a href="/">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Moving Margins
                     </a>
@@ -63,14 +63,14 @@
 
             <ul class="submenu">
                 <li class="hover">
-                    <a href="../../../../sure-bets">
+                    <a href="/">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Surebets
                     </a>
                     <b class="arrow"></b>
                 </li>
                 <li class="hover">
-                    <a href="../../../../back-lay-sure-bets">
+                    <a href="/">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Back/Lay
                     </a>
@@ -78,7 +78,7 @@
                     <b class="arrow"></b>
                 </li>
                 <li class="hover">
-                    <a href="../../../../middles">
+                    <a href="/">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Middles
                     </a>
@@ -86,7 +86,7 @@
                     <b class="arrow"></b>
                 </li>
                 <li class="hover">
-                    <a href="../../../../value-bets.1">
+                    <a href="/">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Value Bets
                     </a>
@@ -96,7 +96,7 @@
         </li>
 
         <li class="hover">
-            <a href="../../../../bookmakers.1" class="dropdown-toggle">
+            <a href="/" class="dropdown-toggle">
                 <i class="menu-icon fa fa-list"></i>
                 <span class="menu-text">Bookmakers</span>
 
@@ -107,7 +107,7 @@
 
             <ul class="submenu">
                 <li class="hover">
-                    <a href="../../../../bookmakers.1">
+                    <a href="/">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Bookmakers
                     </a>
@@ -116,7 +116,7 @@
                 </li>
 
                 <li class="hover">
-                    <a href="../../../../bookmakers/bonus">
+                    <a href="/">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Bonus
                     </a>

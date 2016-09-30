@@ -8,7 +8,7 @@
 
                 <ul class="nav nav-list">
                     <li class="highlight">
-                        <a href="../../../index.html" class="s50 dropdown-toggle">
+                        <a href="/" class="s50 dropdown-toggle">
                             <i class="menu-icon fa"></i>
                             <span class="menu-text" data-original-title="1130">Football</span>
                             <b class="arrow fa fa-angle-down"></b>
@@ -17,7 +17,7 @@
 
                         <ul style="" class="submenu">
                             <li class="">
-                                <a href="../../../../matches/football/index.html">
+                                <a href="/">
                                     <i class="menu-icon fa fa-calendar"></i>
                                     Today&#39;s Matches
                                 </a>
@@ -25,7 +25,7 @@
                             </li>
 
                             <li class="">
-                                <a href="../../../argentina/index.html" class="dropdown-toggle">
+                                <a href="/" class="dropdown-toggle">
                                     <i class="flag flag-ar menu-icon fa"></i>
                                     Argentina
 
@@ -36,7 +36,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Primera Division" class="l-item" href="../../../argentina/primera-division/index.html" data-call="bk">
+                                        <a title="Primera Division" class="l-item" href="/" data-call="bk">
 
                                             Primera Division
                                             <span class="badge badge-primary">1</span>
@@ -45,7 +45,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Primera Nacional B" class="l-item" href="../../../argentina/primera-nacional-b/index.html" data-call="bk">
+                                        <a title="Primera Nacional B" class="l-item" href="/" data-call="bk">
 
                                             Primera Nacional B
                                             <span class="badge badge-primary">2</span>
@@ -54,7 +54,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Primera B Metropolitana" class="l-item" href="../../../argentina/primera-b-metropolitana/index.html" data-call="bk">
+                                        <a title="Primera B Metropolitana" class="l-item" href="/" data-call="bk">
 
                                             Primera B Metropolitana
                                             <span class="badge badge-primary">2</span>
@@ -63,7 +63,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Primera D Metropolitana" class="l-item" href="../../../argentina/primera-d-metropolitana/index.html" data-call="bk">
+                                        <a title="Primera D Metropolitana" class="l-item" href="/" data-call="bk">
 
                                             Primera D Metropolitana
                                             <span class="badge badge-primary">3</span>
@@ -72,7 +72,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Torneo B" class="l-item" href="../../../argentina/torneo-b/index.html" data-call="bk">
+                                        <a title="Torneo B" class="l-item" href="/" data-call="bk">
 
                                             Torneo B
                                             <span class="badge badge-primary">1</span>
@@ -2857,7 +2857,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-W Sharm El Sheikh" class="l-item" href="http://dev.bmbets.com/tennis/egypt/itf-w-sharm-el-sheikh/" data-call="bk">
+                                        <a title="ITF-W Sharm El Sheikh" class="l-item" href="/" data-call="bk">
 
                                             ITF-W Sharm El Sheikh
                                             <span class="badge badge-primary">16</span>
@@ -3615,7 +3615,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="NBL" class="l-item" href="http://dev.bmbets.com/basketball/china-pr/nbl/" data-call="bk">
+                                        <a title="NBL" class="l-item" href="/" data-call="bk">
 
                                             NBL
                                             <span class="badge badge-primary">1</span>

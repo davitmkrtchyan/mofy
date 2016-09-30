@@ -14,7 +14,7 @@
     @endif
 
     <div id="adv-content-right" class="white">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        {{--Lorem Ipsum is simply dummy text of the printing and typesetting industry.--}}
     </div>
 
 

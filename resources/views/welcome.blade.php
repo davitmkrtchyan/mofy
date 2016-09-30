@@ -4,7 +4,7 @@
     <div id="pagebody">
         <div class="page-content">
 
-            <!-- <form action="http://dev.bmbets.com/account/ExternalLogin" method="post"><input name="__RequestVerificationToken" type="hidden" value="3yu3t4_9JxQhcFnHMp-H__IVXx8g8iKmu0ELdq3ylKyS4Q2b3D2j95MT9vrWvN6cu7DQk2j2HmcKi8F3FamhylJpQ2jA2daETcnfMq0JE5I1" />                <ul class="social-links social-signin  circle">
+            <!-- <form action="/" method="post"><input name="__RequestVerificationToken" type="hidden" value="3yu3t4_9JxQhcFnHMp-H__IVXx8g8iKmu0ELdq3ylKyS4Q2b3D2j95MT9vrWvN6cu7DQk2j2HmcKi8F3FamhylJpQ2jA2daETcnfMq0JE5I1" />                <ul class="social-links social-signin  circle">
                 <li class="google">
                     <button type="submit"  id="Google" name="provider" value="Google" title="Log in using your Google account">
                         <i class="fa fa-google-plus"></i><i class="fa fa-sign-in"></i>
@@ -1191,7 +1191,7 @@
                             <div class="tenant l-tenant">
                                 <div class="betvictor">
                                     <div>
-                                        <p><a target="_new" href="../www.bet365.com/home/index.html@affiliate=365_056634">Read news from <br>Blog.MoreOddsForYou.com</a></p>
+                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -1203,7 +1203,7 @@
                             <div class="tenant l-tenant">
                                 <div class="betvictor">
                                     <div>
-                                        <p><a target="_new" href="../www.bet365.com/home/index.html@affiliate=365_056634">Read news from <br>Blog.MoreOddsForYou.com</a></p>
+                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -1215,7 +1215,7 @@
                             <div class="tenant l-tenant">
                                 <div class="betvictor">
                                     <div>
-                                        <p><a target="_new" href="../www.bet365.com/home/index.html@affiliate=365_056634">Read news from <br>Blog.MoreOddsForYou.com</a></p>
+                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -1239,7 +1239,7 @@
                             <div class="tenant l-tenant">
                                 <div class="betvictor">
                                     <div>
-                                        <p><a target="_new" href="../www.bet365.com/home/index.html@affiliate=365_056634">Read news from <br>Blog.MoreOddsForYou.com</a></p>
+                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -1251,7 +1251,7 @@
                             <div class="tenant l-tenant">
                                 <div class="betvictor">
                                     <div>
-                                        <p><a target="_new" href="../www.bet365.com/home/index.html@affiliate=365_056634">Read news from <br>Blog.MoreOddsForYou.com</a></p>
+                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -1263,7 +1263,7 @@
                             <div class="tenant l-tenant">
                                 <div class="betvictor">
                                     <div>
-                                        <p><a target="_new" href="../www.bet365.com/home/index.html@affiliate=365_056634">Read news from <br>Blog.MoreOddsForYou.com</a></p>
+                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -1281,7 +1281,7 @@
                             <div class="tenant l-tenant">
                                 <div class="betvictor">
                                     <div>
-                                        <p><a target="_new" href="../www.bet365.com/home/index.html@affiliate=365_056634">Read news from <br>Blog.MoreOddsForYou.com</a></p>
+                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -1293,7 +1293,7 @@
                             <div class="tenant l-tenant">
                                 <div class="betvictor">
                                     <div>
-                                        <p><a target="_new" href="../www.bet365.com/home/index.html@affiliate=365_056634">Read news from <br>Blog.MoreOddsForYou.com</a></p>
+                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -1305,7 +1305,7 @@
                             <div class="tenant l-tenant">
                                 <div class="betvictor">
                                     <div>
-                                        <p><a target="_new" href="../www.bet365.com/home/index.html@affiliate=365_056634">Read news from <br>Blog.MoreOddsForYou.com</a></p>
+                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -1320,7 +1320,7 @@
                             <div class="tenant l-tenant">
                                 <div class="betvictor">
                                     <div>
-                                        <p><a target="_new" href="../www.bet365.com/home/index.html@affiliate=365_056634">Read news from <br>Blog.MoreOddsForYou.com</a></p>
+                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -1332,7 +1332,7 @@
                             <div class="tenant l-tenant">
                                 <div class="betvictor">
                                     <div>
-                                        <p><a target="_new" href="../www.bet365.com/home/index.html@affiliate=365_056634">Read news from <br>Blog.MoreOddsForYou.com</a></p>
+                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -1344,7 +1344,7 @@
                             <div class="tenant l-tenant">
                                 <div class="betvictor">
                                     <div>
-                                        <p><a target="_new" href="../www.bet365.com/home/index.html@affiliate=365_056634">Read news from <br>Blog.MoreOddsForYou.com</a></p>
+                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
                                     </div>
                                 </div>
                             </div>
