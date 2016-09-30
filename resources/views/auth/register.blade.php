@@ -41,9 +41,9 @@
             <div class="col-sm-10 col-sm-offset-1">
                 <div class="login-container">
                     <div class="center">
-                        <a href="../index.html">
+                        <a href="/">
                             <h1>
-                                <img src="../images/logo.png" alt="MoreOddsForYou">
+                                <img src="{{ URL::asset('assets/images/logo.png') }}" alt="MoreOddsForYou">
                             </h1>
                         </a>
                     </div>
@@ -61,7 +61,8 @@
                                         Please Enter Your Information
                                     </h4>
                                     <div class="space-6"></div>
-                                    <form action="Login" class="form-horizontal" method="post" role="form"><input name="__RequestVerificationToken" type="hidden" value="6hwfjJrMFsdQBScPPAA0vwCC6_WWQ6AafNXrebmiYma_3KjwPTIpHpbZ-XAUx3xbcAfVakRFGtDvPTMB2MkR3ycIeR6JmXyggXB6h527yio1" />    <fieldset>
+                                    {{--<form action="/" class="form-horizontal" method="post" role="form">--}}
+                                        <input name="__RequestVerificationToken" type="hidden" value="6hwfjJrMFsdQBScPPAA0vwCC6_WWQ6AafNXrebmiYma_3KjwPTIpHpbZ-XAUx3xbcAfVakRFGtDvPTMB2MkR3ycIeR6JmXyggXB6h527yio1" />    <fieldset>
                                             <label class="block clearfix">
             <span class="block input-icon input-icon-right">
                 <input class="form-control" data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="The Email field is required." id="Email" name="Email" placeholder="Email" type="text" value="" />
@@ -94,23 +95,24 @@
 
                                             <div class="space-4"></div>
                                         </fieldset>
-                                    </form>
+                                    {{--</form>--}}
                                     <ul class="toolbar item-list ui-sortable">
-                                        <li class="item-red"> <a href="Register#" data-target="#forgot-box" class="">Forgot password? </a></li>
-                                        <li class="item-green"> <a href="Register#" data-target="#signup-box" class="">Register</a></li>
+                                        <li class="item-red"> <a href="/password/reset" data-target="#forgot-box" class="">Forgot password? </a></li>
+                                        <li class="item-green"> <a href="/" data-target="#signup-box" class="">Register</a></li>
                                     </ul>
                                     <div class="social-or-login center">
                                         <span class="bigger-110">Or Login Using</span>
                                     </div>
                                     <div class="space-6"></div>
                                     <div class="social-login center">
-                                        <form action="/" method="post"><input name="__RequestVerificationToken" type="hidden" value="vRCkqLOheQWnDMAUie7IbTiISjUi12p8MMkiU5SsxsfLs2lLKLMnk-BFCsnNr1yG1J5M6jGX6SDu3_-BKN9ijaRm1I8xeI_lBboPM6y13r81" />                    <button type="submit" class="btn btn-danger" id="Google" name="provider" value="Google" title="Log in using your Google account">
+                                        {{--<form action="/" method="post">--}}
+                                            <input name="__RequestVerificationToken" type="hidden" value="vRCkqLOheQWnDMAUie7IbTiISjUi12p8MMkiU5SsxsfLs2lLKLMnk-BFCsnNr1yG1J5M6jGX6SDu3_-BKN9ijaRm1I8xeI_lBboPM6y13r81" />                    <button type="submit" class="btn btn-danger" id="Google" name="provider" value="Google" title="Log in using your Google account">
                                                 <i class="ace-icon fa fa-google-plus"></i>
                                             </button>
                                             <button type="submit" class="btn btn-primary" id="Facebook" name="provider" value="Facebook" title="Log in using your Facebook account">
                                                 <i class="ace-icon fa fa-facebook"></i>
                                             </button>
-                                        </form>
+                                        {{--</form>--}}
 
                                     </div>
                                 </div><!-- /.widget-main -->
@@ -129,7 +131,8 @@
                                     <p>
                                         Enter your email and to receive instructions
                                     </p>
-                                    <form action="/" class="form-horizontal" method="post" role="form"><input name="__RequestVerificationToken" type="hidden" value="eGnEqOTUCU5Cjtza47qD-svoq-o91PuNUMXYMX-SBLVcmRpBhLcB6o2kmdkG1e4YhnKYHbC9jDMaT-gKKK_MA82fLgIt6iIzbcYmY5IvwzU1" /><div class="validation-summary-valid text-danger" data-valmsg-summary="true"><ul><li style="display:none"></li>
+                                    {{--<form action="/" class="form-horizontal" method="post" role="form">--}}
+                                        <input name="__RequestVerificationToken" type="hidden" value="eGnEqOTUCU5Cjtza47qD-svoq-o91PuNUMXYMX-SBLVcmRpBhLcB6o2kmdkG1e4YhnKYHbC9jDMaT-gKKK_MA82fLgIt6iIzbcYmY5IvwzU1" /><div class="validation-summary-valid text-danger" data-valmsg-summary="true"><ul><li style="display:none"></li>
                                             </ul></div>    <fieldset>
                                             <label class="block clearfix">
             <span class="block input-icon input-icon-right">
@@ -145,11 +148,11 @@
                                                 </button>
                                             </div>
                                         </fieldset>
-                                    </form>
+                                    {{--</form>--}}
                                     <div class="space-4"></div>
                                     <ul class="toolbar item-list ui-sortable">
-                                        <li class="item-blue"> <a href="Register#" data-target="#login-box" class="">Login</a></li>
-                                        <li class="item-green"> <a href="Register#" data-target="#signup-box" class="">Register </a></li>
+                                        <li class="item-blue"> <a href="/" data-target="#login-box" class="">Login</a></li>
+                                        <li class="item-green"> <a href="/" data-target="#signup-box" class="">Register </a></li>
                                     </ul>
                                 </div><!-- /.widget-main -->
                             </div><!-- /.widget-body -->
@@ -165,7 +168,8 @@
 
                                     <div class="space-6"></div>
                                     <p> Enter your details to begin: </p>
-                                    <form action="Register" class="form-horizontal" method="post" role="form"><input name="__RequestVerificationToken" type="hidden" value="kSC20AVJO1WboOe-1xehIx_covtclyEPuZQDEhI_2oz-MrdhFuSVLA4v0iaM6Np7L1qGmYbbpozfnWa5VulrhkJSXTGZSyNE9ZBgxHwMHZA1" /><div class="validation-summary-valid text-danger" data-valmsg-summary="true"><ul><li style="display:none"></li>
+                                    {{--<form action="/" class="form-horizontal" method="post" role="form">--}}
+                                        <input name="__RequestVerificationToken" type="hidden" value="kSC20AVJO1WboOe-1xehIx_covtclyEPuZQDEhI_2oz-MrdhFuSVLA4v0iaM6Np7L1qGmYbbpozfnWa5VulrhkJSXTGZSyNE9ZBgxHwMHZA1" /><div class="validation-summary-valid text-danger" data-valmsg-summary="true"><ul><li style="display:none"></li>
                                             </ul></div><input id="Country" name="Country" type="hidden" value="AM" /><input id="GMT" name="GMT" type="hidden" value="4" />    <fieldset>
                                             <label class="block clearfix">
             <span class="block input-icon input-icon-right">
@@ -220,11 +224,11 @@
                                                 </button>
                                             </div>
                                         </fieldset>
-                                    </form>
+                                    {{--</form>--}}
                                     <div class="space-4"></div>
                                     <ul class="toolbar item-list ui-sortable">
-                                        <li class="item-blue"> <a href="Register#" data-target="#login-box" class="">Login</a></li>
-                                        <li class="item-red"> <a href="Register#" data-target="#forgot-box" class="">Forgot password? </a></li>
+                                        <li class="item-blue"> <a href="/" data-target="#login-box" class="">Login</a></li>
+                                        <li class="item-red"> <a href="/" data-target="#forgot-box" class="">Forgot password? </a></li>
                                     </ul>
                                 </div>
                             </div><!-- /.widget-body -->

@@ -65,5 +65,5 @@
         </a>
     </div>
 
-    <a class="btn btn-link white-text" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+    {{--<a class="btn btn-link white-text" href="{{ url('/password/reset') }}">Forgot Your Password?</a>--}}
 </form>
