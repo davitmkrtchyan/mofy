@@ -41,4 +41,9 @@ class HomeController extends Controller
     {
         return view('pages.today_matches', compact('t1'));
     }
+
+    public function bookmaker($b1)
+    {
+        return view('pages.bookmaker', compact('b1'));
+    }
 }
