@@ -13,8 +13,17 @@ class ApiClientService
     {
         $client = new Client();
         $res = $client->get(self::UNIBET_LIVE_EVENTS);
-        return Utils::decodeResponse($res->getBody());
+        $events = Utils::decodeResponse($res->getBody());
+        return $this->buildEventsModel(collect($events->liveEvents)->groupBy('event.sport'));
     }
 
 
+    private function buildEventsModel($events)
+    {
+        $model = array();
+        foreach (Utils::SPORT_TYPES as $typeName) {
+            $model[$typeName] = $events[$typeName];
+        }
+        return $model;
+    }
 }

@@ -29,8 +29,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $result = $this->apiClientService->getLiveEvents();
-        return view('welcome', ['liveEvents' => $result->liveEvents]);
+        return view('welcome', $this->apiClientService->getLiveEvents());
     }
 
     public function game($p1, $p2)
