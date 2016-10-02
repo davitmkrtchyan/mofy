@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+
+    protected $apiClientService;
+
     /**
      * Create a new controller instance.
      *
@@ -14,7 +18,8 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->apiClientService = app()->make('apiClientService');
+//        $this->middleware('auth');
     }
 
     /**
@@ -24,7 +29,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $result = $this->apiClientService->getLiveEvents();
+        return view('welcome', ['liveEvents' => $result->liveEvents]);
     }
 
     public function game($p1, $p2)
