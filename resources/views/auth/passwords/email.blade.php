@@ -1,28 +1,34 @@
-@extends('layouts.app')
+@extends('layouts.app_forms')
 
 <!-- Main Content -->
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
 
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/password/email') }}">
-                        {{ csrf_field() }}
+    <div id="forgot-box" class="forgot-box no-border">
+        <div class="widget-body">
+            <div class="widget-main">
+                <h4 class="header red lighter bigger">
+                    <i class="ace-icon fa fa-key"></i>
+                    Retrieve Password
+                </h4>
 
+                @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
+
+                <div class="space-6"></div>
+                <p>
+                    Enter your email and to receive instructions
+                </p>
+                <form action="{{ url('/password/email') }}" class="form-horizontal" method="post" role="form">
+                    <fieldset>
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                            <!--<label for="email" class="col-md-4 control-label">E-Mail Address</label>-->
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
-
+                            <div class="col-md-12 input-icon input-icon-right">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                <i class="ace-icon fa fa-envelope-o"></i>
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -31,17 +37,30 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-envelope"></i> Send Password Reset Link
-                                </button>
-                            </div>
+
+
+                        <div class="clearfix">
+                            <button type="submit" class=" width-35 pull-right btn btn-sm btn-danger">
+                                <i class="ace-icon fa fa-lightbulb-o"></i>
+                                <span class="bigger-110">Send Me!</span>
+                            </button>
                         </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+                    </fieldset>
+                </form>
+                <div class="space-4"></div>
+                <ul class="toolbar item-list ui-sortable">
+                    <li class="item-blue"> <a href="/" data-target="#login-box" class="blue-text">Login</a></li>
+                    <li class="item-green"> <a href="{{ url('/register') }}" data-target="#signup-box" class="blue-text">Register </a></li>
+                </ul>
+            </div><!-- /.widget-main -->
+        </div><!-- /.widget-body -->
+    </div><!-- /.forgot-box -->
+
+
+    </form>
     </div>
-</div>
+    </div>
+    </div>
+    </div>
+    </div>
 @endsection

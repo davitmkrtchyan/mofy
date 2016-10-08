@@ -214,43 +214,43 @@
                                         </a>
                                     </li>
                                     <li role="presentation" class="">
-                                        <a id='tab-51' href='index.html#ice-hockeyTab' aria-controls="ice-hockeyTab"
+                                        <a id='tab-52' href='index.html#tennisTab' aria-controls="tennisTab"
                                            role="tab" data-toggle="tab">
 
-                                            <i class="sp sp50"></i>
-                                            <span>Football</span>
+                                            <i class="sp sp52"></i>
+                                            <span>Tennis</span>
                                         </a>
                                     </li>
                                     <li role="presentation" class="">
-                                        <a id='tab-52' href='index.html#tennisTab' aria-controls="tennisTab" role="tab"
+                                        <a id='tab-52' href='index.html#ice-hockeyTab' aria-controls="ice-hockeyTab" role="tab"
                                            data-toggle="tab">
 
-                                            <i class="sp sp50"></i>
-                                            <span>Football</span>
+                                            <i class="sp sp51"></i>
+                                            <span>Ice Hockey</span>
                                         </a>
                                     </li>
                                     <li role="presentation" class="">
                                         <a id='tab-53' href='index.html#basketballTab' aria-controls="basketballTab"
                                            role="tab" data-toggle="tab">
 
-                                            <i class="sp sp50"></i>
-                                            <span>Football</span>
+                                            <i class="sp sp53"></i>
+                                            <span>Basketball</span>
                                         </a>
                                     </li>
                                     <li role="presentation" class="">
                                         <a id='tab-54' href='index.html#volleyballTab' aria-controls="volleyballTab"
                                            role="tab" data-toggle="tab">
 
-                                            <i class="sp sp50"></i>
-                                            <span>Football</span>
+                                            <i class="sp sp93"></i>
+                                            <span>Horse Racing</span>
                                         </a>
                                     </li>
                                 </ul>
-                                <div class="tab-content">
+                                <!--<div class="tab-content">
                                     <div class="table-wrapper tab-pane active" id="footballTab">
                                         <table class="table">
                                             <tbody class="main-table">
-                                            @include('home._events',['events' => $FOOTBALL])
+                                           {{--@include('home._events',['events' => $FOOTBALL])--}}
                                             </tbody>
                                         </table>
                                     </div>
@@ -264,25 +264,25 @@
                                     <div class="table-wrapper tab-pane " id="tennisTab">
                                         <table class="table">
                                             <tbody class="main-table">
-                                            @include('home._events',['events' => $GOLF])
+                                            {{--@include('home._events',['events' => $GOLF])--}}
                                             </tbody>
                                         </table>
                                     </div>
                                     <div class="table-wrapper tab-pane " id="basketballTab">
                                         <table class="table">
                                             <tbody class="main-table">
-                                            @include('home._events',['events' => $BASKETBALL])
+                                            {{--@include('home._events',['events' => $BASKETBALL])--}}
                                             </tbody>
                                         </table>
                                     </div>
                                     <div class="table-wrapper tab-pane " id="volleyballTab">
                                         <table class="table">
                                             <tbody class="main-table">
-                                            @include('home._events',['events' => $VOLLEYBALL])
+                                            {{--@include('home._events',['events' => $VOLLEYBALL])--}}
                                             </tbody>
                                         </table>
                                     </div>
-                                </div>
+                                </div>-->
 
 
                             </div><!-- /.widget-main -->

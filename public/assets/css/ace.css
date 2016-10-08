@@ -20060,3 +20060,13 @@ background: #70accf;
 .white-text{
   color: white !important;
 }
+.icon-container{
+  position: relative;
+}
+.input-icon.input-icon-right > .ace-icon {
+  left: auto;
+  right: 15px;
+}
+.blue-text{
+  color: blue;
+}

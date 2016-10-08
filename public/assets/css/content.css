@@ -132,6 +132,10 @@
     background: url(../images/sports/squash.png) 4px no-repeat
 }
 
+.nav-list .s97 {
+    background: url(../images/sports/horse-racing.png) 4px no-repeat
+}
+
 .sp {
     background: url(../images/sporticons.png) no-repeat;
     padding-left: 18px;
@@ -236,6 +240,10 @@
 
 .sp93 {
     background-position: -96px -60px
+}
+
+.sp93 {
+    background-position: -172px -39px;
 }
 
 .BK {
