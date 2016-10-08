@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>Login Page - MoreOddsForYou</title>
+
+    <meta name="description" content="User login page" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="../assets/css/font-awesome.css" />
+
+    <!-- text fonts -->
+    <link rel="stylesheet" href="../assets/css/ace-fonts.css" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="../assets/css/ace.css" />
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="../assets/css/ace-part2.css" />
+    <![endif]-->
+    <link rel="stylesheet" href="../assets/css/ace-rtl.css" />
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.css" />
+    <![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../assets/js/respond.js"></script>
+    <![endif]-->
+</head>
+
+<body class="login-layout  light-login">
+<div class="main-container">
+    <div class="main-content">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="login-container">
+                    <div class="center">
+                        <a href="/">
+                            <h1>
+                                <img src="{{ URL::asset('assets/images/logo.png') }}" alt="MoreOddsForYou">
+                            </h1>
+                        </a>
+                    </div>
+
+                    <div class="space-6"></div>
+
+                    <div class="position-relative">
+
+
+                        <div id="login-box" class="login-box  widget-box no-border ">
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <h4 class="header blue lighter bigger">
+                                        <i class="ace-icon fa fa-coffee green"></i>
+                                        Please Enter Your Information
+                                    </h4>
+                                    <div class="space-6"></div>
+                                    <form action="/" class="form-horizontal" method="post" role="form">
+                                        <input name="__RequestVerificationToken" type="hidden" value="6hwfjJrMFsdQBScPPAA0vwCC6_WWQ6AafNXrebmiYma_3KjwPTIpHpbZ-XAUx3xbcAfVakRFGtDvPTMB2MkR3ycIeR6JmXyggXB6h527yio1" />
+                                        <fieldset>
+                                            <label class="block clearfix">
+                                                <span class="block input-icon input-icon-right">
+                                                <input class="form-control" data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="The Email field is required." id="Email" name="Email" placeholder="Email" type="text" value="" />
+                                                <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                                                <i class="ace-icon fa fa-user"></i>
+                                                </span>
+                                            </label>
+
+                                            <label class="block clearfix">
+                                                <span class="block input-icon input-icon-right">
+                                                <input class="form-control" data-val="true" data-val-required="The Password field is required." id="Password" name="Password" placeholder="Password" type="password" />
+                                                <span class="field-validation-valid text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                                                <i class="ace-icon fa fa-lock"></i>
+                                                </span>
+                                            </label>
+
+                                            <div class="space"></div>
+
+                                            <div class="clearfix">
+                                                <label class="inline">
+                                                    <input data-val="true" data-val-required="The Remember me? field is required." id="RememberMe" name="RememberMe" type="checkbox" value="true" /><input name="RememberMe" type="hidden" value="false" />
+                                                    <span class="lbl"> Remember Me</span>
+                                                </label>
+
+                                                <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
+                                                    <i class="ace-icon fa fa-key"></i>
+                                                    <span class="bigger-110">Login</span>
+                                                </button>
+                                            </div>
+
+                                            <div class="space-4"></div>
+                                        </fieldset>
+                                    </form>
+                                    <ul class="toolbar item-list ui-sortable">
+                                        <li class="item-red"> <a href="/password/reset" data-target="#forgot-box" class="">Forgot password? </a></li>
+                                        <li class="item-green"> <a href="/" data-target="#signup-box" class="">Register</a></li>
+                                    </ul>
+                                    <div class="social-or-login center">
+                                        <span class="bigger-110">Or Login Using</span>
+                                    </div>
+                                    <div class="space-6"></div>
+                                    <div class="social-login center">
+                                        <form action="/" method="post">
+                                            <input name="__RequestVerificationToken" type="hidden" value="vRCkqLOheQWnDMAUie7IbTiISjUi12p8MMkiU5SsxsfLs2lLKLMnk-BFCsnNr1yG1J5M6jGX6SDu3_-BKN9ijaRm1I8xeI_lBboPM6y13r81" />                    <button type="submit" class="btn btn-danger" id="Google" name="provider" value="Google" title="Log in using your Google account">
+                                            <i class="ace-icon fa fa-google-plus"></i>
+                                        </button>
+                                            <button type="submit" class="btn btn-primary" id="Facebook" name="provider" value="Facebook" title="Log in using your Facebook account">
+                                                <i class="ace-icon fa fa-facebook"></i>
+                                            </button>
+                                        </form>
+
+                                    </div>
+                                </div><!-- /.widget-main -->
+                            </div><!-- /.widget-body -->
+                        </div><!-- /.login-box -->
+
+                        <div id="forgot-box" class="forgot-box widget-box no-border">
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <h4 class="header red lighter bigger">
+                                        <i class="ace-icon fa fa-key"></i>
+                                        Retrieve Password
+                                    </h4>
+
+                                    <div class="space-6"></div>
+                                    <p>
+                                        Enter your email and to receive instructions
+                                    </p>
+                                    <form action="/" class="form-horizontal" method="post" role="form">
+                                        <input name="__RequestVerificationToken" type="hidden" value="eGnEqOTUCU5Cjtza47qD-svoq-o91PuNUMXYMX-SBLVcmRpBhLcB6o2kmdkG1e4YhnKYHbC9jDMaT-gKKK_MA82fLgIt6iIzbcYmY5IvwzU1" /><div class="validation-summary-valid text-danger" data-valmsg-summary="true"><ul><li style="display:none"></li>
+                                    </ul></div>    <fieldset>
+                                        <label class="block clearfix">
+                                            <span class="block input-icon input-icon-right">
+                                            <input class="form-control" data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="The Email field is required." id="Email" name="Email" placeholder="Email" type="text" value="" />
+                                            <i class="ace-icon fa fa-envelope-o"></i>
+                                            </span>
+                                        </label>
+
+                                        <div class="clearfix">
+                                            <button type="submit" class=" width-35 pull-right btn btn-sm btn-danger">
+                                                <i class="ace-icon fa fa-lightbulb-o"></i>
+                                                <span class="bigger-110">Send Me!</span>
+                                            </button>
+                                        </div>
+                                    </fieldset>
+                                    </form>
+                                    <div class="space-4"></div>
+                                    <ul class="toolbar item-list ui-sortable">
+                                        <li class="item-blue"> <a href="/" data-target="#login-box" class="">Login</a></li>
+                                        <li class="item-green"> <a href="/" data-target="#signup-box" class="">Register </a></li>
+                                    </ul>
+                                </div><!-- /.widget-main -->
+                            </div><!-- /.widget-body -->
+                        </div><!-- /.forgot-box -->
+
+                        <div id="signup-box" class="signup-box widget-box no-border visible">
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <h4 class="header green lighter bigger">
+                                        <i class="ace-icon fa fa-users blue"></i>
+                                        New User Registration
+                                    </h4>
+
+                                    <div class="space-6"></div>
+                                    <p> Enter your details to begin: </p>
+                                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                                        {{ csrf_field() }}
+                                         <div class="validation-summary-valid text-danger" data-valmsg-summary="true">
+                                            <ul>
+                                                <li style="display:none"></li>
+                                            </ul>
+                                        </div>
+                                        <input id="Country" name="Country" type="hidden" value="AM" />
+                                        <input id="GMT" name="GMT" type="hidden" value="4" />
+                                        <fieldset>
+                                        <label class="block clearfix">
+                                            <span class="block input-icon input-icon-right">
+                                             <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
+                                            <i class="ace-icon fa fa-user"></i>
+                                            </span>
+                                        </label>
+                                        <label class="block clearfix">
+                                            <span class="block input-icon input-icon-right">
+                                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                                <i class="ace-icon fa fa-envelope-o"></i>
+                                            </span>
+                                        </label>
+                                        <label class="block clearfix">
+                                            <span class="block input-icon input-icon-right">
+                                            <input id="password" type="password" class="form-control" name="password">
+                                                <i class="ace-icon fa fa-unlock-alt"></i>
+                                            </span>
+                                        </label>
+
+                                        <label class="block clearfix">
+                                            <span class="block input-icon input-icon-right">
+                                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
+                                                <i class="ace-icon fa fa-unlock"></i>
+                                            </span>
+                                        </label>
+                                        <label class="block clearfix">
+                                            <!--   <input type="checkbox" class="ace ace-switch" checked=&quot;checked&quot; value="true" name="Gender" />
+                                            <span class="lbl" data-lbl="Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Female"></span> -->
+                                            <input type="radio" name="male" value="male"><label class="ace-icon fa fa-male"> Male</label>
+                                            <input type="radio" name="male" value="female"><label class="ace-icon fa fa-female"> Female</label>
+
+                                        </label>
+                                        <label class="block">
+                                            <input type="checkbox" class="ace"  value="true" name="TermsOfUse" />
+                                            <span class="lbl">
+                                                I accept the
+                                                <a href="/">User Agreement</a>
+                                                </span>
+                                        </label>
+                                        <div class="space-4"></div>
+
+                                        <div class="clearfix">
+                                            <button type="reset" class="width-30 pull-left btn btn-sm">
+                                                <i class="ace-icon fa fa-refresh"></i>
+                                                <span class="bigger-110">Reset</span>
+                                            </button>
+
+                                            <button type="submit" class="width-65 pull-right btn btn-sm btn-success">
+                                                <span class="bigger-110">Register</span>
+                                                <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
+                                            </button>
+                                        </div>
+                                    </fieldset>
+                                    </form>
+                                    <div class="space-4"></div>
+                                    <ul class="toolbar item-list ui-sortable">
+                                        <li class="item-blue"> <a href="/" data-target="#login-box" class="">Login</a></li>
+                                        <li class="item-red"> <a href="/" data-target="#forgot-box" class="">Forgot password? </a></li>
+                                    </ul>
+                                </div>
+                            </div><!-- /.widget-body -->
+                        </div><!-- /.signup-box -->
+                        <div class="center">
+                            <h4 class="white" id="id-company-text">Copyright MoreOddsForYou &copy; </h4>
+                            <div class="space-4"></div>
+                        </div>
+                    </div><!-- /.position-relative -->
+                </div>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.main-content -->
+</div><!-- /.main-container -->
+<!-- basic scripts -->
+<!--[if !IE]> -->
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery.js'>" + "<" + "/script>");
+</script>
+
+<!-- <![endif]-->
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery1x.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+<script type="text/javascript">
+    if ('ontouchstart' in document.documentElement) document.write("<script src='../assets/js/jquery.mobile.custom.js'>" + "<" + "/script>");
+</script>
+
+<!-- inline scripts related to this page -->
+<script type="text/javascript">
+    jQuery(function ($) {
+        $(document).on('click', '.toolbar a[data-target]', function (e) {
+            e.preventDefault();
+            var target = $(this).data('target');
+            $('.widget-box.visible').removeClass('visible');//hide others
+            $(target).addClass('visible');//show target
+        });
+    });
+</script>
+</body>
+</html>
