@@ -4,7 +4,8 @@ namespace App\Utils;
 
 class Utils
 {
-    const SPORT_TYPES = ['FOOTBALL','VOLLEYBALL', 'BASKETBALL', 'GOLF'];
+    const MAIN_SPORT_TYPES = ['FOOTBALL', 'TENNIS', 'ICE_HOCKEY', 'BASKETBALL', 'HORSE_RACING'];
+    const SECONDARY_SPORT_TYPES = ['VOLLEYBALL', 'GOLF'];
     const EVENT_MANDATORY_PROPERTIES = ['start', 'homeName', 'awayName'];
     const JSON_TYPE = 'json';
     const XML_TYPE = 'xml';
@@ -22,10 +23,5 @@ class Utils
     public static function getGlobalResponseType()
     {
         return self::JSON_TYPE;
-    }
-
-    public static function isEventHasMandatoryProperties($event)
-    {
-        return true;
     }
 }

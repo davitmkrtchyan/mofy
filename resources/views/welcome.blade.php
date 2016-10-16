@@ -202,257 +202,222 @@
                         </div>
                         <div class="widget-body">
                             <div class="widget-main no-padding main-table-wrapper table-tab">
-
-
                                 <ul class="nav nav-tabs sports-tab" role="tablist">
-                                    <li role="presentation" class="active">
-                                        <a id='tab-50' href='index.html#footballTab' aria-controls="footballTab"
-                                           role="tab" data-toggle="tab">
-
-                                            <i class="sp sp50"></i>
-                                            <span>Football</span>
-                                        </a>
-                                    </li>
-                                    <li role="presentation" class="">
-                                        <a id='tab-52' href='index.html#tennisTab' aria-controls="tennisTab"
-                                           role="tab" data-toggle="tab">
-
-                                            <i class="sp sp52"></i>
-                                            <span>Tennis</span>
-                                        </a>
-                                    </li>
-                                    <li role="presentation" class="">
-                                        <a id='tab-52' href='index.html#ice-hockeyTab' aria-controls="ice-hockeyTab" role="tab"
-                                           data-toggle="tab">
-
-                                            <i class="sp sp51"></i>
-                                            <span>Ice Hockey</span>
-                                        </a>
-                                    </li>
-                                    <li role="presentation" class="">
-                                        <a id='tab-53' href='index.html#basketballTab' aria-controls="basketballTab"
-                                           role="tab" data-toggle="tab">
-
-                                            <i class="sp sp53"></i>
-                                            <span>Basketball</span>
-                                        </a>
-                                    </li>
-                                    <li role="presentation" class="">
-                                        <a id='tab-54' href='index.html#volleyballTab' aria-controls="volleyballTab"
-                                           role="tab" data-toggle="tab">
-
-                                            <i class="sp sp93"></i>
-                                            <span>Horse Racing</span>
-                                        </a>
-                                    </li>
+                                    @foreach($eventsGroups as $eventGroupName=>$eventGroupContent)
+                                        <?php
+                                        $sportClass = \App\Utils\UnibetUtils::resolveSportNameClass($eventGroupName);
+                                        $properties = $sportClass::getViewProperties();
+                                        ?>
+                                        <li role="presentation"
+                                            class="{{$properties['aria-controls']=='footballTab'?'active':''}}">
+                                            <a id='{{$properties['id']}}'
+                                               href='index.html#{{$properties['aria-controls']}}'
+                                               aria-controls='{{$properties['aria-controls']}}'
+                                               role='{{$properties['role']}}' data-toggle="tab">
+                                                <i class="sp {{$properties['icon']}}"></i>
+                                                <span>{{$properties['tabLabel']}}</span>
+                                            </a>
+                                        </li>
+                                    @endforeach
                                 </ul>
-                                <!--<div class="tab-content">
-                                    <div class="table-wrapper tab-pane active" id="footballTab">
-                                        <table class="table">
-                                            <tbody class="main-table">
-                                           {{--@include('home._events',['events' => $FOOTBALL])--}}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="table-wrapper tab-pane " id="ice-hockeyTab">
-                                        <table class="table">
-                                            <tbody class="main-table">
-                                            {{--@include('home._events',['events' => $ICE_HOCKEY])--}}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="table-wrapper tab-pane " id="tennisTab">
-                                        <table class="table">
-                                            <tbody class="main-table">
-                                            {{--@include('home._events',['events' => $GOLF])--}}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="table-wrapper tab-pane " id="basketballTab">
-                                        <table class="table">
-                                            <tbody class="main-table">
-                                            {{--@include('home._events',['events' => $BASKETBALL])--}}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="table-wrapper tab-pane " id="volleyballTab">
-                                        <table class="table">
-                                            <tbody class="main-table">
-                                            {{--@include('home._events',['events' => $VOLLEYBALL])--}}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>-->
+
+                                <div class="tab-content">
+
+                                    @foreach($eventsGroups as $eventGroupName=>$eventGroupContent)
+                                        <?php
+                                        $sportClass = \App\Utils\UnibetUtils::resolveSportNameClass($eventGroupName);
+                                        $properties = $sportClass::getViewProperties();
+                                        ?>
+                                        <div class="table-wrapper tab-pane {{$properties['aria-controls']=='footballTab'?'active':''}}"
+                                             id='{{$properties['aria-controls']}}'>
+                                            <table class="table">
+                                                <tbody class="main-table">
+                                                @include('home._events',['events' => $eventGroupContent])
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    @endforeach
+
+                                </div><!-- /.widget-main -->
+                            </div><!-- /.widget-body -->
+
+                        </div>
 
 
-                            </div><!-- /.widget-main -->
-                        </div><!-- /.widget-body -->
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <hr>
+                                <div class="tenant l-tenant">
+                                    <div class="betvictor">
+                                        <div>
+                                            <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-sm-4">
+
+                                <div class="tenant l-tenant">
+                                    <div class="betvictor">
+                                        <div>
+                                            <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-sm-4">
+
+                                <div class="tenant l-tenant">
+                                    <div class="betvictor">
+                                        <div>
+                                            <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div id="adv-center1">
+
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-sm-4">
+
+                                <div class="tenant l-tenant">
+                                    <div class="betvictor">
+                                        <div>
+                                            <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-sm-4">
+
+                                <div class="tenant l-tenant">
+                                    <div class="betvictor">
+                                        <div>
+                                            <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-sm-4">
+
+                                <div class="tenant l-tenant">
+                                    <div class="betvictor">
+                                        <div>
+                                            <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-sm-4">
+
+                                <div class="tenant l-tenant">
+                                    <div class="betvictor">
+                                        <div>
+                                            <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-sm-4">
+
+                                <div class="tenant l-tenant">
+                                    <div class="betvictor">
+                                        <div>
+                                            <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-sm-4">
+
+                                <div class="tenant l-tenant">
+                                    <div class="betvictor">
+                                        <div>
+                                            <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-4">
+
+                                <div class="tenant l-tenant">
+                                    <div class="betvictor">
+                                        <div>
+                                            <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-sm-4">
+
+                                <div class="tenant l-tenant">
+                                    <div class="betvictor">
+                                        <div>
+                                            <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-sm-4">
+
+                                <div class="tenant l-tenant">
+                                    <div class="betvictor">
+                                        <div>
+                                            <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
 
                     </div>
-
-
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <hr>
-                            <div class="tenant l-tenant">
-                                <div class="betvictor">
-                                    <div>
-                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-sm-4">
-
-                            <div class="tenant l-tenant">
-                                <div class="betvictor">
-                                    <div>
-                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-sm-4">
-
-                            <div class="tenant l-tenant">
-                                <div class="betvictor">
-                                    <div>
-                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-
-                    <div id="adv-center1">
-
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-sm-4">
-
-                            <div class="tenant l-tenant">
-                                <div class="betvictor">
-                                    <div>
-                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-sm-4">
-
-                            <div class="tenant l-tenant">
-                                <div class="betvictor">
-                                    <div>
-                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-sm-4">
-
-                            <div class="tenant l-tenant">
-                                <div class="betvictor">
-                                    <div>
-                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-sm-4">
-
-                            <div class="tenant l-tenant">
-                                <div class="betvictor">
-                                    <div>
-                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-sm-4">
-
-                            <div class="tenant l-tenant">
-                                <div class="betvictor">
-                                    <div>
-                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-sm-4">
-
-                            <div class="tenant l-tenant">
-                                <div class="betvictor">
-                                    <div>
-                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-4">
-
-                            <div class="tenant l-tenant">
-                                <div class="betvictor">
-                                    <div>
-                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-sm-4">
-
-                            <div class="tenant l-tenant">
-                                <div class="betvictor">
-                                    <div>
-                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-sm-4">
-
-                            <div class="tenant l-tenant">
-                                <div class="betvictor">
-                                    <div>
-                                        <p><a target="_new" href="/">Read news from <br>Blog.MoreOddsForYou.com</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-
-                </div>
 
 @endsection

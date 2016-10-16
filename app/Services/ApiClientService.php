@@ -2,8 +2,10 @@
 
 namespace App\Services;
 
+use App\Utils\UnibetUtils;
 use App\Utils\Utils;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Log;
 
 class ApiClientService
 {
@@ -20,10 +22,36 @@ class ApiClientService
 
     private function buildEventsModel($events)
     {
-        $model = array();
-        foreach (Utils::SPORT_TYPES as $typeName) {
-            $model[$typeName] = $events[$typeName];
+
+        $model = collect([]);
+        $missedEventsNames = collect([]);
+        foreach (Utils::MAIN_SPORT_TYPES as $typeName) {
+            $event = $events->get($typeName);
+            if ($event != null) {
+                $model->put($typeName, $event);
+            } else {
+                $missedEventsNames->push($typeName);
+            }
         }
-        return $model;
+
+        $secondaryList = Utils::SECONDARY_SPORT_TYPES;
+        $missedEventsNamesSize = sizeof($missedEventsNames);
+        $this->fillEventsFromSecondaryList($secondaryList, $missedEventsNamesSize, $events, $model);
+
+        return ['eventsGroups' => UnibetUtils::buildUnibetEventsObjects($model)];
+    }
+
+    private function fillEventsFromSecondaryList($secondaryList, $missedEventsNamesSize, $events, $model)
+    {
+        if ($missedEventsNamesSize > 0) {
+            $typeName = $secondaryList[$missedEventsNamesSize - 1];
+            $event = $events->get($typeName);
+            if ($event != null) {
+                $model->put($typeName, $event);
+                $secondaryList = array_diff($secondaryList, [$typeName]);
+                $missedEventsNamesSize -= 1;
+            }
+            $this->fillEventsFromSecondaryList($secondaryList, $missedEventsNamesSize, $events, $model);
+        }
     }
 }

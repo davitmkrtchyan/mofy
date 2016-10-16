@@ -11,13 +11,11 @@
 |
 */
 
-Route::get('/',function(){
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
-Route::get('login', function(){
+Route::get('login', function () {
     return redirect('/');
 });
 Route::get('/game/{p1}-{p2}', 'HomeController@game');
