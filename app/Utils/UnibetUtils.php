@@ -14,6 +14,7 @@ class UnibetUtils
 {
     private static $EVENT_MAIN_PROPERTIES = ['name', 'group', 'start', 'homeName', 'awayName'];
     private static $EVENT_ODDS_TYPES_MAPPING = ['OT_ONE' => 'oddsFirst', 'OT_CROSS' => 'oddsCross', 'OT_TWO' => 'oddsSecond'];
+    const GAMES_COUNT_PER_TAB = 5;
 
     public static function buildUnibetEventsObjects($model)
     {
@@ -22,26 +23,30 @@ class UnibetUtils
             $resultModel->put($events, collect());
         });
         $model->each(function ($events, $sportName) use ($resultModel) {
+
             collect($events)->each(function ($event, $key) use ($sportName, $resultModel) {
-                $class = self::resolveSportNameClass($sportName);
-                $sportObject = new $class();
-                foreach (self::$EVENT_MAIN_PROPERTIES as $propertyName) {
-                    $val = array_key_exists($propertyName, $event->event) ? $event->event->{$propertyName} : '';
-                    $sportObject->{$propertyName} = $val;
-                }
-                if (array_key_exists('mainBetOffer', $event) && array_key_exists('outcomes', $event->mainBetOffer)) {
-                    $asCollection = collect($event->mainBetOffer->outcomes);
-                    foreach (self::$EVENT_ODDS_TYPES_MAPPING as $oddType => $objectProperty) {
-                        $odd = $asCollection->first(function ($value, $key) use ($oddType) {
-                            return $key->type == $oddType;
-                        });
-                        if ($odd != null) {
-                            $sportObject->{$objectProperty} = Utils::convertAmericanOddToDecimal($odd->oddsAmerican);
+                if (sizeof($resultModel->get($sportName)) < self::GAMES_COUNT_PER_TAB) {
+                    $class = self::resolveSportNameClass($sportName);
+                    $sportObject = new $class();
+                    foreach (self::$EVENT_MAIN_PROPERTIES as $propertyName) {
+                        $val = array_key_exists($propertyName, $event->event) ? $event->event->{$propertyName} : '';
+                        $sportObject->{$propertyName} = $val;
+                    }
+                    if (array_key_exists('mainBetOffer', $event) && array_key_exists('outcomes', $event->mainBetOffer)) {
+                        $asCollection = collect($event->mainBetOffer->outcomes);
+                        foreach (self::$EVENT_ODDS_TYPES_MAPPING as $oddType => $objectProperty) {
+                            $odd = $asCollection->first(function ($value, $key) use ($oddType) {
+                                return $key->type == $oddType;
+                            });
+                            if ($odd != null) {
+                                $sportObject->{$objectProperty} = Utils::convertAmericanOddToDecimal($odd->oddsAmerican);
+                            }
                         }
                     }
+                    $resultModel->get($sportName)->push($sportObject);
                 }
-                $resultModel->get($sportName)->push($sportObject);
             });
+
         });
         return $resultModel;
     }

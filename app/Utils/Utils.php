@@ -6,7 +6,6 @@ class Utils
 {
     const MAIN_SPORT_TYPES = ['FOOTBALL', 'TENNIS', 'ICE_HOCKEY', 'BASKETBALL', 'HORSE_RACING'];
     const SECONDARY_SPORT_TYPES = ['VOLLEYBALL', 'GOLF'];
-    const EVENT_MANDATORY_PROPERTIES = ['start', 'homeName', 'awayName'];
     const JSON_TYPE = 'json';
     const XML_TYPE = 'xml';
 
