@@ -4,8 +4,6 @@ namespace App\Utils;
 
 class Utils
 {
-    const MAIN_SPORT_TYPES = ['FOOTBALL', 'TENNIS', 'ICE_HOCKEY', 'BASKETBALL', 'HORSE_RACING'];
-    const SECONDARY_SPORT_TYPES = ['VOLLEYBALL', 'GOLF'];
     const JSON_TYPE = 'json';
     const XML_TYPE = 'xml';
 
@@ -17,6 +15,16 @@ class Utils
         } else {
             return json_decode($data);
         }
+    }
+
+    public static function getSecondarySportTypes()
+    {
+        return ['VOLLEYBALL', 'GOLF'];
+    }
+
+    public static function getMainSportTypes()
+    {
+        return ['FOOTBALL', 'TENNIS', 'ICE_HOCKEY', 'BASKETBALL', 'HORSE_RACING'];
     }
 
     public static function getGlobalResponseType()

@@ -25,7 +25,7 @@ class ApiClientService
 
         $model = collect([]);
         $missedEventsNames = collect([]);
-        foreach (Utils::MAIN_SPORT_TYPES as $typeName) {
+        foreach (Utils::getMainSportTypes() as $typeName) {
             $event = $events->get($typeName);
             if ($event != null) {
                 $model->put($typeName, $event);
@@ -34,7 +34,7 @@ class ApiClientService
             }
         }
 
-        $secondaryList = Utils::SECONDARY_SPORT_TYPES;
+        $secondaryList = Utils::getSecondarySportTypes();
         $missedEventsNamesSize = sizeof($missedEventsNames);
         $this->fillEventsFromSecondaryList($secondaryList, $missedEventsNamesSize, $events, $model);
 
