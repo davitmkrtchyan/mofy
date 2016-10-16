@@ -24,4 +24,10 @@ class Utils
     {
         return self::JSON_TYPE;
     }
+
+    public static function convertAmericanOddToDecimal($value)
+    {
+        $result = $value[0] === '-' ? (100 / floatval(substr($value, 1)) + 1) : (floatval($value) / 100 + 1);
+        return round($result, 2);
+    }
 }

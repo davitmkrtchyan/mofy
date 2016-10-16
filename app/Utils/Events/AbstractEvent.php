@@ -16,4 +16,8 @@ abstract class AbstractEvent
     public $start;
     public $homeName;
     public $awayName;
+
+    public $oddsFirst;
+    public $oddsCross;
+    public $oddsSecond;
 }

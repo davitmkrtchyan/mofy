@@ -36,8 +36,8 @@
             </div>
         </td>
 
-        <td class='odds-col3'><span class="mobile-bet-type">1</span>3.25</td>
-        <td class='odds-col3'><span class="mobile-bet-type">X</span>3.20</td>
-        <td class='odds-col3'><span class="mobile-bet-type">2</span>2.65</td>
+        <td class='odds-col3'><span class="mobile-bet-type">1</span>{{$event->oddsFirst}}</td>
+        <td class='odds-col3'><span class="mobile-bet-type">X</span>{{$event->oddsCross}}</td>
+        <td class='odds-col3'><span class="mobile-bet-type">2</span>{{$event->oddsSecond}}</td>
     </tr>
 @endforeach
