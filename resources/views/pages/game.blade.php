@@ -86,14 +86,14 @@
                                         <th class="sort">Bookmaker</th>
                                     </tr>
                                     </thead>
-                                    <tfoot>
-                                    <tr class="average">
-                                        <td>Average</td>
-                                    </tr>
-                                    <tr class="highest">
-                                        <td>Highest</td>
-                                    </tr>
-                                    </tfoot>
+                                    {{--<tfoot>--}}
+                                    {{--<tr class="average">--}}
+                                        {{--<td>Average</td>--}}
+                                    {{--</tr>--}}
+                                    {{--<tr class="highest">--}}
+                                        {{--<td>Highest</td>--}}
+                                    {{--</tr>--}}
+                                    {{--</tfoot>--}}
                                     <tbody>
 
 
@@ -109,15 +109,15 @@
                                             </td>
                                         </tr>
                                     @endforeach
-                                    <tr>
-                                        <td>
-                                            <div class="bm-block"><a rel="nofollow" class="name"
-                                                                     title="Go to BetAtHome website!" target="_blank"
-                                                                     href="/bookmakers/betathome/web/"><i
-                                                            class="bms bms-8"></i><span
-                                                            class="hidden-480">BetAtHome</span></a></div>
-                                        </td>
-                                    </tr>
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<div class="bm-block"><a rel="nofollow" class="name"--}}
+                                                                     {{--title="Go to BetAtHome website!" target="_blank"--}}
+                                                                     {{--href="/bookmakers/betathome/web/"><i--}}
+                                                            {{--class="bms bms-8"></i><span--}}
+                                                            {{--class="hidden-480">BetAtHome</span></a></div>--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
                                     </tbody>
                                 </table>
                             </div>
@@ -128,14 +128,14 @@
                                         <th></th>
                                     </tr>
                                     </thead>
-                                    <tfoot>
-                                    <tr class="average">
-                                        <td></td>
-                                    </tr>
-                                    <tr class="highest">
-                                        <td></td>
-                                    </tr>
-                                    </tfoot>
+                                    {{--<tfoot>--}}
+                                    {{--<tr class="average">--}}
+                                        {{--<td></td>--}}
+                                    {{--</tr>--}}
+                                    {{--<tr class="highest">--}}
+                                        {{--<td></td>--}}
+                                    {{--</tr>--}}
+                                    {{--</tfoot>--}}
                                     <tbody>
 
                                     <tr>
@@ -158,29 +158,29 @@
                                         <th class="sort center hidden-480 sortASC">Payout</th>
                                     </tr>
                                     </thead>
-                                    <tfoot>
-                                    <tr class="average">
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="odd-pay hidden-480">-</td>
-                                    </tr>
-                                    <tr class="highest">
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="odd-pay hidden-480">-</td>
-                                    </tr>
-                                    </tfoot>
+                                    {{--<tfoot>--}}
+                                    {{--<tr class="average">--}}
+                                        {{--<td></td>--}}
+                                        {{--<td></td>--}}
+                                        {{--<td></td>--}}
+                                        {{--<td></td>--}}
+                                        {{--<td class="odd-pay hidden-480">-</td>--}}
+                                    {{--</tr>--}}
+                                    {{--<tr class="highest">--}}
+                                        {{--<td></td>--}}
+                                        {{--<td></td>--}}
+                                        {{--<td></td>--}}
+                                        {{--<td></td>--}}
+                                        {{--<td class="odd-pay hidden-480">-</td>--}}
+                                    {{--</tr>--}}
+                                    {{--</tfoot>--}}
                                     <tbody>
                                     @foreach($eventDetails as $event=>$key)
                                         <tr>
                                             <td></td>
-                                            <td class="odd-v up lock">{{$key['odd1']}}</td>
-                                            <td class="odd-v up lock">{{$key['odd2']}}</td>
-                                            <td class="odd-v down lock">{{$key['odd3']}}</td>
+                                            <td class="odd-v up">{{$key['odd1']}}</td>
+                                            <td class="odd-v up">{{$key['odd2']}}</td>
+                                            <td class="odd-v down">{{$key['odd3']}}</td>
                                             <td class="odd-pay hidden-480">99.03%</td>
                                         </tr>
                                     @endforeach
