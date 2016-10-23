@@ -11,6 +11,7 @@ namespace App\Utils\Events;
 
 abstract class AbstractEvent
 {
+    public $id;
     public $name;
     public $group;
     public $start;

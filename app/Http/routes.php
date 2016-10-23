@@ -15,6 +15,7 @@ Route::get('/', 'HomeController@index');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/home/loadByEventID/{id}', 'HomeController@loadByEventID');
 Route::get('login', function () {
     return redirect('/');
 });

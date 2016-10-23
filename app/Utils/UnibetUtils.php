@@ -12,7 +12,7 @@ use Exception;
 
 class UnibetUtils
 {
-    private static $EVENT_MAIN_PROPERTIES = ['name', 'group', 'start', 'homeName', 'awayName'];
+    private static $EVENT_MAIN_PROPERTIES = ['id', 'name', 'group', 'start', 'homeName', 'awayName'];
     private static $EVENT_ODDS_TYPES_MAPPING = ['OT_ONE' => 'oddsFirst', 'OT_CROSS' => 'oddsCross', 'OT_TWO' => 'oddsSecond'];
     const GAMES_COUNT_PER_TAB = 5;
 
@@ -71,5 +71,20 @@ class UnibetUtils
             default:
                 throw new Exception("Sport type '" . $sportName . "' is not supported");
         }
+    }
+
+    public static function getSecondarySportTypes()
+    {
+        return ['VOLLEYBALL', 'GOLF'];
+    }
+
+    public static function getMainSportTypes()
+    {
+        return ['FOOTBALL', 'TENNIS', 'ICE_HOCKEY', 'BASKETBALL', 'HORSE_RACING'];
+    }
+
+    public static function buildEventDetailsURL($id)
+    {
+        return "http://api.unicdn.net/v1/feeds/sportsbook/betoffer/live/event/" . $id . ".json?app_id=71d8f332&app_key=d27be2607640ede866d069010a428842&outComeSortBy=lexical&outComeSortDir=asc";
     }
 }

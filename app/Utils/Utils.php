@@ -17,16 +17,6 @@ class Utils
         }
     }
 
-    public static function getSecondarySportTypes()
-    {
-        return ['VOLLEYBALL', 'GOLF'];
-    }
-
-    public static function getMainSportTypes()
-    {
-        return ['FOOTBALL', 'TENNIS', 'ICE_HOCKEY', 'BASKETBALL', 'HORSE_RACING'];
-    }
-
     public static function getGlobalResponseType()
     {
         return self::JSON_TYPE;

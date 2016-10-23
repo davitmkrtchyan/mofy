@@ -51,4 +51,9 @@ class HomeController extends Controller
     {
         return view('pages.bookmaker', compact('b1'));
     }
+
+    public function loadByEventID($id)
+    {
+        return view('pages.game', $this->apiClientService->getEventByID($id));
+    }
 }
