@@ -32,6 +32,7 @@
 <!-- ace settings handler -->
 <script src="{{ URL::asset('assets/js/ace-extra.js') }}"></script>
 <script src="{{ URL::asset('assets/js/jquery.js') }}"></script>
+<script src="{{ URL::asset('assets/js/jquery-ui.min.js') }}"></script>
 <script src="{{ URL::asset('assets/js/jquery.bmbets.favourite.js') }}"></script>
 <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 <!--[if lte IE 8]>

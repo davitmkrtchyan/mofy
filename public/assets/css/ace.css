@@ -16811,7 +16811,7 @@ img.editable-click:hover {
   display: inline;
   font-family: FontAwesome;
   font-size: 15px;
-  content: "\f0da";
+  /*content: "\f0da";*/
 }
 .ui-accordion .ui-accordion-header.ui-state-active .ui-accordion-header-icon:before {
   content: "\f0d7";
@@ -20069,4 +20069,31 @@ background: #70accf;
 }
 .blue-text{
   color: blue;
+}
+
+#accordion-wrapper{
+  padding-top: 60px;
+}
+#accordion{
+  visibility: hidden;
+}
+#accordion h3{
+  font-weight: 700;
+  cursor: pointer;
+}
+#accordion div{
+  background-color: #F9F9F9;
+}
+
+#terms, #privacy, #cookiepolicy, #contactus{
+  background-color: #F9F9F9;
+  padding: 30px 50px 30px 50px;
+}
+#terms a, #privacy a, #cookiepolicy a, #contactus a{
+  color: #6e99ba;
+}
+#terms > h2, #privacy > h2, #cookiepolicy > h2, #contactus > h2{
+  font-weight: 700;
+  text-align: center;
+  padding: 10px 0 20px 0;
 }

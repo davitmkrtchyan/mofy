@@ -23,3 +23,26 @@ Route::get('/game/{p1}-{p2}', 'HomeController@game');
 Route::get('/serie/{s1}', 'HomeController@serie');
 Route::get('/today/{t1}', 'HomeController@today');
 Route::get('/bookmaker/{b1}', 'HomeController@bookmaker');
+
+
+Route::get('/faq',function(){
+    return view('pages.faq');
+});
+Route::get('/terms-of-use',function(){
+    return view('pages.termsofuse');
+});
+Route::get('/privacy-policy',function(){
+    return view('pages.privacypolicy');
+});
+Route::get('/cookie-policy',function(){
+    return view('pages.cookiepolicy');
+});
+Route::get('/contact-us',function(){
+    return view('pages.contactus');
+});
+Route::get('/site-notice',function(){
+    return view('pages.sitenotice');
+});
+Route::get('/feedback',function(){
+    return view('pages.feedback');
+});
