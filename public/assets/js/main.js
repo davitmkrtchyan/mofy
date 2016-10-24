@@ -238,4 +238,33 @@ $(function () {
     window.loader = new Loading();
 });
 
+/*Custom cookie Save*/
+    var text = "";
+    var size = "";
+    function setCookie(key, value) {
+        var expires = new Date();
+        expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
+        document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+    }
+
+    function getCookie(key) {
+        var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+        return keyValue ? keyValue[2] : null;
+    }
+
+    $("#btnGMT").click(function(){
+        str = $("#slider-text").text();
+        text = str.slice(-6);
+        ace.cookie.set('gmt', text);
+        setCookie('text', text);
+        $("#timezone a span").text("GMT " + ace.cookie.get('gmt'));
+        // $("#timezone a span").text("GMT " + getCookie("text"));
+    });
+
+$("#timezone a span").text("GMT " + ace.cookie.get('gmt'));
+// $("#timezone a span").text("GMT " + getCookie("text"));
+
+
+
+
 

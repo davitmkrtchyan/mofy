@@ -90,7 +90,7 @@
 
                 <li class="transparent" id="timezone">
                     <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown">
-                        GMT+00:00
+                        <span>  </span>
                         &nbsp;
                         <i class="ace-icon fa fa-angle-down bigger-110"></i>
                     </a>
