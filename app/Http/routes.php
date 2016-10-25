@@ -16,6 +16,7 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/home/loadByEventID/{id}', 'HomeController@loadByEventID');
+Route::get('/home/loadGamesByGroupAndCountry/{sport}/{country}/{group}', 'HomeController@loadGamesByGroupAndCountry');
 Route::get('login', function () {
     return redirect('/');
 });

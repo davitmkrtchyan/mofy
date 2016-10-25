@@ -56,4 +56,9 @@ class HomeController extends Controller
     {
         return view('pages.game', $this->apiClientService->getEventByID($id));
     }
+
+    public function loadGamesByGroupAndCountry($sport, $country, $group)
+    {
+        return view('testGame', $this->apiClientService->loadGamesByGroupAndCountry($sport, $country, $group));
+    }
 }

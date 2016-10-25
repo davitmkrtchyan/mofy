@@ -200,6 +200,11 @@
                             </ul>
 
                         </div>
+
+                        <a href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'England', 'group' => 'League Two'])}}">
+                            <b style="color: #00b800">TEST</b>
+                        </a>
+
                         <div class="widget-body">
                             <div class="widget-main no-padding main-table-wrapper table-tab">
                                 <ul class="nav nav-tabs sports-tab" role="tablist">

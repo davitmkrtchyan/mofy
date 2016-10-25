@@ -43,6 +43,7 @@ class UnibetUtils
                             }
                         }
                     }
+                    $sportObject->countryName = $event->event->path[1]->englishName;
                     $resultModel->get($sportName)->push($sportObject);
                 }
             });

@@ -21,4 +21,6 @@ abstract class AbstractEvent
     public $oddsFirst;
     public $oddsCross;
     public $oddsSecond;
+
+    public $countryName;
 }

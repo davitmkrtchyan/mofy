@@ -94,4 +94,15 @@ class ApiClientService
             $this->fillEventsFromSecondaryList($secondaryList, $missedEventsNamesSize, $events, $model);
         }
     }
+
+    //////////////----------------------------////////////////////////
+    public function loadGamesByGroupAndCountry($sport, $country, $group)
+    {
+        $unibetEvents = collect($this->getUnibetEvents());
+        $currentSportEvents = $unibetEvents->get('eventsGroups')->get($sport);
+        $filteredGames = $currentSportEvents->filter(function ($item) use ($country, $group) {
+            return $item->countryName == $country && $item->group == $group;
+        });
+        return ['games' => $filteredGames];
+    }
 }
