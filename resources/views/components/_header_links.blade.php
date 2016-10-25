@@ -21,6 +21,7 @@
 
 <link rel="stylesheet" href="{{ URL::asset('assets/css/Bookmaker.css@v1') }}" />
 <link rel="stylesheet" href="{{ URL::asset('assets/css/content.css') }}"/>
+<link rel="stylesheet" href="{{ URL::asset('assets/css/custom.css') }}"/>
 
 <!--[if lte IE 9]>
 <link rel="stylesheet" href="{{ URL::asset('/assets/css/ace-part2.css" class="ace-main-stylesheet') }}" />

@@ -41,9 +41,10 @@ function initGMT_Slider(curGMT, tz) {
 
     if (!curGMT) {
         curGMT = -1 * (new Date().getTimezoneOffset() / 60);
-        ace.cookie.set('gmt', curGMT);
+        // ace.cookie.set('gmt', curGMT);
+        ace.cookie.set('gmt', "+06:05");
     }
-   
+
     var indexGMT = 0;
     for (var i = 0; i < tz.length; i++) {
         if (tz[i].v == curGMT) { indexGMT = i; break; }
@@ -261,7 +262,13 @@ $(function () {
         // $("#timezone a span").text("GMT " + getCookie("text"));
     });
 
-$("#timezone a span").text("GMT " + ace.cookie.get('gmt'));
+if(ace.cookie.get('gmt')){
+    $("#timezone a span").text("GMT " + ace.cookie.get('gmt'));
+}else{
+    ace.cookie.set('gmt', "+00:00");
+    $("#timezone a span").text("GMT " + ace.cookie.get('gmt'));
+}
+
 // $("#timezone a span").text("GMT " + getCookie("text"));
 
 

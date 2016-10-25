@@ -20057,43 +20057,43 @@ background: #70accf;
     display: none !important;
   }
 }
-.white-text{
-  color: white !important;
-}
-.icon-container{
-  position: relative;
-}
-.input-icon.input-icon-right > .ace-icon {
-  left: auto;
-  right: 15px;
-}
-.blue-text{
-  color: blue;
-}
+/*.white-text{*/
+  /*color: white !important;*/
+/*}*/
+/*.icon-container{*/
+  /*position: relative;*/
+/*}*/
+/*.input-icon.input-icon-right > .ace-icon {*/
+  /*left: auto;*/
+  /*right: 15px;*/
+/*}*/
+/*.blue-text{*/
+  /*color: blue;*/
+/*}*/
 
-#accordion-wrapper{
-  padding-top: 60px;
-}
-#accordion{
-  visibility: hidden;
-}
-#accordion h3{
-  font-weight: 700;
-  cursor: pointer;
-}
-#accordion div{
-  background-color: #F9F9F9;
-}
+/*#accordion-wrapper{*/
+  /*padding-top: 60px;*/
+/*}*/
+/*#accordion{*/
+  /*visibility: hidden;*/
+/*}*/
+/*#accordion h3{*/
+  /*font-weight: 700;*/
+  /*cursor: pointer;*/
+/*}*/
+/*#accordion div{*/
+  /*background-color: #F9F9F9;*/
+/*}*/
 
-#terms, #privacy, #cookiepolicy, #contactus{
-  background-color: #F9F9F9;
-  padding: 30px 50px 30px 50px;
-}
-#terms a, #privacy a, #cookiepolicy a, #contactus a{
-  color: #6e99ba;
-}
-#terms > h2, #privacy > h2, #cookiepolicy > h2, #contactus > h2{
-  font-weight: 700;
-  text-align: center;
-  padding: 10px 0 20px 0;
-}
+/*#terms, #privacy, #cookiepolicy, #contactus{*/
+  /*background-color: #F9F9F9;*/
+  /*padding: 30px 50px 30px 50px;*/
+/*}*/
+/*#terms a, #privacy a, #cookiepolicy a, #contactus a{*/
+  /*color: #6e99ba;*/
+/*}*/
+/*#terms > h2, #privacy > h2, #cookiepolicy > h2, #contactus > h2{*/
+  /*font-weight: 700;*/
+  /*text-align: center;*/
+  /*padding: 10px 0 20px 0;*/
+/*}*/

@@ -1,0 +1,73 @@
+@media screen and (max-width: 600px){
+    .logo-image{
+        width: 100px;
+    }
+    .footer-content {
+        float: none !important;
+        text-align: center !important;
+    }
+}
+.main-content{
+    background-color: #6e99ba;
+}
+.icon-container{
+    position: relative;
+}
+.input-icon.input-icon-right > .ace-icon {
+    left: auto;
+    right: 15px;
+}
+.white-text{
+    color: white !important;
+}
+.blue-text{
+    color: blue;
+}
+
+#accordion-wrapper{
+    padding-top: 60px;
+}
+#accordion{
+    visibility: hidden;
+}
+#accordion h3{
+    font-weight: 700;
+    cursor: pointer;
+}
+#accordion div{
+    background-color: #F9F9F9;
+}
+
+#terms, #privacy, #cookiepolicy, #contactus, #sitenotice{
+    background-color: #F9F9F9;
+    padding: 30px 50px 30px 50px;
+}
+@media screen and (max-width: 600px) {
+    #terms, #privacy, #cookiepolicy, #contactus, #sitenotice{
+        background-color: #F9F9F9;
+        padding: 30px 10px 30px 10px;
+    }
+}
+#terms a, #privacy a, #cookiepolicy a, #contactus a, #sitenotice a{
+    color: #6e99ba;
+}
+#terms > h2, #privacy > h2, #cookiepolicy > h2, #contactus > h2, #sitenotice > h2{
+    font-weight: 700;
+    text-align: center;
+    padding: 10px 0 20px 0;
+}
+
+/*Message text area*/
+.contact-fields{
+    padding-right: 27px !important;
+}
+#message{
+    resize: none;
+    height: 70px;
+}
+.contact-form-icon{
+    float: right;
+    color: gray;
+    margin: -24px 10px 0 0;
+}
+/*Message text area*/

@@ -13,7 +13,7 @@
             <!-- #section:basics/navbar.layout.brand -->
             <a href="/" class="navbar-brand">
                 <small>
-                    <img src="{{ URL::asset('assets/images/logo.png') }}" alt="MoreOddsForYou">
+                    <img src="{{ URL::asset('assets/images/logo.png') }}" alt="MoreOddsForYou" class="logo-image">
                 </small>
             </a>
             <!-- /section:basics/navbar.layout.brand -->

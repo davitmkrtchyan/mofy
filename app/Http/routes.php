@@ -43,6 +43,3 @@ Route::get('/contact-us',function(){
 Route::get('/site-notice',function(){
     return view('pages.sitenotice');
 });
-Route::get('/feedback',function(){
-    return view('pages.feedback');
-});
