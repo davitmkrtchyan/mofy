@@ -36,7 +36,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Primera Division" class="l-item" href="/" data-call="bk">
+                                        <a title="Primera Division" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Argentina', 'group' => 'Primera Division'])}}">
 
                                             Primera Division
                                             <span class="badge badge-primary">1</span>
@@ -45,7 +45,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Primera Nacional B" class="l-item" href="/" data-call="bk">
+                                        <a title="Primera Nacional B" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Argentina', 'group' => 'Primera Nacional B'])}}">
 
                                             Primera Nacional B
                                             <span class="badge badge-primary">2</span>
@@ -54,7 +54,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Primera B Metropolitana" class="l-item" href="/" data-call="bk">
+                                        <a title="Primera B Metropolitana" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Argentina', 'group' => 'Primera B Metropolitana'])}}">
 
                                             Primera B Metropolitana
                                             <span class="badge badge-primary">2</span>
@@ -63,7 +63,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Primera D Metropolitana" class="l-item" href="/" data-call="bk">
+                                        <a title="Primera D Metropolitana" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Argentina', 'group' => 'Primera D Metropolitana'])}}">
 
                                             Primera D Metropolitana
                                             <span class="badge badge-primary">3</span>
@@ -72,7 +72,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Torneo B" class="l-item" href="/" data-call="bk">
+                                        <a title="Torneo B" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Argentina', 'group' => 'Torneo B'])}}">
 
                                             Torneo B
                                             <span class="badge badge-primary">1</span>
@@ -81,7 +81,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Copa Argentina" class="l-item" href="../../../argentina/copa-argentina/index.html" data-call="bk">
+                                        <a title="Copa Argentina" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Argentina', 'group' => 'Copa Argentina'])}}">
 
                                             Copa Argentina
                                             <span class="badge badge-primary">2</span>
@@ -90,7 +90,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Reserve League" class="l-item" href="../../../argentina/reserve-league/index.html" data-call="bk">
+                                        <a title="Reserve League" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Argentina', 'group' => 'Reserve League'])}}">
 
                                             Reserve League
                                             <span class="badge badge-primary">4</span>
@@ -101,7 +101,7 @@
                                 </ul>
                             </li>
                             <li class="">
-                                <a href="../../../armenia/index.html" class="dropdown-toggle">
+                                <a href="/" class="dropdown-toggle">
                                     <i class="flag flag-am menu-icon fa"></i>
                                     Armenia
 
@@ -112,7 +112,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="League One" class="l-item" href="../../../armenia/league-one/index.html" data-call="bk">
+                                        <a title="League One" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Armenia', 'group' => 'League One'])}}">
 
                                             League One
                                             <span class="badge badge-primary">1</span>
@@ -123,7 +123,7 @@
                                 </ul>
                             </li>
                             <li class="">
-                                <a href="../../../asia/index.html" class="dropdown-toggle">
+                                <a href="/" class="dropdown-toggle">
                                     <i class="flag flag-wld menu-icon fa"></i>
                                     Asia
 
@@ -134,7 +134,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="AFC Champions League" class="l-item" href="../../../asia/afc-champions-league/index.html" data-call="bk">
+                                        <a title="AFC Champions League" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Asia', 'group' => 'AFC Champions League'])}}">
 
                                             AFC Champions League
                                             <span class="badge badge-primary">4</span>
@@ -145,7 +145,7 @@
                                 </ul>
                             </li>
                             <li class="">
-                                <a href="../../../australia/index.html" class="dropdown-toggle">
+                                <a href="/" class="dropdown-toggle">
                                     <i class="flag flag-au menu-icon fa"></i>
                                     Australia
 
@@ -156,7 +156,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="A-League" class="l-item" href="../../../australia/a-league/index.html" data-call="bk">
+                                        <a title="A-League" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Australia', 'group' => 'A-League'])}}">
 
                                             A-League
                                             <span class="badge badge-primary">5</span>
@@ -165,7 +165,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="FFA Cup" class="l-item" href="../../../australia/ffa-cup/index.html" data-call="bk">
+                                        <a title="FFA Cup" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Australia', 'group' => 'FFA Cup'])}}">
 
                                             FFA Cup
                                             <span class="badge badge-primary">4</span>
@@ -176,7 +176,7 @@
                                 </ul>
                             </li>
                             <li class="">
-                                <a href="../../../austria/index.html" class="dropdown-toggle">
+                                <a href="/" class="dropdown-toggle">
                                     <i class="flag flag-at menu-icon fa"></i>
                                     Austria
 
@@ -187,7 +187,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Bundesliga" class="l-item" href="../../../austria/bundesliga/index.html" data-call="bk">
+                                        <a title="Bundesliga" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Austria', 'group' => 'Bundesliga'])}}">
 
                                             Bundesliga
                                             <span class="badge badge-primary">5</span>
@@ -196,7 +196,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Erste Liga" class="l-item" href="../../../austria/erste-liga/index.html" data-call="bk">
+                                        <a title="Erste Liga" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Austria', 'group' => 'Erste Liga'])}}">
 
                                             Erste Liga
                                             <span class="badge badge-primary">5</span>
@@ -205,7 +205,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Regionalliga East" class="l-item" href="../../../austria/regionalliga-east/index.html" data-call="bk">
+                                        <a title="Regionalliga East" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Austria', 'group' => 'Regionalliga East'])}}">
 
                                             Regionalliga East
                                             <span class="badge badge-primary">3</span>
@@ -214,7 +214,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Regionalliga Mitte" class="l-item" href="../../../austria/regionalliga-mitte/index.html" data-call="bk">
+                                        <a title="Regionalliga Mitte" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Austria', 'group' => 'Regionalliga Mitte'])}}">
 
                                             Regionalliga Mitte
                                             <span class="badge badge-primary">3</span>
@@ -223,7 +223,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Regionalliga West" class="l-item" href="../../../austria/regionalliga-west/index.html" data-call="bk">
+                                        <a title="Regionalliga West" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Austria', 'group' => 'Regionalliga West'])}}">
 
                                             Regionalliga West
                                             <span class="badge badge-primary">2</span>
@@ -232,7 +232,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Amateur Cup" class="l-item" href="../../../austria/amateur-cup/index.html" data-call="bk">
+                                        <a title="Amateur Cup" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Austria', 'group' => 'Amateur Cup'])}}">
 
                                             Amateur Cup
                                             <span class="badge badge-primary">5</span>
@@ -243,7 +243,7 @@
                                 </ul>
                             </li>
                             <li class="">
-                                <a href="../../../belarus/index.html" class="dropdown-toggle">
+                                <a href="/" class="dropdown-toggle">
                                     <i class="flag flag-by menu-icon fa"></i>
                                     Belarus
 
@@ -254,7 +254,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Premier League" class="l-item" href="../../../belarus/premier-league/index.html" data-call="bk">
+                                        <a title="Premier League" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Belarus', 'group' => 'Premier League'])}}">
 
                                             Premier League
                                             <span class="badge badge-primary">1</span>
@@ -265,7 +265,7 @@
                                 </ul>
                             </li>
                             <li class="">
-                                <a href="../../../belgium/index.html" class="dropdown-toggle">
+                                <a href="/" class="dropdown-toggle">
                                     <i class="flag flag-be menu-icon fa"></i>
                                     Belgium
 
@@ -276,7 +276,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Jupiler Pro League" class="l-item" href="../../../belgium/jupiler-pro-league/index.html" data-call="bk">
+                                        <a title="Jupiler Pro League" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Belgium', 'group' => 'Jupiler Pro League'])}}">
 
                                             Jupiler Pro League
                                             <span class="badge badge-primary">12</span>
@@ -285,7 +285,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="EXQI League" class="l-item" href="../../../belgium/exqi-league/index.html" data-call="bk">
+                                        <a title="EXQI League" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Belgium', 'group' => 'EXQI League'])}}">
 
                                             EXQI League
                                             <span class="badge badge-primary">4</span>
@@ -296,7 +296,7 @@
                                 </ul>
                             </li>
                             <li class="">
-                                <a href="../../index.html" class="dropdown-toggle">
+                                <a href="/" class="dropdown-toggle">
                                     <i class="flag flag-br menu-icon fa"></i>
                                     Brazil
 
@@ -307,7 +307,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Serie A" class="l-item" href="../../serie-a/index.html" data-call="bk">
+                                        <a title="Serie A" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Brazil', 'group' => 'Serie A'])}}">
 
                                             Serie A
                                             <span class="badge badge-primary">3</span>
@@ -316,7 +316,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Serie B" class="l-item" href="../index.html" data-call="bk">
+                                        <a title="Serie B" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Brazil', 'group' => 'Serie B'])}}">
 
                                             Serie B
                                             <span class="badge badge-primary">18</span>
@@ -325,7 +325,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Brazil Cup" class="l-item" href="../../brazil-cup/index.html" data-call="bk">
+                                        <a title="Brazil Cup" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Brazil', 'group' => 'Brazil Cup'])}}">
 
                                             Brazil Cup
                                             <span class="badge badge-primary">4</span>
@@ -334,7 +334,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Copa Paulista" class="l-item" href="../../copa-paulista/index.html" data-call="bk">
+                                        <a title="Copa Paulista" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Brazil', 'group' => 'Copa Paulista'])}}">
 
                                             Copa Paulista
                                             <span class="badge badge-primary">1</span>
@@ -343,7 +343,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="League U20" class="l-item" href="../../league-u20/index.html" data-call="bk">
+                                        <a title="League U20" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Brazil', 'group' => 'U20 League'])}}">
 
                                             U20 League
                                             <span class="badge badge-primary">2</span>
@@ -352,7 +352,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Rio Cup" class="l-item" href="../../rio-cup/index.html" data-call="bk">
+                                        <a title="Rio Cup" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Brazil', 'group' => 'Rio Cup'])}}">
 
                                             Rio Cup
                                             <span class="badge badge-primary">5</span>
@@ -361,7 +361,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Brasil Cup Women" class="l-item" href="../../brasil-cup-women/index.html" data-call="bk">
+                                        <a title="Brasil Cup Women" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Brazil', 'group' => 'Brasil Cup Women'])}}">
 
                                             Brasil Cup Women
                                             <span class="badge badge-primary">4</span>
@@ -372,7 +372,7 @@
                                 </ul>
                             </li>
                             <li class="">
-                                <a href="../../../cameroon/index.html" class="dropdown-toggle">
+                                <a href="/" class="dropdown-toggle">
                                     <i class="flag flag-cm menu-icon fa"></i>
                                     Cameroon
 
@@ -383,7 +383,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Cameroon Cup" class="l-item" href="../../../cameroon/cameroon-cup/index.html" data-call="bk">
+                                        <a title="Cameroon Cup" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Cameroon', 'group' => 'Cameroon Cup'])}}">
 
                                             Cameroon Cup
                                             <span class="badge badge-primary">4</span>
@@ -394,7 +394,7 @@
                                 </ul>
                             </li>
                             <li class="">
-                                <a href="../../../china-pr/index.html" class="dropdown-toggle">
+                                <a href="/" class="dropdown-toggle">
                                     <i class="flag flag-cn menu-icon fa"></i>
                                     China
 
@@ -405,7 +405,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="China League" class="l-item" href="../../../china-pr/china-league/index.html" data-call="bk">
+                                        <a title="China League" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'China', 'group' => 'China League'])}}">
 
                                             China League
                                             <span class="badge badge-primary">2</span>
@@ -416,7 +416,7 @@
                                 </ul>
                             </li>
                             <li class="">
-                                <a href="../../../colombia/index.html" class="dropdown-toggle">
+                                <a href="/" class="dropdown-toggle">
                                     <i class="flag flag-co menu-icon fa"></i>
                                     Colombia
 
@@ -427,7 +427,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Primera B" class="l-item" href="../../../colombia/primera-b/index.html" data-call="bk">
+                                        <a title="Primera B" class="l-item" href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'Colombia', 'group' => 'Primera B'])}}">
 
                                             Primera B
                                             <span class="badge badge-primary">2</span>
@@ -449,7 +449,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Primera Division" class="l-item" href="../../../costa-rica/primera-division/index.html" data-call="bk">
+                                        <a title="Primera Division" class="l-item" href="../../../costa-rica/primera-division/index.html">
 
                                             Primera Division
                                             <span class="badge badge-primary">1</span>
@@ -458,7 +458,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Segunda Liga" class="l-item" href="../../../costa-rica/segunda-liga/index.html" data-call="bk">
+                                        <a title="Segunda Liga" class="l-item" href="../../../costa-rica/segunda-liga/index.html">
 
                                             Segunda Liga
                                             <span class="badge badge-primary">2</span>
@@ -480,7 +480,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="1 HNL" class="l-item" href="../../../croatia/1-hnl/index.html" data-call="bk">
+                                        <a title="1 HNL" class="l-item" href="../../../croatia/1-hnl/index.html">
 
                                             1 HNL
                                             <span class="badge badge-primary">1</span>
@@ -489,7 +489,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="2 HNL" class="l-item" href="../../../croatia/2-hnl/index.html" data-call="bk">
+                                        <a title="2 HNL" class="l-item" href="../../../croatia/2-hnl/index.html">
 
                                             2 HNL
                                             <span class="badge badge-primary">4</span>
@@ -511,7 +511,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Gambrinus Liga" class="l-item" href="../../../czech-republic/gambrinus-liga/index.html" data-call="bk">
+                                        <a title="Gambrinus Liga" class="l-item" href="../../../czech-republic/gambrinus-liga/index.html">
 
                                             Gambrinus Liga
                                             <span class="badge badge-primary">8</span>
@@ -520,7 +520,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Druha liga" class="l-item" href="../../../czech-republic/druha-liga/index.html" data-call="bk">
+                                        <a title="Druha liga" class="l-item" href="../../../czech-republic/druha-liga/index.html">
 
                                             Druha liga
                                             <span class="badge badge-primary">7</span>
@@ -529,7 +529,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="5 Liga" class="l-item" href="../../../czech-republic/5-liga/index.html" data-call="bk">
+                                        <a title="5 Liga" class="l-item" href="../../../czech-republic/5-liga/index.html">
 
                                             5 Liga
                                             <span class="badge badge-primary">3</span>
@@ -538,7 +538,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="U19 League" class="l-item" href="../../../czech-republic/u19-league/index.html" data-call="bk">
+                                        <a title="U19 League" class="l-item" href="../../../czech-republic/u19-league/index.html">
 
                                             U19 League
                                             <span class="badge badge-primary">1</span>
@@ -560,7 +560,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="SAS Ligaen" class="l-item" href="../../../denmark/sas-ligaen/index.html" data-call="bk">
+                                        <a title="SAS Ligaen" class="l-item" href="../../../denmark/sas-ligaen/index.html">
 
                                             SAS Ligaen
                                             <span class="badge badge-primary">14</span>
@@ -569,7 +569,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="1st Division" class="l-item" href="../../../denmark/1st-division/index.html" data-call="bk">
+                                        <a title="1st Division" class="l-item" href="../../../denmark/1st-division/index.html">
 
                                             1st Division
                                             <span class="badge badge-primary">6</span>
@@ -578,7 +578,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="2nd Division" class="l-item" href="../../../denmark/2nd-division/index.html" data-call="bk">
+                                        <a title="2nd Division" class="l-item" href="../../../denmark/2nd-division/index.html">
 
                                             2nd Division
                                             <span class="badge badge-primary">8</span>
@@ -587,7 +587,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Fynsserien" class="l-item" href="../../../denmark/fynsserien/index.html" data-call="bk">
+                                        <a title="Fynsserien" class="l-item" href="../../../denmark/fynsserien/index.html">
 
                                             Fynsserien
                                             <span class="badge badge-primary">1</span>
@@ -596,7 +596,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Jyllandsserien Pulje" class="l-item" href="../../../denmark/jyllandsserien-pulje/index.html" data-call="bk">
+                                        <a title="Jyllandsserien Pulje" class="l-item" href="../../../denmark/jyllandsserien-pulje/index.html">
 
                                             Jyllandsserien Pulje
                                             <span class="badge badge-primary">4</span>
@@ -605,7 +605,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Danish Cup" class="l-item" href="../../../denmark/danish-cup/index.html" data-call="bk">
+                                        <a title="Danish Cup" class="l-item" href="../../../denmark/danish-cup/index.html">
 
                                             Danish Cup
                                             <span class="badge badge-primary">21</span>
@@ -614,7 +614,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="League U21" class="l-item" href="../../../denmark/league-u21/index.html" data-call="bk">
+                                        <a title="League U21" class="l-item" href="../../../denmark/league-u21/index.html">
 
                                             League U21
                                             <span class="badge badge-primary">1</span>
@@ -623,7 +623,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Elitedivisionen Women" class="l-item" href="../../../denmark/elitedivisionen-women/index.html" data-call="bk">
+                                        <a title="Elitedivisionen Women" class="l-item" href="../../../denmark/elitedivisionen-women/index.html">
 
                                             Elitedivisionen Women
                                             <span class="badge badge-primary">4</span>
@@ -632,7 +632,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Danish Cup Women" class="l-item" href="../../../denmark/danish-cup-women/index.html" data-call="bk">
+                                        <a title="Danish Cup Women" class="l-item" href="../../../denmark/danish-cup-women/index.html">
 
                                             Danish Cup Women
                                             <span class="badge badge-primary">1</span>
@@ -654,7 +654,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Premier League" class="l-item" href="../../../england/premier-league/index.html" data-call="bk">
+                                        <a title="Premier League" class="l-item" href="../../../england/premier-league/index.html">
 
                                             Premier League
                                             <span class="badge badge-primary">30</span>
@@ -663,7 +663,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Championship" class="l-item" href="../../../england/championship/index.html" data-call="bk">
+                                        <a title="Championship" class="l-item" href="../../../england/championship/index.html">
 
                                             Championship
                                             <span class="badge badge-primary">12</span>
@@ -672,7 +672,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="League One" class="l-item" href="../../../england/league-one/index.html" data-call="bk">
+                                        <a title="League One" class="l-item" href="../../../england/league-one/index.html">
 
                                             League One
                                             <span class="badge badge-primary">12</span>
@@ -681,7 +681,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="League Two" class="l-item" href="../../../england/league-two/index.html" data-call="bk">
+                                        <a title="League Two" class="l-item" href="../../../england/league-two/index.html">
 
                                             League Two
                                             <span class="badge badge-primary">12</span>
@@ -690,7 +690,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Conference" class="l-item" href="../../../england/conference/index.html" data-call="bk">
+                                        <a title="Conference" class="l-item" href="../../../england/conference/index.html">
 
                                             Conference
                                             <span class="badge badge-primary">12</span>
@@ -699,7 +699,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Conference North" class="l-item" href="../../../england/conference-north/index.html" data-call="bk">
+                                        <a title="Conference North" class="l-item" href="../../../england/conference-north/index.html">
 
                                             Conference North
                                             <span class="badge badge-primary">9</span>
@@ -708,7 +708,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Conference South" class="l-item" href="../../../england/conference-south/index.html" data-call="bk">
+                                        <a title="Conference South" class="l-item" href="../../../england/conference-south/index.html">
 
                                             Conference South
                                             <span class="badge badge-primary">6</span>
@@ -717,7 +717,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Capital One Cup" class="l-item" href="../../../england/capital-one-cup/index.html" data-call="bk">
+                                        <a title="Capital One Cup" class="l-item" href="../../../england/capital-one-cup/index.html">
 
                                             Capital One Cup
                                             <span class="badge badge-primary">16</span>
@@ -726,7 +726,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Checkatrade Trophy" class="l-item" href="../../../england/checkatrade-trophy/index.html" data-call="bk">
+                                        <a title="Checkatrade Trophy" class="l-item" href="../../../england/checkatrade-trophy/index.html">
 
                                             Checkatrade Trophy
                                             <span class="badge badge-primary">30</span>
@@ -748,7 +748,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Estonian Cup" class="l-item" href="../../../estonia/estonian-cup/index.html" data-call="bk">
+                                        <a title="Estonian Cup" class="l-item" href="../../../estonia/estonian-cup/index.html">
 
                                             Estonian Cup
                                             <span class="badge badge-primary">1</span>
@@ -770,7 +770,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="UEFA Champions League" class="l-item" href="../../../europe/uefa-champions-league/index.html" data-call="bk">
+                                        <a title="UEFA Champions League" class="l-item" href="../../../europe/uefa-champions-league/index.html">
 
                                             UEFA Champions League
                                             <span class="badge badge-primary">16</span>
@@ -779,7 +779,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="UEFA Europa League" class="l-item" href="../../../europe/uefa-europa-league/index.html" data-call="bk">
+                                        <a title="UEFA Europa League" class="l-item" href="../../../europe/uefa-europa-league/index.html">
 
                                             UEFA Europa League
                                             <span class="badge badge-primary">24</span>
@@ -788,7 +788,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="UEFA Championship U21" class="l-item" href="../../../europe/uefa-championship-u21/index.html" data-call="bk">
+                                        <a title="UEFA Championship U21" class="l-item" href="../../../europe/uefa-championship-u21/index.html">
 
                                             UEFA Championship U21
                                             <span class="badge badge-primary">18</span>
@@ -810,7 +810,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Kolmonen League" class="l-item" href="../../../finland/kolmonen-league/index.html" data-call="bk">
+                                        <a title="Kolmonen League" class="l-item" href="../../../finland/kolmonen-league/index.html">
 
                                             Kolmonen League
                                             <span class="badge badge-primary">8</span>
@@ -819,7 +819,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Kakkonen Lohko A" class="l-item" href="../../../finland/kakkonen-lohko-a/index.html" data-call="bk">
+                                        <a title="Kakkonen Lohko A" class="l-item" href="../../../finland/kakkonen-lohko-a/index.html">
 
                                             Kakkonen Lohko A
                                             <span class="badge badge-primary">1</span>
@@ -828,7 +828,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Kakkonen Group B" class="l-item" href="../../../finland/kakkonen-group-b/index.html" data-call="bk">
+                                        <a title="Kakkonen Group B" class="l-item" href="../../../finland/kakkonen-group-b/index.html">
 
                                             Kakkonen Group B
                                             <span class="badge badge-primary">1</span>
@@ -837,7 +837,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Veikkausliiga" class="l-item" href="../../../finland/veikkausliiga/index.html" data-call="bk">
+                                        <a title="Veikkausliiga" class="l-item" href="../../../finland/veikkausliiga/index.html">
 
                                             Veikkausliiga
                                             <span class="badge badge-primary">6</span>
@@ -846,7 +846,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Ykkonen" class="l-item" href="../../../finland/ykkonen/index.html" data-call="bk">
+                                        <a title="Ykkonen" class="l-item" href="../../../finland/ykkonen/index.html">
 
                                             Ykkonen
                                             <span class="badge badge-primary">5</span>
@@ -855,7 +855,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Finland Cup" class="l-item" href="../../../finland/finland-cup/index.html" data-call="bk">
+                                        <a title="Finland Cup" class="l-item" href="../../../finland/finland-cup/index.html">
 
                                             Finland Cup
                                             <span class="badge badge-primary">1</span>
@@ -877,7 +877,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Ligue 1" class="l-item" href="../../../france/ligue-1/index.html" data-call="bk">
+                                        <a title="Ligue 1" class="l-item" href="../../../france/ligue-1/index.html">
 
                                             Ligue 1
                                             <span class="badge badge-primary">29</span>
@@ -886,7 +886,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Ligue 2" class="l-item" href="../../../france/ligue-2/index.html" data-call="bk">
+                                        <a title="Ligue 2" class="l-item" href="../../../france/ligue-2/index.html">
 
                                             Ligue 2
                                             <span class="badge badge-primary">2</span>
@@ -895,7 +895,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Ligue 3" class="l-item" href="../../../france/ligue-3/index.html" data-call="bk">
+                                        <a title="Ligue 3" class="l-item" href="../../../france/ligue-3/index.html">
 
                                             Ligue 3
                                             <span class="badge badge-primary">9</span>
@@ -904,7 +904,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="League U19" class="l-item" href="../../../france/league-u19/index.html" data-call="bk">
+                                        <a title="League U19" class="l-item" href="../../../france/league-u19/index.html">
 
                                             League U19
                                             <span class="badge badge-primary">3</span>
@@ -926,7 +926,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Bundesliga" class="l-item" href="../../../germany/bundesliga/index.html" data-call="bk">
+                                        <a title="Bundesliga" class="l-item" href="../../../germany/bundesliga/index.html">
 
                                             Bundesliga
                                             <span class="badge badge-primary">27</span>
@@ -935,7 +935,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="2. Bundesliga" class="l-item" href="../../../germany/2-bundesliga/index.html" data-call="bk">
+                                        <a title="2. Bundesliga" class="l-item" href="../../../germany/2-bundesliga/index.html">
 
                                             2. Bundesliga
                                             <span class="badge badge-primary">9</span>
@@ -944,7 +944,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="3. Bundesliga" class="l-item" href="../../../germany/3-bundesliga/index.html" data-call="bk">
+                                        <a title="3. Bundesliga" class="l-item" href="../../../germany/3-bundesliga/index.html">
 
                                             3. Bundesliga
                                             <span class="badge badge-primary">9</span>
@@ -953,7 +953,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Regionalliga West" class="l-item" href="../../../germany/regionalliga-west/index.html" data-call="bk">
+                                        <a title="Regionalliga West" class="l-item" href="../../../germany/regionalliga-west/index.html">
 
                                             Regionalliga West
                                             <span class="badge badge-primary">2</span>
@@ -962,7 +962,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Regionalliga Sudwest" class="l-item" href="../../../germany/regionalliga-sudwest/index.html" data-call="bk">
+                                        <a title="Regionalliga Sudwest" class="l-item" href="../../../germany/regionalliga-sudwest/index.html">
 
                                             Regionalliga Sudwest
                                             <span class="badge badge-primary">10</span>
@@ -971,7 +971,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Bayernliga" class="l-item" href="../../../germany/bayernliga/index.html" data-call="bk">
+                                        <a title="Bayernliga" class="l-item" href="../../../germany/bayernliga/index.html">
 
                                             Bayernliga
                                             <span class="badge badge-primary">2</span>
@@ -980,7 +980,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Hessenliga" class="l-item" href="../../../germany/hessenliga/index.html" data-call="bk">
+                                        <a title="Hessenliga" class="l-item" href="../../../germany/hessenliga/index.html">
 
                                             Hessenliga
                                             <span class="badge badge-primary">1</span>
@@ -989,7 +989,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Oberliga Hamburg" class="l-item" href="../../../germany/oberliga-hamburg/index.html" data-call="bk">
+                                        <a title="Oberliga Hamburg" class="l-item" href="../../../germany/oberliga-hamburg/index.html">
 
                                             Oberliga Hamburg
                                             <span class="badge badge-primary">2</span>
@@ -998,7 +998,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Oberliga Rheinland-Pfalz Saar" class="l-item" href="../../../germany/oberliga-rheinland-pfalz-saar/index.html" data-call="bk">
+                                        <a title="Oberliga Rheinland-Pfalz Saar" class="l-item" href="../../../germany/oberliga-rheinland-pfalz-saar/index.html">
 
                                             Oberliga Rheinland-Pfalz Saar
                                             <span class="badge badge-primary">9</span>
@@ -1007,7 +1007,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Oberliga Baden Wuerttemberg" class="l-item" href="../../../germany/oberliga-baden-wuerttemberg/index.html" data-call="bk">
+                                        <a title="Oberliga Baden Wuerttemberg" class="l-item" href="../../../germany/oberliga-baden-wuerttemberg/index.html">
 
                                             Oberliga Baden Wuerttemberg
                                             <span class="badge badge-primary">8</span>
@@ -1016,7 +1016,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Schleswig-Holstein-Liga" class="l-item" href="../../../germany/schleswig-holstein-liga/index.html" data-call="bk">
+                                        <a title="Schleswig-Holstein-Liga" class="l-item" href="../../../germany/schleswig-holstein-liga/index.html">
 
                                             Schleswig-Holstein-Liga
                                             <span class="badge badge-primary">1</span>
@@ -1025,7 +1025,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Germany Cup" class="l-item" href="../../../germany/germany-cup/index.html" data-call="bk">
+                                        <a title="Germany Cup" class="l-item" href="../../../germany/germany-cup/index.html">
 
                                             Germany Cup
                                             <span class="badge badge-primary">2</span>
@@ -1047,7 +1047,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Icelandic 1 deild" class="l-item" href="../../../iceland/icelandic-1-deild/index.html" data-call="bk">
+                                        <a title="Icelandic 1 deild" class="l-item" href="../../../iceland/icelandic-1-deild/index.html">
 
                                             Icelandic 1 deild
                                             <span class="badge badge-primary">6</span>
@@ -1056,7 +1056,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Premier League Women" class="l-item" href="../../../iceland/premier-league-women/index.html" data-call="bk">
+                                        <a title="Premier League Women" class="l-item" href="../../../iceland/premier-league-women/index.html">
 
                                             Premier League Women
                                             <span class="badge badge-primary">5</span>
@@ -1065,7 +1065,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="1 deild kvenna A" class="l-item" href="../../../iceland/1-deild-kvenna-a/index.html" data-call="bk">
+                                        <a title="1 deild kvenna A" class="l-item" href="../../../iceland/1-deild-kvenna-a/index.html">
 
                                             1 deild kvenna A
                                             <span class="badge badge-primary">1</span>
@@ -1087,7 +1087,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="S-League" class="l-item" href="../../../india/s-league/index.html" data-call="bk">
+                                        <a title="S-League" class="l-item" href="../../../india/s-league/index.html">
 
                                             S-League
                                             <span class="badge badge-primary">1</span>
@@ -1096,7 +1096,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Durand Cup" class="l-item" href="../../../india/durand-cup/index.html" data-call="bk">
+                                        <a title="Durand Cup" class="l-item" href="../../../india/durand-cup/index.html">
 
                                             Durand Cup
                                             <span class="badge badge-primary">3</span>
@@ -1105,7 +1105,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Goa Pro League" class="l-item" href="../../../india/goa-pro-league/index.html" data-call="bk">
+                                        <a title="Goa Pro League" class="l-item" href="../../../india/goa-pro-league/index.html">
 
                                             Goa Pro League
                                             <span class="badge badge-primary">2</span>
@@ -1114,7 +1114,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Calcutta Premier League" class="l-item" href="../../../india/calcutta-premier-league/index.html" data-call="bk">
+                                        <a title="Calcutta Premier League" class="l-item" href="../../../india/calcutta-premier-league/index.html">
 
                                             Calcutta Premier League
                                             <span class="badge badge-primary">3</span>
@@ -1136,7 +1136,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Championship II" class="l-item" href="../../../indonesia/championship-ii/index.html" data-call="bk">
+                                        <a title="Championship II" class="l-item" href="../../../indonesia/championship-ii/index.html">
 
                                             Championship II
                                             <span class="badge badge-primary">1</span>
@@ -1158,7 +1158,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Eircom League" class="l-item" href="../../../ireland/eircom-league/index.html" data-call="bk">
+                                        <a title="Eircom League" class="l-item" href="../../../ireland/eircom-league/index.html">
 
                                             Eircom League
                                             <span class="badge badge-primary">8</span>
@@ -1167,7 +1167,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Irish Cup" class="l-item" href="../../../ireland/irish-cup/index.html" data-call="bk">
+                                        <a title="Irish Cup" class="l-item" href="../../../ireland/irish-cup/index.html">
 
                                             Irish Cup
                                             <span class="badge badge-primary">1</span>
@@ -1189,7 +1189,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Israel Cup" class="l-item" href="../../../israel/israel-cup/index.html" data-call="bk">
+                                        <a title="Israel Cup" class="l-item" href="../../../israel/israel-cup/index.html">
 
                                             Israel Cup
                                             <span class="badge badge-primary">1</span>
@@ -1211,7 +1211,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Serie A" class="l-item" href="../../../italy/serie-a/index.html" data-call="bk">
+                                        <a title="Serie A" class="l-item" href="../../../italy/serie-a/index.html">
 
                                             Serie A
                                             <span class="badge badge-primary">30</span>
@@ -1220,7 +1220,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Serie B" class="l-item" href="../../../italy/serie-b/index.html" data-call="bk">
+                                        <a title="Serie B" class="l-item" href="../../../italy/serie-b/index.html">
 
                                             Serie B
                                             <span class="badge badge-primary">11</span>
@@ -1229,7 +1229,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Coppa Italia Lega Pro" class="l-item" href="../../../italy/coppa-italia-lega-pro/index.html" data-call="bk">
+                                        <a title="Coppa Italia Lega Pro" class="l-item" href="../../../italy/coppa-italia-lega-pro/index.html">
 
                                             Coppa Italia Lega Pro
                                             <span class="badge badge-primary">1</span>
@@ -1251,7 +1251,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="J2 League" class="l-item" href="../../../japan/j2-league/index.html" data-call="bk">
+                                        <a title="J2 League" class="l-item" href="../../../japan/j2-league/index.html">
 
                                             J2 League
                                             <span class="badge badge-primary">1</span>
@@ -1260,7 +1260,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="J League Cup" class="l-item" href="../../../japan/j-league-cup/index.html" data-call="bk">
+                                        <a title="J League Cup" class="l-item" href="../../../japan/j-league-cup/index.html">
 
                                             J League Cup
                                             <span class="badge badge-primary">4</span>
@@ -1282,7 +1282,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="K League" class="l-item" href="../../../korea-republic/k-league/index.html" data-call="bk">
+                                        <a title="K League" class="l-item" href="../../../korea-republic/k-league/index.html">
 
                                             K League
                                             <span class="badge badge-primary">1</span>
@@ -1304,7 +1304,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Second League" class="l-item" href="../../../latvia/second-league/index.html" data-call="bk">
+                                        <a title="Second League" class="l-item" href="../../../latvia/second-league/index.html">
 
                                             Second League
                                             <span class="badge badge-primary">1</span>
@@ -1326,7 +1326,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Premiere Division" class="l-item" href="../../../mali/premiere-division/index.html" data-call="bk">
+                                        <a title="Premiere Division" class="l-item" href="../../../mali/premiere-division/index.html">
 
                                             Premiere Division
                                             <span class="badge badge-primary">2</span>
@@ -1348,7 +1348,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Divizia Nationala" class="l-item" href="../../../moldova/divizia-nationala/index.html" data-call="bk">
+                                        <a title="Divizia Nationala" class="l-item" href="../../../moldova/divizia-nationala/index.html">
 
                                             Divizia Nationala
                                             <span class="badge badge-primary">1</span>
@@ -1370,7 +1370,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Super League" class="l-item" href="../../../morocco/super-league/index.html" data-call="bk">
+                                        <a title="Super League" class="l-item" href="../../../morocco/super-league/index.html">
 
                                             Super League
                                             <span class="badge badge-primary">1</span>
@@ -1392,7 +1392,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Dutch Eredivisie" class="l-item" href="../../../netherlands/dutch-eredivisie/index.html" data-call="bk">
+                                        <a title="Dutch Eredivisie" class="l-item" href="../../../netherlands/dutch-eredivisie/index.html">
 
                                             Dutch Eredivisie
                                             <span class="badge badge-primary">18</span>
@@ -1401,7 +1401,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Dutch Jupiler League" class="l-item" href="../../../netherlands/dutch-jupiler-league/index.html" data-call="bk">
+                                        <a title="Dutch Jupiler League" class="l-item" href="../../../netherlands/dutch-jupiler-league/index.html">
 
                                             Dutch Jupiler League
                                             <span class="badge badge-primary">1</span>
@@ -1423,7 +1423,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Premier League Women" class="l-item" href="../../../northern-ireland/premier-league-women/index.html" data-call="bk">
+                                        <a title="Premier League Women" class="l-item" href="../../../northern-ireland/premier-league-women/index.html">
 
                                             Premier League Women
                                             <span class="badge badge-primary">4</span>
@@ -1432,7 +1432,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="League Cup" class="l-item" href="../../../northern-ireland/league-cup/index.html" data-call="bk">
+                                        <a title="League Cup" class="l-item" href="../../../northern-ireland/league-cup/index.html">
 
                                             League Cup
                                             <span class="badge badge-primary">16</span>
@@ -1441,7 +1441,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Reserve League" class="l-item" href="../../../northern-ireland/reserve-league/index.html" data-call="bk">
+                                        <a title="Reserve League" class="l-item" href="../../../northern-ireland/reserve-league/index.html">
 
                                             Reserve League
                                             <span class="badge badge-primary">1</span>
@@ -1463,7 +1463,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Tippeligaen" class="l-item" href="../../../norway/tippeligaen/index.html" data-call="bk">
+                                        <a title="Tippeligaen" class="l-item" href="../../../norway/tippeligaen/index.html">
 
                                             Tippeligaen
                                             <span class="badge badge-primary">8</span>
@@ -1472,7 +1472,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="2nd Division 4" class="l-item" href="../../../norway/2nd-division-4/index.html" data-call="bk">
+                                        <a title="2nd Division 4" class="l-item" href="../../../norway/2nd-division-4/index.html">
 
                                             2nd Division 4
                                             <span class="badge badge-primary">5</span>
@@ -1481,7 +1481,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="3th Division" class="l-item" href="../../../norway/3th-division/index.html" data-call="bk">
+                                        <a title="3th Division" class="l-item" href="../../../norway/3th-division/index.html">
 
                                             3th Division
                                             <span class="badge badge-primary">6</span>
@@ -1490,7 +1490,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="4th Division" class="l-item" href="../../../norway/4th-division/index.html" data-call="bk">
+                                        <a title="4th Division" class="l-item" href="../../../norway/4th-division/index.html">
 
                                             4th Division
                                             <span class="badge badge-primary">16</span>
@@ -1499,7 +1499,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="5th Division" class="l-item" href="../../../norway/5th-division/index.html" data-call="bk">
+                                        <a title="5th Division" class="l-item" href="../../../norway/5th-division/index.html">
 
                                             5th Division
                                             <span class="badge badge-primary">20</span>
@@ -1508,7 +1508,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="NM Cup - Men" class="l-item" href="../../../norway/nm-cup---men/index.html" data-call="bk">
+                                        <a title="NM Cup - Men" class="l-item" href="../../../norway/nm-cup---men/index.html">
 
                                             NM Cup - Men
                                             <span class="badge badge-primary">4</span>
@@ -1517,7 +1517,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Interkretsserie U19" class="l-item" href="../../../norway/interkretsserie-u19/index.html" data-call="bk">
+                                        <a title="Interkretsserie U19" class="l-item" href="../../../norway/interkretsserie-u19/index.html">
 
                                             Interkretsserie U19
                                             <span class="badge badge-primary">4</span>
@@ -1539,7 +1539,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Premier League" class="l-item" href="../../../oman/premier-league/index.html" data-call="bk">
+                                        <a title="Premier League" class="l-item" href="../../../oman/premier-league/index.html">
 
                                             Premier League
                                             <span class="badge badge-primary">7</span>
@@ -1561,7 +1561,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Primera Division" class="l-item" href="../../../paraguay/primera-division/index.html" data-call="bk">
+                                        <a title="Primera Division" class="l-item" href="../../../paraguay/primera-division/index.html">
 
                                             Primera Division
                                             <span class="badge badge-primary">1</span>
@@ -1570,7 +1570,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Reserve League" class="l-item" href="../../../paraguay/reserve-league/index.html" data-call="bk">
+                                        <a title="Reserve League" class="l-item" href="../../../paraguay/reserve-league/index.html">
 
                                             Reserve League
                                             <span class="badge badge-primary">1</span>
@@ -1592,7 +1592,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Ekstraklasa" class="l-item" href="../../../poland/ekstraklasa/index.html" data-call="bk">
+                                        <a title="Ekstraklasa" class="l-item" href="../../../poland/ekstraklasa/index.html">
 
                                             Ekstraklasa
                                             <span class="badge badge-primary">8</span>
@@ -1601,7 +1601,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="I League" class="l-item" href="../../../poland/i-league/index.html" data-call="bk">
+                                        <a title="I League" class="l-item" href="../../../poland/i-league/index.html">
 
                                             I League
                                             <span class="badge badge-primary">7</span>
@@ -1610,7 +1610,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="III League" class="l-item" href="../../../poland/iii-league/index.html" data-call="bk">
+                                        <a title="III League" class="l-item" href="../../../poland/iii-league/index.html">
 
                                             III League
                                             <span class="badge badge-primary">10</span>
@@ -1619,7 +1619,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Regional Cup" class="l-item" href="../../../poland/regional-cup/index.html" data-call="bk">
+                                        <a title="Regional Cup" class="l-item" href="../../../poland/regional-cup/index.html">
 
                                             Regional Cup
                                             <span class="badge badge-primary">1</span>
@@ -1641,7 +1641,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Liga Zon Sagres" class="l-item" href="../../../portugal/liga-zon-sagres/index.html" data-call="bk">
+                                        <a title="Liga Zon Sagres" class="l-item" href="../../../portugal/liga-zon-sagres/index.html">
 
                                             Liga Zon Sagres
                                             <span class="badge badge-primary">10</span>
@@ -1650,7 +1650,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Segunda Liga" class="l-item" href="../../../portugal/segunda-liga/index.html" data-call="bk">
+                                        <a title="Segunda Liga" class="l-item" href="../../../portugal/segunda-liga/index.html">
 
                                             Segunda Liga
                                             <span class="badge badge-primary">3</span>
@@ -1672,7 +1672,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Liga I" class="l-item" href="../../../romania/liga-i/index.html" data-call="bk">
+                                        <a title="Liga I" class="l-item" href="../../../romania/liga-i/index.html">
 
                                             Liga I
                                             <span class="badge badge-primary">1</span>
@@ -1694,7 +1694,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Premier League" class="l-item" href="../../../russia/premier-league/index.html" data-call="bk">
+                                        <a title="Premier League" class="l-item" href="../../../russia/premier-league/index.html">
 
                                             Premier League
                                             <span class="badge badge-primary">16</span>
@@ -1703,7 +1703,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="1st Division" class="l-item" href="../../../russia/1st-division/index.html" data-call="bk">
+                                        <a title="1st Division" class="l-item" href="../../../russia/1st-division/index.html">
 
                                             1st Division
                                             <span class="badge badge-primary">10</span>
@@ -1712,7 +1712,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="2st Division" class="l-item" href="../../../russia/2st-division/index.html" data-call="bk">
+                                        <a title="2st Division" class="l-item" href="../../../russia/2st-division/index.html">
 
                                             2st Division
                                             <span class="badge badge-primary">4</span>
@@ -1721,7 +1721,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Russia Cup" class="l-item" href="../../../russia/russia-cup/index.html" data-call="bk">
+                                        <a title="Russia Cup" class="l-item" href="../../../russia/russia-cup/index.html">
 
                                             Russia Cup
                                             <span class="badge badge-primary">16</span>
@@ -1743,7 +1743,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Premier League" class="l-item" href="../../../scotland/premier-league/index.html" data-call="bk">
+                                        <a title="Premier League" class="l-item" href="../../../scotland/premier-league/index.html">
 
                                             Premier League
                                             <span class="badge badge-primary">6</span>
@@ -1752,7 +1752,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Highland League" class="l-item" href="../../../scotland/highland-league/index.html" data-call="bk">
+                                        <a title="Highland League" class="l-item" href="../../../scotland/highland-league/index.html">
 
                                             Highland League
                                             <span class="badge badge-primary">3</span>
@@ -1761,7 +1761,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Lowland League" class="l-item" href="../../../scotland/lowland-league/index.html" data-call="bk">
+                                        <a title="Lowland League" class="l-item" href="../../../scotland/lowland-league/index.html">
 
                                             Lowland League
                                             <span class="badge badge-primary">5</span>
@@ -1770,7 +1770,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="SPL U20" class="l-item" href="../../../scotland/spl-u20/index.html" data-call="bk">
+                                        <a title="SPL U20" class="l-item" href="../../../scotland/spl-u20/index.html">
 
                                             Premier League U20
                                             <span class="badge badge-primary">6</span>
@@ -1792,7 +1792,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Corgon Liga" class="l-item" href="../../../slovakia/corgon-liga/index.html" data-call="bk">
+                                        <a title="Corgon Liga" class="l-item" href="../../../slovakia/corgon-liga/index.html">
 
                                             Corgon Liga
                                             <span class="badge badge-primary">6</span>
@@ -1801,7 +1801,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="3 Liga" class="l-item" href="../../../slovakia/3-liga/index.html" data-call="bk">
+                                        <a title="3 Liga" class="l-item" href="../../../slovakia/3-liga/index.html">
 
                                             3 Liga
                                             <span class="badge badge-primary">4</span>
@@ -1810,7 +1810,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Slovakia Cup" class="l-item" href="../../../slovakia/slovakia-cup/index.html" data-call="bk">
+                                        <a title="Slovakia Cup" class="l-item" href="../../../slovakia/slovakia-cup/index.html">
 
                                             Slovakia Cup
                                             <span class="badge badge-primary">1</span>
@@ -1832,7 +1832,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Copa Sudamericana" class="l-item" href="../../../south-america/copa-sudamericana/index.html" data-call="bk">
+                                        <a title="Copa Sudamericana" class="l-item" href="../../../south-america/copa-sudamericana/index.html">
 
                                             Copa Sudamericana
                                             <span class="badge badge-primary">4</span>
@@ -1854,7 +1854,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Primera Division" class="l-item" href="../../../spain/primera-division/index.html" data-call="bk">
+                                        <a title="Primera Division" class="l-item" href="../../../spain/primera-division/index.html">
 
                                             Primera Division
                                             <span class="badge badge-primary">30</span>
@@ -1863,7 +1863,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Liga Adelante" class="l-item" href="../../../spain/liga-adelante/index.html" data-call="bk">
+                                        <a title="Liga Adelante" class="l-item" href="../../../spain/liga-adelante/index.html">
 
                                             Liga Adelante
                                             <span class="badge badge-primary">11</span>
@@ -1872,7 +1872,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Tercera Division" class="l-item" href="../../../spain/tercera-division/index.html" data-call="bk">
+                                        <a title="Tercera Division" class="l-item" href="../../../spain/tercera-division/index.html">
 
                                             Tercera Division
                                             <span class="badge badge-primary">1</span>
@@ -1881,7 +1881,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Spain Cup" class="l-item" href="../../../spain/spain-cup/index.html" data-call="bk">
+                                        <a title="Spain Cup" class="l-item" href="../../../spain/spain-cup/index.html">
 
                                             Spain Cup
                                             <span class="badge badge-primary">18</span>
@@ -1890,7 +1890,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Copa Federacio" class="l-item" href="../../../spain/copa-federacio/index.html" data-call="bk">
+                                        <a title="Copa Federacio" class="l-item" href="../../../spain/copa-federacio/index.html">
 
                                             Copa Federacion
                                             <span class="badge badge-primary">8</span>
@@ -1912,7 +1912,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Superettan" class="l-item" href="../../../sweden/superettan/index.html" data-call="bk">
+                                        <a title="Superettan" class="l-item" href="../../../sweden/superettan/index.html">
 
                                             Superettan
                                             <span class="badge badge-primary">10</span>
@@ -1921,7 +1921,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Allsvenskan" class="l-item" href="../../../sweden/allsvenskan/index.html" data-call="bk">
+                                        <a title="Allsvenskan" class="l-item" href="../../../sweden/allsvenskan/index.html">
 
                                             Allsvenskan
                                             <span class="badge badge-primary">16</span>
@@ -1930,7 +1930,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Division 1 Sodra" class="l-item" href="../../../sweden/division-1-sodra/index.html" data-call="bk">
+                                        <a title="Division 1 Sodra" class="l-item" href="../../../sweden/division-1-sodra/index.html">
 
                                             Division 1 Sodra
                                             <span class="badge badge-primary">1</span>
@@ -1939,7 +1939,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Division 2 Norra Gotaland" class="l-item" href="../../../sweden/division-2-norra-gotaland/index.html" data-call="bk">
+                                        <a title="Division 2 Norra Gotaland" class="l-item" href="../../../sweden/division-2-norra-gotaland/index.html">
 
                                             Division 2 Norra Gotaland
                                             <span class="badge badge-primary">10</span>
@@ -1948,7 +1948,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Division 2 Sodra Svealand" class="l-item" href="../../../sweden/division-2-sodra-svealand/index.html" data-call="bk">
+                                        <a title="Division 2 Sodra Svealand" class="l-item" href="../../../sweden/division-2-sodra-svealand/index.html">
 
                                             Division 2 Sodra Svealand
                                             <span class="badge badge-primary">5</span>
@@ -1957,7 +1957,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Division 2 Sodra Gotaland" class="l-item" href="../../../sweden/division-2-sodra-gotaland/index.html" data-call="bk">
+                                        <a title="Division 2 Sodra Gotaland" class="l-item" href="../../../sweden/division-2-sodra-gotaland/index.html">
 
                                             Division 2 Sodra Gotaland
                                             <span class="badge badge-primary">1</span>
@@ -1966,7 +1966,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Division 3 Mellersta Norrland" class="l-item" href="../../../sweden/division-3-mellersta-norrland/index.html" data-call="bk">
+                                        <a title="Division 3 Mellersta Norrland" class="l-item" href="../../../sweden/division-3-mellersta-norrland/index.html">
 
                                             Division 3 Mellersta Norrland
                                             <span class="badge badge-primary">1</span>
@@ -1975,7 +1975,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Division 3 Vastra Svealand" class="l-item" href="../../../sweden/division-3-vastra-svealand/index.html" data-call="bk">
+                                        <a title="Division 3 Vastra Svealand" class="l-item" href="../../../sweden/division-3-vastra-svealand/index.html">
 
                                             Division 3 Vastra Svealand
                                             <span class="badge badge-primary">1</span>
@@ -1984,7 +1984,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Swedish Cup" class="l-item" href="../../../sweden/swedish-cup/index.html" data-call="bk">
+                                        <a title="Swedish Cup" class="l-item" href="../../../sweden/swedish-cup/index.html">
 
                                             Swedish Cup
                                             <span class="badge badge-primary">1</span>
@@ -1993,7 +1993,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Allsvenskan U19" class="l-item" href="../../../sweden/allsvenskan-u19/index.html" data-call="bk">
+                                        <a title="Allsvenskan U19" class="l-item" href="../../../sweden/allsvenskan-u19/index.html">
 
                                             Allsvenskan U19
                                             <span class="badge badge-primary">1</span>
@@ -2002,7 +2002,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Damallsvenskan" class="l-item" href="../../../sweden/damallsvenskan/index.html" data-call="bk">
+                                        <a title="Damallsvenskan" class="l-item" href="../../../sweden/damallsvenskan/index.html">
 
                                             Damallsvenskan
                                             <span class="badge badge-primary">1</span>
@@ -2024,7 +2024,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Swiss Axpo Super League" class="l-item" href="../../../switzerland/swiss-axpo-super-league/index.html" data-call="bk">
+                                        <a title="Swiss Axpo Super League" class="l-item" href="../../../switzerland/swiss-axpo-super-league/index.html">
 
                                             Swiss Axpo Super League
                                             <span class="badge badge-primary">5</span>
@@ -2033,7 +2033,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Challenge League" class="l-item" href="../../../switzerland/challenge-league/index.html" data-call="bk">
+                                        <a title="Challenge League" class="l-item" href="../../../switzerland/challenge-league/index.html">
 
                                             Challenge League
                                             <span class="badge badge-primary">5</span>
@@ -2042,7 +2042,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="1.Liga Classic" class="l-item" href="../../../switzerland/1liga-classic/index.html" data-call="bk">
+                                        <a title="1.Liga Classic" class="l-item" href="../../../switzerland/1liga-classic/index.html">
 
                                             1.Liga Classic
                                             <span class="badge badge-primary">1</span>
@@ -2064,7 +2064,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Turkcell Super League" class="l-item" href="../../../turkey/turkcell-super-league/index.html" data-call="bk">
+                                        <a title="Turkcell Super League" class="l-item" href="../../../turkey/turkcell-super-league/index.html">
 
                                             Turkcell Super League
                                             <span class="badge badge-primary">9</span>
@@ -2086,7 +2086,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Premier League" class="l-item" href="../../../ukraine/premier-league/index.html" data-call="bk">
+                                        <a title="Premier League" class="l-item" href="../../../ukraine/premier-league/index.html">
 
                                             Premier League
                                             <span class="badge badge-primary">6</span>
@@ -2095,7 +2095,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Division 1 Women" class="l-item" href="../../../ukraine/division-1-women/index.html" data-call="bk">
+                                        <a title="Division 1 Women" class="l-item" href="../../../ukraine/division-1-women/index.html">
 
                                             Division 1 Women
                                             <span class="badge badge-primary">1</span>
@@ -2117,7 +2117,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Primera Division" class="l-item" href="../../../uruguay/primera-division/index.html" data-call="bk">
+                                        <a title="Primera Division" class="l-item" href="../../../uruguay/primera-division/index.html">
 
                                             Primera Division
                                             <span class="badge badge-primary">4</span>
@@ -2126,7 +2126,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Reserve League" class="l-item" href="../../../uruguay/reserve-league/index.html" data-call="bk">
+                                        <a title="Reserve League" class="l-item" href="../../../uruguay/reserve-league/index.html">
 
                                             Reserve League
                                             <span class="badge badge-primary">5</span>
@@ -2148,7 +2148,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Major League Soccer" class="l-item" href="../../../usa/major-league-soccer/index.html" data-call="bk">
+                                        <a title="Major League Soccer" class="l-item" href="../../../usa/major-league-soccer/index.html">
 
                                             Major League Soccer
                                             <span class="badge badge-primary">6</span>
@@ -2157,7 +2157,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="USL Pro" class="l-item" href="../../../usa/usl-pro/index.html" data-call="bk">
+                                        <a title="USL Pro" class="l-item" href="../../../usa/usl-pro/index.html">
 
                                             USL First Division
                                             <span class="badge badge-primary">4</span>
@@ -2166,7 +2166,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="NWSL" class="l-item" href="../../../usa/nwsl/index.html" data-call="bk">
+                                        <a title="NWSL" class="l-item" href="../../../usa/nwsl/index.html">
 
                                             NWSL
                                             <span class="badge badge-primary">1</span>
@@ -2188,7 +2188,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Segunda Division" class="l-item" href="../../../venezuela/segunda-division/index.html" data-call="bk">
+                                        <a title="Segunda Division" class="l-item" href="../../../venezuela/segunda-division/index.html">
 
                                             Segunda Division
                                             <span class="badge badge-primary">8</span>
@@ -2210,7 +2210,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="V-League 2" class="l-item" href="../../../vietnam/v-league-2/index.html" data-call="bk">
+                                        <a title="V-League 2" class="l-item" href="../../../vietnam/v-league-2/index.html">
 
                                             V-League 2
                                             <span class="badge badge-primary">1</span>
@@ -2219,7 +2219,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="V-League" class="l-item" href="../../../vietnam/v-league/index.html" data-call="bk">
+                                        <a title="V-League" class="l-item" href="../../../vietnam/v-league/index.html">
 
                                             V-League
                                             <span class="badge badge-primary">5</span>
@@ -2241,7 +2241,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Welsh Premier League" class="l-item" href="../../../wales/welsh-premier-league/index.html" data-call="bk">
+                                        <a title="Welsh Premier League" class="l-item" href="../../../wales/welsh-premier-league/index.html">
 
                                             Welsh Premier League
                                             <span class="badge badge-primary">10</span>
@@ -2263,7 +2263,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="World Cup Qualifying - UEFA" class="l-item" href="../../../world/world-cup-qualifying---uefa/index.html" data-call="bk">
+                                        <a title="World Cup Qualifying - UEFA" class="l-item" href="../../../world/world-cup-qualifying---uefa/index.html">
 
                                             World Cup Qualifying - UEFA
                                             <span class="badge badge-primary">29</span>
@@ -2272,7 +2272,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="World Cup Qualifiers - Asia" class="l-item" href="../../../world/world-cup-qualifiers---asia/index.html" data-call="bk">
+                                        <a title="World Cup Qualifiers - Asia" class="l-item" href="../../../world/world-cup-qualifiers---asia/index.html">
 
                                             World Cup Qualifiers - Asia
                                             <span class="badge badge-primary">6</span>
@@ -2281,7 +2281,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="World Cup Qualifiers - CONCACAF" class="l-item" href="../../../world/world-cup-qualifiers---concacaf/index.html" data-call="bk">
+                                        <a title="World Cup Qualifiers - CONCACAF" class="l-item" href="../../../world/world-cup-qualifiers---concacaf/index.html">
 
                                             World Cup Qualifiers - CONCACAF
                                             <span class="badge badge-primary">6</span>
@@ -2290,7 +2290,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="World Cup Qualifiers - South America" class="l-item" href="../../../world/world-cup-qualifiers---south-america/index.html" data-call="bk">
+                                        <a title="World Cup Qualifiers - South America" class="l-item" href="../../../world/world-cup-qualifiers---south-america/index.html">
 
                                             World Cup Qualifiers - South America
                                             <span class="badge badge-primary">5</span>
@@ -2299,7 +2299,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Club Friendlies" class="l-item" href="../../../world/club-friendlies/index.html" data-call="bk">
+                                        <a title="Club Friendlies" class="l-item" href="../../../world/club-friendlies/index.html">
 
                                             Club Friendlies
                                             <span class="badge badge-primary">13</span>
@@ -2308,7 +2308,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Friendly Internationals" class="l-item" href="../../../world/friendly-internationals/index.html" data-call="bk">
+                                        <a title="Friendly Internationals" class="l-item" href="../../../world/friendly-internationals/index.html">
 
                                             Friendly Internationals
                                             <span class="badge badge-primary">18</span>
@@ -2317,7 +2317,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Friendly Internationals U19" class="l-item" href="../../../world/friendly-internationals-u19/index.html" data-call="bk">
+                                        <a title="Friendly Internationals U19" class="l-item" href="../../../world/friendly-internationals-u19/index.html">
 
                                             Friendly Internationals U19
                                             <span class="badge badge-primary">2</span>
@@ -2359,7 +2359,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Asia League" class="l-item" href="../../../../ice-hockey/asia/asia-league/index.html" data-call="bk">
+                                        <a title="Asia League" class="l-item" href="../../../../ice-hockey/asia/asia-league/index.html">
 
                                             Asia League
                                             <span class="badge badge-primary">1</span>
@@ -2381,7 +2381,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="WHL" class="l-item" href="../../../../ice-hockey/canada/whl/index.html" data-call="bk">
+                                        <a title="WHL" class="l-item" href="../../../../ice-hockey/canada/whl/index.html">
 
                                             WHL
                                             <span class="badge badge-primary">1</span>
@@ -2403,7 +2403,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Extraliga" class="l-item" href="../../../../ice-hockey/czech-republic/extraliga/index.html" data-call="bk">
+                                        <a title="Extraliga" class="l-item" href="../../../../ice-hockey/czech-republic/extraliga/index.html">
 
                                             Extraliga
                                             <span class="badge badge-primary">4</span>
@@ -2425,7 +2425,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Champions League" class="l-item" href="../../../../ice-hockey/europe/champions-league/index.html" data-call="bk">
+                                        <a title="Champions League" class="l-item" href="../../../../ice-hockey/europe/champions-league/index.html">
 
                                             Champions League
                                             <span class="badge badge-primary">21</span>
@@ -2447,7 +2447,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="SM-Liiga" class="l-item" href="../../../../ice-hockey/finland/sm-liiga/index.html" data-call="bk">
+                                        <a title="SM-Liiga" class="l-item" href="../../../../ice-hockey/finland/sm-liiga/index.html">
 
                                             SM-Liiga
                                             <span class="badge badge-primary">7</span>
@@ -2469,7 +2469,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Memorial Molchanov" class="l-item" href="../../../../ice-hockey/russia/memorial-molchanov/index.html" data-call="bk">
+                                        <a title="Memorial Molchanov" class="l-item" href="../../../../ice-hockey/russia/memorial-molchanov/index.html">
 
                                             Memorial Molchanov
                                             <span class="badge badge-primary">4</span>
@@ -2478,7 +2478,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="KHL" class="l-item" href="../../../../ice-hockey/russia/khl/index.html" data-call="bk">
+                                        <a title="KHL" class="l-item" href="../../../../ice-hockey/russia/khl/index.html">
 
                                             KHL
                                             <span class="badge badge-primary">29</span>
@@ -2500,7 +2500,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="SHL" class="l-item" href="../../../../ice-hockey/sweden/shl/index.html" data-call="bk">
+                                        <a title="SHL" class="l-item" href="../../../../ice-hockey/sweden/shl/index.html">
 
                                             SHL
                                             <span class="badge badge-primary">10</span>
@@ -2522,7 +2522,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Nationalliga A" class="l-item" href="../../../../ice-hockey/switzerland/nationalliga-a/index.html" data-call="bk">
+                                        <a title="Nationalliga A" class="l-item" href="../../../../ice-hockey/switzerland/nationalliga-a/index.html">
 
                                             Nationalliga A
                                             <span class="badge badge-primary">7</span>
@@ -2544,7 +2544,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="NHL" class="l-item" href="../../../../ice-hockey/usa/nhl/index.html" data-call="bk">
+                                        <a title="NHL" class="l-item" href="../../../../ice-hockey/usa/nhl/index.html">
 
                                             NHL
                                             <span class="badge badge-primary">13</span>
@@ -2566,7 +2566,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="World Cup" class="l-item" href="../../../../ice-hockey/world/world-cup/index.html" data-call="bk">
+                                        <a title="World Cup" class="l-item" href="../../../../ice-hockey/world/world-cup/index.html">
 
                                             World Cup
                                             <span class="badge badge-primary">15</span>
@@ -2575,7 +2575,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Olympics Qualification" class="l-item" href="../../../../ice-hockey/world/olympics-qualification/index.html" data-call="bk">
+                                        <a title="Olympics Qualification" class="l-item" href="../../../../ice-hockey/world/olympics-qualification/index.html">
 
                                             Olympics Qualification
                                             <span class="badge badge-primary">6</span>
@@ -2584,7 +2584,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Club Friendlies" class="l-item" href="../../../../ice-hockey/world/club-friendlies/index.html" data-call="bk">
+                                        <a title="Club Friendlies" class="l-item" href="../../../../ice-hockey/world/club-friendlies/index.html">
 
                                             Club Friendlies
                                             <span class="badge badge-primary">46</span>
@@ -2593,7 +2593,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Friendlies" class="l-item" href="../../../../ice-hockey/world/friendlies/index.html" data-call="bk">
+                                        <a title="Friendlies" class="l-item" href="../../../../ice-hockey/world/friendlies/index.html">
 
                                             Friendlies
                                             <span class="badge badge-primary">12</span>
@@ -2635,7 +2635,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ITF-W St.Poelten" class="l-item" href="../../../../tennis/austria/itf-w-stpoelten/index.html" data-call="bk">
+                                        <a title="ITF-W St.Poelten" class="l-item" href="../../../../tennis/austria/itf-w-stpoelten/index.html">
 
                                             ITF-W St.Poelten
                                             <span class="badge badge-primary">16</span>
@@ -2644,7 +2644,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-W St.Poelten Doubles" class="l-item" href="../../../../tennis/austria/itf-w-stpoelten-doubles/index.html" data-call="bk">
+                                        <a title="ITF-W St.Poelten Doubles" class="l-item" href="../../../../tennis/austria/itf-w-stpoelten-doubles/index.html">
 
                                             ITF-W St.Poelten Doubles
                                             <span class="badge badge-primary">4</span>
@@ -2653,7 +2653,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-M Austria" class="l-item" href="../../../../tennis/austria/itf-m-austria/index.html" data-call="bk">
+                                        <a title="ITF-M Austria" class="l-item" href="../../../../tennis/austria/itf-m-austria/index.html">
 
                                             ITF-M Austria
                                             <span class="badge badge-primary">16</span>
@@ -2662,7 +2662,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-M Austria Doubles" class="l-item" href="../../../../tennis/austria/itf-m-austria-doubles/index.html" data-call="bk">
+                                        <a title="ITF-M Austria Doubles" class="l-item" href="../../../../tennis/austria/itf-m-austria-doubles/index.html">
 
                                             ITF-M Austria Doubles
                                             <span class="badge badge-primary">7</span>
@@ -2684,7 +2684,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ITF-M Belgium" class="l-item" href="../../../../tennis/belgium/itf-m-belgium/index.html" data-call="bk">
+                                        <a title="ITF-M Belgium" class="l-item" href="../../../../tennis/belgium/itf-m-belgium/index.html">
 
                                             ITF-M Belgium
                                             <span class="badge badge-primary">13</span>
@@ -2693,7 +2693,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-M Belgium Doubles" class="l-item" href="../../../../tennis/belgium/itf-m-belgium-doubles/index.html" data-call="bk">
+                                        <a title="ITF-M Belgium Doubles" class="l-item" href="../../../../tennis/belgium/itf-m-belgium-doubles/index.html">
 
                                             ITF-M Belgium Doubles
                                             <span class="badge badge-primary">3</span>
@@ -2715,7 +2715,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ATP Curitiba" class="l-item" href="../../../../tennis/brazil/atp-curitiba/index.html" data-call="bk">
+                                        <a title="ATP Curitiba" class="l-item" href="../../../../tennis/brazil/atp-curitiba/index.html">
 
                                             ATP Curitiba
                                             <span class="badge badge-primary">12</span>
@@ -2724,7 +2724,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ATP Curitiba Doubles" class="l-item" href="../../../../tennis/brazil/atp-curitiba-doubles/index.html" data-call="bk">
+                                        <a title="ATP Curitiba Doubles" class="l-item" href="../../../../tennis/brazil/atp-curitiba-doubles/index.html">
 
                                             ATP Curitiba Doubles
                                             <span class="badge badge-primary">5</span>
@@ -2746,7 +2746,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ITF-M Canada" class="l-item" href="../../../../tennis/canada/itf-m-canada/index.html" data-call="bk">
+                                        <a title="ITF-M Canada" class="l-item" href="../../../../tennis/canada/itf-m-canada/index.html">
 
                                             ITF-M Canada
                                             <span class="badge badge-primary">9</span>
@@ -2755,7 +2755,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-M Canada Doubles" class="l-item" href="../../../../tennis/canada/itf-m-canada-doubles/index.html" data-call="bk">
+                                        <a title="ITF-M Canada Doubles" class="l-item" href="../../../../tennis/canada/itf-m-canada-doubles/index.html">
 
                                             ITF-M Canada Doubles
                                             <span class="badge badge-primary">3</span>
@@ -2777,7 +2777,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ITF-W Guiyang" class="l-item" href="../../../../tennis/china-pr/itf-w-guiyang/index.html" data-call="bk">
+                                        <a title="ITF-W Guiyang" class="l-item" href="../../../../tennis/china-pr/itf-w-guiyang/index.html">
 
                                             ITF-W Guiyang
                                             <span class="badge badge-primary">16</span>
@@ -2786,7 +2786,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-W Guiyang Doubles" class="l-item" href="../../../../tennis/china-pr/itf-w-guiyang-doubles/index.html" data-call="bk">
+                                        <a title="ITF-W Guiyang Doubles" class="l-item" href="../../../../tennis/china-pr/itf-w-guiyang-doubles/index.html">
 
                                             ITF-W Guiyang Doubles
                                             <span class="badge badge-primary">6</span>
@@ -2808,7 +2808,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ITF-W Prague" class="l-item" href="../../../../tennis/czech-republic/itf-w-prague/index.html" data-call="bk">
+                                        <a title="ITF-W Prague" class="l-item" href="../../../../tennis/czech-republic/itf-w-prague/index.html">
 
                                             ITF-W Prague
                                             <span class="badge badge-primary">16</span>
@@ -2817,7 +2817,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-W Prague Doubles" class="l-item" href="../../../../tennis/czech-republic/itf-w-prague-doubles/index.html" data-call="bk">
+                                        <a title="ITF-W Prague Doubles" class="l-item" href="../../../../tennis/czech-republic/itf-w-prague-doubles/index.html">
 
                                             ITF-W Prague Doubles
                                             <span class="badge badge-primary">9</span>
@@ -2839,7 +2839,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ITF-M Egypt" class="l-item" href="../../../../tennis/egypt/itf-m-egypt/index.html" data-call="bk">
+                                        <a title="ITF-M Egypt" class="l-item" href="../../../../tennis/egypt/itf-m-egypt/index.html">
 
                                             ITF-M Egypt
                                             <span class="badge badge-primary">16</span>
@@ -2848,7 +2848,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-M Egypt Doubles" class="l-item" href="../../../../tennis/egypt/itf-m-egypt-doubles/index.html" data-call="bk">
+                                        <a title="ITF-M Egypt Doubles" class="l-item" href="../../../../tennis/egypt/itf-m-egypt-doubles/index.html">
 
                                             ITF-M Egypt Doubles
                                             <span class="badge badge-primary">8</span>
@@ -2857,7 +2857,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-W Sharm El Sheikh" class="l-item" href="/" data-call="bk">
+                                        <a title="ITF-W Sharm El Sheikh" class="l-item" href="/">
 
                                             ITF-W Sharm El Sheikh
                                             <span class="badge badge-primary">16</span>
@@ -2866,7 +2866,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-W Sharm El Sheikh Doubles" class="l-item" href="../../../../tennis/egypt/itf-w-sharm-el-sheikh-doubles/index.html" data-call="bk">
+                                        <a title="ITF-W Sharm El Sheikh Doubles" class="l-item" href="../../../../tennis/egypt/itf-w-sharm-el-sheikh-doubles/index.html">
 
                                             ITF-W Sharm El Sheikh Doubles
                                             <span class="badge badge-primary">6</span>
@@ -2888,7 +2888,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ITF-W Batumi" class="l-item" href="../../../../tennis/georgia/itf-w-batumi/index.html" data-call="bk">
+                                        <a title="ITF-W Batumi" class="l-item" href="../../../../tennis/georgia/itf-w-batumi/index.html">
 
                                             ITF-W Batumi
                                             <span class="badge badge-primary">17</span>
@@ -2897,7 +2897,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-W Batumi Doubles" class="l-item" href="../../../../tennis/georgia/itf-w-batumi-doubles/index.html" data-call="bk">
+                                        <a title="ITF-W Batumi Doubles" class="l-item" href="../../../../tennis/georgia/itf-w-batumi-doubles/index.html">
 
                                             ITF-W Batumi Doubles
                                             <span class="badge badge-primary">9</span>
@@ -2919,7 +2919,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ITF-M Indonesia" class="l-item" href="../../../../tennis/indonesia/itf-m-indonesia/index.html" data-call="bk">
+                                        <a title="ITF-M Indonesia" class="l-item" href="../../../../tennis/indonesia/itf-m-indonesia/index.html">
 
                                             ITF-M Indonesia
                                             <span class="badge badge-primary">19</span>
@@ -2928,7 +2928,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-M Indonesia Doubles" class="l-item" href="../../../../tennis/indonesia/itf-m-indonesia-doubles/index.html" data-call="bk">
+                                        <a title="ITF-M Indonesia Doubles" class="l-item" href="../../../../tennis/indonesia/itf-m-indonesia-doubles/index.html">
 
                                             ITF-M Indonesia Doubles
                                             <span class="badge badge-primary">8</span>
@@ -2950,7 +2950,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ITF-W Trieste" class="l-item" href="../../../../tennis/italy/itf-w-trieste/index.html" data-call="bk">
+                                        <a title="ITF-W Trieste" class="l-item" href="../../../../tennis/italy/itf-w-trieste/index.html">
 
                                             ITF-W Trieste
                                             <span class="badge badge-primary">16</span>
@@ -2959,7 +2959,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-W Trieste Doubles" class="l-item" href="../../../../tennis/italy/itf-w-trieste-doubles/index.html" data-call="bk">
+                                        <a title="ITF-W Trieste Doubles" class="l-item" href="../../../../tennis/italy/itf-w-trieste-doubles/index.html">
 
                                             ITF-W Trieste Doubles
                                             <span class="badge badge-primary">6</span>
@@ -2968,7 +2968,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ATP Rome" class="l-item" href="../../../../tennis/italy/atp-rome/index.html" data-call="bk">
+                                        <a title="ATP Rome" class="l-item" href="../../../../tennis/italy/atp-rome/index.html">
 
                                             ATP Rome
                                             <span class="badge badge-primary">2</span>
@@ -2977,7 +2977,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="WTA Rome" class="l-item" href="../../../../tennis/italy/wta-rome/index.html" data-call="bk">
+                                        <a title="WTA Rome" class="l-item" href="../../../../tennis/italy/wta-rome/index.html">
 
                                             WTA Rome
                                             <span class="badge badge-primary">2</span>
@@ -2986,7 +2986,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="CH Como" class="l-item" href="../../../../tennis/italy/ch-como/index.html" data-call="bk">
+                                        <a title="CH Como" class="l-item" href="../../../../tennis/italy/ch-como/index.html">
 
                                             CH Como
                                             <span class="badge badge-primary">20</span>
@@ -2995,7 +2995,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="CH Como Doubles" class="l-item" href="../../../../tennis/italy/ch-como-doubles/index.html" data-call="bk">
+                                        <a title="CH Como Doubles" class="l-item" href="../../../../tennis/italy/ch-como-doubles/index.html">
 
                                             CH Como Doubles
                                             <span class="badge badge-primary">7</span>
@@ -3004,7 +3004,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-M Italy" class="l-item" href="../../../../tennis/italy/itf-m-italy/index.html" data-call="bk">
+                                        <a title="ITF-M Italy" class="l-item" href="../../../../tennis/italy/itf-m-italy/index.html">
 
                                             ITF-M Italy
                                             <span class="badge badge-primary">17</span>
@@ -3013,7 +3013,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-M Italy Doubles" class="l-item" href="../../../../tennis/italy/itf-m-italy-doubles/index.html" data-call="bk">
+                                        <a title="ITF-M Italy Doubles" class="l-item" href="../../../../tennis/italy/itf-m-italy-doubles/index.html">
 
                                             ITF-M Italy Doubles
                                             <span class="badge badge-primary">5</span>
@@ -3035,7 +3035,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ITF-W Noto" class="l-item" href="../../../../tennis/japan/itf-w-noto/index.html" data-call="bk">
+                                        <a title="ITF-W Noto" class="l-item" href="../../../../tennis/japan/itf-w-noto/index.html">
 
                                             ITF-W Noto
                                             <span class="badge badge-primary">16</span>
@@ -3044,7 +3044,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-W Noto Doubles" class="l-item" href="../../../../tennis/japan/itf-w-noto-doubles/index.html" data-call="bk">
+                                        <a title="ITF-W Noto Doubles" class="l-item" href="../../../../tennis/japan/itf-w-noto-doubles/index.html">
 
                                             ITF-W Noto Doubles
                                             <span class="badge badge-primary">6</span>
@@ -3066,7 +3066,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ITF-W Almaty" class="l-item" href="../../../../tennis/kazakhstan/itf-w-almaty/index.html" data-call="bk">
+                                        <a title="ITF-W Almaty" class="l-item" href="../../../../tennis/kazakhstan/itf-w-almaty/index.html">
 
                                             ITF-W Almaty
                                             <span class="badge badge-primary">20</span>
@@ -3075,7 +3075,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-W Almaty Doubles" class="l-item" href="../../../../tennis/kazakhstan/itf-w-almaty-doubles/index.html" data-call="bk">
+                                        <a title="ITF-W Almaty Doubles" class="l-item" href="../../../../tennis/kazakhstan/itf-w-almaty-doubles/index.html">
 
                                             ITF-W Almaty Doubles
                                             <span class="badge badge-primary">4</span>
@@ -3097,7 +3097,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ITF-W Yeongwol" class="l-item" href="../../../../tennis/korea-republic/itf-w-yeongwol/index.html" data-call="bk">
+                                        <a title="ITF-W Yeongwol" class="l-item" href="../../../../tennis/korea-republic/itf-w-yeongwol/index.html">
 
                                             ITF-W Yeongwol
                                             <span class="badge badge-primary">24</span>
@@ -3106,7 +3106,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-W Yeongwol Doubles" class="l-item" href="../../../../tennis/korea-republic/itf-w-yeongwol-doubles/index.html" data-call="bk">
+                                        <a title="ITF-W Yeongwol Doubles" class="l-item" href="../../../../tennis/korea-republic/itf-w-yeongwol-doubles/index.html">
 
                                             ITF-W Yeongwol Doubles
                                             <span class="badge badge-primary">8</span>
@@ -3115,7 +3115,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-M Korea" class="l-item" href="../../../../tennis/korea-republic/itf-m-korea/index.html" data-call="bk">
+                                        <a title="ITF-M Korea" class="l-item" href="../../../../tennis/korea-republic/itf-m-korea/index.html">
 
                                             ITF-M Korea
                                             <span class="badge badge-primary">20</span>
@@ -3124,7 +3124,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-M Korea Doubles" class="l-item" href="../../../../tennis/korea-republic/itf-m-korea-doubles/index.html" data-call="bk">
+                                        <a title="ITF-M Korea Doubles" class="l-item" href="../../../../tennis/korea-republic/itf-m-korea-doubles/index.html">
 
                                             ITF-M Korea Doubles
                                             <span class="badge badge-primary">5</span>
@@ -3146,7 +3146,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ITF-W Schoonhoven" class="l-item" href="../../../../tennis/netherlands/itf-w-schoonhoven/index.html" data-call="bk">
+                                        <a title="ITF-W Schoonhoven" class="l-item" href="../../../../tennis/netherlands/itf-w-schoonhoven/index.html">
 
                                             ITF-W Schoonhoven
                                             <span class="badge badge-primary">25</span>
@@ -3155,7 +3155,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-W Schoonhoven Doubles" class="l-item" href="../../../../tennis/netherlands/itf-w-schoonhoven-doubles/index.html" data-call="bk">
+                                        <a title="ITF-W Schoonhoven Doubles" class="l-item" href="../../../../tennis/netherlands/itf-w-schoonhoven-doubles/index.html">
 
                                             ITF-W Schoonhoven Doubles
                                             <span class="badge badge-primary">7</span>
@@ -3164,7 +3164,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-M Netherlands" class="l-item" href="../../../../tennis/netherlands/itf-m-netherlands/index.html" data-call="bk">
+                                        <a title="ITF-M Netherlands" class="l-item" href="../../../../tennis/netherlands/itf-m-netherlands/index.html">
 
                                             ITF-M Netherlands
                                             <span class="badge badge-primary">13</span>
@@ -3173,7 +3173,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-M Netherlands Doubles" class="l-item" href="../../../../tennis/netherlands/itf-m-netherlands-doubles/index.html" data-call="bk">
+                                        <a title="ITF-M Netherlands Doubles" class="l-item" href="../../../../tennis/netherlands/itf-m-netherlands-doubles/index.html">
 
                                             ITF-M Netherlands Doubles
                                             <span class="badge badge-primary">4</span>
@@ -3195,7 +3195,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ITF-M Romania" class="l-item" href="../../../../tennis/romania/itf-m-romania/index.html" data-call="bk">
+                                        <a title="ITF-M Romania" class="l-item" href="../../../../tennis/romania/itf-m-romania/index.html">
 
                                             ITF-M Romania
                                             <span class="badge badge-primary">16</span>
@@ -3204,7 +3204,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-M Romania Doubles" class="l-item" href="../../../../tennis/romania/itf-m-romania-doubles/index.html" data-call="bk">
+                                        <a title="ITF-M Romania Doubles" class="l-item" href="../../../../tennis/romania/itf-m-romania-doubles/index.html">
 
                                             ITF-M Romania Doubles
                                             <span class="badge badge-primary">12</span>
@@ -3213,7 +3213,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-W Mamaia" class="l-item" href="../../../../tennis/romania/itf-w-mamaia/index.html" data-call="bk">
+                                        <a title="ITF-W Mamaia" class="l-item" href="../../../../tennis/romania/itf-w-mamaia/index.html">
 
                                             ITF-W Mamaia
                                             <span class="badge badge-primary">24</span>
@@ -3222,7 +3222,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-W Mamaia Doubles" class="l-item" href="../../../../tennis/romania/itf-w-mamaia-doubles/index.html" data-call="bk">
+                                        <a title="ITF-W Mamaia Doubles" class="l-item" href="../../../../tennis/romania/itf-w-mamaia-doubles/index.html">
 
                                             ITF-W Mamaia Doubles
                                             <span class="badge badge-primary">8</span>
@@ -3244,7 +3244,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ITF-M Russia" class="l-item" href="../../../../tennis/russia/itf-m-russia/index.html" data-call="bk">
+                                        <a title="ITF-M Russia" class="l-item" href="../../../../tennis/russia/itf-m-russia/index.html">
 
                                             ITF-M Russia
                                             <span class="badge badge-primary">17</span>
@@ -3253,7 +3253,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-M Russia Doubles" class="l-item" href="../../../../tennis/russia/itf-m-russia-doubles/index.html" data-call="bk">
+                                        <a title="ITF-M Russia Doubles" class="l-item" href="../../../../tennis/russia/itf-m-russia-doubles/index.html">
 
                                             ITF-M Russia Doubles
                                             <span class="badge badge-primary">6</span>
@@ -3275,7 +3275,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ITF-W Vrnjacka Banja" class="l-item" href="../../../../tennis/serbia/itf-w-vrnjacka-banja/index.html" data-call="bk">
+                                        <a title="ITF-W Vrnjacka Banja" class="l-item" href="../../../../tennis/serbia/itf-w-vrnjacka-banja/index.html">
 
                                             ITF-W Vrnjacka Banja
                                             <span class="badge badge-primary">16</span>
@@ -3284,7 +3284,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-W Vrnjacka Banja Doubles" class="l-item" href="../../../../tennis/serbia/itf-w-vrnjacka-banja-doubles/index.html" data-call="bk">
+                                        <a title="ITF-W Vrnjacka Banja Doubles" class="l-item" href="../../../../tennis/serbia/itf-w-vrnjacka-banja-doubles/index.html">
 
                                             ITF-W Vrnjacka Banja Doubles
                                             <span class="badge badge-primary">5</span>
@@ -3306,7 +3306,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ITF-W Barcelona" class="l-item" href="../../../../tennis/spain/itf-w-barcelona/index.html" data-call="bk">
+                                        <a title="ITF-W Barcelona" class="l-item" href="../../../../tennis/spain/itf-w-barcelona/index.html">
 
                                             ITF-W Barcelona
                                             <span class="badge badge-primary">18</span>
@@ -3315,7 +3315,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-W Barcelona Doubles" class="l-item" href="../../../../tennis/spain/itf-w-barcelona-doubles/index.html" data-call="bk">
+                                        <a title="ITF-W Barcelona Doubles" class="l-item" href="../../../../tennis/spain/itf-w-barcelona-doubles/index.html">
 
                                             ITF-W Barcelona Doubles
                                             <span class="badge badge-primary">5</span>
@@ -3324,7 +3324,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-M Spain" class="l-item" href="../../../../tennis/spain/itf-m-spain/index.html" data-call="bk">
+                                        <a title="ITF-M Spain" class="l-item" href="../../../../tennis/spain/itf-m-spain/index.html">
 
                                             ITF-M Spain
                                             <span class="badge badge-primary">22</span>
@@ -3333,7 +3333,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-M Spain Doubles" class="l-item" href="../../../../tennis/spain/itf-m-spain-doubles/index.html" data-call="bk">
+                                        <a title="ITF-M Spain Doubles" class="l-item" href="../../../../tennis/spain/itf-m-spain-doubles/index.html">
 
                                             ITF-M Spain Doubles
                                             <span class="badge badge-primary">4</span>
@@ -3355,7 +3355,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ITF-W Sion" class="l-item" href="../../../../tennis/switzerland/itf-w-sion/index.html" data-call="bk">
+                                        <a title="ITF-W Sion" class="l-item" href="../../../../tennis/switzerland/itf-w-sion/index.html">
 
                                             ITF-W Sion
                                             <span class="badge badge-primary">12</span>
@@ -3364,7 +3364,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-W Sion Doubles" class="l-item" href="../../../../tennis/switzerland/itf-w-sion-doubles/index.html" data-call="bk">
+                                        <a title="ITF-W Sion Doubles" class="l-item" href="../../../../tennis/switzerland/itf-w-sion-doubles/index.html">
 
                                             ITF-W Sion Doubles
                                             <span class="badge badge-primary">3</span>
@@ -3373,7 +3373,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-M Switzerland" class="l-item" href="../../../../tennis/switzerland/itf-m-switzerland/index.html" data-call="bk">
+                                        <a title="ITF-M Switzerland" class="l-item" href="../../../../tennis/switzerland/itf-m-switzerland/index.html">
 
                                             ITF-M Switzerland
                                             <span class="badge badge-primary">12</span>
@@ -3382,7 +3382,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-M Switzerland Doubles" class="l-item" href="../../../../tennis/switzerland/itf-m-switzerland-doubles/index.html" data-call="bk">
+                                        <a title="ITF-M Switzerland Doubles" class="l-item" href="../../../../tennis/switzerland/itf-m-switzerland-doubles/index.html">
 
                                             ITF-M Switzerland Doubles
                                             <span class="badge badge-primary">9</span>
@@ -3404,7 +3404,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ATP Bangkok 4" class="l-item" href="../../../../tennis/thailand/atp-bangkok-4/index.html" data-call="bk">
+                                        <a title="ATP Bangkok 4" class="l-item" href="../../../../tennis/thailand/atp-bangkok-4/index.html">
 
                                             ATP Bangkok 4
                                             <span class="badge badge-primary">20</span>
@@ -3413,7 +3413,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ATP Bangkok 4 Doubles" class="l-item" href="../../../../tennis/thailand/atp-bangkok-4-doubles/index.html" data-call="bk">
+                                        <a title="ATP Bangkok 4 Doubles" class="l-item" href="../../../../tennis/thailand/atp-bangkok-4-doubles/index.html">
 
                                             ATP Bangkok 4 Doubles
                                             <span class="badge badge-primary">6</span>
@@ -3422,7 +3422,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-M Thailand" class="l-item" href="../../../../tennis/thailand/itf-m-thailand/index.html" data-call="bk">
+                                        <a title="ITF-M Thailand" class="l-item" href="../../../../tennis/thailand/itf-m-thailand/index.html">
 
                                             ITF-M Thailand
                                             <span class="badge badge-primary">19</span>
@@ -3431,7 +3431,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ITF-M Thailand Doubles" class="l-item" href="../../../../tennis/thailand/itf-m-thailand-doubles/index.html" data-call="bk">
+                                        <a title="ITF-M Thailand Doubles" class="l-item" href="../../../../tennis/thailand/itf-m-thailand-doubles/index.html">
 
                                             ITF-M Thailand Doubles
                                             <span class="badge badge-primary">4</span>
@@ -3453,7 +3453,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ATP US Open" class="l-item" href="../../../../tennis/usa/atp-us-open/index.html" data-call="bk">
+                                        <a title="ATP US Open" class="l-item" href="../../../../tennis/usa/atp-us-open/index.html">
 
                                             ATP US Open
                                             <span class="badge badge-primary">48</span>
@@ -3462,7 +3462,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ATP US Open Doubles" class="l-item" href="../../../../tennis/usa/atp-us-open-doubles/index.html" data-call="bk">
+                                        <a title="ATP US Open Doubles" class="l-item" href="../../../../tennis/usa/atp-us-open-doubles/index.html">
 
                                             ATP US Open Doubles
                                             <span class="badge badge-primary">32</span>
@@ -3471,7 +3471,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="WTA US Open" class="l-item" href="../../../../tennis/usa/wta-us-open/index.html" data-call="bk">
+                                        <a title="WTA US Open" class="l-item" href="../../../../tennis/usa/wta-us-open/index.html">
 
                                             WTA US Open
                                             <span class="badge badge-primary">49</span>
@@ -3480,7 +3480,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="WTA US Open Doubles" class="l-item" href="../../../../tennis/usa/wta-us-open-doubles/index.html" data-call="bk">
+                                        <a title="WTA US Open Doubles" class="l-item" href="../../../../tennis/usa/wta-us-open-doubles/index.html">
 
                                             WTA US Open Doubles
                                             <span class="badge badge-primary">35</span>
@@ -3522,7 +3522,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="ACT Premier League 1" class="l-item" href="../../../../basketball/australia/act-premier-league-1/index.html" data-call="bk">
+                                        <a title="ACT Premier League 1" class="l-item" href="../../../../basketball/australia/act-premier-league-1/index.html">
 
                                             ACT Premier League 1
                                             <span class="badge badge-primary">2</span>
@@ -3531,7 +3531,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="ACT Prem League 1 Women" class="l-item" href="../../../../basketball/australia/act-prem-league-1-women/index.html" data-call="bk">
+                                        <a title="ACT Prem League 1 Women" class="l-item" href="../../../../basketball/australia/act-prem-league-1-women/index.html">
 
                                             ACT Prem League 1 Women
                                             <span class="badge badge-primary">2</span>
@@ -3553,7 +3553,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Bahrain Cup Men" class="l-item" href="../../../../basketball/bahrain/bahrain-cup-men/index.html" data-call="bk">
+                                        <a title="Bahrain Cup Men" class="l-item" href="../../../../basketball/bahrain/bahrain-cup-men/index.html">
 
                                             Bahrain Cup Men
                                             <span class="badge badge-primary">2</span>
@@ -3575,7 +3575,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Paulista Women" class="l-item" href="../../../../basketball/brazil/paulista-women/index.html" data-call="bk">
+                                        <a title="Paulista Women" class="l-item" href="../../../../basketball/brazil/paulista-women/index.html">
 
                                             Paulista Women
                                             <span class="badge badge-primary">1</span>
@@ -3584,7 +3584,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="LDB" class="l-item" href="../../../../basketball/brazil/ldb/index.html" data-call="bk">
+                                        <a title="LDB" class="l-item" href="../../../../basketball/brazil/ldb/index.html">
 
                                             LDB
                                             <span class="badge badge-primary">5</span>
@@ -3593,7 +3593,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="FPB" class="l-item" href="../../../../basketball/brazil/fpb/index.html" data-call="bk">
+                                        <a title="FPB" class="l-item" href="../../../../basketball/brazil/fpb/index.html">
 
                                             FPB
                                             <span class="badge badge-primary">1</span>
@@ -3615,7 +3615,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="NBL" class="l-item" href="/" data-call="bk">
+                                        <a title="NBL" class="l-item" href="/">
 
                                             NBL
                                             <span class="badge badge-primary">1</span>
@@ -3637,7 +3637,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="LNB" class="l-item" href="../../../../basketball/dominican-republic/lnb/index.html" data-call="bk">
+                                        <a title="LNB" class="l-item" href="../../../../basketball/dominican-republic/lnb/index.html">
 
                                             LNB
                                             <span class="badge badge-primary">1</span>
@@ -3659,7 +3659,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Liga Mayor" class="l-item" href="../../../../basketball/el-salvador/liga-mayor/index.html" data-call="bk">
+                                        <a title="Liga Mayor" class="l-item" href="../../../../basketball/el-salvador/liga-mayor/index.html">
 
                                             Liga Mayor
                                             <span class="badge badge-primary">2</span>
@@ -3681,7 +3681,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="European Championship Qualification Men" class="l-item" href="../../../../basketball/europe/european-championship-qualification-men/index.html" data-call="bk">
+                                        <a title="European Championship Qualification Men" class="l-item" href="../../../../basketball/europe/european-championship-qualification-men/index.html">
 
                                             European Championship Qualification Men
                                             <span class="badge badge-primary">1</span>
@@ -3690,7 +3690,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="EuroBasket" class="l-item" href="../../../../basketball/europe/eurobasket/index.html" data-call="bk">
+                                        <a title="EuroBasket" class="l-item" href="../../../../basketball/europe/eurobasket/index.html">
 
                                             EuroBasket
                                             <span class="badge badge-primary">12</span>
@@ -3712,7 +3712,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="PBA" class="l-item" href="../../../../basketball/philippines/pba/index.html" data-call="bk">
+                                        <a title="PBA" class="l-item" href="../../../../basketball/philippines/pba/index.html">
 
                                             PBA
                                             <span class="badge badge-primary">5</span>
@@ -3721,7 +3721,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="NCAA" class="l-item" href="../../../../basketball/philippines/ncaa/index.html" data-call="bk">
+                                        <a title="NCAA" class="l-item" href="../../../../basketball/philippines/ncaa/index.html">
 
                                             NCAA
                                             <span class="badge badge-primary">4</span>
@@ -3743,7 +3743,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Portugal Cup" class="l-item" href="../../../../basketball/portugal/portugal-cup/index.html" data-call="bk">
+                                        <a title="Portugal Cup" class="l-item" href="../../../../basketball/portugal/portugal-cup/index.html">
 
                                             Portugal Cup
                                             <span class="badge badge-primary">1</span>
@@ -3765,7 +3765,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="LUA" class="l-item" href="../../../../basketball/uruguay/lua/index.html" data-call="bk">
+                                        <a title="LUA" class="l-item" href="../../../../basketball/uruguay/lua/index.html">
 
                                             LUA
                                             <span class="badge badge-primary">2</span>
@@ -3787,7 +3787,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="WNBA" class="l-item" href="../../../../basketball/usa/wnba/index.html" data-call="bk">
+                                        <a title="WNBA" class="l-item" href="../../../../basketball/usa/wnba/index.html">
 
                                             WNBA
                                             <span class="badge badge-primary">3</span>
@@ -3809,7 +3809,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="VBA" class="l-item" href="../../../../basketball/vietnam/vba/index.html" data-call="bk">
+                                        <a title="VBA" class="l-item" href="../../../../basketball/vietnam/vba/index.html">
 
                                             VBA
                                             <span class="badge badge-primary">2</span>
@@ -3831,7 +3831,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Club Friendlies" class="l-item" href="../../../../basketball/world/club-friendlies/index.html" data-call="bk">
+                                        <a title="Club Friendlies" class="l-item" href="../../../../basketball/world/club-friendlies/index.html">
 
                                             Club Friendlies
                                             <span class="badge badge-primary">10</span>
@@ -3873,7 +3873,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Asia Club Champs" class="l-item" href="../../../../volleyball/asia/asia-club-champs/index.html" data-call="bk">
+                                        <a title="Asia Club Champs" class="l-item" href="../../../../volleyball/asia/asia-club-champs/index.html">
 
                                             Asia Club Champs
                                             <span class="badge badge-primary">5</span>
@@ -3895,7 +3895,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="NVT" class="l-item" href="../../../../volleyball/china-pr/nvt/index.html" data-call="bk">
+                                        <a title="NVT" class="l-item" href="../../../../volleyball/china-pr/nvt/index.html">
 
                                             NVT
                                             <span class="badge badge-primary">4</span>
@@ -3904,7 +3904,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="CVL" class="l-item" href="../../../../volleyball/china-pr/cvl/index.html" data-call="bk">
+                                        <a title="CVL" class="l-item" href="../../../../volleyball/china-pr/cvl/index.html">
 
                                             CVL
                                             <span class="badge badge-primary">7</span>
@@ -3926,7 +3926,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Sibir and Far East Cup" class="l-item" href="../../../../volleyball/russia/sibir-and-far-east-cup/index.html" data-call="bk">
+                                        <a title="Sibir and Far East Cup" class="l-item" href="../../../../volleyball/russia/sibir-and-far-east-cup/index.html">
 
                                             Sibir and Far East Cup
                                             <span class="badge badge-primary">2</span>
@@ -3948,7 +3948,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Liga Women" class="l-item" href="../../../../volleyball/venezuela/liga-women/index.html" data-call="bk">
+                                        <a title="Liga Women" class="l-item" href="../../../../volleyball/venezuela/liga-women/index.html">
 
                                             Liga Women
                                             <span class="badge badge-primary">2</span>
@@ -3970,7 +3970,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Club Friendlies Women" class="l-item" href="../../../../volleyball/world/club-friendlies-women/index.html" data-call="bk">
+                                        <a title="Club Friendlies Women" class="l-item" href="../../../../volleyball/world/club-friendlies-women/index.html">
 
                                             Club Friendlies Women
                                             <span class="badge badge-primary">1</span>
@@ -3979,7 +3979,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="International Friendly Women U19" class="l-item" href="../../../../volleyball/world/international-friendly-women-u19/index.html" data-call="bk">
+                                        <a title="International Friendly Women U19" class="l-item" href="../../../../volleyball/world/international-friendly-women-u19/index.html">
 
                                             International Friendly Women U19
                                             <span class="badge badge-primary">1</span>
@@ -3988,7 +3988,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="International Friendlies Men" class="l-item" href="../../../../volleyball/world/international-friendlies-men/index.html" data-call="bk">
+                                        <a title="International Friendlies Men" class="l-item" href="../../../../volleyball/world/international-friendlies-men/index.html">
 
                                             International Friendlies Men
                                             <span class="badge badge-primary">1</span>
@@ -3997,7 +3997,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="International Friendlies Women" class="l-item" href="../../../../volleyball/world/international-friendlies-women/index.html" data-call="bk">
+                                        <a title="International Friendlies Women" class="l-item" href="../../../../volleyball/world/international-friendlies-women/index.html">
 
                                             International Friendlies Women
                                             <span class="badge badge-primary">1</span>
@@ -4039,7 +4039,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Division 1" class="l-item" href="../../../../handball/denmark/division-1/index.html" data-call="bk">
+                                        <a title="Division 1" class="l-item" href="../../../../handball/denmark/division-1/index.html">
 
                                             Division 1
                                             <span class="badge badge-primary">7</span>
@@ -4048,7 +4048,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Division 1 Women" class="l-item" href="../../../../handball/denmark/division-1-women/index.html" data-call="bk">
+                                        <a title="Division 1 Women" class="l-item" href="../../../../handball/denmark/division-1-women/index.html">
 
                                             Division 1 Women
                                             <span class="badge badge-primary">7</span>
@@ -4070,7 +4070,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="SEHA Liga" class="l-item" href="../../../../handball/europe/seha-liga/index.html" data-call="bk">
+                                        <a title="SEHA Liga" class="l-item" href="../../../../handball/europe/seha-liga/index.html">
 
                                             SEHA Liga
                                             <span class="badge badge-primary">1</span>
@@ -4092,7 +4092,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Supercup" class="l-item" href="../../../../handball/germany/supercup/index.html" data-call="bk">
+                                        <a title="Supercup" class="l-item" href="../../../../handball/germany/supercup/index.html">
 
                                             Supercup
                                             <span class="badge badge-primary">1</span>
@@ -4114,7 +4114,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Division 1" class="l-item" href="../../../../handball/hungary/division-1/index.html" data-call="bk">
+                                        <a title="Division 1" class="l-item" href="../../../../handball/hungary/division-1/index.html">
 
                                             Division 1
                                             <span class="badge badge-primary">1</span>
@@ -4136,7 +4136,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Iceland Cup" class="l-item" href="../../../../handball/iceland/iceland-cup/index.html" data-call="bk">
+                                        <a title="Iceland Cup" class="l-item" href="../../../../handball/iceland/iceland-cup/index.html">
 
                                             Iceland Cup
                                             <span class="badge badge-primary">1</span>
@@ -4158,7 +4158,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Postenligaen" class="l-item" href="../../../../handball/norway/postenligaen/index.html" data-call="bk">
+                                        <a title="Postenligaen" class="l-item" href="../../../../handball/norway/postenligaen/index.html">
 
                                             Postenligaen
                                             <span class="badge badge-primary">1</span>
@@ -4180,7 +4180,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Superliga Women" class="l-item" href="../../../../handball/poland/superliga-women/index.html" data-call="bk">
+                                        <a title="Superliga Women" class="l-item" href="../../../../handball/poland/superliga-women/index.html">
 
                                             Superliga Women
                                             <span class="badge badge-primary">6</span>
@@ -4202,7 +4202,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="National League" class="l-item" href="../../../../handball/romania/national-league/index.html" data-call="bk">
+                                        <a title="National League" class="l-item" href="../../../../handball/romania/national-league/index.html">
 
                                             National League
                                             <span class="badge badge-primary">7</span>
@@ -4224,7 +4224,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Super Copa" class="l-item" href="../../../../handball/spain/super-copa/index.html" data-call="bk">
+                                        <a title="Super Copa" class="l-item" href="../../../../handball/spain/super-copa/index.html">
 
                                             Super Copa
                                             <span class="badge badge-primary">1</span>
@@ -4246,7 +4246,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Club Friendlies" class="l-item" href="../../../../handball/world/club-friendlies/index.html" data-call="bk">
+                                        <a title="Club Friendlies" class="l-item" href="../../../../handball/world/club-friendlies/index.html">
 
                                             Club Friendlies
                                             <span class="badge badge-primary">3</span>
@@ -4255,7 +4255,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Club Friendlies Women" class="l-item" href="../../../../handball/world/club-friendlies-women/index.html" data-call="bk">
+                                        <a title="Club Friendlies Women" class="l-item" href="../../../../handball/world/club-friendlies-women/index.html">
 
                                             Club Friendlies Women
                                             <span class="badge badge-primary">1</span>
@@ -4264,7 +4264,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="International Friendlies" class="l-item" href="../../../../handball/world/international-friendlies/index.html" data-call="bk">
+                                        <a title="International Friendlies" class="l-item" href="../../../../handball/world/international-friendlies/index.html">
 
                                             International Friendlies
                                             <span class="badge badge-primary">1</span>
@@ -4306,7 +4306,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="CPBL" class="l-item" href="../../../../baseball/chinese-taipei/cpbl/index.html" data-call="bk">
+                                        <a title="CPBL" class="l-item" href="../../../../baseball/chinese-taipei/cpbl/index.html">
 
                                             CPBL
                                             <span class="badge badge-primary">2</span>
@@ -4328,7 +4328,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Serie Nacional" class="l-item" href="../../../../baseball/cuba/serie-nacional/index.html" data-call="bk">
+                                        <a title="Serie Nacional" class="l-item" href="../../../../baseball/cuba/serie-nacional/index.html">
 
                                             Serie Nacional
                                             <span class="badge badge-primary">8</span>
@@ -4350,7 +4350,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="NPB" class="l-item" href="../../../../baseball/japan/npb/index.html" data-call="bk">
+                                        <a title="NPB" class="l-item" href="../../../../baseball/japan/npb/index.html">
 
                                             NPB
                                             <span class="badge badge-primary">30</span>
@@ -4372,7 +4372,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Korean League" class="l-item" href="../../../../baseball/korea-republic/korean-league/index.html" data-call="bk">
+                                        <a title="Korean League" class="l-item" href="../../../../baseball/korea-republic/korean-league/index.html">
 
                                             Korean League
                                             <span class="badge badge-primary">10</span>
@@ -4394,7 +4394,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Mexican League" class="l-item" href="../../../../baseball/mexico/mexican-league/index.html" data-call="bk">
+                                        <a title="Mexican League" class="l-item" href="../../../../baseball/mexico/mexican-league/index.html">
 
                                             Mexican League
                                             <span class="badge badge-primary">2</span>
@@ -4416,7 +4416,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="MLB" class="l-item" href="../../../../baseball/usa/mlb/index.html" data-call="bk">
+                                        <a title="MLB" class="l-item" href="../../../../baseball/usa/mlb/index.html">
 
                                             MLB
                                             <span class="badge badge-primary">21</span>
@@ -4425,7 +4425,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Pacific Coast League" class="l-item" href="../../../../baseball/usa/pacific-coast-league/index.html" data-call="bk">
+                                        <a title="Pacific Coast League" class="l-item" href="../../../../baseball/usa/pacific-coast-league/index.html">
 
                                             Pacific Coast League
                                             <span class="badge badge-primary">16</span>
@@ -4434,7 +4434,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="International League" class="l-item" href="../../../../baseball/usa/international-league/index.html" data-call="bk">
+                                        <a title="International League" class="l-item" href="../../../../baseball/usa/international-league/index.html">
 
                                             International League
                                             <span class="badge badge-primary">7</span>
@@ -4476,7 +4476,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Light Flyweight" class="l-item" href="../../../../boxing/world/light-flyweight/index.html" data-call="bk">
+                                        <a title="Light Flyweight" class="l-item" href="../../../../boxing/world/light-flyweight/index.html">
 
                                             Light Flyweight
                                             <span class="badge badge-primary">4</span>
@@ -4485,7 +4485,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Super welterweight" class="l-item" href="../../../../boxing/world/super-welterweight/index.html" data-call="bk">
+                                        <a title="Super welterweight" class="l-item" href="../../../../boxing/world/super-welterweight/index.html">
 
                                             Super welterweight
                                             <span class="badge badge-primary">1</span>
@@ -4494,7 +4494,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Bantamweight" class="l-item" href="../../../../boxing/world/bantamweight/index.html" data-call="bk">
+                                        <a title="Bantamweight" class="l-item" href="../../../../boxing/world/bantamweight/index.html">
 
                                             Bantamweight
                                             <span class="badge badge-primary">3</span>
@@ -4503,7 +4503,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Cruiserweight" class="l-item" href="../../../../boxing/world/cruiserweight/index.html" data-call="bk">
+                                        <a title="Cruiserweight" class="l-item" href="../../../../boxing/world/cruiserweight/index.html">
 
                                             Cruiserweight
                                             <span class="badge badge-primary">3</span>
@@ -4512,7 +4512,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Middleweight" class="l-item" href="../../../../boxing/world/middleweight/index.html" data-call="bk">
+                                        <a title="Middleweight" class="l-item" href="../../../../boxing/world/middleweight/index.html">
 
                                             Middleweight
                                             <span class="badge badge-primary">5</span>
@@ -4521,7 +4521,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Heavyweight" class="l-item" href="../../../../boxing/world/heavyweight/index.html" data-call="bk">
+                                        <a title="Heavyweight" class="l-item" href="../../../../boxing/world/heavyweight/index.html">
 
                                             Heavyweight
                                             <span class="badge badge-primary">15</span>
@@ -4530,7 +4530,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Light Heavyweight" class="l-item" href="../../../../boxing/world/light-heavyweight/index.html" data-call="bk">
+                                        <a title="Light Heavyweight" class="l-item" href="../../../../boxing/world/light-heavyweight/index.html">
 
                                             Light Heavyweight
                                             <span class="badge badge-primary">4</span>
@@ -4539,7 +4539,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Welterweight" class="l-item" href="../../../../boxing/world/welterweight/index.html" data-call="bk">
+                                        <a title="Welterweight" class="l-item" href="../../../../boxing/world/welterweight/index.html">
 
                                             Welterweight
                                             <span class="badge badge-primary">5</span>
@@ -4548,7 +4548,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Lightweight" class="l-item" href="../../../../boxing/world/lightweight/index.html" data-call="bk">
+                                        <a title="Lightweight" class="l-item" href="../../../../boxing/world/lightweight/index.html">
 
                                             Lightweight
                                             <span class="badge badge-primary">3</span>
@@ -4557,7 +4557,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Featherweight" class="l-item" href="../../../../boxing/world/featherweight/index.html" data-call="bk">
+                                        <a title="Featherweight" class="l-item" href="../../../../boxing/world/featherweight/index.html">
 
                                             Featherweight
                                             <span class="badge badge-primary">2</span>
@@ -4566,7 +4566,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Super Middleweight" class="l-item" href="../../../../boxing/world/super-middleweight/index.html" data-call="bk">
+                                        <a title="Super Middleweight" class="l-item" href="../../../../boxing/world/super-middleweight/index.html">
 
                                             Super Middleweight
                                             <span class="badge badge-primary">11</span>
@@ -4575,7 +4575,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Light Middleweight" class="l-item" href="../../../../boxing/world/light-middleweight/index.html" data-call="bk">
+                                        <a title="Light Middleweight" class="l-item" href="../../../../boxing/world/light-middleweight/index.html">
 
                                             Light Middleweight
                                             <span class="badge badge-primary">1</span>
@@ -4584,7 +4584,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Flyweight" class="l-item" href="../../../../boxing/world/flyweight/index.html" data-call="bk">
+                                        <a title="Flyweight" class="l-item" href="../../../../boxing/world/flyweight/index.html">
 
                                             Flyweight
                                             <span class="badge badge-primary">1</span>
@@ -4593,7 +4593,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Super Featherweight" class="l-item" href="../../../../boxing/world/super-featherweight/index.html" data-call="bk">
+                                        <a title="Super Featherweight" class="l-item" href="../../../../boxing/world/super-featherweight/index.html">
 
                                             Super Featherweight
                                             <span class="badge badge-primary">1</span>
@@ -4602,7 +4602,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Super Flyweight" class="l-item" href="../../../../boxing/world/super-flyweight/index.html" data-call="bk">
+                                        <a title="Super Flyweight" class="l-item" href="../../../../boxing/world/super-flyweight/index.html">
 
                                             Super Flyweight
                                             <span class="badge badge-primary">4</span>
@@ -4644,7 +4644,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="FIH World League" class="l-item" href="../../../../field-hockey/world/fih-world-league/index.html" data-call="bk">
+                                        <a title="FIH World League" class="l-item" href="../../../../field-hockey/world/fih-world-league/index.html">
 
                                             FIH World League
                                             <span class="badge badge-primary">3</span>
@@ -4653,7 +4653,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="FIH World League Women" class="l-item" href="../../../../field-hockey/world/fih-world-league-women/index.html" data-call="bk">
+                                        <a title="FIH World League Women" class="l-item" href="../../../../field-hockey/world/fih-world-league-women/index.html">
 
                                             FIH World League Women
                                             <span class="badge badge-primary">2</span>
@@ -4695,7 +4695,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Puerto Vallarta Open Men" class="l-item" href="../../../../beach-volleyball/world/puerto-vallarta-open-men/index.html" data-call="bk">
+                                        <a title="Puerto Vallarta Open Men" class="l-item" href="../../../../beach-volleyball/world/puerto-vallarta-open-men/index.html">
 
                                             Puerto Vallarta Open Men
                                             <span class="badge badge-primary">1</span>
@@ -4737,7 +4737,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Aviva Premiership" class="l-item" href="../../../../rugby-union/england/aviva-premiership/index.html" data-call="bk">
+                                        <a title="Aviva Premiership" class="l-item" href="../../../../rugby-union/england/aviva-premiership/index.html">
 
                                             Aviva Premiership
                                             <span class="badge badge-primary">6</span>
@@ -4759,7 +4759,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="RaboDirect Pro 12" class="l-item" href="../../../../rugby-union/europe/rabodirect-pro-12/index.html" data-call="bk">
+                                        <a title="RaboDirect Pro 12" class="l-item" href="../../../../rugby-union/europe/rabodirect-pro-12/index.html">
 
                                             RaboDirect Pro 12
                                             <span class="badge badge-primary">6</span>
@@ -4781,7 +4781,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Top 14" class="l-item" href="../../../../rugby-union/france/top-14/index.html" data-call="bk">
+                                        <a title="Top 14" class="l-item" href="../../../../rugby-union/france/top-14/index.html">
 
                                             Top 14
                                             <span class="badge badge-primary">7</span>
@@ -4803,7 +4803,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Mitre Cup" class="l-item" href="../../../../rugby-union/new-zealand/mitre-cup/index.html" data-call="bk">
+                                        <a title="Mitre Cup" class="l-item" href="../../../../rugby-union/new-zealand/mitre-cup/index.html">
 
                                             Mitre Cup
                                             <span class="badge badge-primary">6</span>
@@ -4825,7 +4825,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Rugby Championship" class="l-item" href="../../../../rugby-union/world/rugby-championship/index.html" data-call="bk">
+                                        <a title="Rugby Championship" class="l-item" href="../../../../rugby-union/world/rugby-championship/index.html">
 
                                             Rugby Championship
                                             <span class="badge badge-primary">2</span>
@@ -4867,7 +4867,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Shanghai Masters" class="l-item" href="../../../../snooker/world/shanghai-masters/index.html" data-call="bk">
+                                        <a title="Shanghai Masters" class="l-item" href="../../../../snooker/world/shanghai-masters/index.html">
 
                                             Shanghai Masters
                                             <span class="badge badge-primary">53</span>
@@ -4909,7 +4909,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="CFL" class="l-item" href="../../../../american-football/canada/cfl/index.html" data-call="bk">
+                                        <a title="CFL" class="l-item" href="../../../../american-football/canada/cfl/index.html">
 
                                             CFL
                                             <span class="badge badge-primary">5</span>
@@ -4931,7 +4931,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="NFL" class="l-item" href="../../../../american-football/usa/nfl/index.html" data-call="bk">
+                                        <a title="NFL" class="l-item" href="../../../../american-football/usa/nfl/index.html">
 
                                             NFL
                                             <span class="badge badge-primary">32</span>
@@ -4940,7 +4940,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="NCAA" class="l-item" href="../../../../american-football/usa/ncaa/index.html" data-call="bk">
+                                        <a title="NCAA" class="l-item" href="../../../../american-football/usa/ncaa/index.html">
 
                                             NCAA
                                             <span class="badge badge-primary">241</span>
@@ -4982,7 +4982,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Liga Futsal" class="l-item" href="../../../../futsal/brazil/liga-futsal/index.html" data-call="bk">
+                                        <a title="Liga Futsal" class="l-item" href="../../../../futsal/brazil/liga-futsal/index.html">
 
                                             Liga Futsal
                                             <span class="badge badge-primary">1</span>
@@ -5024,7 +5024,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Olympiad Women" class="l-item" href="../../../../chess/world/olympiad-women/index.html" data-call="bk">
+                                        <a title="Olympiad Women" class="l-item" href="../../../../chess/world/olympiad-women/index.html">
 
                                             Olympiad Women
                                             <span class="badge badge-primary">1</span>
@@ -5033,7 +5033,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="World Championship Men" class="l-item" href="../../../../chess/world/world-championship-men/index.html" data-call="bk">
+                                        <a title="World Championship Men" class="l-item" href="../../../../chess/world/world-championship-men/index.html">
 
                                             World Championship Men
                                             <span class="badge badge-primary">1</span>
@@ -5075,7 +5075,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Bundesliga" class="l-item" href="../../../../table-tennis/germany/bundesliga/index.html" data-call="bk">
+                                        <a title="Bundesliga" class="l-item" href="../../../../table-tennis/germany/bundesliga/index.html">
 
                                             Bundesliga
                                             <span class="badge badge-primary">5</span>
@@ -5097,7 +5097,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Challenger Series Men" class="l-item" href="../../../../table-tennis/world/challenger-series-men/index.html" data-call="bk">
+                                        <a title="Challenger Series Men" class="l-item" href="../../../../table-tennis/world/challenger-series-men/index.html">
 
                                             Challenger Series Men
                                             <span class="badge badge-primary">19</span>
@@ -5139,7 +5139,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="AFL" class="l-item" href="../../../../aussie-rules/australia/afl/index.html" data-call="bk">
+                                        <a title="AFL" class="l-item" href="../../../../aussie-rules/australia/afl/index.html">
 
                                             AFL
                                             <span class="badge badge-primary">8</span>
@@ -5181,7 +5181,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Test  Series" class="l-item" href="../../../../cricket/australia/test-series/index.html" data-call="bk">
+                                        <a title="Test  Series" class="l-item" href="../../../../cricket/australia/test-series/index.html">
 
                                             Test  Series
                                             <span class="badge badge-primary">1</span>
@@ -5190,7 +5190,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="T20 Big Bash" class="l-item" href="../../../../cricket/australia/t20-big-bash/index.html" data-call="bk">
+                                        <a title="T20 Big Bash" class="l-item" href="../../../../cricket/australia/t20-big-bash/index.html">
 
                                             T20 Big Bash
                                             <span class="badge badge-primary">4</span>
@@ -5212,7 +5212,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Premier League" class="l-item" href="../../../../cricket/bangladesh/premier-league/index.html" data-call="bk">
+                                        <a title="Premier League" class="l-item" href="../../../../cricket/bangladesh/premier-league/index.html">
 
                                             Premier League
                                             <span class="badge badge-primary">1</span>
@@ -5234,7 +5234,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="One Day Cup" class="l-item" href="../../../../cricket/england/one-day-cup/index.html" data-call="bk">
+                                        <a title="One Day Cup" class="l-item" href="../../../../cricket/england/one-day-cup/index.html">
 
                                             One Day Cup
                                             <span class="badge badge-primary">1</span>
@@ -5243,7 +5243,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="County Championship 2" class="l-item" href="../../../../cricket/england/county-championship-2/index.html" data-call="bk">
+                                        <a title="County Championship 2" class="l-item" href="../../../../cricket/england/county-championship-2/index.html">
 
                                             County Championship 2
                                             <span class="badge badge-primary">8</span>
@@ -5252,7 +5252,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="County Championship" class="l-item" href="../../../../cricket/england/county-championship/index.html" data-call="bk">
+                                        <a title="County Championship" class="l-item" href="../../../../cricket/england/county-championship/index.html">
 
                                             County Championship
                                             <span class="badge badge-primary">8</span>
@@ -5274,7 +5274,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Tamil Nadu Premier League" class="l-item" href="../../../../cricket/india/tamil-nadu-premier-league/index.html" data-call="bk">
+                                        <a title="Tamil Nadu Premier League" class="l-item" href="../../../../cricket/india/tamil-nadu-premier-league/index.html">
 
                                             Tamil Nadu Premier League
                                             <span class="badge badge-primary">1</span>
@@ -5296,7 +5296,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="The Ashes" class="l-item" href="../../../../cricket/world/the-ashes/index.html" data-call="bk">
+                                        <a title="The Ashes" class="l-item" href="../../../../cricket/world/the-ashes/index.html">
 
                                             The Ashes
                                             <span class="badge badge-primary">1</span>
@@ -5305,7 +5305,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="One Day Internationals" class="l-item" href="../../../../cricket/world/one-day-internationals/index.html" data-call="bk">
+                                        <a title="One Day Internationals" class="l-item" href="../../../../cricket/world/one-day-internationals/index.html">
 
                                             One Day Internationals
                                             <span class="badge badge-primary">3</span>
@@ -5314,7 +5314,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Test Series" class="l-item" href="../../../../cricket/world/test-series/index.html" data-call="bk">
+                                        <a title="Test Series" class="l-item" href="../../../../cricket/world/test-series/index.html">
 
                                             Test Series
                                             <span class="badge badge-primary">1</span>
@@ -5356,7 +5356,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Brasil Grand Prix" class="l-item" href="../../../../badminton/brazil/brasil-grand-prix/index.html" data-call="bk">
+                                        <a title="Brasil Grand Prix" class="l-item" href="../../../../badminton/brazil/brasil-grand-prix/index.html">
 
                                             Brasil Grand Prix
                                             <span class="badge badge-primary">36</span>
@@ -5378,7 +5378,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Purple League Women" class="l-item" href="../../../../badminton/world/purple-league-women/index.html" data-call="bk">
+                                        <a title="Purple League Women" class="l-item" href="../../../../badminton/world/purple-league-women/index.html">
 
                                             Purple League Women
                                             <span class="badge badge-primary">1</span>
@@ -5420,7 +5420,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="UFC" class="l-item" href="../../../../combat-sports/world/ufc/index.html" data-call="bk">
+                                        <a title="UFC" class="l-item" href="../../../../combat-sports/world/ufc/index.html">
 
                                             UFC
                                             <span class="badge badge-primary">37</span>
@@ -5462,7 +5462,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Grand Prix" class="l-item" href="../../../../bowls/world/grand-prix/index.html" data-call="bk">
+                                        <a title="Grand Prix" class="l-item" href="../../../../bowls/world/grand-prix/index.html">
 
                                             Grand Prix
                                             <span class="badge badge-primary">6</span>
@@ -5504,7 +5504,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="NRL" class="l-item" href="../../../../rugby-league/australia/nrl/index.html" data-call="bk">
+                                        <a title="NRL" class="l-item" href="../../../../rugby-league/australia/nrl/index.html">
 
                                             NRL
                                             <span class="badge badge-primary">8</span>
@@ -5526,7 +5526,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="Super League" class="l-item" href="../../../../rugby-league/england/super-league/index.html" data-call="bk">
+                                        <a title="Super League" class="l-item" href="../../../../rugby-league/england/super-league/index.html">
 
                                             Super League
                                             <span class="badge badge-primary">6</span>
@@ -5568,7 +5568,7 @@
 
                                 <ul style="display: none;" class="submenu nav-hide">
                                     <li class="">
-                                        <a title="LoL LCK" class="l-item" href="../../../../e-sports/world/lol-lck/index.html" data-call="bk">
+                                        <a title="LoL LCK" class="l-item" href="../../../../e-sports/world/lol-lck/index.html">
 
                                             LoL Champions Korea
                                             <span class="badge badge-primary">1</span>
@@ -5577,7 +5577,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="LoL NA Challenger" class="l-item" href="../../../../e-sports/world/lol-na-challenger/index.html" data-call="bk">
+                                        <a title="LoL NA Challenger" class="l-item" href="../../../../e-sports/world/lol-na-challenger/index.html">
 
                                             LoL NA Challenger
                                             <span class="badge badge-primary">1</span>
@@ -5586,7 +5586,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Starcraft2" class="l-item" href="../../../../e-sports/world/starcraft2/index.html" data-call="bk">
+                                        <a title="Starcraft2" class="l-item" href="../../../../e-sports/world/starcraft2/index.html">
 
                                             Starcraft 2
                                             <span class="badge badge-primary">10</span>
@@ -5595,7 +5595,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Dota2" class="l-item" href="../../../../e-sports/world/dota2/index.html" data-call="bk">
+                                        <a title="Dota2" class="l-item" href="../../../../e-sports/world/dota2/index.html">
 
                                             Dota 2
                                             <span class="badge badge-primary">3</span>
@@ -5604,7 +5604,7 @@
                                         <b class="arrow"></b>
                                     </li>
                                     <li class="">
-                                        <a title="Counter Strike" class="l-item" href="../../../../e-sports/world/counter-strike/index.html" data-call="bk">
+                                        <a title="Counter Strike" class="l-item" href="../../../../e-sports/world/counter-strike/index.html">
 
                                             Counter Strike
                                             <span class="badge badge-primary">16</span>
