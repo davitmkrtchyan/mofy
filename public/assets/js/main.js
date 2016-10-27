@@ -273,6 +273,7 @@ if(ace.cookie.get('gmt')){
 
 
 $(document).ready(function(){
+    $(".badge-primary").hide();
     var dropdownToggle = $(".dropdown-toggle .menu-text");
     var litem = $(".l-item");
     var sport, country, group;
@@ -285,7 +286,8 @@ $(document).ready(function(){
             country = $(this).closest(".submenu").closest("li").find(".dropdown-toggle").contents().filter(function(){return this.nodeType == 3;}).text();
             group = $(this).closest("a").contents().filter(function(){return this.nodeType == 3;}).text();
             // console.log(sport + ", " + country + ", " + group + "\n");
-            $(this).attr("href", "\{\{url('/home/loadGamesByGroupAndCountry', ['sport'=>'" + $.trim(sport) + "','country' => '" + $.trim(country) + "', 'group' => '" + $.trim(group) + "'])\}\}");
+
+            $(this).attr("href", "/home/loadGamesByGroupAndCountry/" + $.trim(sport.toUpperCase()) + "/" + $.trim(country) + "/" + $.trim(group));
         });
 
     // litem.attr("href", "{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'" + sport + "','country' => '" + country + "', 'group' => '" + group + "'])}}");

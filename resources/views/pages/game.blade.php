@@ -12,11 +12,11 @@
             </script>
             <ul class="breadcrumb">
 
-                <li><a href="../../../index.html"><i class="sp sp50"></i><span class="hidden-480">{{$sportName}}</span></a>
+                <li><a href="#"><i class="sp sp50"></i><span class="hidden-480">{{$sportName}}</span></a>
                 </li>
-                <li><a href="../../index.html"><i class="fa flag flag-br"></i><span class="hidden-480">{{$countryName}}</span></a>
+                <li><a href="#"><i class="fa flag flag-br"></i><span class="hidden-480">{{$countryName}}</span></a>
                 </li>
-                <li><a href="../index.html">{{$group}}</a></li>
+                <li><a href="#">{{$group}}</a></li>
             </ul><!-- /.breadcrumb -->
         </div>
 
@@ -88,10 +88,10 @@
                                     </thead>
                                     {{--<tfoot>--}}
                                     {{--<tr class="average">--}}
-                                        {{--<td>Average</td>--}}
+                                    {{--<td>Average</td>--}}
                                     {{--</tr>--}}
                                     {{--<tr class="highest">--}}
-                                        {{--<td>Highest</td>--}}
+                                    {{--<td>Highest</td>--}}
                                     {{--</tr>--}}
                                     {{--</tfoot>--}}
                                     <tbody>
@@ -110,13 +110,13 @@
                                         </tr>
                                     @endforeach
                                     {{--<tr>--}}
-                                        {{--<td>--}}
-                                            {{--<div class="bm-block"><a rel="nofollow" class="name"--}}
-                                                                     {{--title="Go to BetAtHome website!" target="_blank"--}}
-                                                                     {{--href="/bookmakers/betathome/web/"><i--}}
-                                                            {{--class="bms bms-8"></i><span--}}
-                                                            {{--class="hidden-480">BetAtHome</span></a></div>--}}
-                                        {{--</td>--}}
+                                    {{--<td>--}}
+                                    {{--<div class="bm-block"><a rel="nofollow" class="name"--}}
+                                    {{--title="Go to BetAtHome website!" target="_blank"--}}
+                                    {{--href="/bookmakers/betathome/web/"><i--}}
+                                    {{--class="bms bms-8"></i><span--}}
+                                    {{--class="hidden-480">BetAtHome</span></a></div>--}}
+                                    {{--</td>--}}
                                     {{--</tr>--}}
                                     </tbody>
                                 </table>
@@ -130,10 +130,10 @@
                                     </thead>
                                     {{--<tfoot>--}}
                                     {{--<tr class="average">--}}
-                                        {{--<td></td>--}}
+                                    {{--<td></td>--}}
                                     {{--</tr>--}}
                                     {{--<tr class="highest">--}}
-                                        {{--<td></td>--}}
+                                    {{--<td></td>--}}
                                     {{--</tr>--}}
                                     {{--</tfoot>--}}
                                     <tbody>
@@ -160,18 +160,18 @@
                                     </thead>
                                     {{--<tfoot>--}}
                                     {{--<tr class="average">--}}
-                                        {{--<td></td>--}}
-                                        {{--<td></td>--}}
-                                        {{--<td></td>--}}
-                                        {{--<td></td>--}}
-                                        {{--<td class="odd-pay hidden-480">-</td>--}}
+                                    {{--<td></td>--}}
+                                    {{--<td></td>--}}
+                                    {{--<td></td>--}}
+                                    {{--<td></td>--}}
+                                    {{--<td class="odd-pay hidden-480">-</td>--}}
                                     {{--</tr>--}}
                                     {{--<tr class="highest">--}}
-                                        {{--<td></td>--}}
-                                        {{--<td></td>--}}
-                                        {{--<td></td>--}}
-                                        {{--<td></td>--}}
-                                        {{--<td class="odd-pay hidden-480">-</td>--}}
+                                    {{--<td></td>--}}
+                                    {{--<td></td>--}}
+                                    {{--<td></td>--}}
+                                    {{--<td></td>--}}
+                                    {{--<td class="odd-pay hidden-480">-</td>--}}
                                     {{--</tr>--}}
                                     {{--</tfoot>--}}
                                     <tbody>

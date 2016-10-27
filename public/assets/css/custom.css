@@ -71,3 +71,7 @@
     margin: -24px 10px 0 0;
 }
 /*Message text area*/
+
+.badge-primary{
+    display: none;
+}
