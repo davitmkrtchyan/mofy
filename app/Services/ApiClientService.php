@@ -84,7 +84,7 @@ class ApiClientService
     private function fillEventsFromSecondaryList($secondaryList, $missedEventsNamesSize, $events, $model)
     {
         if ($missedEventsNamesSize > 0) {
-            $typeName = $secondaryList[$missedEventsNamesSize - 1];
+            $typeName = collect($secondaryList)->get($missedEventsNamesSize - 1);
             $event = $events->get($typeName);
             if ($event != null) {
                 $model->put($typeName, $event);
