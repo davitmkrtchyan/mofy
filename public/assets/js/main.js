@@ -272,6 +272,24 @@ if(ace.cookie.get('gmt')){
 // $("#timezone a span").text("GMT " + getCookie("text"));
 
 
+$(document).ready(function(){
+    var dropdownToggle = $(".dropdown-toggle .menu-text");
+    var litem = $(".l-item");
+    var sport, country, group;
+    // sport = litem.closest(".highlight").find(".menu-text").text();
+    // country = litem.closest(".submenu").closest("li").find(".dropdown-toggle").contents().filter(function(){return this.nodeType == 3;}).text();
+    // group = litem.closest("a").contents().filter(function(){return this.nodeType == 3;}).text();
+    // console.log(group);
+        litem.each(function(i){
+            sport = $(this).closest(".highlight").find(".menu-text").text();
+            country = $(this).closest(".submenu").closest("li").find(".dropdown-toggle").contents().filter(function(){return this.nodeType == 3;}).text();
+            group = $(this).closest("a").contents().filter(function(){return this.nodeType == 3;}).text();
+            // console.log(sport + ", " + country + ", " + group + "\n");
+            $(this).attr("href", "\{\{url('/home/loadGamesByGroupAndCountry', ['sport'=>'" + $.trim(sport) + "','country' => '" + $.trim(country) + "', 'group' => '" + $.trim(group) + "'])\}\}");
+        });
 
+    // litem.attr("href", "{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'" + sport + "','country' => '" + country + "', 'group' => '" + group + "'])}}");
+
+});
 
 
