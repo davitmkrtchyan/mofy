@@ -5,15 +5,15 @@
         <div class="row">
             <div class="col-xs-12 col-md-9 widget-container-col ui-sortable">
 
-                <a class="btn btn-sm btn-primary" href="http://dev.bmbets.com/sports/League">
+                <a class="btn btn-sm btn-primary" href="#">
                     <i class="ace-icon fa fa-book"></i>
                     <span class="hidden-580">Beting Odds</span>
                 </a>
-                <a class="btn btn-sm btn-danger disabled" href="http://dev.bmbets.com/football/brazil/serie-a/tables">
+                <a class="btn btn-sm btn-danger disabled" href="#">
                     <i class="ace-icon fa fa-sitemap"></i>
                     <span class="hidden-580">Standings</span>
                 </a>
-                <a class="btn btn-sm btn-success disabled" href="http://dev.bmbets.com/football/brazil/serie-a/results-fixtures">
+                <a class="btn btn-sm btn-success disabled" href="#">
                     <i class="ace-icon fa fa-calendar"></i>
                     <span class="hidden-580">Results/Fixtures</span>
                 </a>
@@ -61,12 +61,12 @@
                                 </td>
                                 <td class="players-name-col">
                                     <div class="player-1 text-scroll">
-                                        <div class="img" style="background-image: url('http://res.bmbets.com/Images/teams/50/18x18/56164.png');"></div>
+                                        <div class="img"></div>
 
                                         <a title="Go to Fluminense - Figueirense odds comparisons" href="/home/loadByEventID/{{$game->id}}">{{$game->homeName}}</a>
                                     </div>
                                     <div class="player-2 text-scroll">
-                                        <div class="img" style="background-image: url('http://res.bmbets.com/Images/teams/50/18x18/56163.png');"></div>
+                                        <div class="img"></div>
                                         <a title="Go to Fluminense - Figueirense odds comparisons" href="/home/loadByEventID/{{$game->id}}">{{$game->awayName}}</a>
                                     </div>
                                 </td>
