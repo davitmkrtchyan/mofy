@@ -71,6 +71,7 @@
                                     </div>
                                 </td>
 
+
                                 <td class='odds-col4'><span class="mobile-bet-type">1</span>{{$game->oddsFirst}}</td>
                                 <td class='odds-col4'><span class="mobile-bet-type">X</span>{{$game->oddsCross}}</td>
                                 <td class='odds-col4'><span class="mobile-bet-type">2</span>{{$game->oddsSecond}}</td>
