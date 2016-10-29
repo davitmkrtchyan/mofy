@@ -61,7 +61,7 @@ class ApiClientService
             'start' => $events->events[0]->start,
             'eventDetails' => [
                 'Unibet' => ['url' => 'https://www.unibet.com', 'odd1' => $odd1, 'odd2' => $odd3 != null ? $odd2 : '-', 'odd3' => $odd3 == null ? $odd2 : $odd3],
-                'Xbet' => ['url' => 'https://www.1xbet.com/', 'odd1' => $matchedObject->oddsFirst, 'odd2' => $matchedObject->oddsCross, 'odd3' => $matchedObject->oddsSecond],
+                'Xbet' => ['url' => 'https://www.1xbet.com/', 'odd1' => $matchedObject ? $matchedObject->oddsFirst : '', 'odd2' => $matchedObject ? $matchedObject->oddsCross : '', 'odd3' => $matchedObject ? $matchedObject->oddsSecond : ''],
             ]
         ];
     }

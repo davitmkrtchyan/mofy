@@ -52,7 +52,12 @@ class Utils
         $name1Array = collect(explode(" ", $name1));
         $name2Array = collect(explode(" ", $name2));
         $intersections = $name1Array->intersect($name2Array);
-        return $intersections->count() > 0;
+
+        if ($intersections->count() > 0) {
+            return true;
+        } else {
+            return self::isInteractionExists($name1Array, $name2Array) || self:: isInteractionExists($name2Array, $name1Array);
+        }
     }
 
     public static function sliceEventsModel($eventsList)
@@ -62,5 +67,18 @@ class Utils
             $result['eventsGroups']->put($sportName, $events->slice(0, UnibetUtils::$GAMES_COUNT_PER_TAB));
         });
         return $result;
+    }
+
+    private static function isInteractionExists($name1Array, $name2Array)
+    {
+        $isLike = false;
+        foreach ($name1Array as $partOfName) {
+            foreach ($name2Array as $partOfNameSecond) {
+                if (preg_match('/' . str_replace('/', '\/', $partOfName) . '/', $partOfNameSecond) == true) {
+                    $isLike = true;
+                }
+            }
+        }
+        return $isLike;
     }
 }
