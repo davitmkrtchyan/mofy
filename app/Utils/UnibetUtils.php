@@ -77,6 +77,12 @@ class UnibetUtils
         }
     }
 
+    public static function createInstanceForSport($sportName)
+    {
+        $class = self::resolveSportNameClass($sportName);
+        return new $class();
+    }
+
     public static function getSecondarySportTypes()
     {
         return ['VOLLEYBALL', 'GOLF'];

@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Utils\UnibetUtils;
 use App\Utils\Utils;
 use App\Utils\XBetUtils;
+use Carbon\Carbon;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 
@@ -28,10 +29,8 @@ class ApiClientService
     public function getEventByID($id)
     {
         $client = new Client();
-
         $res = $client->get(UnibetUtils::buildEventDetailsURL($id));
         $events = Utils::decodeResponse($res->getBody());
-
 
         $oddsSize = sizeof($events->betoffers[0]->outcomes);
         $odd1 = Utils::convertAmericanOddToDecimal($events->betoffers[0]->outcomes[0]->oddsAmerican);
@@ -40,6 +39,19 @@ class ApiClientService
         if ($oddsSize == 3) {
             $odd3 = Utils::convertAmericanOddToDecimal($events->betoffers[0]->outcomes[2]->oddsAmerican);
         }
+
+        $unibetEvent = UnibetUtils::createInstanceForSport($events->events[0]->sport);
+        $unibetEvent->homeName = $events->events[0]->homeName;
+        $unibetEvent->awayName = $events->events[0]->awayName;
+        $unibetEvent->group = $events->events[0]->group;
+        $unibetEvent->sportName = $events->events[0]->path[0]->englishName;
+        $unibetEvent->countryName = $events->events[0]->path[1]->englishName;
+        $unibetEvent->start = Carbon::parse($events->events[0]->start);
+
+        $matchedObject = $this->getXbetEvents()['eventsGroups']->get($events->events[0]->sport)->first(function ($index, $xbetSportObject) use ($unibetEvent) {
+            return $unibetEvent->equals($xbetSportObject);
+        });
+
         return [
             'homeName' => $events->events[0]->homeName,
             'awayName' => $events->events[0]->awayName,
@@ -49,7 +61,7 @@ class ApiClientService
             'start' => $events->events[0]->start,
             'eventDetails' => [
                 'Unibet' => ['url' => 'https://www.unibet.com', 'odd1' => $odd1, 'odd2' => $odd3 != null ? $odd2 : '-', 'odd3' => $odd3 == null ? $odd2 : $odd3],
-                'Xbet' => ['url' => 'https://www.1xbet.com/', 'odd1' => '', 'odd2' => '', 'odd3' => ''],
+                'Xbet' => ['url' => 'https://www.1xbet.com/', 'odd1' => $matchedObject->oddsFirst, 'odd2' => $matchedObject->oddsCross, 'odd3' => $matchedObject->oddsSecond],
             ]
         ];
     }
@@ -164,7 +176,7 @@ class ApiClientService
                 if (strpos($xbetEvent->C, '.') !== false) {
                     $countryAndLeague = explode(".", $xbetEvent->C);
                     $country = $countryAndLeague[0];
-                    $league = $countryAndLeague[1];
+                    $league = sizeof($countryAndLeague) > 1 ? $countryAndLeague[1] : $xbetEvent->C;
                 }
                 $eventJson = array(
                     'event' => array(
@@ -173,7 +185,7 @@ class ApiClientService
                         'homeName' => $xbetEvent->H,
                         'awayName' => $xbetEvent->A,
                         'start' => '2016-10-29T09:24:50Z',//TODO
-                        'group' => $league ?: $xbetEvent->C,
+                        'group' => $league,
                         'sport' => XBetUtils::$SPORT_MAPPING_TO_UNIBET[$xbetEvent->S],
                         'path' => array(
                             array(),
