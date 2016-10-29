@@ -1,13 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: hgrigoryan
- * Date: 10/9/16
- * Time: 8:16 PM
- */
 
 namespace App\Utils\Events;
 
+
+use App\Utils\Utils;
 
 abstract class AbstractEvent
 {
@@ -23,4 +19,9 @@ abstract class AbstractEvent
     public $oddsSecond;
 
     public $countryName;
+
+    public function equals(AbstractEvent $event)
+    {
+        return $this->countryName == $event->countryName && Utils::isNamesLike($this->homeName, $event->homeName);
+    }
 }

@@ -8,44 +8,47 @@ use App\Utils\Events\HorseRacingEvent;
 use App\Utils\Events\IceHockeyEvent;
 use App\Utils\Events\TennisEvent;
 use App\Utils\Events\VolleyballEvent;
+use Carbon\Carbon;
 use Exception;
 
 class UnibetUtils
 {
     private static $EVENT_MAIN_PROPERTIES = ['id', 'name', 'group', 'start', 'homeName', 'awayName'];
     private static $EVENT_ODDS_TYPES_MAPPING = ['OT_ONE' => 'oddsFirst', 'OT_CROSS' => 'oddsCross', 'OT_TWO' => 'oddsSecond'];
-    const GAMES_COUNT_PER_TAB = 5;
+    public static $GAMES_COUNT_PER_TAB = 5;
 
-    public static function buildUnibetEventsObjects($model)
+    public static function buildUnibetEventsObjects($model, $useAmericanOdds = true)
     {
         $resultModel = collect();
-        $model->keys()->each(function ($events, $sportName) use ($resultModel) {
+        $model->keys()->each(function ($events, $sportName) use ($resultModel, $useAmericanOdds) {
             $resultModel->put($events, collect());
         });
-        $model->each(function ($events, $sportName) use ($resultModel) {
-
-            collect($events)->each(function ($event, $key) use ($sportName, $resultModel) {
-                if (sizeof($resultModel->get($sportName)) < self::GAMES_COUNT_PER_TAB) {
-                    $class = self::resolveSportNameClass($sportName);
-                    $sportObject = new $class();
-                    foreach (self::$EVENT_MAIN_PROPERTIES as $propertyName) {
-                        $val = array_key_exists($propertyName, $event->event) ? $event->event->{$propertyName} : '';
+        $model->each(function ($events, $sportName) use ($resultModel, $useAmericanOdds) {
+            collect($events)->each(function ($event, $key) use ($sportName, $resultModel, $useAmericanOdds) {
+                $class = self::resolveSportNameClass($sportName);
+                $sportObject = new $class();
+                foreach (self::$EVENT_MAIN_PROPERTIES as $propertyName) {
+                    $val = array_key_exists($propertyName, $event->event) ? $event->event->{$propertyName} : '';
+                    if ($propertyName == 'start') {
+                        $sportObject->{$propertyName} = Carbon::parse($val);
+                    } else {
                         $sportObject->{$propertyName} = $val;
                     }
-                    if (array_key_exists('mainBetOffer', $event) && array_key_exists('outcomes', $event->mainBetOffer)) {
-                        $asCollection = collect($event->mainBetOffer->outcomes);
-                        foreach (self::$EVENT_ODDS_TYPES_MAPPING as $oddType => $objectProperty) {
-                            $odd = $asCollection->first(function ($value, $key) use ($oddType) {
-                                return $key->type == $oddType;
-                            });
-                            if ($odd != null) {
-                                $sportObject->{$objectProperty} = Utils::convertAmericanOddToDecimal($odd->oddsAmerican);
-                            }
+                }
+                if (array_key_exists('mainBetOffer', $event) && array_key_exists('outcomes', $event->mainBetOffer)) {
+                    $asCollection = collect($event->mainBetOffer->outcomes);
+                    foreach (self::$EVENT_ODDS_TYPES_MAPPING as $oddType => $objectProperty) {
+                        $odd = $asCollection->first(function ($value, $key) use ($oddType) {
+                            return $key->type == $oddType;
+                        });
+                        if ($odd != null) {
+                            $oddVale = $useAmericanOdds ? Utils::convertAmericanOddToDecimal($odd->oddsAmerican) : Utils::getFractionalOddValue($odd->oddsFractional);
+                            $sportObject->{$objectProperty} = $oddVale;
                         }
                     }
-                    $sportObject->countryName = $event->event->path[1]->englishName;
-                    $resultModel->get($sportName)->push($sportObject);
                 }
+                $sportObject->countryName = $event->event->path[1]->englishName;
+                $resultModel->get($sportName)->push($sportObject);
             });
 
         });
