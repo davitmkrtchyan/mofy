@@ -144,9 +144,11 @@ class ApiClientService
                     return $unibetEventObject->equals($eventObject);
                 });
                 if ($xbetObject == null) {
-                    $resultListForSport->push($unibetEventObject);
+                    if($unibetEventObject->oddsFirst != null){
+                        $resultListForSport->push($unibetEventObject);
+                    }
                 } else {
-                    $unibetEventObject->oddsFirst > $xbetObject->oddsFirst ? $resultListForSport->push($unibetEventObject) : $resultListForSport->push($xbetObject);
+                    $unibetEventObject->oddsFirst != null && ($unibetEventObject->oddsFirst > $xbetObject->oddsFirst) ? $resultListForSport->push($unibetEventObject) : $resultListForSport->push($xbetObject);
                 }
             });
 
