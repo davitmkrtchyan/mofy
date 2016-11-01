@@ -426,6 +426,4 @@
                     </div>
                 </div>
 
-    @include('_menu')
-
 @endsection
