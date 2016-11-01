@@ -195,4 +195,5 @@
 
                 </div>
 
+    @include('_menu')
 @endsection

@@ -58,8 +58,10 @@ class HomeController extends Controller
 
     public function loadByEventID($id)
     {
-        $result = $this->apiClientService->getEventByID($id);
-        return $result ? view('pages.game', $result) : view('errors.503');
+        $model = null;
+        $model =$this->apiClientService->getEventByID($id);
+        $model['groups'] = $this->apiClientService->getAllGroups();
+        return $model ? view('pages.game', $model) : view('errors.503');
     }
 
     public function loadGamesByGroupAndCountry()

@@ -39,7 +39,7 @@
                                             <li class="">
                                             @foreach($leagueList as $leagueInformation)
                                                 <!--Change url parameters-->
-                                                    <a title="Primera Division" class="l-item"
+                                                    <a title="{{$leagueInformation['leagueName']}}" class="l-item"
                                                        href="{{ url('/home/loadGamesByGroupAndCountry')}}?sport={{$sportName}}&country={{$countryName}}&group={{$leagueInformation['leagueName']}}">
                                                         {{$leagueInformation['leagueName']}}
                                                         <span class="badge badge-primary"> {{$leagueInformation['boCount']}}</span>
