@@ -100,12 +100,15 @@
                                     @foreach($eventDetails as $event=>$key)
                                         <tr>
                                             <td>
-                                                <div class="bm-block"><a rel="nofollow" class="name"
-                                                                         title="Go to Betfair SP website!"
+                                                <div class="bm-block">
+                                                    <a rel="nofollow" class="name"
+                                                                         title="Go to website"
                                                                          target="_blank"
-                                                                         href="{{$key['url']}}"><i
-                                                                class="bms bms-109"></i><span
-                                                                class="hidden-480">{{$event}}</span></a></div>
+                                                                         href="{{$key['url']}}">
+                                                        <i class="bms bms-109"></i>
+                                                        <span class="hidden-480">{{$event}}</span>
+                                                    </a>
+                                                </div>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -179,8 +182,8 @@
                                         <tr>
                                             <td></td>
                                             <td class="odd-v up">{{$key['odd1']}}</td>
-                                            <td class="odd-v up">{{$key['odd2']}}</td>
-                                            <td class="odd-v down">{{$key['odd3']}}</td>
+                                            <td class="odd-v up">{{$key['odd3']}}</td>
+                                            <td class="odd-v down">{{$key['odd2']}}</td>
                                             <td class="odd-pay hidden-480">99.03%</td>
                                         </tr>
                                     @endforeach
