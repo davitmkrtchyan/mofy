@@ -47,6 +47,7 @@ class UnibetUtils
                         }
                     }
                 }
+                $sportObject->url = (array_key_exists('url', $event->event) && $event->event->url != null ? $event->event->url : self::buildGameURLByID($event->event->id));
                 $sportObject->countryName = $event->event->path[1]->englishName;
                 $resultModel->get($sportName)->push($sportObject);
             });
@@ -96,5 +97,10 @@ class UnibetUtils
     public static function buildEventDetailsURL($id)
     {
         return "http://api.unicdn.net/v1/feeds/sportsbook/betoffer/live/event/" . $id . ".json?app_id=71d8f332&app_key=d27be2607640ede866d069010a428842&outComeSortBy=lexical&outComeSortDir=asc";
+    }
+
+    public static function buildGameURLByID($eventId)
+    {
+        return "https://www.unibet.com/betting#event/" . $eventId;
     }
 }

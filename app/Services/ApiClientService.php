@@ -49,6 +49,7 @@ class ApiClientService
             $unibetEvent->sportName = $events->events[0]->path[0]->englishName;
             $unibetEvent->countryName = $events->events[0]->path[1]->englishName;
             $unibetEvent->start = Carbon::parse($events->events[0]->start);
+            $unibetEvent->url = UnibetUtils::buildGameURLByID($events->events[0]->id);
 
             $matchedObject = $this->getXbetEvents()['eventsGroups']->get($events->events[0]->sport)->first(function ($index, $xbetSportObject) use ($unibetEvent) {
                 return $unibetEvent->equals($xbetSportObject);
@@ -62,8 +63,8 @@ class ApiClientService
                 'countryName' => $events->events[0]->path[1]->englishName,
                 'start' => $events->events[0]->start,
                 'eventDetails' => [
-                    'Unibet' => ['url' => 'https://www.unibet.com', 'odd1' => $odd1, 'odd2' => $odd3 != null ? $odd2 : '-', 'odd3' => $odd3 == null ? $odd2 : $odd3],
-                    'Xbet' => ['url' => 'https://www.1xbet.com/', 'odd1' => $matchedObject ? $matchedObject->oddsFirst : '', 'odd2' => $matchedObject ? $matchedObject->oddsCross : '', 'odd3' => $matchedObject ? $matchedObject->oddsSecond : ''],
+                    'Unibet' => ['url' => $unibetEvent->url, 'odd1' => $odd1, 'odd2' => $odd3 != null ? $odd2 : '-', 'odd3' => $odd3 == null ? $odd2 : $odd3],
+                    'Xbet' => ['url' => $matchedObject->url, 'odd1' => $matchedObject ? $matchedObject->oddsFirst : '', 'odd2' => $matchedObject ? $matchedObject->oddsCross : '', 'odd3' => $matchedObject ? $matchedObject->oddsSecond : ''],
                 ]
             ];
         } catch (\Exception $e) {
@@ -168,9 +169,22 @@ class ApiClientService
         $unibetEvents = collect($this->getUnibetEvents());
         $currentSportEvents = $unibetEvents->get('eventsGroups')->get($sport);
         $filteredGames = $currentSportEvents->filter(function ($item) use ($country, $group) {
-            return $item->countryName == $country && $item->group == $group;
+            return $item->countryName == $country && in_array($item->group, $group);
         });
         return ['games' => $filteredGames];
+    }
+
+    public function loadGamesByGroupListAndCountry($sport, $country, $groups = array())
+    {
+
+//        $unibetEvents = collect($this->getUnibetEvents());
+//        $currentSportEvents = $unibetEvents->get('eventsGroups')->get($sport);
+//        $filteredGames = $currentSportEvents->filter(function ($item) use ($country, $groups) {
+//            return $item->countryName == $country && collect($groups)->contains($item->group);
+//        })->groupBy('group');
+//
+//
+//        return ['games' => $filteredGames];
     }
 
     private function convertXbetToUnibet($xbetEvents)
@@ -188,6 +202,7 @@ class ApiClientService
                 $eventJson = array(
                     'event' => array(
                         'id' => $xbetEvent->I,
+                        'url' => $xbetEvent->U,
                         'name' => $xbetEvent->H . " " . $xbetEvent->A,
                         'homeName' => $xbetEvent->H,
                         'awayName' => $xbetEvent->A,

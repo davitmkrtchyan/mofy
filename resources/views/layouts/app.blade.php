@@ -14,7 +14,7 @@
 <body class="no-skin">
 
 @include("components._header")
-
+<input id="loadCountForGroupsURL" type="hidden" disabled="disabled" value="{{action('HomeController@loadCountForGroups')}}"/>
 
 
 <!-- /section:basics/navbar.layout -->

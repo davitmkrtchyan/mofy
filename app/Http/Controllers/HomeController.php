@@ -63,4 +63,10 @@ class HomeController extends Controller
     {
         return view('testGame', $this->apiClientService->loadGamesByGroupAndCountry($sport, $country, $group));
     }
+
+    public function loadCountForGroups()
+    {
+//        $this->apiClientService->loadGamesByGroupListAndCountry(request('sportName'), request('countryName'), explode("+", request('groupsList')));
+//        return "ok";
+    }
 }

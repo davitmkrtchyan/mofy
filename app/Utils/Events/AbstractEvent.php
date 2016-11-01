@@ -19,6 +19,7 @@ abstract class AbstractEvent
     public $oddsSecond;
 
     public $countryName;
+    public $url;
 
     public function equals(AbstractEvent $event)
     {

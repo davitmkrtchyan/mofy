@@ -58,7 +58,7 @@
 <script src="{{ URL::asset('assets/js/jquery.multiple.select.js') }}"></script>
 <script src="{{ URL::asset('assets/js/main.js') }}"></script>
 <script src="{{ URL::asset('assets/js/jqcloud.js') }}"></script>
-
+<script src="{{ URL::asset('assets/js/event/loadEventByID.js') }}"></script>
 
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
