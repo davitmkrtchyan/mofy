@@ -87,8 +87,9 @@ class Utils
 
     public static function getAmericanOddByType($outcomes, $oddType)
     {
-        return collect($outcomes)->first(function ($index, $outcomeObject) use ($oddType) {
-            return $outcomeObject->type = $oddType;
-        })->oddsAmerican;
+        $matchedOutcome = collect($outcomes)->first(function ($index, $outcomeObject) use ($oddType) {
+            return $outcomeObject->type == $oddType;
+        });
+        return $matchedOutcome ? $matchedOutcome->oddsAmerican : null;
     }
 }
