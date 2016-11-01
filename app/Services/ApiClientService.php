@@ -35,12 +35,10 @@ class ApiClientService
             $events = Utils::decodeResponse($res->getBody());
 
             $oddsSize = sizeof($events->betoffers[0]->outcomes);
-            $odd1 = Utils::convertAmericanOddToDecimal($events->betoffers[0]->outcomes[0]->oddsAmerican);
-            $odd2 = Utils::convertAmericanOddToDecimal($events->betoffers[0]->outcomes[1]->oddsAmerican);
-            $odd3 = null;
-            if ($oddsSize == 3) {
-                $odd3 = Utils::convertAmericanOddToDecimal($events->betoffers[0]->outcomes[2]->oddsAmerican);
-            }
+
+            $odd1 = Utils::convertAmericanOddToDecimal(Utils::getAmericanOddByType($events->betoffers[0]->outcomes, "OT_ONE"));
+            $odd2 = Utils::convertAmericanOddToDecimal(Utils::getAmericanOddByType($events->betoffers[0]->outcomes, "OT_CROSS"));
+            $odd3 = $odd2 = Utils::convertAmericanOddToDecimal(Utils::getAmericanOddByType($events->betoffers[0]->outcomes, "OT_TWO"));
 
             $unibetEvent = UnibetUtils::createInstanceForSport($events->events[0]->sport);
             $unibetEvent->homeName = $events->events[0]->homeName;
@@ -63,7 +61,7 @@ class ApiClientService
                 'countryName' => $events->events[0]->path[1]->englishName,
                 'start' => $events->events[0]->start,
                 'eventDetails' => [
-                    'Unibet' => ['url' => $unibetEvent->url, 'odd1' => $odd1, 'odd2' => $odd3 != null ? $odd2 : '-', 'odd3' => $odd3 == null ? $odd2 : $odd3],
+                    'Unibet' => ['url' => $unibetEvent->url, 'odd1' => $odd1, 'odd2' => $odd2, 'odd3' => $odd3],
                     'Xbet' => ['url' => $matchedObject->url, 'odd1' => $matchedObject ? $matchedObject->oddsFirst : '', 'odd2' => $matchedObject ? $matchedObject->oddsCross : '', 'odd3' => $matchedObject ? $matchedObject->oddsSecond : ''],
                 ]
             ];

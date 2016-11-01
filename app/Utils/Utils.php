@@ -24,6 +24,9 @@ class Utils
 
     public static function convertAmericanOddToDecimal($value)
     {
+        if ($value == null) {
+            return '-';
+        }
         $result = $value[0] === '-' ? (100 / floatval(substr($value, 1)) + 1) : (floatval($value) / 100 + 1);
         return round($result, 2);
     }
@@ -80,5 +83,12 @@ class Utils
             }
         }
         return $isLike;
+    }
+
+    public static function getAmericanOddByType($outcomes, $oddType)
+    {
+        return collect($outcomes)->first(function ($index, $outcomeObject) use ($oddType) {
+            return $outcomeObject->type = $oddType;
+        })->oddsAmerican;
     }
 }
