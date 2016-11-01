@@ -19,7 +19,7 @@
 
 <!-- /section:basics/navbar.layout -->
 <div class="main-container container" id="main-container">
-    @include('components._left_sidebar')
+    @include('components._left_sidebar_row')
 
     <div class="main-content">
         <div class="main-content-inner">
