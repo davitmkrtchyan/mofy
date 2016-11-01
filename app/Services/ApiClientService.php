@@ -49,12 +49,12 @@ class ApiClientService
             ]),
             'HORSE_RACING' => collect([
                 'logo' => 's50',
-                'name' => '',
+                'name' => 'Horse Racing',
                 'countryList' => collect([])
             ]),
             'GOLF' => collect([
                 'logo' => 's50',
-                'name' => '',
+                'name' => 'Go',
                 'countryList' => collect([])
             ]),
             'VOLLEYBALL' => collect([
