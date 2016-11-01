@@ -16,7 +16,7 @@ function BindFilterEvents() {
         $("#f_FilterId").val($(this).parent().data("id"));
         var form = $(this).parents("form");
         if (form)form.submit();
-        return false;        
+        return false;
     });
 
     $(".btn-filter .delete-filter").on("click", function () {
@@ -25,7 +25,7 @@ function BindFilterEvents() {
         var success = function (data) {
             if (data.state == "ok") {
                 This.remove();
-                ShowModal("Remove Filter.", "Filter has be removed.");             
+                ShowModal("Remove Filter.", "Filter has be removed.");
             } else if (data.state == "error") {
                 ShowModal("Error", data.msg);
             }
@@ -66,7 +66,7 @@ function initGMT_Slider(curGMT, tz) {
                 location.href = location.href;
             },
             error: function () {}
-        });        
+        });
     });
 
     $("#slider-gmt").slider({
@@ -133,11 +133,11 @@ $(function () {
             type: "POST",
             url: src,
             data: null,
-            success: function (data) {               
+            success: function (data) {
                 ShowModal("Help", data);
             },
             error: function () {
-               
+
             }
         });
         return false;
@@ -148,7 +148,7 @@ $(function () {
         return false;
     });
 
-   /* $(".logo-container img").error(function () {       
+   /* $(".logo-container img").error(function () {
         var p = $(this).attr('src');
         p = p.replace(/\d+.png/g, "0.png");
         $(this).attr('src', p);
@@ -171,12 +171,12 @@ $(function () {
             close_active: false,
             max_load_wait: 50
         }
-        this.settings = $.extend({}, s, options);       
+        this.settings = $.extend({}, s, options);
 
         var $overlay = $();//empty set
         var self = this;
         var working = false;
-       
+
         ///////////////////////
         var fixPos = false;
         var loadTimer = null;
@@ -217,7 +217,7 @@ $(function () {
                 }, this.settings.max_load_wait * 1000);
         }
 
-        this.stop = function () {          
+        this.stop = function () {
             working = false;
             $overlay.remove();
             if (fixPos) {
@@ -282,12 +282,12 @@ $(document).ready(function(){
     // group = litem.closest("a").contents().filter(function(){return this.nodeType == 3;}).text();
     // console.log(group);
         litem.each(function(i){
-            sport = $(this).closest(".highlight").find(".menu-text").text();
-            country = $(this).closest(".submenu").closest("li").find(".dropdown-toggle").contents().filter(function(){return this.nodeType == 3;}).text();
-            group = $(this).closest("a").contents().filter(function(){return this.nodeType == 3;}).text();
-            // console.log(sport + ", " + country + ", " + group + "\n");
-
-            $(this).attr("href", "/home/loadGamesByGroupAndCountry/" + $.trim(sport.toUpperCase()) + "/" + $.trim(country) + "/" + $.trim(group));
+            // sport = $(this).closest(".highlight").find(".menu-text").text();
+            // country = $(this).closest(".submenu").closest("li").find(".dropdown-toggle").contents().filter(function(){return this.nodeType == 3;}).text();
+            // group = $(this).closest("a").contents().filter(function(){return this.nodeType == 3;}).text();
+            // // console.log(sport + ", " + country + ", " + group + "\n");
+            //
+            // $(this).attr("href", "/home/loadGamesByGroupAndCountry/" + $.trim(sport.toUpperCase()) + "/" + $.trim(country) + "/" + $.trim(group));
         });
 
     // litem.attr("href", "{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'" + sport + "','country' => '" + country + "', 'group' => '" + group + "'])}}");

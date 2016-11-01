@@ -202,7 +202,7 @@
                         </div>
 
                         {{--<a href="{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'FOOTBALL','country' => 'England', 'group' => 'League Two'])}}">--}}
-                            {{--<b style="color: #00b800">TEST</b>--}}
+                        {{--<b style="color: #00b800">TEST</b>--}}
                         {{--</a>--}}
 
                         <div class="widget-body">
@@ -424,6 +424,8 @@
                         </div>
 
                     </div>
-    </div>
+                </div>
+
+    @include('_menu')
 
 @endsection

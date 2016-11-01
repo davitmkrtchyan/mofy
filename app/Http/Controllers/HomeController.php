@@ -30,7 +30,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome', $this->apiClientService->getLiveEvents());
+        $model = null;
+        $model = $this->apiClientService->getLiveEvents();
+        $model['groups'] = $this->apiClientService->getAllGroups();
+        return view('welcome', $model);
     }
 
     public function game($p1, $p2)
@@ -59,9 +62,9 @@ class HomeController extends Controller
         return $result ? view('pages.game', $result) : view('errors.503');
     }
 
-    public function loadGamesByGroupAndCountry($sport, $country, $group)
+    public function loadGamesByGroupAndCountry()
     {
-        return view('testGame', $this->apiClientService->loadGamesByGroupAndCountry($sport, $country, $group));
+        return view('testGame', $this->apiClientService->loadGamesByGroupAndCountry(request('sport'), request('country'), request('group')));
     }
 
     public function loadCountForGroups()

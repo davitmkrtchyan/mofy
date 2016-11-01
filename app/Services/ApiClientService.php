@@ -2,17 +2,84 @@
 
 namespace App\Services;
 
+use App\Utils\Group\SportGroup;
 use App\Utils\UnibetUtils;
 use App\Utils\Utils;
 use App\Utils\XBetUtils;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\ClientException;
 
 class ApiClientService
 {
     const UNIBET_LIVE_EVENTS = "http://api.unicdn.net/v1/feeds/sportsbook/event/live.json?app_id=71d8f332&app_key=d27be2607640ede866d069010a428842";
     const XBET_LIVE_EVENTS = "https://betpartpart.com/PartLive/GetAllFeedGames?lng=en";
+    const UNIBET_ALL_GROUPS = "http://api.unicdn.net/v1/feeds/sportsbook/groups.json?app_id=71d8f332&app_key=d27be2607640ede866d069010a428842";
+
+    public function getAllGroups()
+    {
+        $client = new Client();
+        $res = $client->get(self::UNIBET_ALL_GROUPS);
+        $events = Utils::decodeResponse($res->getBody());
+        $result = $this->buildAllGroupsModel(collect($events->group->groups));
+        return $result['sportTypes'];
+    }
+
+    public function buildAllGroupsModel($groups)
+    {
+        $result = ['sportTypes' => collect([
+            'FOOTBALL' => collect([
+                'logo' => 's50',
+                'name' => '',
+                'countryList' => collect([])
+            ]),
+            'TENNIS' => collect([
+                'logo' => 's52',
+                'name' => '',
+                'countryList' => collect([])
+            ]),
+            'BASKETBALL' => collect([
+                'logo' => 's53',
+                'name' => '',
+                'countryList' => collect([])
+            ]),
+            'ICE_HOCKEY' => collect([
+                'logo' => 's51',
+                'name' => '',
+                'countryList' => collect([])
+            ]),
+            'HORSE_RACING' => collect([
+                'logo' => 's50',
+                'name' => '',
+                'countryList' => collect([])
+            ]),
+            'GOLF' => collect([
+                'logo' => 's50',
+                'name' => '',
+                'countryList' => collect([])
+            ]),
+            'VOLLEYBALL' => collect([
+                'logo' => 's54',
+                'name' => '',
+                'countryList' => collect([])
+            ]),
+        ])];
+        $groups->each(function ($groupBySportType, $index) use ($result) {
+            if (in_array($groupBySportType->sport, UnibetUtils::$SPORT_TYPES)) {
+                $result['sportTypes']->get($groupBySportType->sport)->put('name', $groupBySportType->name);
+                if (array_key_exists('groups', $groupBySportType)) {
+                    collect($groupBySportType->groups)->each(function ($groupForCountry, $index1) use ($result, $groupBySportType) {
+                        $result['sportTypes']->get($groupBySportType->sport)->get('countryList')->put($groupForCountry->name, collect([]));
+                        if (array_key_exists('groups', $groupForCountry)) {
+                            collect($groupForCountry->groups)->each(function ($leagueForCountry, $index2) use ($result, $groupBySportType, $groupForCountry) {
+                                $result['sportTypes']->get($groupBySportType->sport)->get('countryList')->get($groupForCountry->name)->push(collect(['id' => $leagueForCountry->id, 'leagueName' => $leagueForCountry->name, 'boCount' => $leagueForCountry->boCount]));
+                            });
+                        }
+                    });
+                }
+            }
+        });
+        return $result;
+    }
 
     public function getLiveEvents()
     {
@@ -166,7 +233,7 @@ class ApiClientService
         $unibetEvents = collect($this->getUnibetEvents());
         $currentSportEvents = $unibetEvents->get('eventsGroups')->get($sport);
         $filteredGames = $currentSportEvents->filter(function ($item) use ($country, $group) {
-            return $item->countryName == $country && in_array($item->group, $group);
+            return $item->countryName == $country && $item->group == $group;
         });
         return ['games' => $filteredGames];
     }
