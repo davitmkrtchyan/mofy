@@ -101,6 +101,6 @@ class UnibetUtils
 
     public static function buildGameURLByID($eventId)
     {
-        return "https://www.unibet.com/betting#event/" . $eventId;
+        return "https://www.unibet.com/betting#event/live/" . $eventId;
     }
 }

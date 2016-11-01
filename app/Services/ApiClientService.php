@@ -34,6 +34,7 @@ class ApiClientService
             $res = $client->get(UnibetUtils::buildEventDetailsURL($id));
             $events = Utils::decodeResponse($res->getBody());
 
+
             $odd1 = Utils::convertAmericanOddToDecimal(Utils::getAmericanOddByType($events->betoffers[0]->outcomes, "OT_ONE"));
             $odd2 = Utils::convertAmericanOddToDecimal(Utils::getAmericanOddByType($events->betoffers[0]->outcomes, "OT_CROSS"));
             $odd3 = Utils::convertAmericanOddToDecimal(Utils::getAmericanOddByType($events->betoffers[0]->outcomes, "OT_TWO"));
@@ -214,8 +215,8 @@ class ApiClientService
                     'mainBetOffer' => array(
                         'outcomes' => array(
                             array('type' => 'OT_ONE', 'oddsFractional' => @$xbetEvent->EE[0]->C, 'oddsAmerican' => ''),
-                            array('type' => 'OT_TWO', 'oddsFractional' => @$xbetEvent->EE[1]->C, 'oddsAmerican' => ''),
-                            array('type' => 'OT_CROSS', 'oddsFractional' => @$xbetEvent->EE[2]->C, 'oddsAmerican' => '')
+                            array('type' => 'OT_CROSS', 'oddsFractional' => @$xbetEvent->EE[1]->C, 'oddsAmerican' => ''),
+                            array('type' => 'OT_TWO', 'oddsFractional' => @$xbetEvent->EE[2]->C, 'oddsAmerican' => '')
                         )
                     )
                 );
