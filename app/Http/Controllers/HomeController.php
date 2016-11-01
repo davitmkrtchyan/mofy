@@ -64,10 +64,14 @@ class HomeController extends Controller
         return $model ? view('pages.game', $model) : view('errors.503');
     }
 
-    public function loadGamesByGroupAndCountry()
-    {
-        return view('testGame', $this->apiClientService->loadGamesByGroupAndCountry(request('sport'), request('country'), request('group')));
-    }
+//    public function loadGamesByGroupAndCountry()
+//    {
+//        return view('testGame', $this->apiClientService->loadGamesByGroupAndCountry(request('sport'), request('country'), request('group')));
+//    }
+    public function loadGamesByGroupAndCountry($sport, $country, $group)
+     {
+         return view('testGame', $this->apiClientService->loadGamesByGroupAndCountry($sport, $country, $group));
+     }
 
     public function loadCountForGroups()
     {
