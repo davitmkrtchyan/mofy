@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Mail;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -29,6 +30,7 @@ class AuthController extends Controller
      * @var string
      */
     protected $redirectTo = '/';
+    protected $req_data = [];
 
     /**
      * Create a new authentication controller instance.
@@ -63,10 +65,31 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+//        $this->req_data = array(
+//            'name' => $data['name'],
+//            'login' => $data['email'],
+//            'password' => $data['password']
+//        );
+
+        Mail::send('emails.greeting', $data, function($message) use ($data)
+        {
+            $message->from('infomofy@gmail.com', 'More Odds For You');
+
+            $message->to($data['email'], $data['name'])->subject('Thank You');
+        });
+//        Mail::send('emails.welcome', $data, function($message) use ($data)
+//        {
+//            $message->from('no-reply@site.com', "Site name");
+//            $message->subject("Welcome to site name");
+//            $message->to($data['email']);
+//        });
+
+        return $user;
     }
 }

@@ -1,17 +1,18 @@
 <div class="col-xs-12 col-md-3 widget-container-col ui-sortable">
+    <div class="username-block">
+        @if (Auth::guest())
 
-    @if (Auth::guest())
+            @include('components._login_form')
 
-        @include('components._login_form')
-
-    @else
-        <p>Hello, {{ Auth::user()->name }} </p>
-        <br>
-        <a href="{{ url('/logout') }}">
-            <i class="fa fa-btn fa-sign-out"></i>Logout
-        </a>
-        <br>
-    @endif
+        @else
+            <p>Hello, {{ Auth::user()->name }} </p>
+            <br>
+            <a href="{{ url('/logout') }}">
+                <i class="fa fa-btn fa-sign-out"></i>Logout
+            </a>
+            <br>
+        @endif
+    </div>
 
     <div id="adv-content-right" class="white">
         {{--Lorem Ipsum is simply dummy text of the printing and typesetting industry.--}}

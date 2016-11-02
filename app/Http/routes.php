@@ -13,6 +13,11 @@
 
 Route::get('/', 'HomeController@index');
 Route::auth();
+//Route::get('/sendmail', function(){
+//    return view('emails.greeting');
+//});
+
+
 
 Route::get('/home', 'HomeController@index');
 Route::get('/home/loadByEventID/{id}', 'HomeController@loadByEventID');

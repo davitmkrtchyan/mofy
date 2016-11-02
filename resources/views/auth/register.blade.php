@@ -125,9 +125,5 @@
         </div><!-- /.widget-body -->
     </div><!-- /.signup-box -->
     </form>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
+
 @endsection

@@ -10,6 +10,18 @@
 .main-content{
     background-color: #6e99ba;
 }
+.username-block{
+    text-align: center;
+    height: 92px;
+    padding-top: 15px;
+    margin-bottom: 22px;
+}
+#twitter-widget-0{
+    margin-top: 20px !important;
+}
+.forms-background{
+    background-color: #dfe0e2 !important;
+}
 .icon-container{
     position: relative;
 }
