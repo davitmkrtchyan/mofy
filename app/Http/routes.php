@@ -59,6 +59,7 @@ Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
         return view('admin.dashboard');
     } );
     Route::get('/bookmakers', 'AdminController@bookmakers' );
-    Route::post('/bookmakers/save', 'AdminController@bookmakersSave' );
+    Route::post('/bookmakers/edit/{id}', 'AdminController@bookmakersEdit' );
     Route::post('/bookmakers/add', 'AdminController@bookmakersAdd' );
+    Route::delete('/bookmakers/delete/{id}', 'AdminController@bookmakersDelete' );
 });
