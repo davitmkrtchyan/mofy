@@ -148,11 +148,11 @@ $(function () {
         return false;
     });
 
-   /* $(".logo-container img").error(function () {
-        var p = $(this).attr('src');
-        p = p.replace(/\d+.png/g, "0.png");
-        $(this).attr('src', p);
-    });*/
+    /* $(".logo-container img").error(function () {
+     var p = $(this).attr('src');
+     p = p.replace(/\d+.png/g, "0.png");
+     $(this).attr('src', p);
+     });*/
     $("#cheackall").click(function () { $(".user-bookmakers  input:checkbox").each(function () { if (!this.disabled) this.checked = true; }); });
     $("#uncheackall").click(function () { $(".user-bookmakers  input:checkbox").each(function () { if (!this.disabled) this.checked = false; }); });
 });
@@ -240,27 +240,27 @@ $(function () {
 });
 
 /*Custom cookie Save*/
-    var text = "";
-    var size = "";
-    function setCookie(key, value) {
-        var expires = new Date();
-        expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
-        document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
-    }
+var text = "";
+var size = "";
+function setCookie(key, value) {
+    var expires = new Date();
+    expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
+    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+}
 
-    function getCookie(key) {
-        var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
-        return keyValue ? keyValue[2] : null;
-    }
+function getCookie(key) {
+    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+    return keyValue ? keyValue[2] : null;
+}
 
-    $("#btnGMT").click(function(){
-        str = $("#slider-text").text();
-        text = str.slice(-6);
-        ace.cookie.set('gmt', text);
-        setCookie('text', text);
-        $("#timezone a span").text("GMT " + ace.cookie.get('gmt'));
-        // $("#timezone a span").text("GMT " + getCookie("text"));
-    });
+$("#btnGMT").click(function(){
+    str = $("#slider-text").text();
+    text = str.slice(-6);
+    ace.cookie.set('gmt', text);
+    setCookie('text', text);
+    $("#timezone a span").text("GMT " + ace.cookie.get('gmt'));
+    // $("#timezone a span").text("GMT " + getCookie("text"));
+});
 
 if(ace.cookie.get('gmt')){
     $("#timezone a span").text("GMT " + ace.cookie.get('gmt'));
@@ -281,16 +281,19 @@ $(document).ready(function(){
     // country = litem.closest(".submenu").closest("li").find(".dropdown-toggle").contents().filter(function(){return this.nodeType == 3;}).text();
     // group = litem.closest("a").contents().filter(function(){return this.nodeType == 3;}).text();
     // console.log(group);
-        litem.each(function(i){
-            // sport = $(this).closest(".highlight").find(".menu-text").text();
-            // country = $(this).closest(".submenu").closest("li").find(".dropdown-toggle").contents().filter(function(){return this.nodeType == 3;}).text();
-            // group = $(this).closest("a").contents().filter(function(){return this.nodeType == 3;}).text();
-            // // console.log(sport + ", " + country + ", " + group + "\n");
-            //
-            // $(this).attr("href", "/home/loadGamesByGroupAndCountry/" + $.trim(sport.toUpperCase()) + "/" + $.trim(country) + "/" + $.trim(group));
-        });
+    litem.each(function(i){
+        // sport = $(this).closest(".highlight").find(".menu-text").text();
+        // country = $(this).closest(".submenu").closest("li").find(".dropdown-toggle").contents().filter(function(){return this.nodeType == 3;}).text();
+        // group = $(this).closest("a").contents().filter(function(){return this.nodeType == 3;}).text();
+        // // console.log(sport + ", " + country + ", " + group + "\n");
+        //
+        // $(this).attr("href", "/home/loadGamesByGroupAndCountry/" + $.trim(sport.toUpperCase()) + "/" + $.trim(country) + "/" + $.trim(group));
+    });
 
     // litem.attr("href", "{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'" + sport + "','country' => '" + country + "', 'group' => '" + group + "'])}}");
+
+
+
 
 });
 

@@ -31,6 +31,8 @@ Route::get('/serie/{s1}', 'HomeController@serie');
 Route::get('/today/{t1}', 'HomeController@today');
 Route::get('/bookmaker/{b1}', 'HomeController@bookmaker');
 
+Route::get('/ratings', 'HomeController@ratings');
+
 
 Route::get('/faq',function(){
     return view('pages.faq');
@@ -49,4 +51,11 @@ Route::get('/contact-us',function(){
 });
 Route::get('/site-notice',function(){
     return view('pages.sitenotice');
+});
+
+Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
+{
+    Route::get('/', 'AdminController@index' );
+    Route::get('/stars', 'AdminController@stars' );
+    Route::post('/stars/save', 'AdminController@starsSave' );
 });

@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Rating;
 use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Contracts\View\View;
 
 class HomeController extends Controller
 {
@@ -34,6 +37,12 @@ class HomeController extends Controller
         $model = $this->apiClientService->getLiveEvents();
         $model['groups'] = $this->apiClientService->getAllGroups();
         return view('welcome', $model);
+    }
+
+    public function ratings()
+    {
+        $rate = DB::table('ratings')->groupBy('bookmaker')->get();
+        return view('pages.ratings', array('rate' => $rate));
     }
 
     public function game($p1, $p2)

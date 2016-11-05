@@ -87,3 +87,28 @@
 .badge-primary{
     display: none;
 }
+
+.bookmakersBlock, .bookmakerComments, .bookmakerProperties, .bookmakerRating, .bookmakerName, .bookmakerNumber{
+    border: 1px solid white;
+    height: 200px;
+}
+.bookmakersBlock{
+    background-color: #FFE08D;
+}
+.bookmakerRatingText{
+    line-height: 150px;
+    font-size: 30px;
+    text-align: center;
+}
+#rateYo{
+    margin: 0 auto;
+}
+.bookmakerName{
+    padding-top: 65px;
+    text-align: center;
+}
+.bookmakerNumber{
+    line-height: 200px;
+    font-size: 20px;
+    text-align: center;
+}

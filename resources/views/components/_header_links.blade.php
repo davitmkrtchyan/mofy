@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="{{ URL::asset('assets/css/Bookmaker.css@v1') }}" />
 <link rel="stylesheet" href="{{ URL::asset('assets/css/content.css') }}"/>
 <link rel="stylesheet" href="{{ URL::asset('assets/css/custom.css') }}"/>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.2.0/jquery.rateyo.min.css">
 <!--[if lte IE 9]>
 <link rel="stylesheet" href="{{ URL::asset('/assets/css/ace-part2.css" class="ace-main-stylesheet') }}" />
 <![endif]-->
@@ -34,6 +34,7 @@
 <script src="{{ URL::asset('assets/js/ace-extra.js') }}"></script>
 <script src="{{ URL::asset('assets/js/jquery.js') }}"></script>
 <script src="{{ URL::asset('assets/js/jquery-ui.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.2.0/jquery.rateyo.min.js"></script>
 <script src="{{ URL::asset('assets/js/jquery.bmbets.favourite.js') }}"></script>
 <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 <!--[if lte IE 8]>
