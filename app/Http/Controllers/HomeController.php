@@ -41,8 +41,10 @@ class HomeController extends Controller
 
     public function bookmakers()
     {
-        $rate = DB::table('ratings')->groupBy('bookmaker')->get();
-        return view('pages.ratings', array('rate' => $rate));
+        $bookmakers = DB::table('ratings')->groupBy('bookmaker')->get();
+        $bookmakersCount = count($bookmakers);
+        $count = 0;
+        return view('pages.ratings', array('bookmakers' => $bookmakers, 'bookmakersCount' => $bookmakersCount, 'count' => $count));
     }
 
     public function game($p1, $p2)

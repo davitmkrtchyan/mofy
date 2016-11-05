@@ -59,9 +59,10 @@ class AdminController extends Controller
     public function bookmakersAdd(Request $request)
     {
 
-//        echo('<pre>');
-//        print_r($request['bookmakerLogo']);
-//        die();
+        if(!$this->ratingCheck($request->bookmakerRating)){
+            return redirect('/admin/bookmakers');
+        }
+
         $bookmaker = new Rating;
 
         $file = array('image' => Input::file('bookmakerLogo'));
@@ -75,7 +76,6 @@ class AdminController extends Controller
         }
         else {
             // checking file is valid.
-
             $destinationPath = 'assets/images/bm/admin-bookmakers/'; // upload path
             $extension = Input::file('bookmakerLogo')->getClientOriginalExtension(); // getting image extension
             $fileName = rand(11111,99999).'.'.$extension; // renameing image
@@ -95,6 +95,10 @@ class AdminController extends Controller
 
     public function bookmakersEdit($id, Request $request)
     {
+        if(!$this->ratingCheck($request->bookmakerRating)){
+            return redirect('/admin/bookmakers');
+        }
+
         DB::table('ratings')
             ->where('id', $id)
             ->update(['rating' => $request['bookmakerRating']]);
@@ -125,6 +129,14 @@ class AdminController extends Controller
         //$rate->save();
 
         return $this->bookmakers();
+    }
+
+    public function ratingCheck($rate)
+    {
+        if($rate < 0 || $rate > 5){
+            return false;
+        }
+        return true;
     }
 
 }

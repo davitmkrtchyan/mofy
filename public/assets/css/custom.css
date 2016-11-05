@@ -39,6 +39,9 @@
 #accordion-wrapper{
     padding-top: 60px;
 }
+#bookmakers-wrapper{
+    padding-top: 30px;
+}
 #accordion{
     visibility: hidden;
 }
@@ -88,6 +91,17 @@
     display: none;
 }
 
+
+.bookmakers-wrapper-title{
+    font-size: 31px;
+    color: gainsboro;
+    float: left;
+    margin-right: 100px;
+}
+#bookmakers-wrapper hr{
+    color: white;
+    border-top: 1px dotted white;
+}
 .bookmakersBlock, .bookmakerComments, .bookmakerProperties, .bookmakerRating, .bookmakerName, .bookmakerNumber{
     border: 1px solid white;
     height: 200px;
@@ -111,6 +125,29 @@
     line-height: 200px;
     font-size: 20px;
     text-align: center;
+}
+
+.blue-butt{
+    margin-top: 30px;
+    background: darkblue;
+    color: white;
+    border: 0;
+    outline: 0;
+    width: 100%;
+    padding: 10px;
+}
+.bookmaker-sort{
+    width: 150px !important;
+}
+.bookmakerPropertiesVotes{
+    background-color: darkorange;
+    color: white;
+    padding: 0 10px;
+}
+.bookmakerPropertiesList{
+    list-style-type: none;
+    margin-top: 35px;
+    width: 100%;
 }
 
 /*Admin panel*/
