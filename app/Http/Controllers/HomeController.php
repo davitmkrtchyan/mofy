@@ -39,7 +39,7 @@ class HomeController extends Controller
         return view('welcome', $model);
     }
 
-    public function ratings()
+    public function bookmakers()
     {
         $rate = DB::table('ratings')->groupBy('bookmaker')->get();
         return view('pages.ratings', array('rate' => $rate));

@@ -31,7 +31,7 @@ Route::get('/serie/{s1}', 'HomeController@serie');
 Route::get('/today/{t1}', 'HomeController@today');
 Route::get('/bookmaker/{b1}', 'HomeController@bookmaker');
 
-Route::get('/ratings', 'HomeController@ratings');
+Route::get('/bookmakers', 'HomeController@bookmakers');
 
 
 Route::get('/faq',function(){
@@ -55,7 +55,10 @@ Route::get('/site-notice',function(){
 
 Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
 {
-    Route::get('/', 'AdminController@index' );
-    Route::get('/stars', 'AdminController@stars' );
-    Route::post('/stars/save', 'AdminController@starsSave' );
+    Route::get('/', function(){
+        return view('admin.dashboard');
+    } );
+    Route::get('/bookmakers', 'AdminController@bookmakers' );
+    Route::post('/bookmakers/save', 'AdminController@bookmakersSave' );
+    Route::post('/bookmakers/add', 'AdminController@bookmakersAdd' );
 });

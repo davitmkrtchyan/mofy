@@ -112,3 +112,8 @@
     font-size: 20px;
     text-align: center;
 }
+
+/*Admin panel*/
+#editBookmakerForm, #deleteBookmakerForm{
+    float: right;
+}

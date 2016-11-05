@@ -107,7 +107,7 @@
 
             <ul class="submenu">
                 <li class="hover">
-                    <a href="/">
+                    <a href="/bookmakers">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Bookmakers
                     </a>

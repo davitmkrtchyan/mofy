@@ -38,21 +38,41 @@ class AdminController extends Controller
         return view('admin.dashboard');
     }
 
-    public function stars()
+    public function bookmakers()
     {
-        return view('admin.stars');
+        $bookmakers = DB::table('ratings')->groupBy('bookmaker')->get();
+
+        $bookmakersCount = count($bookmakers);
+
+        return view('admin.pages.bookmakers', [
+            'bookmakers' => $bookmakers,
+            'bookmakersCount' => $bookmakersCount
+        ]);
     }
 
-    public function starsSave(Request $request)
+    public function bookmakersAdd(Request $request)
+    {
+        $bookmaker = new Rating;
+        $bookmaker->bookmaker = $request->bookmakerName;
+        $bookmaker->rating = $request->bookmakerRating;
+        $bookmaker->save();
+
+        return redirect('/admin/bookmakers');
+    }
+
+
+    public function bookmakersSave(Request $request)
     {
 
-            DB::table('ratings')
-                ->where('bookmaker', $request['bookmaker'])
-                ->update(['rating' => $request['rating'] ]);
+        DB::table('ratings')
+            ->where('bookmaker', $request['bookmaker'])
+            ->update(['rating' => $request['rating'] ]);
 
+        //$rate->bookmaker = $request['bookmaker'];
+        //$rate->rating = $request['rating'];
+        //$rate->save();
 
-
-        return $this->stars();
+        return $this->bookmakers();
     }
 
 }
