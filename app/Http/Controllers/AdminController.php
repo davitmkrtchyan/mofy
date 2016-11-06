@@ -88,6 +88,23 @@ class AdminController extends Controller
 
         $bookmaker->bookmaker = $request->bookmakerName;
         $bookmaker->rating = $request->bookmakerRating;
+
+        $bookmaker->review = $request->bookmakerReview;
+        $bookmaker->bonuses = $request->bookmakerBonuses;
+        $bookmaker->advantages = $request->bookmakerAdvantages;
+        $bookmaker->languages = $request->bookmakerLanguages;
+        $bookmaker->depositmethods = $request->bookmakerDeposit;
+        $bookmaker->withdrawalmethods = $request->bookmakerWithdrawal;
+        $bookmaker->livebetting = $request->bookmakerLivebetting;
+        $bookmaker->livestreaming = $request->bookmakerLivestreaming;
+        $bookmaker->casino = $request->bookmakerCasino;
+        $bookmaker->poker = $request->bookmakerPoker;
+        $bookmaker->livechat = $request->bookmakerLivechat;
+        $bookmaker->liveemail = $request->bookmakerLiveemail;
+        $bookmaker->telephone = $request->bookmakerTelephone;
+        $bookmaker->currencieslimits = $request->bookmakerCurrencieslimits;
+        $bookmaker->affiliatelink = $request->affiliatelink;
+
         $bookmaker->save();
 
         return redirect('/admin/bookmakers');

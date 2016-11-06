@@ -29,9 +29,10 @@ Route::get('login', function () {
 Route::get('/game/{p1}-{p2}', 'HomeController@game');
 Route::get('/serie/{s1}', 'HomeController@serie');
 Route::get('/today/{t1}', 'HomeController@today');
-Route::get('/bookmaker/{b1}', 'HomeController@bookmaker');
+//Route::get('/bookmaker/{b1}', 'HomeController@bookmaker');
 
 Route::get('/bookmakers', 'HomeController@bookmakers');
+Route::get('/bookmakers/{id}', 'HomeController@bookmakersDetails');
 
 
 Route::get('/faq',function(){

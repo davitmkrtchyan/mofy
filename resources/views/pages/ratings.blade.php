@@ -20,9 +20,10 @@
                     <div class="col-xs-12 col-md-12 bookmakersBlock">
                         <div class="col-xs-1 col-md-1 bookmakerNumber">{{ ++$count }}</div>
                         <div class="col-xs-3 col-md-3 bookmakerName">
-                            <img src="{{ URL::asset('assets/images/bm/admin-bookmakers/'.$bookmaker->logo) }}" alt="{{$bookmaker->logo}}"
-                            style="width: 100%;; height: auto;">
-
+                            <a href="/bookmakers/{{$bookmaker->id}}">
+                                <img src="{{ URL::asset('assets/images/bm/admin-bookmakers/'.$bookmaker->logo) }}" alt="{{$bookmaker->logo}}"
+                                style="width: 100%;; height: auto;">
+                            </a>
                             <p><br>{{ $bookmaker->bookmaker }}</p>
                         </div>
                         <div class="col-xs-2 col-md-2 bookmakerRating">

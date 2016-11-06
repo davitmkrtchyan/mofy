@@ -16,6 +16,22 @@ class CreateRatingTable extends Migration
             $table->increments('id');
             $table->string('bookmaker');
             $table->string('rating');
+            $table->string('logo');
+            $table->text('review');
+            $table->text('bonuses');
+            $table->text('advantages');
+            $table->text('languages');
+            $table->text('depositmethods');
+            $table->text('withdrawalmethods');
+            $table->string('livebetting');
+            $table->string('livestriming');
+            $table->string('casino');
+            $table->string('poker');
+            $table->string('livechat');
+            $table->string('liveemail');
+            $table->string('telephone');
+            $table->text('currencieslimits');
+            $table->string('affiliatelink');
             $table->timestamps();
         });
     }

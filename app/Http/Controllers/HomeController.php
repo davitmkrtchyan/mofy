@@ -47,6 +47,15 @@ class HomeController extends Controller
         return view('pages.ratings', array('bookmakers' => $bookmakers, 'bookmakersCount' => $bookmakersCount, 'count' => $count));
     }
 
+    public function bookmakersDetails($id)
+    {
+        $bm =  Rating::find($id);
+
+        return view('pages.bookmakerDetails', [
+            'bookmaker' => $bm
+        ]);
+    }
+
     public function game($p1, $p2)
     {
         return view('pages.game', compact('p1', 'p2'));

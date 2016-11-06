@@ -150,6 +150,24 @@
     width: 100%;
 }
 
+.bookmakerDetailsTitle{
+    background: lightgray;
+}
+.bookmakerDetailsIconChecked{
+    color: green;
+    font-size: 30px;
+}
+.bookmakerDetailsIconNotchecked{
+    color: darkred;
+    font-size: 30px;
+}
+.bookmakerLogo{
+    margin: 10px 0 20px 0;
+}
+.bookmakerDetailsContent{
+    margin: 10px;
+}
+
 /*Admin panel*/
 #editBookmakerForm, #deleteBookmakerForm{
     float: right;
