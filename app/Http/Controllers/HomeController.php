@@ -51,6 +51,9 @@ class HomeController extends Controller
     {
         $bm =  Rating::find($id);
 
+        if(!$bm){
+            return redirect('bookmakers');
+        }
         return view('pages.bookmakerDetails', [
             'bookmaker' => $bm
         ]);
