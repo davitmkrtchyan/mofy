@@ -133,6 +133,7 @@
                             </thead>
                             <!-- Table Body -->
                             <tbody>
+
                             @foreach ($bookmakers as $bookmaker)
                                 <tr>
                                     <!-- Name -->
@@ -174,22 +175,99 @@
                                             </button>
                                             <div class="modal fade bd-example-modal-md-{{ $bookmaker->id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-md">
-                                                    <div class="modal-content" style="height: 200px;">
+                                                    <div class="modal-content">
                                                         <div class="modal-header">
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                             <h4 class="modal-title" id="exampleModalLabel">Edit rating</h4>
                                                         </div>
+
                                                         <div class="modal-body">
-                                                            <form method="post" action="/admin/bookmakers/edit/{{ $bookmaker->id }}" enctype="multipart/form-data">
+                                                            <form method="POST" action="/admin/bookmakers/edit/{{ $bookmaker->id }}" enctype="multipart/form-data">
                                                                 {{ csrf_field() }}
-                                                                <div class="col-md-5 form-group">
+                                                                <div class="form-group">
+                                                                    <label for="bookmakerName" class="form-control-label">Bookmaker:</label>
+                                                                    <input type="text" class="form-control" id="bookmakerName" name="bookmakerName" value="{{ $bookmaker->bookmaker }}" required>
+                                                                </div>
+                                                                <div class="col-md-8 form-group">
+                                                                    <label for="bookmakerLogo" class="form-control-label">Logo:</label>
+                                                                    <input type="file" class="form-control" id="bookmakerLogo" name="bookmakerLogo">
+                                                                </div>
+                                                                <div class="col-md-4 form-group">
                                                                     <label for="bookmakerRating" class="form-control-label">Rating (0 to 5.0):</label>
-                                                                    <input type="text" class="form-control" id="bookmakerRating" name="bookmakerRating" required>
+                                                                    <input type="text" class="form-control" id="bookmakerRating" name="bookmakerRating" value="{{ $bookmaker->rating }}" required>
                                                                 </div>
 
-                                                                <div class="col-md-12 align-right">
+                                                                <!--Description-->
+                                                                <div class="col-md-12 form-group">
+                                                                    <label for="bookmakerReview" class="form-control-label">Review:</label>
+                                                                    <textarea class="form-control" id="bookmakerReview" name="bookmakerReview">{{ $bookmaker->review }}</textarea>
+                                                                </div>
+                                                                <div class="col-md-12 form-group">
+                                                                    <label for="bookmakerBonuses" class="form-control-label">Bonuses:</label>
+                                                                    <textarea class="form-control" id="bookmakerBonuses" name="bookmakerBonuses">{{ $bookmaker->bonuses }}</textarea>
+                                                                </div>
+                                                                <div class="col-md-12 form-group">
+                                                                    <label for="bookmakerAdvantages" class="form-control-label">Advantages:</label>
+                                                                    <textarea class="form-control" id="bookmakerAdvantages" name="bookmakerAdvantages">{{ $bookmaker->advantages }}</textarea>
+                                                                </div>
+                                                                <div class="col-md-12 form-group">
+                                                                    <label for="bookmakerLanguages" class="form-control-label">Languages:</label>
+                                                                    <textarea class="form-control" id="bookmakerLanguages" name="bookmakerLanguages">{{ $bookmaker->languages }}</textarea>
+                                                                </div>
+                                                                <div class="col-md-12 form-group">
+                                                                    <label for="bookmakerDeposit" class="form-control-label">Deposit methods:</label>
+                                                                    <textarea class="form-control" id="bookmakerDeposit" name="bookmakerDeposit">{{ $bookmaker->depositmethods }}</textarea>
+                                                                </div>
+                                                                <div class="col-md-12 form-group">
+                                                                    <label for="bookmakerWithdrawal" class="form-control-label">Withdrawal methods:</label>
+                                                                    <textarea class="form-control" id="bookmakerWithdrawal" name="bookmakerWithdrawal">{{ $bookmaker->withdrawalmethods }}</textarea>
+                                                                </div>
+                                                                <div class="col-md-12 row">
+                                                                    <div class="col-md-3 form-group">
+                                                                        <label for="bookmakerLivebetting" class="form-control-label">Live betting:</label><br>
+                                                                        <input type="checkbox" class="" id="bookmakerLivebetting" name="bookmakerLivebetting" {{ $bookmaker->livebetting == 'on' ? 'checked' : '' }}>
+                                                                    </div>
+                                                                    <div class="col-md-3 form-group">
+                                                                        <label for="bookmakerLivestreaming" class="form-control-label">Live streaming:</label><br>
+                                                                        <input type="checkbox" class="" id="bookmakerLivestreaming" name="bookmakerLivestreaming" {{ $bookmaker->livestreaming == 'on' ? 'checked' : '' }}>
+                                                                    </div>
+                                                                    <div class="col-md-3 form-group">
+                                                                        <label for="bookmakerCasino" class="form-control-label">Casino:</label><br>
+                                                                        <input type="checkbox" class="" id="bookmakerCasino" name="bookmakerCasino" {{ $bookmaker->casino == 'on' ? 'checked' : '' }}>
+                                                                    </div>
+                                                                    <div class="col-md-3 form-group">
+                                                                        <label for="bookmakerPoker" class="form-control-label">Poker:</label><br>
+                                                                        <input type="checkbox" class="" id="bookmakerPoker" name="bookmakerPoker" {{ $bookmaker->poker == 'on' ? 'checked' : '' }}>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 row">
+                                                                    <div class="col-md-3 form-group">
+                                                                        <label for="bookmakerLivechat" class="form-control-label">Live chat:</label><br>
+                                                                        <input type="checkbox" class="" id="bookmakerLivechat" name="bookmakerLivechat" {{ $bookmaker->livechat == 'on' ? 'checked' : '' }}>
+                                                                    </div>
+                                                                    <div class="col-md-3 form-group">
+                                                                        <label for="bookmakerLiveemail" class="form-control-label">Live email:</label><br>
+                                                                        <input type="checkbox" class="" id="bookmakerLiveemail" name="bookmakerLiveemail" {{ $bookmaker->liveemail == 'on' ? 'checked' : '' }}>
+                                                                    </div>
+                                                                    <div class="col-md-3 form-group">
+                                                                        <label for="bookmakerTelephone" class="form-control-label">Telephone:</label><br>
+                                                                        <input type="checkbox" class="" id="bookmakerTelephone" name="bookmakerTelephone" {{ $bookmaker->telephone == 'on' ? 'checked' : '' }}>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 form-group">
+                                                                    <label for="bookmakerCurrencieslimits" class="form-control-label">Currencies Limits:</label>
+                                                                    <input type="text" class="form-control" id="bookmakerCurrencieslimits" name="bookmakerCurrencieslimits" value="{{ $bookmaker->currencieslimits }}">
+                                                                </div>
+                                                                <div class="col-md-12 form-group">
+                                                                    <label for="affiliatelink" class="form-control-label">Affiliate link:</label>
+                                                                    <input type="text" class="form-control" id="affiliatelink" name="affiliatelink" value="{{ $bookmaker->affiliatelink }}">
+                                                                </div>
+
+                                                                <!--End description-->
+
+                                                                <div class="align-right">
                                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                                     <button type="submit" class="btn btn-primary">Submit</button>
                                                                 </div>

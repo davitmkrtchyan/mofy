@@ -36,6 +36,11 @@
           <span>Bookmakers</span>
         </a>
       </li>
+      <li class="active">
+        <a href="/admin/slider">
+          <span>Slider</span>
+        </a>
+      </li>
       {{--<li>--}}
         {{--<a href="#">--}}
           {{--<span>Another Link</span>--}}

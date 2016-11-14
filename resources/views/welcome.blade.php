@@ -190,13 +190,15 @@
                     <div class="widget-box transparent">
                         <div class="alert">
                             <!-- Slideshow 1 -->
-                            <ul class="rslides" id="slider1">
-                                <li><a href="#"><img src="{{ URL::asset('assets/images/slider/1.jpg') }}" alt=""></a>
-                                </li>
-                                <li><a href="#"><img src="{{ URL::asset('assets/images/slider/2.jpg') }}" alt=""></a>
-                                </li>
-                                <li><a href="#"><img src="{{ URL::asset('assets/images/slider/3.jpg') }}" alt=""></a>
-                                </li>
+                            <ul class="rslides" id="slider1" style="height: 300px;">
+                                @foreach($sliders as $slider)
+                                    <li>
+                                        <a href="{{$slider->gameLink}}">
+                                            <img src="{{ URL::asset('assets/images/bm/admin-slider/'.$slider->imageName) }}" alt="">
+                                        </a>
+                                    </li>
+                                @endforeach
+
                             </ul>
 
                         </div>
@@ -208,7 +210,7 @@
                         <div class="widget-body">
                             <div class="widget-main no-padding main-table-wrapper table-tab">
                                 <ul class="nav nav-tabs sports-tab" role="tablist">
-                                    @foreach($eventsGroups as $eventGroupName=>$eventGroupContent)
+                                    @foreach($model['eventsGroups'] as $eventGroupName=>$eventGroupContent)
                                         <?php
                                         $sportClass = \App\Utils\UnibetUtils::resolveSportNameClass($eventGroupName);
                                         $properties = $sportClass::getViewProperties();
@@ -228,7 +230,7 @@
 
                                 <div class="tab-content">
 
-                                    @foreach($eventsGroups as $eventGroupName=>$eventGroupContent)
+                                    @foreach($model['eventsGroups'] as $eventGroupName=>$eventGroupContent)
                                         <?php
                                         $sportClass = \App\Utils\UnibetUtils::resolveSportNameClass($eventGroupName);
                                         $properties = $sportClass::getViewProperties();

@@ -36,7 +36,9 @@ class HomeController extends Controller
         $model = null;
         $model = $this->apiClientService->getLiveEvents();
         $model['groups'] = $this->apiClientService->getAllGroups();
-        return view('welcome', $model);
+
+        $sliders = DB::table('sliders')->orderBy('created_at', 'desc')->get();
+        return view('welcome')->with('model', $model)->with('sliders', $sliders);
     }
 
     public function bookmakers()

@@ -16,9 +16,11 @@
 
 
 
-                    @foreach($bookmakers as $bookmaker)
+                    @foreach($bookmakers->items() as $bookmaker)
                     <div class="col-xs-12 col-md-12 bookmakersBlock">
-                        <div class="col-xs-1 col-md-1 bookmakerNumber">{{ ++$count }}</div>
+                        <div class="col-xs-1 col-md-1 bookmakerNumber">
+                            {{ ++$count }}
+                        </div>
                         <div class="col-xs-3 col-md-3 bookmakerName">
                             <a href="/bookmakers/{{$bookmaker->id}}">
                                 <img src="{{ URL::asset('assets/images/bm/admin-bookmakers/'.$bookmaker->logo) }}" alt="{{$bookmaker->logo}}"
@@ -92,6 +94,9 @@
                         </div>
                     </div>
                         @endforeach
+                    <div class="col-md-12 align-center">
+                        {{ $bookmakers->links() }}
+                    </div>
 
                 </div>
             </div>

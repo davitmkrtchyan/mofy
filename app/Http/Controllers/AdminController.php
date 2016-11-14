@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Slider;
 use App\User;
 use App\Rating;
 use Illuminate\Http\Response;
@@ -116,9 +117,56 @@ class AdminController extends Controller
             return redirect('/admin/bookmakers');
         }
 
-        DB::table('ratings')
-            ->where('id', $id)
-            ->update(['rating' => $request['bookmakerRating']]);
+//        DB::table('ratings')
+//            ->where('id', $id)
+//            ->update(['rating' => $request['bookmakerRating']]);
+
+        $bookmaker = Rating::find($id);
+
+        if(Input::file('bookmakerLogo')){
+            $file = array('image' => Input::file('bookmakerLogo'));
+            // setting up rules
+            $rules = array('image' => 'required',); //mimes:jpeg,bmp,png and for max size max:10000
+            // doing the validation, passing post data, rules and the messages
+            $validator = Validator::make($file, $rules);
+            if ($validator->fails()) {
+                // send back to the page with the input data and errors
+                return Redirect::to('upload')->withInput()->withErrors($validator);
+            }
+            else {
+                // checking file is valid.
+                $destinationPath = 'assets/images/bm/admin-bookmakers/'; // upload path
+                $extension = Input::file('bookmakerLogo')->getClientOriginalExtension(); // getting image extension
+                $fileName = rand(11111,99999).'.'.$extension; // renameing image
+                Input::file('bookmakerLogo')->move($destinationPath, $fileName); // uploading file to given path
+                // sending back with message
+                $bookmaker->logo = $fileName;
+
+            }
+
+        }
+
+
+        $bookmaker->bookmaker = $request->bookmakerName;
+        $bookmaker->rating = $request->bookmakerRating;
+
+        $bookmaker->review = $request->bookmakerReview;
+        $bookmaker->bonuses = $request->bookmakerBonuses;
+        $bookmaker->advantages = $request->bookmakerAdvantages;
+        $bookmaker->languages = $request->bookmakerLanguages;
+        $bookmaker->depositmethods = $request->bookmakerDeposit;
+        $bookmaker->withdrawalmethods = $request->bookmakerWithdrawal;
+        $bookmaker->livebetting = $request->bookmakerLivebetting;
+        $bookmaker->livestreaming = $request->bookmakerLivestreaming;
+        $bookmaker->casino = $request->bookmakerCasino;
+        $bookmaker->poker = $request->bookmakerPoker;
+        $bookmaker->livechat = $request->bookmakerLivechat;
+        $bookmaker->liveemail = $request->bookmakerLiveemail;
+        $bookmaker->telephone = $request->bookmakerTelephone;
+        $bookmaker->currencieslimits = $request->bookmakerCurrencieslimits;
+        $bookmaker->affiliatelink = $request->affiliatelink;
+
+        $bookmaker->save();
 
 
         return redirect('/admin/bookmakers');
@@ -154,6 +202,60 @@ class AdminController extends Controller
             return false;
         }
         return true;
+    }
+
+    public function slider(){
+
+        $sliders = DB::table('sliders')->groupBy('imageName')->orderBy('created_at', 'desc')->get();
+
+        $sliderCount = count($sliders);
+
+        return view('admin.pages.slider', [
+            'sliders' => $sliders,
+            'sliderCount' => $sliderCount
+        ]);
+    }
+
+    public function sliderAdd(Request $request){
+
+        $slider = new Slider;
+
+        if(Input::file('sliderImg')){
+            $file = array('image' => Input::file('sliderImg'));
+            // setting up rules
+            $rules = array('image' => 'required',); //mimes:jpeg,bmp,png and for max size max:10000
+            // doing the validation, passing post data, rules and the messages
+            $validator = Validator::make($file, $rules);
+            if ($validator->fails()) {
+                // send back to the page with the input data and errors
+                return Redirect::to('/admin/slider')->withInput()->withErrors($validator);
+            }
+            else {
+                // checking file is valid.
+                $destinationPath = 'assets/images/bm/admin-slider/'; // upload path
+                $extension = Input::file('sliderImg')->getClientOriginalExtension(); // getting image extension
+                $fileName = rand(11111,99999).'.'.$extension; // renameing image
+                Input::file('sliderImg')->move($destinationPath, $fileName); // uploading file to given path
+                // sending back with message
+                $slider->imageName = $fileName;
+
+
+            }
+        }
+
+        $slider->gameLink = $request->gameLink;
+
+        $slider->save();
+
+        return redirect('/admin/slider');
+    }
+
+    public function sliderDelete($id){
+        $sl =  Slider::find($id);
+        Slider::findOrFail($id)->delete();
+
+        File::delete('assets/images/bm/admin-slider/'.$sl->imageName);
+        return redirect('/admin/slider');
     }
 
 }
