@@ -190,7 +190,7 @@
                     <div class="widget-box transparent">
                         <div class="alert">
                             <!-- Slideshow 1 -->
-                            <ul class="rslides" id="slider1" style="height: 300px;">
+                            <ul class="rslides" id="slider1" style="height: 360px;">
                                 @foreach($sliders as $slider)
                                     <li>
                                         <a href="{{$slider->gameLink}}">
