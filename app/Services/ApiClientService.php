@@ -14,6 +14,7 @@ class ApiClientService
     const UNIBET_LIVE_EVENTS = "http://api.unicdn.net/v1/feeds/sportsbook/event/live.json?app_id=71d8f332&app_key=d27be2607640ede866d069010a428842";
     const XBET_LIVE_EVENTS = "https://betpartpart.com/PartLive/GetAllFeedGames?lng=en";
     const UNIBET_ALL_GROUPS = "http://api.unicdn.net/v1/feeds/sportsbook/groups.json?app_id=71d8f332&app_key=d27be2607640ede866d069010a428842";
+    const BET_AT_HOME__LIVE_EVENTS = "https://www.bet-at-home.com/en/feed/feed?username=Moreoddsforyou&password=Moreoddsforyou58838!&jurisdictionid=1&type=7";
 
     public function getAllGroups()
     {
@@ -270,7 +271,8 @@ class ApiClientService
                         'name' => $xbetEvent->H . " " . $xbetEvent->A,
                         'homeName' => $xbetEvent->H,
                         'awayName' => $xbetEvent->A,
-                        'start' => '2016-10-29T09:24:50Z',//TODO
+
+                        'start' => XBetUtils::buildDate($xbetEvent->D),
                         'group' => $league,
                         'sport' => XBetUtils::$SPORT_MAPPING_TO_UNIBET[$xbetEvent->S],
                         'path' => array(

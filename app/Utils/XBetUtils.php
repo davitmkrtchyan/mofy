@@ -2,6 +2,7 @@
 
 namespace App\Utils;
 
+use DateTime;
 
 class XBetUtils
 {
@@ -21,5 +22,19 @@ class XBetUtils
     public static function sportIsSupported($xbetSport)
     {
         return array_key_exists($xbetSport, self::$SPORT_MAPPING_TO_UNIBET);
+    }
+
+    public static function buildDate($xbetDate)
+    {
+        $timStamp = substr(self::getStringBetween($xbetDate, '(', ')'), 0, -3);
+        $d = new DateTime();
+        $d->setTimestamp($timStamp);
+        return $d->format('Y-m-d H:i:s');
+    }
+
+    public static function getStringBetween($str, $from, $to)
+    {
+        $sub = substr($str, strpos($str, $from) + strlen($from), strlen($str));
+        return substr($sub, 0, strpos($sub, $to));
     }
 }
