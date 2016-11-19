@@ -38,8 +38,8 @@
 
             @if ($errors->has('password'))
                 <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                    <strong>{{ $errors->first('password') }}</strong>
+                </span>
             @endif
         </div>
     </div>
@@ -65,5 +65,9 @@
         </a>
     </div>
 
-    <a class="btn btn-link white-text" style="visibility: hidden;" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+    @if(Auth::guest())
+    <a class="btn btn-link white-text" style="" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+    @else
+        <a class="btn btn-link white-text" style="visibility: hidden;" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+    @endif
 </form>

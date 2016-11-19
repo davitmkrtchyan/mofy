@@ -7,7 +7,7 @@
         <div class="page-content">
             <div class="page-header">
                 <h1>
-                    bet365 Review
+                    Bookmakers
                 </h1>
             </div>
             <div class="row">

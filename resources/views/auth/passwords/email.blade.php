@@ -22,6 +22,7 @@
                     Enter your email and to receive instructions
                 </p>
                 <form action="{{ url('/password/email') }}" class="form-horizontal" method="post" role="form">
+                    {{ csrf_field() }}
                     <fieldset>
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <!--<label for="email" class="col-md-4 control-label">E-Mail Address</label>-->
