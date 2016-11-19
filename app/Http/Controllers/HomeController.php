@@ -50,7 +50,7 @@ class HomeController extends Controller
             ->leftJoin('ratings', 'votes.bookmaker_id', '=', 'ratings.id')
             ->select('*', DB::raw('SUM(votes.value)/COUNT(votes.value) as total_sum'))
             ->groupBy('bookmaker_id')
-            ->get();
+            ->paginate(4);
         $bookmakersCount = count($bookmakers);
         $count = 0;
         return view('pages.ratings')->with('bookmakers', $bookmakers)->with('bookmakersCount', $bookmakersCount)->with('count', $count);

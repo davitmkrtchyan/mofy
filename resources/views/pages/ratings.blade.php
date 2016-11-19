@@ -119,7 +119,7 @@
                             </div>
                         </div>
                     @endforeach
-
+                        {!! $bookmakers->links() !!}
                 </div>
             </div>
 
