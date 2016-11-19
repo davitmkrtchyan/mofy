@@ -32,6 +32,7 @@ Route::get('/today/{t1}', 'HomeController@today');
 //Route::get('/bookmaker/{b1}', 'HomeController@bookmaker');
 
 Route::get('/bookmakers', 'HomeController@bookmakers');
+Route::post('/bookmakers/vote', 'HomeController@bookmakersVote');
 Route::get('/bookmakers/{id}', 'HomeController@bookmakersDetails');
 
 

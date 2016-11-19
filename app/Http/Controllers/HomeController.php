@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Rating;
+use App\Vote;
 use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\View\View;
 
@@ -43,10 +45,38 @@ class HomeController extends Controller
 
     public function bookmakers()
     {
-        $bookmakers = DB::table('ratings')->groupBy('bookmaker')->get();
+
+        $bookmakers = DB::table('votes')
+            ->leftJoin('ratings', 'votes.bookmaker_id', '=', 'ratings.id')
+            ->select('*', DB::raw('SUM(votes.value)/COUNT(votes.value) as total_sum'))
+            ->groupBy('bookmaker_id')
+            ->get();
         $bookmakersCount = count($bookmakers);
         $count = 0;
-        return view('pages.ratings', array('bookmakers' => $bookmakers, 'bookmakersCount' => $bookmakersCount, 'count' => $count));
+        return view('pages.ratings')->with('bookmakers', $bookmakers)->with('bookmakersCount', $bookmakersCount)->with('count', $count);
+    }
+
+    public function bookmakersVote(Request $request)
+    {
+        $user_id = Auth::id();
+
+            $vote = DB::table('votes')->where('user_id', $user_id)->where('bookmaker_id', $request['bookmaker_id'])->first();
+
+        if(!empty($vote)){
+            $val = Vote::find($vote->id);
+            $val->value = $request['value'];
+            $val->bookmaker_id = $request['bookmaker_id'];
+            $val->user_id = $user_id;
+            $val->save();
+        }else{
+            $vote = new Vote;
+            $vote->value = $request['value'];
+            $vote->bookmaker_id = $request['bookmaker_id'];
+            $vote->user_id = $user_id;
+            $vote->save();
+        }
+
+        return json_encode('');
     }
 
     public function bookmakersDetails($id)
@@ -60,6 +90,11 @@ class HomeController extends Controller
             'bookmaker' => $bm
         ]);
     }
+
+
+
+
+
 
     public function game($p1, $p2)
     {

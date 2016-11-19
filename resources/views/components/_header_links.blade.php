@@ -1,3 +1,4 @@
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <link href="{{ URL::asset('assets/images/favicon.ico') }}" rel="shortcut icon" />
 <!-- bootstrap & fontawesome -->
 <link rel="stylesheet" href="{{ URL::asset('assets/css/jquery-ui.custom.css') }}" />
