@@ -12,7 +12,10 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::auth();
+
+Route::group(['middleware' => 'throttle:5,1'], function(){
+    Route::auth();
+});
 //Route::get('/sendmail', function(){
 //    return view('emails.greeting');
 //});
