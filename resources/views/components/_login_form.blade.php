@@ -17,16 +17,25 @@
 
 <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
     {{ csrf_field() }}
+    {{--@if (count($errors) > 0)--}}
+        {{--<div class="alert alert-danger">--}}
+            {{--<ul>--}}
+                {{--@foreach ($errors->all() as $error)--}}
+                    {{--<li>{{ $error }}</li>--}}
+                {{--@endforeach--}}
+            {{--</ul>--}}
+        {{--</div>--}}
+    {{--@endif--}}
 
     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
         <div class="col-xs-12 col-md-12">
-            <input id="email" type="email" class="form-control" placeholder="E-mail" name="email" value="{{ old('email') }}">
+            <input id="email" type="email" class="form-control" placeholder="E-mail" name="email" value="{{ old('email') }}" required>
 
             @if ($errors->has('email'))
                 <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                     <strong>{{ $errors->first('email') }}</strong>
+                </span>
             @endif
         </div>
     </div>
@@ -34,12 +43,12 @@
     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 
         <div class="col-xs-12 col-md-12">
-            <input id="password" type="password" class="form-control" placeholder="Password" name="password">
+            <input id="password" type="password" class="form-control" placeholder="Password" name="password" required>
 
             @if ($errors->has('password'))
                 <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                    <strong>{{ $errors->first('password') }}</strong>
+                </span>
             @endif
         </div>
     </div>
@@ -65,5 +74,9 @@
         </a>
     </div>
 
-    <a class="btn btn-link white-text" style="visibility: hidden;" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+    @if(Auth::guest())
+    <a class="btn btn-link white-text" style="" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+    @else
+        <a class="btn btn-link white-text" style="visibility: hidden;" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+    @endif
 </form>

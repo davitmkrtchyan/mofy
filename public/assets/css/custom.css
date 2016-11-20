@@ -12,7 +12,7 @@
 }
 .username-block{
     text-align: center;
-    height: 92px;
+    height: 300px;
     padding-top: 15px;
     margin-bottom: 22px;
 }
@@ -167,6 +167,11 @@
 .bookmakerDetailsContent{
     margin: 10px;
 }
+.sortByForm{
+    width: 180px;
+    display: inline-block;
+}
+
 
 /*Admin panel*/
 #editBookmakerForm, #deleteBookmakerForm{

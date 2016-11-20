@@ -292,9 +292,11 @@ $(document).ready(function(){
 
     // litem.attr("href", "{{ url('/home/loadGamesByGroupAndCountry', ['sport'=>'" + sport + "','country' => '" + country + "', 'group' => '" + group + "'])}}");
 
-
-
-
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    })
 });
 
 

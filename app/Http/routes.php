@@ -12,7 +12,10 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::auth();
+
+Route::group(['middleware' => 'throttle:5,1'], function(){
+    Route::auth();
+});
 //Route::get('/sendmail', function(){
 //    return view('emails.greeting');
 //});
@@ -32,6 +35,9 @@ Route::get('/today/{t1}', 'HomeController@today');
 //Route::get('/bookmaker/{b1}', 'HomeController@bookmaker');
 
 Route::get('/bookmakers', 'HomeController@bookmakers');
+Route::get('/bookmakers/sortby', 'HomeController@bookmakersSort');
+Route::get('/bookmakers/sortby', 'HomeController@bookmakersSort');
+Route::post('/bookmakers/vote', 'HomeController@bookmakersVote');
 Route::get('/bookmakers/{id}', 'HomeController@bookmakersDetails');
 
 

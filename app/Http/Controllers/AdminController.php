@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Slider;
 use App\User;
 use App\Rating;
+use App\Vote;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
@@ -108,6 +109,12 @@ class AdminController extends Controller
 
         $bookmaker->save();
 
+        $votes = new Vote;
+        $votes->value = $bookmaker->rating;
+        $votes->bookmaker_id = $bookmaker->id;
+        $votes->user_id = Auth::id();
+        $votes->save();
+
         return redirect('/admin/bookmakers');
     }
 
@@ -168,6 +175,21 @@ class AdminController extends Controller
 
         $bookmaker->save();
 
+        $vote = DB::table('votes')->where('user_id', Auth::id())->where('bookmaker_id', $id)->first();
+
+        if(!empty($vote)){
+            $votes = Vote::find($vote->id);
+            $votes->value = $bookmaker->rating;
+            $votes->bookmaker_id = $bookmaker->id;
+            $votes->user_id = Auth::id();
+            $votes->save();
+        }else{
+            $votes = new Vote;
+            $votes->value = $bookmaker->rating;
+            $votes->bookmaker_id = $bookmaker->id;
+            $votes->user_id = Auth::id();
+            $votes->save();
+        }
 
         return redirect('/admin/bookmakers');
     }
