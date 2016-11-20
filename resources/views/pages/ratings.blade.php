@@ -3,8 +3,14 @@
 @section('content')
     <div class="page-content" id="bookmakers-wrapper">
         <h2 class="bookmakers-wrapper-title">Our Bookmakers</h2>
-        <button class="blue-butt bookmaker-sort">Sort by Name</button>
-        <button class="blue-butt bookmaker-sort">Sort by Rank</button>
+        <form action="/bookmakers/sortby" name="name" type="POST" class="sortByForm">
+            <input type="hidden" name="name" value="true">
+            <input type="submit" class="blue-butt bookmaker-sort" value="Sort by Name">
+        </form>
+        <form action="/bookmakers/sortby" name="rank" type="POST" class="sortByForm">
+            <input type="hidden" name="rank" value="true">
+            <input type="submit" class="blue-butt bookmaker-sort" value="Sort by Rank">
+        </form>
         <br>
         <hr>
         <br>
@@ -119,7 +125,10 @@
                             </div>
                         </div>
                     @endforeach
+                    <div class="col-md-12 align-center">
                         {!! $bookmakers->links() !!}
+                    </div>
+
                 </div>
             </div>
 

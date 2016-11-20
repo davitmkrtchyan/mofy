@@ -175,7 +175,7 @@ class AdminController extends Controller
 
         $bookmaker->save();
 
-        $vote = DB::table('votes')->where('user_id', Auth::id())->where('bookmaker_id', $request['bookmaker_id'])->first();
+        $vote = DB::table('votes')->where('user_id', Auth::id())->where('bookmaker_id', $id)->first();
 
         if(!empty($vote)){
             $votes = Vote::find($vote->id);

@@ -121,7 +121,7 @@
                                     N. Name
                                 </td>
                                 <td>
-                                    Rating
+                                    My Rate
                                 </td>
                                 <td>
                                     Logo

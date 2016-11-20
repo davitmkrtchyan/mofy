@@ -56,6 +56,32 @@ class HomeController extends Controller
         return view('pages.ratings')->with('bookmakers', $bookmakers)->with('bookmakersCount', $bookmakersCount)->with('count', $count);
     }
 
+    public function bookmakersSort(Request $request)
+    {
+        if($request['name'] == 'true'){
+            $bookmakers = DB::table('votes')
+                ->leftJoin('ratings', 'votes.bookmaker_id', '=', 'ratings.id')
+                ->select('*', DB::raw('SUM(votes.value)/COUNT(votes.value) as total_sum'))
+                ->groupBy('bookmaker_id')
+                ->orderBy('ratings.bookmaker', 'asc')
+                ->paginate(4);
+            $bookmakersCount = count($bookmakers);
+            $count = 0;
+            return view('pages.ratings')->with('bookmakers', $bookmakers)->with('bookmakersCount', $bookmakersCount)->with('count', $count);
+        }else{
+            $bookmakers = DB::table('votes')
+                ->leftJoin('ratings', 'votes.bookmaker_id', '=', 'ratings.id')
+                ->select('*', DB::raw('SUM(votes.value)/COUNT(votes.value) as total_sum'))
+                ->groupBy('bookmaker_id')
+                ->orderBy('total_sum', 'desc')
+                ->paginate(4);
+            $bookmakersCount = count($bookmakers);
+            $count = 0;
+            return view('pages.ratings')->with('bookmakers', $bookmakers)->with('bookmakersCount', $bookmakersCount)->with('count', $count);
+        }
+
+    }
+
     public function bookmakersVote(Request $request)
     {
         $user_id = Auth::id();
