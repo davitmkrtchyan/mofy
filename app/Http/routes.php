@@ -44,6 +44,8 @@ Route::get('/bookmakers/sortby', 'HomeController@bookmakersSort');
 Route::post('/bookmakers/vote', 'HomeController@bookmakersVote');
 Route::get('/bookmakers/{id}', 'HomeController@bookmakersDetails');
 
+Route::post('/contact/send', 'HomeController@contactFormSend');
+
 
 Route::get('/faq',function(){
     return view('pages.faq');

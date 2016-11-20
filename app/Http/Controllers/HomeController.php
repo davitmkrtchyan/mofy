@@ -150,6 +150,27 @@ class HomeController extends Controller
     }
 
 
+    public function contactFormSend(Request $request)
+    {
+        $user = DB::table('users')->where('email', $request->email)->value('id');
+
+        $data = $request->input();
+        if($user){
+            $data['info'] = '';
+        }else{
+            $data['info'] = 'not';
+        }
+
+        Mail::send('emails.contactus', ['data' => $data], function($message) use ($data)
+        {
+            $message->from('infomofy@gmail.com', 'More Odds For You');
+
+            $message->to('info@moreoddsforyou.com', $data['name'])->subject('Contact form');
+        });
+
+        return redirect('/');
+
+    }
 
 
 
