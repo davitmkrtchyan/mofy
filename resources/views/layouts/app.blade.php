@@ -40,7 +40,7 @@
 <!-- Start of LiveChat (www.livechatinc.com) code -->
 <script type="text/javascript">
     window.__lc = window.__lc || {};
-    window.__lc.license = 8461397;
+    window.__lc.license = 8461427;
     (function() {
         var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
         lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
