@@ -31,7 +31,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $model = null;
         $model = $this->apiClientService->getLiveEvents();
@@ -51,9 +51,9 @@ class HomeController extends Controller
 
     public function bookmakersDetails($id)
     {
-        $bm =  Rating::find($id);
+        $bm = Rating::find($id);
 
-        if(!$bm){
+        if (!$bm) {
             return redirect('bookmakers');
         }
         return view('pages.bookmakerDetails', [
@@ -84,9 +84,13 @@ class HomeController extends Controller
     public function loadByEventID($id)
     {
         $model = null;
-        $model =$this->apiClientService->getEventByID($id);
-        $model['groups'] = $this->apiClientService->getAllGroups();
-        return $model ? view('pages.game', $model) : view('errors.503');
+        $model = $this->apiClientService->getEventByID($id);
+        if ($model) {
+            $model['groups'] = $this->apiClientService->getAllGroups();
+            return $model ? view('pages.game', $model) : view('errors.503');
+        } else {
+            return view('errors.503');
+        }
     }
 
 //    public function loadGamesByGroupAndCountry()
@@ -94,9 +98,9 @@ class HomeController extends Controller
 //        return view('testGame', $this->apiClientService->loadGamesByGroupAndCountry(request('sport'), request('country'), request('group')));
 //    }
     public function loadGamesByGroupAndCountry($sport, $country, $group)
-     {
-         return view('testGame', $this->apiClientService->loadGamesByGroupAndCountry($sport, $country, $group));
-     }
+    {
+        return view('testGame', $this->apiClientService->loadGamesByGroupAndCountry($sport, $country, $group));
+    }
 
     public function loadCountForGroups()
     {

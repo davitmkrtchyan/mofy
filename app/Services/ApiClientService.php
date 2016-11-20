@@ -2,12 +2,15 @@
 
 namespace App\Services;
 
+use App\Utils\BetAtHomeUtils;
 use App\Utils\Group\SportGroup;
 use App\Utils\UnibetUtils;
 use App\Utils\Utils;
 use App\Utils\XBetUtils;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Storage;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class ApiClientService
 {
@@ -15,6 +18,8 @@ class ApiClientService
     const XBET_LIVE_EVENTS = "https://betpartpart.com/PartLive/GetAllFeedGames?lng=en";
     const UNIBET_ALL_GROUPS = "http://api.unicdn.net/v1/feeds/sportsbook/groups.json?app_id=71d8f332&app_key=d27be2607640ede866d069010a428842";
     const BET_AT_HOME__LIVE_EVENTS = "https://www.bet-at-home.com/en/feed/feed?username=Moreoddsforyou&password=Moreoddsforyou58838!&jurisdictionid=1&type=7";
+
+    static $glob = null;
 
     public function getAllGroups()
     {
@@ -88,20 +93,88 @@ class ApiClientService
         try {
             $unibetEvents = $this->getUnibetEvents();
             $xbetEvents = $this->getXbetEvents();
-            return $this->sortByDateAndOdds($unibetEvents, $xbetEvents);
+            $betAtHomeEvents = $this->getBetAtHomeEvents();
+            return $this->sortByDateAndOdds($this->sortByDateAndOdds($unibetEvents, $xbetEvents), $betAtHomeEvents);
         } catch (\Exception $e) {
             return Utils::sliceEventsModel($unibetEvents);
         }
     }
 
+    public function getBetAtHomeEvents()
+    {
+        $client = new Client();
+        $res = $client->get(self::BET_AT_HOME__LIVE_EVENTS);
+        $content = $res->getBody()->getContents();
+        if (strpos($content, 'xml') !== false) {
+            $utf16Content = preg_replace('/(<\?xml[^?]+?)utf-16/i', '$1utf-8', $content);
+            $betAtHomeGlobalObject = simplexml_load_string($utf16Content);
+            Storage::disk('local')->put('betAtHomeTemp.xml', $betAtHomeGlobalObject->asXML());
+            $sports = BetAtHomeUtils::buildChildrenList($betAtHomeGlobalObject);
+            return $this->convertBetAtHomeToUnibet($sports);
+        } else {
+            $betAtHomeGlobalObject = simplexml_load_string(Storage::disk('local')->get('betAtHomeTemp.xml'));
+            $sports = BetAtHomeUtils::buildChildrenList($betAtHomeGlobalObject);
+            return $this->convertBetAtHomeToUnibet($sports);
+        }
+    }
+
+    public function convertBetAtHomeToUnibet($sports)
+    {
+        $post_data = collect([]);
+        $sports->each(function ($sport, $sportLabel) use ($post_data, $sports) {
+            BetAtHomeUtils::buildChildrenList($sport)->each(function ($region, $regionLabel) use ($sport, $post_data, $post_data) {
+                BetAtHomeUtils::buildChildrenList($region)->each(function ($league, $leagueLabel) use ($sport, $region, $post_data) {
+                    BetAtHomeUtils::buildChildrenList($league)->each(function ($liveEvent, $liveEventLabel) use ($sport, $region, $league, $post_data) {
+                        $attrs = $liveEvent->attributes();
+                        $betObject = BetAtHomeUtils::buildChildrenList($liveEvent)->first(function ($index, $bet) {
+                            return $bet->attributes()->BetTypeCategoryId == '1';
+                        });
+                        if ($betObject && array_key_exists("{$sport->attributes()->Name}", XBetUtils::$SPORT_MAPPING_TO_UNIBET)) {
+                            $OT_ONE = BetAtHomeUtils::buildOddByType($betObject->Odds, '1');
+                            $OT_CROSS = BetAtHomeUtils::buildOddByType($betObject->Odds, '0');
+                            $OT_TWO = BetAtHomeUtils::buildOddByType($betObject->Odds, '2');
+                            $eventJson = array(
+                                'event' => array(
+                                    'id' => "{$attrs->Id}",
+                                    'url' => '',
+                                    'name' => "{$attrs->Name}",
+                                    'homeName' => "{$attrs->HomeTeam}",
+                                    'awayName' => "{$attrs->AwayTeam}",
+                                    'start' => "{$attrs->StartDate}",
+                                    'group' => "{$league->attributes()->Name}",
+                                    'sport' => XBetUtils::$SPORT_MAPPING_TO_UNIBET["{$sport->attributes()->Name}"],
+                                    'path' => array(
+                                        array(),
+                                        array('englishName' => "{$region->attributes()->Name}"),
+                                        array()
+                                    )
+                                ),
+                                'mainBetOffer' => array(
+                                    'outcomes' => array(
+                                        array('type' => 'OT_ONE', 'oddsFractional' => "{$OT_ONE->attributes()->Value}", 'oddsAmerican' => ''),
+                                        array('type' => 'OT_CROSS', 'oddsFractional' => $OT_CROSS ? "{$OT_CROSS->attributes()->Value}" : null, 'oddsAmerican' => ''),
+                                        array('type' => 'OT_TWO', 'oddsFractional' => "{$OT_TWO->attributes()->Value}", 'oddsAmerican' => '')
+                                    )
+                                )
+                            );
+                            $post_data->push($eventJson);
+                        }
+                    });
+                });
+            });
+
+
+        });
+        return $this->buildEventsModel(collect(Utils::decodeResponse($post_data))->groupBy('event.sport'), false);
+    }
+
+
     public function getEventByID($id)
     {
-
         try {
             $client = new Client();
             $res = $client->get(UnibetUtils::buildEventDetailsURL($id));
             $events = Utils::decodeResponse($res->getBody());
-
 
             $odd1 = Utils::convertAmericanOddToDecimal(Utils::getAmericanOddByType($events->betoffers[0]->outcomes, "OT_ONE"));
             $odd2 = Utils::convertAmericanOddToDecimal(Utils::getAmericanOddByType($events->betoffers[0]->outcomes, "OT_CROSS"));
@@ -120,6 +193,21 @@ class ApiClientService
                 return $unibetEvent->equals($xbetSportObject);
             });
 
+            $matchedObject1 = $this->getBetAtHomeEvents()['eventsGroups']->get($events->events[0]->sport)->first(function ($index, $betAtHomeSportObject) use ($unibetEvent) {
+                return $unibetEvent->equals($betAtHomeSportObject);
+            });
+
+            $eventDetails = [
+                'Unibet' => ['url' => $unibetEvent->url, 'odd1' => $odd1, 'odd2' => $odd2, 'odd3' => $odd3],
+            ];
+            if ($matchedObject) {
+                $eventDetails['Xbet'] = ['url' => $matchedObject->url, 'odd1' => $matchedObject ? $matchedObject->oddsFirst : '-', 'odd2' => $matchedObject ? $matchedObject->oddsCross : '-', 'odd3' => $matchedObject ? $matchedObject->oddsSecond : '-'];
+            }
+
+            if ($matchedObject1) {
+                $eventDetails['BetAtHome'] = ['url' => $matchedObject1->url, 'odd1' => $matchedObject1 ? $matchedObject1->oddsFirst : '-', 'odd2' => $matchedObject1 ? $matchedObject1->oddsCross : '-', 'odd3' => $matchedObject1 ? $matchedObject1->oddsSecond : '-'];
+            }
+
             return [
                 'homeName' => $events->events[0]->homeName,
                 'awayName' => $events->events[0]->awayName,
@@ -127,10 +215,7 @@ class ApiClientService
                 'sportName' => $events->events[0]->path[0]->englishName,
                 'countryName' => $events->events[0]->path[1]->englishName,
                 'start' => $events->events[0]->start,
-                'eventDetails' => [
-                    'Unibet' => ['url' => $unibetEvent->url, 'odd1' => $odd1, 'odd2' => $odd2, 'odd3' => $odd3],
-                    'Xbet' => ['url' => $matchedObject->url, 'odd1' => $matchedObject ? $matchedObject->oddsFirst : '-', 'odd2' => $matchedObject ? $matchedObject->oddsCross : '-', 'odd3' => $matchedObject ? $matchedObject->oddsSecond : '-'],
-                ]
+                'eventDetails' => $eventDetails
             ];
         } catch (\Exception $e) {
             return null;
@@ -192,7 +277,6 @@ class ApiClientService
     private function sortByDateAndOdds($unibetEvents, $xbetEvents)
     {
         $result = collect(['eventsGroups' => collect([])]);
-
         $unibetEvents['eventsGroups']->each(function ($unibetEventsForSport, $sportName) use ($xbetEvents, $result) {
             $resultListForSport = collect([]);
             $unibetFilteredByDateListForCurrentSport = Utils::sortEventsByDate($unibetEventsForSport);

@@ -23,6 +23,6 @@ abstract class AbstractEvent
 
     public function equals(AbstractEvent $event)
     {
-        return $this->countryName == $event->countryName && Utils::isNamesLike($this->homeName, $event->homeName);
+        return Utils::isNamesLike($this->countryName, $event->countryName) && Utils::isNamesLike($this->homeName, $event->homeName);
     }
 }
