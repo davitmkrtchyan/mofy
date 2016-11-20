@@ -21,6 +21,10 @@ Route::group(['middleware' => 'throttle:5,1'], function(){
 //});
 
 
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/password/update', 'HomeController@changePassView');
+    Route::post('/password/update/notification', 'HomeController@changePass');
+});
 
 Route::get('/home', 'HomeController@index');
 Route::get('/home/loadByEventID/{id}', 'HomeController@loadByEventID');

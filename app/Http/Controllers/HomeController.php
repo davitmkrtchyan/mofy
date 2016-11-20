@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Rating;
+use App\User;
 use App\Vote;
 use Exception;
 use GuzzleHttp\Client;
@@ -11,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -41,6 +43,36 @@ class HomeController extends Controller
 
         $sliders = DB::table('sliders')->orderBy('created_at', 'desc')->get();
         return view('welcome')->with('model', $model)->with('sliders', $sliders);
+    }
+
+    public function changePassView()
+    {
+        $user = User::find(Auth::id());
+
+        return view('auth.passwords.update')->with('email', $user['email']);
+    }
+
+    public function changePass(Request $request)
+    {
+        $user = User::find(Auth::id());
+
+        if($user['email'] === $request['email'] && $request['password'] === $request['password_confirmation']){
+            $data = $request->input();
+            $data['name'] = $user['name'];
+            $user['password'] = bcrypt($request['password']);
+            $request['name'] = $user['name'];
+            $user->save();
+
+            Mail::send('emails.greeting', $data, function($message) use ($data)
+            {
+                $message->from('infomofy@gmail.com', 'More Odds For You');
+
+                $message->to($data['email'], $data['name'])->subject('Password changed');
+            });
+        }
+
+        return redirect('/');
+
     }
 
     public function bookmakers()
