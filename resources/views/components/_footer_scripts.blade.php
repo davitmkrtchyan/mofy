@@ -59,6 +59,7 @@
 <script src="{{ URL::asset('assets/js/main.js') }}"></script>
 <script src="{{ URL::asset('assets/js/jqcloud.js') }}"></script>
 <script src="{{ URL::asset('assets/js/event/loadEventByID.js') }}"></script>
+<script src="{{ URL::asset('assets/js/search.js') }}"></script>
 
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
@@ -156,8 +157,11 @@
         $('#search').bs_typeahead({
             source: function(query, process) {
                 $.ajax({
+                    data: {
+                        'gameName': $("#search").val()
+                    },
                     type: "POST",
-                    url: '/suggest?q='+encodeURIComponent(query)
+                    url:  $("#searchUrl").val()
                 }).done(function(result_items){
                     process(result_items);
                 })

@@ -79,6 +79,28 @@ class UnibetUtils
         }
     }
 
+    public static function resolveSportLog($sportName)
+    {
+        switch ($sportName) {
+            case "FOOTBALL":
+                return "sp50";
+            case "TENNIS":
+                return "sp52";
+            case "ICE_HOCKEY":
+                return "sp51";
+            case "BASKETBALL":
+                return "sp53";
+            case "HORSE_RACING":
+                return "sp50";
+            case "VOLLEYBALL":
+                return "sp50";
+            case "GOLF":
+                return "sp54";
+            default:
+                throw new Exception("Sport type '" . $sportName . "' is not supported");
+        }
+    }
+
     public static function createInstanceForSport($sportName)
     {
         $class = self::resolveSportNameClass($sportName);

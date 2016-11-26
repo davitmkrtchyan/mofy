@@ -87,17 +87,70 @@ class ApiClientService
         return $result;
     }
 
-    public function getLiveEvents()
+    public function getLiveEvents($request, $applyRestriction = true)
     {
         $unibetEvents = ['eventsGroups' => collect([])];
         try {
             $unibetEvents = $this->getUnibetEvents();
+            $request->session()->put('unibetStorage', $unibetEvents);
             $xbetEvents = $this->getXbetEvents();
+            $request->session()->put('xbetStorage', $xbetEvents);
             $betAtHomeEvents = $this->getBetAtHomeEvents();
-            return $this->sortByDateAndOdds($this->sortByDateAndOdds($unibetEvents, $xbetEvents), $betAtHomeEvents);
+            $request->session()->put('betAtHome', $betAtHomeEvents);
+            return $this->sortByDateAndOdds($this->sortByDateAndOdds($unibetEvents, $xbetEvents, $applyRestriction), $betAtHomeEvents, $applyRestriction);
         } catch (\Exception $e) {
             return Utils::sliceEventsModel($unibetEvents);
         }
+    }
+
+    public function getLiveEventALL($request)
+    {
+        $unibetEvents = ['eventsGroups' => collect([])];
+        try {
+            $unibetEvents = $this->getUnibetEvents();
+            $request->session()->put('unibetStorage', $unibetEvents);
+            $xbetEvents = $this->getXbetEvents();
+            $request->session()->put('xbetStorage', $xbetEvents);
+            $betAtHomeEvents = $this->getBetAtHomeEvents();
+            $request->session()->put('betAtHome', $betAtHomeEvents);
+            return $this->sortByDateAndJoin($this->sortByDateAndJoin($unibetEvents, $xbetEvents, false), $betAtHomeEvents, false);
+        } catch (\Exception $e) {
+            return Utils::sliceEventsModel($unibetEvents);
+        }
+    }
+
+    public function sortByDateAndJoin($unibetEvents, $xbetEvents)
+    {
+//        collect($unibetEvents)->each(function ($sports, $index) use ($xbetEvents, $betAtHomeEvents) {
+//            $sports->each(function ($sport, $index01) use ($xbetEvents, $betAtHomeEvents,$sports) {
+//
+//                collect($xbetEvents)->each(function ($xbetSports, $index1) use($sports){
+//                    $xbetSports->each(function ($xbetSport, $index11) use($sports){
+//                        if (get_class($xbetSport[0]) == get_class($sports[0])){
+//                            $sports->push();
+//                        }
+//                    });
+//                });
+//
+//            });
+//        });
+
+        $result = collect(['eventsGroups' => collect([])]);
+        $unibetEvents['eventsGroups']->each(function ($unibetEventsForSport, $sportName) use ($xbetEvents, $result) {
+            $resultListForSport = collect([]);
+            $unibetFilteredByDateListForCurrentSport = Utils::sortEventsByDate($unibetEventsForSport, false);
+
+            if ($xbetEvents['eventsGroups']->get($sportName) != null) {
+                $resultListForSport->push($unibetFilteredByDateListForCurrentSport->merge($xbetEvents['eventsGroups']->get($sportName)->slice(0, 100)));
+            };
+
+            $resultListForSport->each(function ($sport, $index) {
+                $sport->id = $sport->id ?: '';
+            });
+
+            $result['eventsGroups']->put($sportName, $resultListForSport);
+        });
+        return $result;
     }
 
     public function getBetAtHomeEvents()
@@ -274,12 +327,12 @@ class ApiClientService
         }
     }
 
-    private function sortByDateAndOdds($unibetEvents, $xbetEvents)
+    private function sortByDateAndOdds($unibetEvents, $xbetEvents, $applyRestriction = true)
     {
         $result = collect(['eventsGroups' => collect([])]);
-        $unibetEvents['eventsGroups']->each(function ($unibetEventsForSport, $sportName) use ($xbetEvents, $result) {
+        $unibetEvents['eventsGroups']->each(function ($unibetEventsForSport, $sportName) use ($xbetEvents, $result, $applyRestriction) {
             $resultListForSport = collect([]);
-            $unibetFilteredByDateListForCurrentSport = Utils::sortEventsByDate($unibetEventsForSport);
+            $unibetFilteredByDateListForCurrentSport = Utils::sortEventsByDate($unibetEventsForSport, $applyRestriction);
             $xbetFilteredByUnibetGames = collect([]);
 
             $unibetFilteredByDateListForCurrentSport->each(function ($unibetEventObject) use ($xbetEvents, $sportName, $xbetFilteredByUnibetGames) {

@@ -30,3 +30,4 @@
         </div>
     </div>
 </div>
+<input type="hidden" id="searchUrl" value="{{action('HomeController@search')}}"/>

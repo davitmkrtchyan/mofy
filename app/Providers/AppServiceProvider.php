@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Services\ApiClientService;
+use App\Services\SearchService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -26,6 +27,10 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton('apiClientService', function () {
             return new ApiClientService();
+        });
+
+        $this->app->singleton('searchService', function () {
+            return new SearchService();
         });
     }
 }

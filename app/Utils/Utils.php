@@ -36,7 +36,7 @@ class Utils
         return $value ? floatval($value) : '';
     }
 
-    public static function sortEventsByDate($eventsList)
+    public static function sortEventsByDate($eventsList, $applyRestriction = true)
     {
         for ($i = 0; $i < $eventsList->count() - 1; $i++) {
             for ($j = 1; $j < $eventsList->count() - $i; $j++) {
@@ -47,7 +47,7 @@ class Utils
                 }
             }
         }
-        return $eventsList->slice(0, UnibetUtils::$GAMES_COUNT_PER_TAB);
+        return $applyRestriction ? $eventsList->slice(0, UnibetUtils::$GAMES_COUNT_PER_TAB) : $eventsList;
     }
 
     public static function isNamesLike($name1, $name2)
@@ -77,7 +77,9 @@ class Utils
         $isLike = false;
         foreach ($name1Array as $partOfName) {
             foreach ($name2Array as $partOfNameSecond) {
-                if (preg_match('/' . str_replace('/', '\/', $partOfName) . '/', $partOfNameSecond) == true) {
+                $escaped1=str_replace(')','',str_replace('(','',$partOfName));
+                $escaped2=str_replace(')','',str_replace('(','',$partOfNameSecond));
+                if (preg_match('/' . str_replace('/', '\/', $escaped1) . '/', $escaped2) == true) {
                     $isLike = true;
                 }
             }
@@ -91,5 +93,10 @@ class Utils
             return $outcomeObject->type == $oddType;
         });
         return $matchedOutcome ? $matchedOutcome->oddsAmerican : null;
+    }
+
+    public static function highlight($text, $words) {
+        $text = preg_replace("|($words)|ui", "<span class=\"hit\">$1</span>", $text);
+        return $text;
     }
 }

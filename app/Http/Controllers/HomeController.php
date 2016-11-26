@@ -16,6 +16,7 @@ class HomeController extends Controller
 {
 
     protected $apiClientService;
+    protected $searchService;
 
     /**
      * Create a new controller instance.
@@ -25,6 +26,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->apiClientService = app()->make('apiClientService');
+        $this->searchService = app()->make('searchService');
 //        $this->middleware('auth');
     }
 
@@ -36,7 +38,7 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $model = null;
-        $model = $this->apiClientService->getLiveEvents();
+        $model = $this->apiClientService->getLiveEvents($request);
         $model['groups'] = $this->apiClientService->getAllGroups();
 
         $sliders = DB::table('sliders')->orderBy('created_at', 'desc')->get();
@@ -58,7 +60,7 @@ class HomeController extends Controller
 
     public function bookmakersSort(Request $request)
     {
-        if($request['name'] == 'true'){
+        if ($request['name'] == 'true') {
             $bookmakers = DB::table('votes')
                 ->leftJoin('ratings', 'votes.bookmaker_id', '=', 'ratings.id')
                 ->select('*', DB::raw('SUM(votes.value)/COUNT(votes.value) as total_sum'))
@@ -68,7 +70,7 @@ class HomeController extends Controller
             $bookmakersCount = count($bookmakers);
             $count = 0;
             return view('pages.ratings')->with('bookmakers', $bookmakers)->with('bookmakersCount', $bookmakersCount)->with('count', $count);
-        }else{
+        } else {
             $bookmakers = DB::table('votes')
                 ->leftJoin('ratings', 'votes.bookmaker_id', '=', 'ratings.id')
                 ->select('*', DB::raw('SUM(votes.value)/COUNT(votes.value) as total_sum'))
@@ -86,15 +88,15 @@ class HomeController extends Controller
     {
         $user_id = Auth::id();
 
-            $vote = DB::table('votes')->where('user_id', $user_id)->where('bookmaker_id', $request['bookmaker_id'])->first();
+        $vote = DB::table('votes')->where('user_id', $user_id)->where('bookmaker_id', $request['bookmaker_id'])->first();
 
-        if(!empty($vote)){
+        if (!empty($vote)) {
             $val = Vote::find($vote->id);
             $val->value = $request['value'];
             $val->bookmaker_id = $request['bookmaker_id'];
             $val->user_id = $user_id;
             $val->save();
-        }else{
+        } else {
             $vote = new Vote;
             $vote->value = $request['value'];
             $vote->bookmaker_id = $request['bookmaker_id'];
@@ -118,8 +120,10 @@ class HomeController extends Controller
     }
 
 
-
-
+    public function search(Request $request)
+    {
+        return view('_searchResults', ['eventsGroups' => $this->searchService->search($request)['eventsGroups']]);
+    }
 
 
     public function game($p1, $p2)
@@ -167,5 +171,15 @@ class HomeController extends Controller
     {
 //        $this->apiClientService->loadGamesByGroupListAndCountry(request('sportName'), request('countryName'), explode("+", request('groupsList')));
 //        return "ok";
+    }
+
+    public function matches(Request $request)
+    {
+        $model = null;
+        $model = $this->apiClientService->getLiveEventALL($request);
+        $model['groups'] = $this->apiClientService->getAllGroups();
+
+        $sliders = DB::table('sliders')->orderBy('created_at', 'desc')->get();
+        return view('welcome')->with('model', $model)->with('sliders', $sliders);
     }
 }
