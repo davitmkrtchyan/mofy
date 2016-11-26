@@ -7,20 +7,21 @@
 
                 <div id="contactus">
                     <h2>Contact Us</h2>
-                    <form action="#" method="post">
+                    <form action="contact/send" method="post">
+                        {{ csrf_field() }}
                         <div class="form-group">
                             <label for="name">Your name:</label>
-                            <input type="text" class="form-control contact-fields" id="name">
+                            <input type="text" class="form-control contact-fields" id="name" name="name">
                             <i class="fa fa-user contact-form-icon" aria-hidden="true"></i>
                         </div>
                         <div class="form-group">
                             <label for="email">Your email:</label>
-                            <input type="email" class="form-control contact-fields" id="email">
+                            <input type="email" class="form-control contact-fields" id="email" name="email">
                             <i class="fa fa-envelope contact-form-icon" aria-hidden="true"></i>
                         </div>
                         <div class="form-group">
                             <label for="message">Your message:</label>
-                            <textarea class="form-control" id="message"></textarea>
+                            <textarea class="form-control" id="message" name="message"></textarea>
                         </div>
                         <button type="submit" class="btn btn-default">Send</button>
                     </form>

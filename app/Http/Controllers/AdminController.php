@@ -197,7 +197,7 @@ class AdminController extends Controller
     public function bookmakersDelete($id){
         $bm =  Rating::find($id);
         Rating::findOrFail($id)->delete();
-
+        DB::table('votes')->where('bookmaker_id', '=', $id)->delete();
         File::delete('assets/images/bm/admin-bookmakers/'.$bm->logo);
         return redirect('/admin/bookmakers');
     }

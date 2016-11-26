@@ -13,7 +13,7 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::group(['middleware' => 'throttle:5,1'], function () {
+Route::group(['middleware' => 'throttle:5,1'], function(){
     Route::auth();
 });
 //Route::get('/sendmail', function(){
@@ -21,8 +21,13 @@ Route::group(['middleware' => 'throttle:5,1'], function () {
 //});
 
 
-Route::get('/home', 'HomeController@index');
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/password/update', 'HomeController@changePassView');
+    Route::post('/password/update/notification', 'HomeController@changePass');
+});
 Route::get('/home/matches', 'HomeController@matches');
+
+Route::get('/home', 'HomeController@index');
 Route::get('/home/loadByEventID/{id}', 'HomeController@loadByEventID');
 Route::get('/home/loadGamesByGroupAndCountry/{sport}/{country}/{group}', 'HomeController@loadGamesByGroupAndCountry');
 Route::get('/home/loadCountForGroups', 'HomeController@loadCountForGroups');
@@ -39,38 +44,41 @@ Route::get('/bookmakers/sortby', 'HomeController@bookmakersSort');
 Route::get('/bookmakers/sortby', 'HomeController@bookmakersSort');
 Route::post('/bookmakers/vote', 'HomeController@bookmakersVote');
 Route::get('/bookmakers/{id}', 'HomeController@bookmakersDetails');
-Route::post('/home/search', ['uses' => 'HomeController@search', 'as' => 'search']);
-Route::get('/home/search', ['uses' => 'HomeController@search', 'as' => 'search']);
 
-Route::get('/faq', function () {
+Route::post('/contact/send', 'HomeController@contactFormSend');
+Route::post('/home/search', ['uses' => 'HomeController@search', 'as' => 'search']);
+
+
+Route::get('/faq',function(){
     return view('pages.faq');
 });
-Route::get('/terms-of-use', function () {
+Route::get('/terms-of-use',function(){
     return view('pages.termsofuse');
 });
-Route::get('/privacy-policy', function () {
+Route::get('/privacy-policy',function(){
     return view('pages.privacypolicy');
 });
-Route::get('/cookie-policy', function () {
+Route::get('/cookie-policy',function(){
     return view('pages.cookiepolicy');
 });
-Route::get('/contact-us', function () {
+Route::get('/contact-us',function(){
     return view('pages.contactus');
 });
-Route::get('/site-notice', function () {
+Route::get('/site-notice',function(){
     return view('pages.sitenotice');
 });
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
-    Route::get('/', function () {
+Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
+{
+    Route::get('/', function(){
         return view('admin.dashboard');
-    });
-    Route::get('/bookmakers', 'AdminController@bookmakers');
-    Route::post('/bookmakers/edit/{id}', 'AdminController@bookmakersEdit');
-    Route::post('/bookmakers/add', 'AdminController@bookmakersAdd');
-    Route::delete('/bookmakers/delete/{id}', 'AdminController@bookmakersDelete');
+    } );
+    Route::get('/bookmakers', 'AdminController@bookmakers' );
+    Route::post('/bookmakers/edit/{id}', 'AdminController@bookmakersEdit' );
+    Route::post('/bookmakers/add', 'AdminController@bookmakersAdd' );
+    Route::delete('/bookmakers/delete/{id}', 'AdminController@bookmakersDelete' );
 
-    Route::get('/slider', 'AdminController@slider');
-    Route::post('/slider/add', 'AdminController@sliderAdd');
-    Route::delete('/slider/delete/{id}', 'AdminController@sliderDelete');
+    Route::get('/slider', 'AdminController@slider' );
+    Route::post('/slider/add', 'AdminController@sliderAdd' );
+    Route::delete('/slider/delete/{id}', 'AdminController@sliderDelete' );
 });

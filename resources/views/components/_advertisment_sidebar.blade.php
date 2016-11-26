@@ -11,6 +11,9 @@
                 <i class="fa fa-btn fa-sign-out"></i>Logout
             </a>
             <br>
+            <br>
+            <br>
+            <a href="{{ url('/password/update') }}"><i class="fa fa-btn fa-unlock-alt"></i> Change password</a>
         @endif
     </div>
 
