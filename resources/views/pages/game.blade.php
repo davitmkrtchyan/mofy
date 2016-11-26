@@ -181,9 +181,9 @@
                                     @foreach($eventDetails as $event=>$key)
                                         <tr>
                                             <td></td>
-                                            <td class="odd-v up">{{$key['odd1']}}</td>
-                                            <td class="odd-v up">{{$key['odd2']}}</td>
-                                            <td class="odd-v down">{{$key['odd3']}}</td>
+                                            <td class="odd-v up">{{\App\Utils\Utils::convertOdd($key['odd1'])}}</td>
+                                            <td class="odd-v up">{{\App\Utils\Utils::convertOdd($key['odd2'])}}</td>
+                                            <td class="odd-v down">{{\App\Utils\Utils::convertOdd($key['odd3'])}}</td>
                                             <td class="odd-pay hidden-480">99.03%</td>
                                         </tr>
                                     @endforeach

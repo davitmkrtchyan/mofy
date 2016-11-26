@@ -58,15 +58,14 @@ class HomeController extends Controller
     {
         $user = User::find(Auth::id());
 
-        if($user['email'] === $request['email'] && $request['password'] === $request['password_confirmation']){
+        if ($user['email'] === $request['email'] && $request['password'] === $request['password_confirmation']) {
             $data = $request->input();
             $data['name'] = $user['name'];
             $user['password'] = bcrypt($request['password']);
             $request['name'] = $user['name'];
             $user->save();
 
-            Mail::send('emails.greeting', $data, function($message) use ($data)
-            {
+            Mail::send('emails.greeting', $data, function ($message) use ($data) {
                 $message->from('infomofy@gmail.com', 'More Odds For You');
 
                 $message->to($data['email'], $data['name'])->subject('Password changed');
@@ -92,7 +91,7 @@ class HomeController extends Controller
 
     public function bookmakersSort(Request $request)
     {
-        if($request['name'] == 'true'){
+        if ($request['name'] == 'true') {
             $bookmakers = DB::table('votes')
                 ->leftJoin('ratings', 'votes.bookmaker_id', '=', 'ratings.id')
                 ->select('*', DB::raw('SUM(votes.value)/COUNT(votes.value) as total_sum'))
@@ -102,7 +101,7 @@ class HomeController extends Controller
             $bookmakersCount = count($bookmakers);
             $count = 0;
             return view('pages.ratings')->with('bookmakers', $bookmakers)->with('bookmakersCount', $bookmakersCount)->with('count', $count);
-        }else{
+        } else {
             $bookmakers = DB::table('votes')
                 ->leftJoin('ratings', 'votes.bookmaker_id', '=', 'ratings.id')
                 ->select('*', DB::raw('SUM(votes.value)/COUNT(votes.value) as total_sum'))
@@ -122,13 +121,13 @@ class HomeController extends Controller
 
         $vote = DB::table('votes')->where('user_id', $user_id)->where('bookmaker_id', $request['bookmaker_id'])->first();
 
-        if(!empty($vote)){
+        if (!empty($vote)) {
             $val = Vote::find($vote->id);
             $val->value = $request['value'];
             $val->bookmaker_id = $request['bookmaker_id'];
             $val->user_id = $user_id;
             $val->save();
-        }else{
+        } else {
             $vote = new Vote;
             $vote->value = $request['value'];
             $vote->bookmaker_id = $request['bookmaker_id'];
@@ -157,14 +156,13 @@ class HomeController extends Controller
         $user = DB::table('users')->where('email', $request->email)->value('id');
 
         $data = $request->input();
-        if($user){
+        if ($user) {
             $data['info'] = '';
-        }else{
+        } else {
             $data['info'] = 'not';
         }
 
-        Mail::send('emails.contactus', ['data' => $data], function($message) use ($data)
-        {
+        Mail::send('emails.contactus', ['data' => $data], function ($message) use ($data) {
             $message->from('infomofy@gmail.com', 'More Odds For You');
 
             $message->to('info@moreoddsforyou.com', $data['name'])->subject('Contact form');
@@ -173,8 +171,6 @@ class HomeController extends Controller
         return redirect('/');
 
     }
-
-
 
 
     public function game($p1, $p2)

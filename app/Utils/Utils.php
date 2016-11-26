@@ -2,6 +2,8 @@
 namespace App\Utils;
 
 
+use Illuminate\Support\Facades\Request;
+
 class Utils
 {
     const JSON_TYPE = 'json';
@@ -77,8 +79,8 @@ class Utils
         $isLike = false;
         foreach ($name1Array as $partOfName) {
             foreach ($name2Array as $partOfNameSecond) {
-                $escaped1=str_replace(')','',str_replace('(','',$partOfName));
-                $escaped2=str_replace(')','',str_replace('(','',$partOfNameSecond));
+                $escaped1 = str_replace(')', '', str_replace('(', '', $partOfName));
+                $escaped2 = str_replace(')', '', str_replace('(', '', $partOfNameSecond));
                 if (preg_match('/' . str_replace('/', '\/', $escaped1) . '/', $escaped2) == true) {
                     $isLike = true;
                 }
@@ -95,8 +97,54 @@ class Utils
         return $matchedOutcome ? $matchedOutcome->oddsAmerican : null;
     }
 
-    public static function highlight($text, $words) {
+    public static function highlight($text, $words)
+    {
         $text = preg_replace("|($words)|ui", "<span class=\"hit\">$1</span>", $text);
         return $text;
+    }
+
+    public static function convertOdd($oddInDecimal, $oddType = null)
+    {
+        $oddType = $oddType ?: Request::get('oddType');
+        switch ($oddType) {
+            case "US":
+                return self::decimalToAmericanOdd($oddInDecimal);
+            case "UK":
+                return self::decimalToFractionalOdd($oddInDecimal);
+            default:
+                return $oddInDecimal;
+        }
+    }
+
+    public static function decimalToAmericanOdd($value)
+    {
+        if ($value == null || $value == '-') {
+            return '-';
+        }
+        $number = floatval($value);
+        if ($number >= 2) {
+            return ($value - 1) * 100;
+        } else {
+            return -100 * (1 - $value);
+        }
+    }
+
+    public static function decimalToFractionalOdd($value)
+    {
+        return self::decimalToFraction(floatval($value) - 1);
+    }
+
+    public static function fractionToDecimal($fraction)
+    {
+        $parts = explode('/', $fraction);
+        return round(intval($parts[0]) / intval($parts[1]), 2);
+    }
+
+    public static function decimalToFraction($value)
+    {
+        $pnum = round($value, 2);
+        $denominator = pow(10, 2);
+        $numerator = $pnum * $denominator;
+        return $numerator . "/" . $denominator;
     }
 }

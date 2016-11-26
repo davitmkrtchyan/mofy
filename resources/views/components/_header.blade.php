@@ -1,12 +1,16 @@
 <!-- #section:basics/navbar.layout -->
 <div id="navbar" class="navbar navbar-default navbar-fixed-top  navbar-collapse  h-navbar">
     <script type="text/javascript">
-        try { ace.settings.check('navbar', 'fixed') } catch (e) { }
+        try {
+            ace.settings.check('navbar', 'fixed')
+        } catch (e) {
+        }
     </script>
 
     <div class="navbar-container container" id="navbar-container">
         <div class="navbar-header pull-left">
-            <button type="button" class="navbar-toggle menu-toggler pull-left fixed" id="menu-toggler" data-target="#sidebar">
+            <button type="button" class="navbar-toggle menu-toggler pull-left fixed" id="menu-toggler"
+                    data-target="#sidebar">
                 <span class="sr-only">Toggle sidebar</span>
                 <i class="ace-icon fa fa-book white bigger-125"></i>
             </button>
@@ -18,12 +22,14 @@
             </a>
             <!-- /section:basics/navbar.layout.brand -->
             <!-- #section:basics/navbar.toggle -->
-            <button class="pull-right navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-buttons,.navbar-menu">
+            <button class="pull-right navbar-toggle collapsed" type="button" data-toggle="collapse"
+                    data-target=".navbar-buttons,.navbar-menu">
                 <span class="sr-only">Toggle user menu</span>
                 <i class="ace-icon fa  fa-gear white bigger-125"></i>
             </button>
 
-            <button class="pull-right navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#sidebarTop" aria-expanded="false">
+            <button class="pull-right navbar-toggle collapsed" type="button" data-toggle="collapse"
+                    data-target="#sidebarTop" aria-expanded="false">
                 <span class="sr-only">Toggle sidebar</span>
 
                 <span class="icon-bar"></span>
@@ -35,7 +41,6 @@
 
             <!-- /section:basics/navbar.toggle -->
         </div>
-
 
 
         <!-- #section:basics/navbar.dropdown -->
@@ -51,17 +56,17 @@
                     </a>
                     <ul class="dropdown-menu dropdown-light-blue dropdown-caret">
                         <li>
-                            <a href="index.html#" data-call="oddsFormat" data-num="0">
+                            <a href="{{Request::url()}}?oddType=EU">
                                 EU Odds (2.5)
                             </a>
                         </li>
                         <li>
-                            <a href="index.html#" data-call="oddsFormat" data-num="1">
+                            <a href="{{Request::url()}}?oddType=UK">
                                 UK Odds (3/2)
                             </a>
                         </li>
                         <li>
-                            <a href="index.html#" data-call="oddsFormat" data-num="2">
+                            <a href="{{Request::url()}}?oddType=US">
                                 US Odds (+150)
                             </a>
                         </li>
@@ -97,7 +102,9 @@
                     <ul class="dropdown-navbar timezone dropdown-menu dropdown-menu-right navbar-pink  dropdown-caret ">
                         <li class="dropdown-header">
                             <i class="ace-icon fa  fa-clock-o bigger-110 blue"></i>Time zone
-                            <div class="dropdown-toolbar"><button id="btnGMT" class="btn btn-minier btn-success">Set GMT</button></div>
+                            <div class="dropdown-toolbar">
+                                <button id="btnGMT" class="btn btn-minier btn-success">Set GMT</button>
+                            </div>
                         </li>
                         <li class="dropdown-content1 scroll-disabled">
                             <div style="padding: 5px;">
@@ -125,7 +132,8 @@
             <div id="nav-search" class="nav-search">
                 <form class="form-search" action="#">
                         <span class="input-icon">
-                            <input type="search" class="nav-search-input" id="search" name="query" autocomplete="off" placeholder="Search ..." />
+                            <input type="search" class="nav-search-input" id="search" name="query" autocomplete="off"
+                                   placeholder="Search ..."/>
                             <i class="ace-icon fa fa-search nav-search-icon"></i>
                         </span>
                 </form>
