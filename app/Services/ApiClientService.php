@@ -119,11 +119,12 @@ class ApiClientService
         try {
             $unibetEvents = $this->getUnibetEvents();
             $request->session()->put('unibetStorage', $unibetEvents);
+
             $xbetEvents = $this->getXbetEvents();
             $request->session()->put('xbetStorage', $xbetEvents);
-            $betAtHomeEvents = $this->getBetAtHomeEvents();
-            $request->session()->put('betAtHome', $betAtHomeEvents);
-            return $this->sortByDateAndJoin($this->sortByDateAndJoin($unibetEvents, $xbetEvents, false), $betAtHomeEvents, false);
+
+            $sorted1 = $this->sortByDateAndJoin($unibetEvents, $xbetEvents);
+            return $sorted1;
         } catch (\Exception $e) {
             return Utils::sliceEventsModel($unibetEvents);
         }
@@ -134,15 +135,12 @@ class ApiClientService
         $result = collect(['eventsGroups' => collect([])]);
         $unibetEvents['eventsGroups']->each(function ($unibetEventsForSport, $sportName) use ($xbetEvents, $result) {
             $resultListForSport = collect([]);
-            $unibetFilteredByDateListForCurrentSport = Utils::sortEventsByDate($unibetEventsForSport, false);
+            $unibetFilteredByDateListForCurrentSport = Utils::sortEventsByDate($unibetEventsForSport);
+            $resultListForSport = $resultListForSport->merge($unibetFilteredByDateListForCurrentSport);
 
-            if ($xbetEvents['eventsGroups']->get($sportName) != null) {
-                $resultListForSport->push($unibetFilteredByDateListForCurrentSport->merge($xbetEvents['eventsGroups']->get($sportName)->slice(0, 100)));
-            };
-
-            $resultListForSport->each(function ($sport, $index) {
-                $sport->id = $sport->id ?: '';
-            });
+            if ($xbetEvents['eventsGroups'][$sportName] != null) {
+                $resultListForSport = $resultListForSport->merge(Utils::sortEventsByDate($xbetEvents['eventsGroups'][$sportName], false));
+            }
 
             $result['eventsGroups']->put($sportName, $resultListForSport);
         });
@@ -353,38 +351,40 @@ class ApiClientService
     private function sortByDateAndOdds($unibetEvents, $xbetEvents, $applyRestriction = true)
     {
         $result = collect(['eventsGroups' => collect([])]);
-        $unibetEvents['eventsGroups']->each(function ($unibetEventsForSport, $sportName) use ($xbetEvents, $result, $applyRestriction) {
-            $resultListForSport = collect([]);
-            $unibetFilteredByDateListForCurrentSport = Utils::sortEventsByDate($unibetEventsForSport, $applyRestriction);
-            $xbetFilteredByUnibetGames = collect([]);
+        if ($applyRestriction) {
+            $unibetEvents['eventsGroups']->each(function ($unibetEventsForSport, $sportName) use ($xbetEvents, $result, $applyRestriction) {
+                $resultListForSport = collect([]);
+                $unibetFilteredByDateListForCurrentSport = Utils::sortEventsByDate($unibetEventsForSport, $applyRestriction);
+                $xbetFilteredByUnibetGames = collect([]);
 
-            $unibetFilteredByDateListForCurrentSport->each(function ($unibetEventObject) use ($xbetEvents, $sportName, $xbetFilteredByUnibetGames) {
-                if ($xbetEvents['eventsGroups']->get($sportName) != null) {
-                    $matchingGame = $xbetEvents['eventsGroups']->get($sportName)->first(function ($index, $xbetEventObject) use ($unibetEventObject) {
-                        return $unibetEventObject->equals($xbetEventObject);
-                    });
-                    if ($matchingGame != null) {
-                        $matchingGame->id = $unibetEventObject->id;
-                        $xbetFilteredByUnibetGames->push($matchingGame);
+                $unibetFilteredByDateListForCurrentSport->each(function ($unibetEventObject) use ($xbetEvents, $sportName, $xbetFilteredByUnibetGames) {
+                    if ($xbetEvents['eventsGroups']->get($sportName) != null) {
+                        $matchingGame = $xbetEvents['eventsGroups']->get($sportName)->first(function ($index, $xbetEventObject) use ($unibetEventObject) {
+                            return $unibetEventObject->equals($xbetEventObject);
+                        });
+                        if ($matchingGame != null) {
+                            $matchingGame->id = $unibetEventObject->id;
+                            $xbetFilteredByUnibetGames->push($matchingGame);
+                        }
                     }
-                }
-            });
-
-            $unibetFilteredByDateListForCurrentSport->each(function ($unibetEventObject) use ($xbetFilteredByUnibetGames, $resultListForSport) {
-                $xbetObject = $xbetFilteredByUnibetGames->first(function ($index, $eventObject) use ($unibetEventObject) {
-                    return $unibetEventObject->equals($eventObject);
                 });
-                if ($xbetObject == null) {
-                    if ($unibetEventObject->oddsFirst != null) {
-                        $resultListForSport->push($unibetEventObject);
-                    }
-                } else {
-                    $unibetEventObject->oddsFirst != null && ($unibetEventObject->oddsFirst > $xbetObject->oddsFirst) ? $resultListForSport->push($unibetEventObject) : $resultListForSport->push($xbetObject);
-                }
-            });
 
-            $result['eventsGroups']->put($sportName, $resultListForSport);
-        });
+                $unibetFilteredByDateListForCurrentSport->each(function ($unibetEventObject) use ($xbetFilteredByUnibetGames, $resultListForSport) {
+                    $xbetObject = $xbetFilteredByUnibetGames->first(function ($index, $eventObject) use ($unibetEventObject) {
+                        return $unibetEventObject->equals($eventObject);
+                    });
+                    if ($xbetObject == null) {
+                        if ($unibetEventObject->oddsFirst != null) {
+                            $resultListForSport->push($unibetEventObject);
+                        }
+                    } else {
+                        $unibetEventObject->oddsFirst != null && ($unibetEventObject->oddsFirst > $xbetObject->oddsFirst) ? $resultListForSport->push($unibetEventObject) : $resultListForSport->push($xbetObject);
+                    }
+                });
+
+                $result['eventsGroups']->put($sportName, $resultListForSport);
+            });
+        }
         return $result;
     }
 

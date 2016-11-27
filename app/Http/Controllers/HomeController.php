@@ -42,7 +42,6 @@ class HomeController extends Controller
     {
         $model = null;
         $model = $this->apiClientService->getLiveEvents($request);
-        $model['groups'] = $this->apiClientService->getAllGroups();
 
         $sliders = DB::table('sliders')->orderBy('created_at', 'desc')->get();
         return view('welcome')->with('model', $model)->with('sliders', $sliders);
@@ -225,7 +224,6 @@ class HomeController extends Controller
     {
         $model = null;
         $model = $this->apiClientService->getLiveEventALL($request);
-        $model['groups'] = $this->apiClientService->getAllGroups();
 
         $sliders = DB::table('sliders')->orderBy('created_at', 'desc')->get();
         return view('welcome')->with('model', $model)->with('sliders', $sliders);
