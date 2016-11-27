@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Utils\BetAdoinsUtils;
 use App\Utils\BetAtHomeUtils;
 use App\Utils\Group\SportGroup;
 use App\Utils\UnibetUtils;
@@ -93,11 +94,20 @@ class ApiClientService
         try {
             $unibetEvents = $this->getUnibetEvents();
             $request->session()->put('unibetStorage', $unibetEvents);
+
             $xbetEvents = $this->getXbetEvents();
             $request->session()->put('xbetStorage', $xbetEvents);
+
             $betAtHomeEvents = $this->getBetAtHomeEvents();
             $request->session()->put('betAtHome', $betAtHomeEvents);
-            return $this->sortByDateAndOdds($this->sortByDateAndOdds($unibetEvents, $xbetEvents, $applyRestriction), $betAtHomeEvents, $applyRestriction);
+
+            $betAdoinsEvents = $this->getBetAdoinsEvents($unibetEvents);
+            $request->session()->put('betAdoins', $betAdoinsEvents);
+
+            $sorted1 = $this->sortByDateAndOdds($unibetEvents, $xbetEvents, $applyRestriction);
+            $sorted2 = $this->sortByDateAndOdds($sorted1, $betAtHomeEvents, $applyRestriction);
+            $sorted3 = $this->sortByDateAndOdds($sorted2, $betAdoinsEvents, $applyRestriction);
+            return $sorted3;
         } catch (\Exception $e) {
             return Utils::sliceEventsModel($unibetEvents);
         }
@@ -121,20 +131,6 @@ class ApiClientService
 
     public function sortByDateAndJoin($unibetEvents, $xbetEvents)
     {
-//        collect($unibetEvents)->each(function ($sports, $index) use ($xbetEvents, $betAtHomeEvents) {
-//            $sports->each(function ($sport, $index01) use ($xbetEvents, $betAtHomeEvents,$sports) {
-//
-//                collect($xbetEvents)->each(function ($xbetSports, $index1) use($sports){
-//                    $xbetSports->each(function ($xbetSport, $index11) use($sports){
-//                        if (get_class($xbetSport[0]) == get_class($sports[0])){
-//                            $sports->push();
-//                        }
-//                    });
-//                });
-//
-//            });
-//        });
-
         $result = collect(['eventsGroups' => collect([])]);
         $unibetEvents['eventsGroups']->each(function ($unibetEventsForSport, $sportName) use ($xbetEvents, $result) {
             $resultListForSport = collect([]);
@@ -153,23 +149,6 @@ class ApiClientService
         return $result;
     }
 
-    public function getBetAtHomeEvents()
-    {
-        $client = new Client();
-        $res = $client->get(self::BET_AT_HOME__LIVE_EVENTS);
-        $content = $res->getBody()->getContents();
-        if (strpos($content, 'xml') !== false) {
-            $utf16Content = preg_replace('/(<\?xml[^?]+?)utf-16/i', '$1utf-8', $content);
-            $betAtHomeGlobalObject = simplexml_load_string($utf16Content);
-            Storage::disk('local')->put('betAtHomeTemp.xml', $betAtHomeGlobalObject->asXML());
-            $sports = BetAtHomeUtils::buildChildrenList($betAtHomeGlobalObject);
-            return $this->convertBetAtHomeToUnibet($sports);
-        } else {
-            $betAtHomeGlobalObject = simplexml_load_string(Storage::disk('local')->get('betAtHomeTemp.xml'));
-            $sports = BetAtHomeUtils::buildChildrenList($betAtHomeGlobalObject);
-            return $this->convertBetAtHomeToUnibet($sports);
-        }
-    }
 
     public function convertBetAtHomeToUnibet($sports)
     {
@@ -250,6 +229,11 @@ class ApiClientService
                 return $unibetEvent->equals($betAtHomeSportObject);
             });
 
+            $matchedObject2 = $this->getBetAdoinsEvents()['eventsGroups']->get($events->events[0]->sport)->first(function ($index, $betAdoinsHomeSportObject) use ($unibetEvent) {
+                return $unibetEvent->equals($betAdoinsHomeSportObject);
+            });
+
+
             $eventDetails = [
                 'Unibet' => ['url' => $unibetEvent->url, 'odd1' => $odd1, 'odd2' => $odd2, 'odd3' => $odd3],
             ];
@@ -259,6 +243,10 @@ class ApiClientService
 
             if ($matchedObject1) {
                 $eventDetails['BetAtHome'] = ['url' => $matchedObject1->url, 'odd1' => $matchedObject1 ? $matchedObject1->oddsFirst : '-', 'odd2' => $matchedObject1 ? $matchedObject1->oddsCross : '-', 'odd3' => $matchedObject1 ? $matchedObject1->oddsSecond : '-'];
+            }
+
+            if ($matchedObject2) {
+                $eventDetails['BetAdoins'] = ['url' => $matchedObject2->url, 'odd1' => $matchedObject2 ? $matchedObject2->oddsFirst : '-', 'odd2' => $matchedObject2 ? $matchedObject2->oddsCross : '-', 'odd3' => $matchedObject2 ? $matchedObject2->oddsSecond : '-'];
             }
 
             return [
@@ -295,6 +283,40 @@ class ApiClientService
         return $events;
     }
 
+    public function getBetAtHomeEvents()
+    {
+        $client = new Client();
+        $res = $client->get(self::BET_AT_HOME__LIVE_EVENTS);
+        $content = $res->getBody()->getContents();
+        if (strpos($content, 'xml') !== false) {
+            $utf16Content = preg_replace('/(<\?xml[^?]+?)utf-16/i', '$1utf-8', $content);
+            $betAtHomeGlobalObject = simplexml_load_string($utf16Content);
+            Storage::disk('local')->put('betAtHomeTemp.xml', $betAtHomeGlobalObject->asXML());
+            $sports = BetAtHomeUtils::buildChildrenList($betAtHomeGlobalObject);
+            return $this->convertBetAtHomeToUnibet($sports);
+        } else {
+            $betAtHomeGlobalObject = simplexml_load_string(Storage::disk('local')->get('betAtHomeTemp.xml'));
+            $sports = BetAtHomeUtils::buildChildrenList($betAtHomeGlobalObject);
+            return $this->convertBetAtHomeToUnibet($sports);
+        }
+    }
+
+    public function getBetAdoinsEvents()
+    {
+        $post_data = collect([]);
+        foreach (BetAdoinsUtils::$URLS as $sportName => $url) {
+            if ($url != null) {
+                $client = new Client();
+                $res = $client->get($url);
+                $content = $res->getBody()->getContents();
+                $betAdoinsObjectForSport = simplexml_load_string($content);
+                BetAdoinsUtils::convertBetAdoinsForSportToUnibet($post_data, $sportName, BetAdoinsUtils::extractCountyList($betAdoinsObjectForSport));
+            }
+        }
+        return $this->buildEventsModel(collect(Utils::decodeResponse($post_data))->groupBy('event.sport'), false);
+    }
+
+
     private function buildEventsModel($events, $useAmericanOdds = true)
     {
         $model = collect([]);
@@ -309,6 +331,7 @@ class ApiClientService
         }
         $secondaryList = UnibetUtils::getSecondarySportTypes();
         $missedEventsNamesSize = sizeof($missedEventsNames);
+
         $this->fillEventsFromSecondaryList($secondaryList, $missedEventsNamesSize, $events, $model);
         return ['eventsGroups' => UnibetUtils::buildUnibetEventsObjects($model, $useAmericanOdds)];
     }
