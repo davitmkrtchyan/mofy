@@ -48,7 +48,7 @@ class UnibetUtils
                         }
                     }
                 }
-                $sportObject->url = (array_key_exists('url', $event->event) && $event->event->url != null ? $event->event->url : self::buildGameURLByID($event->event->id));
+                $sportObject->url = (array_key_exists('url', $event->event) && ($event->event->url != null || $event->event->url != '') ? $event->event->url : self::buildGameURLByID($event->event->id));
                 $sportObject->countryName = $event->event->path[1]->englishName;
                 $resultModel->get($sportName)->push($sportObject);
             });

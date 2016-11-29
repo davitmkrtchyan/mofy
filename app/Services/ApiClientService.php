@@ -211,6 +211,7 @@ class ApiClientService
             $odd3 = Utils::convertAmericanOddToDecimal(Utils::getAmericanOddByType($events->betoffers[0]->outcomes, "OT_TWO"));
 
             $unibetEvent = UnibetUtils::createInstanceForSport($events->events[0]->sport);
+            $unibetEvent->id = $events->events[0]->id;
             $unibetEvent->homeName = $events->events[0]->homeName;
             $unibetEvent->awayName = $events->events[0]->awayName;
             $unibetEvent->group = $events->events[0]->group;
@@ -226,10 +227,18 @@ class ApiClientService
             $matchedObject1 = $this->getBetAtHomeEvents()['eventsGroups']->get($events->events[0]->sport)->first(function ($index, $betAtHomeSportObject) use ($unibetEvent) {
                 return $unibetEvent->equals($betAtHomeSportObject);
             });
+            if ($matchedObject1) {
+                $matchedObject1->id = $unibetEvent->id;
+                $matchedObject1->url = $unibetEvent->url;
+            }
 
             $matchedObject2 = $this->getBetAdoinsEvents()['eventsGroups']->get($events->events[0]->sport)->first(function ($index, $betAdoinsHomeSportObject) use ($unibetEvent) {
                 return $unibetEvent->equals($betAdoinsHomeSportObject);
             });
+            if ($matchedObject2) {
+                $matchedObject2->id = $unibetEvent->id;
+                $matchedObject2->url = $unibetEvent->url;
+            }
 
 
             $eventDetails = [
