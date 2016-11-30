@@ -63,7 +63,7 @@
 
             <ul class="submenu">
                 <li class="hover">
-                    <a href="/">
+                    <a href="{{action('HomeController@surebets')}}">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Surebets
                     </a>

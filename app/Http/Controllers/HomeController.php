@@ -233,4 +233,13 @@ class HomeController extends Controller
     {
         return view('_searchResults', ['eventsGroups' => $this->searchService->search($request)['eventsGroups']]);
     }
+
+    public function surebets(Request $request)
+    {
+        $model = null;
+        $model = $this->apiClientService->getSurebets($request);
+
+        $sliders = DB::table('sliders')->orderBy('created_at', 'desc')->get();
+        return view('welcome')->with('model', $model)->with('sliders', $sliders)->with('surebets',true);
+    }
 }

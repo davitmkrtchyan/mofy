@@ -1,3 +1,6 @@
+<?php
+$isSureBets = isset($surebets) && $surebets == true
+?>
 @foreach($events as $event)
     <tr class="match-info">
         <td colspan="2">
@@ -36,13 +39,30 @@
             </div>
         </td>
         <td class='odds-col3'><span
-                    class="mobile-bet-type">1</span>{{\App\Utils\Utils::convertOdd($event->oddsFirst)}}
+                    class="mobile-bet-type">1</span>
+            <b>
+                @if($isSureBets)
+                    ({{$event->oddsFirstName}})
+                @endif
+            </b>
+            {{\App\Utils\Utils::convertOdd($event->oddsFirst)}}
         </td>
         <td class='odds-col3'><span
-                    class="mobile-bet-type">X</span>{{\App\Utils\Utils::convertOdd($event->oddsCross)}}
+                    class="mobile-bet-type">X</span>
+            @if($event->oddsCross && $isSureBets)
+                <b>
+                    ({{$event->oddsCrossName}})
+                </b>
+            @endif
+            {{\App\Utils\Utils::convertOdd($event->oddsCross)}}
         </td>
         <td class='odds-col3'><span
-                    class="mobile-bet-type">2</span>{{\App\Utils\Utils::convertOdd($event->oddsSecond)}}
+                    class="mobile-bet-type">2</span>
+            <b>
+                @if($isSureBets)
+                    ({{$event->oddsSecondName}})
+                @endif
+            </b>{{\App\Utils\Utils::convertOdd($event->oddsSecond)}}
         </td>
     </tr>
 @endforeach
