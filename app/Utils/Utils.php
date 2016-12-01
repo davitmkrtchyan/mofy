@@ -2,6 +2,7 @@
 namespace App\Utils;
 
 
+use App\Utils\Events\SureBet;
 use Illuminate\Support\Facades\Request;
 
 class Utils
@@ -146,5 +147,20 @@ class Utils
         $denominator = pow(10, 2);
         $numerator = $pnum * $denominator;
         return $numerator . "/" . $denominator;
+    }
+
+    public static function calculateProfit(SureBet $sureBet)
+    {
+        $result = 0;
+        if ($sureBet->oddsFirst) {
+            $result = 1 - (1 / $sureBet->oddsFirst);
+        }
+        if ($sureBet->oddsSecond) {
+            $result = $result + (1 / $sureBet->oddsSecond);
+        }
+        if ($sureBet->oddsCross) {
+            $result = $result + (1 / $sureBet->oddsCross);
+        }
+        return round((100 * $result) / 1, 2);
     }
 }

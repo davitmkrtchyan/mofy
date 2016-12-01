@@ -51,7 +51,7 @@ $isSureBets = isset($surebets) && $surebets == true
                     class="mobile-bet-type">X</span>
             @if($event->oddsCross && $isSureBets)
                 <b>
-                    ({{$event->oddsCrossName}})
+                    ({{$event->oddsCrossName}})---{{$event->profitPercentage}}
                 </b>
             @endif
             {{\App\Utils\Utils::convertOdd($event->oddsCross)}}

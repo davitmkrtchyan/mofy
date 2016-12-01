@@ -186,6 +186,7 @@ class ApiClientService
                     $surebet->oddsFirstName = $maxBookmakerByFirst;
                     $surebet->oddsSecondName = $maxBookmakerBySecond;
                     $surebet->oddsCrossName = $maxBookmakerByCross;
+                    $surebet->profitPercentage = Utils::calculateProfit($surebet);
                     $resultListForSport->push($surebet);
                 });
                 $result['eventsGroups']->put($sportName, $resultListForSport);
