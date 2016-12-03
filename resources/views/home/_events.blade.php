@@ -41,20 +41,38 @@ $isSureBets = isset($surebets) && $surebets == true
                 </a>
             </div>
         </td>
-        <td class='odds-col3'><span class="mobile-bet-type">1</span>
-            @if($isSureBets)  {{$event->oddsFirstName}}@endif {{\App\Utils\Utils::convertOdd($event->oddsFirst)}}
+        <td class='odds-col3'>
+            <a href="toGameWebsite">
+                <span class="mobile-bet-type">1</span>
+                <!--example: class="b-logo logo-firstName"-->
+                <span class='b-logo logo-unibet'></span>
+                   <p>FirstName</p>
+            </a>
         </td>
-        <td class='odds-col3'><span
-                    class="mobile-bet-type">X</span>
-            @if($isSureBets){{$event->oddsCrossName}}@endif   {{\App\Utils\Utils::convertOdd($event->oddsCross)}}
+        <td class='odds-col3'>
+            <a href="toGameWebsite">
+                <span class="mobile-bet-type">X</span>
+                <span class='b-logo logo-xbet'></span>
+                <p>CrossName</p>
+            </a>
         </td>
-        <td class='odds-col3'><span class="mobile-bet-type">2</span>
-            @if($isSureBets) {{$event->oddsSecondName}}@endif
-            {{\App\Utils\Utils::convertOdd($event->oddsSecond)}}
+        <td class='odds-col3'>
+        <a href="toGameWebsite">
+            <span class="mobile-bet-type">2</span>
+            <span class='b-logo logo-betathome'></span>
+                <p>SecondName</p>
+        </a>
         </td>
         @if($isSureBets)
-        <td class='odds-col3'><span class="mobile-bet-type">Profit</span>
-            {{$event->profitPercentage}}%
+        <td class='odds-col3'>
+        <span class="mobile-bet-type">Profit</span>
+        <span class='b-logo logo-betadonis'></span>
+        <span>
+            <a href="#" onclick="window.open('calculator', 'newwindow', 'width=600, height=350'); return false;">
+                <i class="fa fa-calculator block"></i>
+            </a>
+        </span>
+            <p>Percentage%</p>
         </td>
         @endif
     </tr>

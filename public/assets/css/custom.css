@@ -177,3 +177,33 @@
 #editBookmakerForm, #deleteBookmakerForm{
     float: right;
 }
+
+/*Bookmakers logos*/
+.b-logo{
+    background-image: url(../images/bm.png);
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+    margin: 2px 0px 0 10px;
+}
+.logo-unibet{
+    width: 75px;
+    height: 16px;
+    background-position: -160px -102px;
+}
+.logo-xbet{
+    width: 75px;
+    height: 16px;
+    background-position: -81px -22px;
+}
+.logo-betathome{
+    width: 75px;
+    height: 16px;
+    background-position: -239px -322px;
+}
+.logo-betadonis{
+    width: 75px;
+    height: 16px;
+    background-position: -318px -302px;
+}
+/*End bookmakers logos*/

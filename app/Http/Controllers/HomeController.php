@@ -239,4 +239,9 @@ class HomeController extends Controller
 
         return view('surebets')->with('model', $model)->with('surebets',true);
     }
+
+    public function calculator()
+    {
+        return view('home.calculator');
+    }
 }
