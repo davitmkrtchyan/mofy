@@ -158,7 +158,7 @@ class Utils
         if ($sureBet->oddsSecond) {
             $result = $result + (1 / $sureBet->oddsSecond);
         }
-        if ($sureBet->oddsCross) {
+        if ($sureBet->oddsCross && $sureBet->oddsCross != '-') {
             $result = $result + (1 / $sureBet->oddsCross);
         }
         return $result != 0 ? round((100 * $result) / 1, 2) : '';
