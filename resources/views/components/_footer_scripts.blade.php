@@ -59,7 +59,7 @@
 <script src="{{ URL::asset('assets/js/main.js') }}"></script>
 <script src="{{ URL::asset('assets/js/jqcloud.js') }}"></script>
 <script src="{{ URL::asset('assets/js/event/loadEventByID.js') }}"></script>
-<script src="{{ URL::asset('assets/js/search.js') }}"></script>
+<script src="{{ URL::asset('assets/js/dataTables/jquery.dataTables.js') }}"></script>
 
 <!-- inline scripts related to this page -->
 <script type="text/javascript">

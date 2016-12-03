@@ -161,6 +161,6 @@ class Utils
                 $result = $result + (1 / $sureBet->oddsCross);
             }
         }
-        return $result != 0 ? round($result, 2) : 1;
+        return $result != 0 ? $result : 1;
     }
 }

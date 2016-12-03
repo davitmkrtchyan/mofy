@@ -16,6 +16,9 @@ $isSureBets = isset($surebets) && $surebets == true
         <td class="odds-name hidden-xs">1</td>
         <td class="odds-name hidden-xs">X</td>
         <td class="odds-name hidden-xs">2</td>
+        @if($isSureBets)
+        <td class="odds-name hidden-xs">Profit</td>
+        @endif
     </tr>
     <tr class="main-table-row">
         <td class="date-col">
@@ -38,17 +41,21 @@ $isSureBets = isset($surebets) && $surebets == true
                 </a>
             </div>
         </td>
-        <td class='odds-col3'><span
-                    class="mobile-bet-type">1</span>
-            {{\App\Utils\Utils::convertOdd($event->oddsFirst)}}
+        <td class='odds-col3'><span class="mobile-bet-type">1</span>
+            @if($isSureBets)  {{$event->oddsFirstName}}@endif {{\App\Utils\Utils::convertOdd($event->oddsFirst)}}
         </td>
         <td class='odds-col3'><span
                     class="mobile-bet-type">X</span>
-            {{\App\Utils\Utils::convertOdd($event->oddsCross)}}
+            @if($isSureBets){{$event->oddsCrossName}}@endif   {{\App\Utils\Utils::convertOdd($event->oddsCross)}}
         </td>
-        <td class='odds-col3'><span
-                    class="mobile-bet-type">2</span>
-           {{\App\Utils\Utils::convertOdd($event->oddsSecond)}}
+        <td class='odds-col3'><span class="mobile-bet-type">2</span>
+            @if($isSureBets) {{$event->oddsSecondName}}@endif
+            {{\App\Utils\Utils::convertOdd($event->oddsSecond)}}
         </td>
+        @if($isSureBets)
+        <td class='odds-col3'><span class="mobile-bet-type">Profit</span>
+            {{$event->profitPercentage}}%
+        </td>
+        @endif
     </tr>
 @endforeach

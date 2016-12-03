@@ -224,9 +224,7 @@ class HomeController extends Controller
     {
         $model = null;
         $model = $this->apiClientService->getLiveEventALL($request);
-
-        $sliders = DB::table('sliders')->orderBy('created_at', 'desc')->get();
-        return view('welcome')->with('model', $model)->with('sliders', $sliders);
+        return view('welcome')->with('model', $model);
     }
 
     public function search(Request $request)
@@ -239,6 +237,6 @@ class HomeController extends Controller
         $model = null;
         $model = $this->apiClientService->getSurebets($request);
 
-        return view('pages.surebets')->with('model', $model)->with('surebets',true);
+        return view('surebets')->with('model', $model)->with('surebets',true);
     }
 }
