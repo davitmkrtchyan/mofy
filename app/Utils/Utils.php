@@ -153,14 +153,14 @@ class Utils
     {
         $result = 0;
         if ($sureBet->oddsFirst) {
-            $result = 1 - (1 / $sureBet->oddsFirst);
+            $result = 1 / $sureBet->oddsFirst;
+            if ($sureBet->oddsSecond) {
+                $result = $result + (1 / $sureBet->oddsSecond);
+            }
+            if ($sureBet->oddsCross && $sureBet->oddsCross != '-') {
+                $result = $result + (1 / $sureBet->oddsCross);
+            }
         }
-        if ($sureBet->oddsSecond) {
-            $result = $result + (1 / $sureBet->oddsSecond);
-        }
-        if ($sureBet->oddsCross && $sureBet->oddsCross != '-') {
-            $result = $result + (1 / $sureBet->oddsCross);
-        }
-        return $result != 0 ? round((100 * $result) / 1, 2) : '';
+        return $result != 0 ? round($result, 2) : 1;
     }
 }

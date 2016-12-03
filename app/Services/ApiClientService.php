@@ -186,8 +186,11 @@ class ApiClientService
                     $surebet->oddsFirstName = $maxBookmakerByFirst;
                     $surebet->oddsSecondName = $maxBookmakerBySecond;
                     $surebet->oddsCrossName = $maxBookmakerByCross;
-                    $surebet->profitPercentage = Utils::calculateProfit($surebet);
-                    $resultListForSport->push($surebet);
+                    $sumOfOdds= Utils::calculateProfit($surebet);
+                    if($sumOfOdds>1){
+                        $surebet->profitPercentage=$sumOfOdds*100;
+                        $resultListForSport->push($surebet);
+                    }
                 });
                 $result['eventsGroups']->put($sportName, $resultListForSport);
             });
@@ -198,7 +201,6 @@ class ApiClientService
 
     public function getLiveEvents($request, $applyRestriction = true)
     {
-        $unibetEvents = ['eventsGroups' => collect([])];
         try {
             $unibetEvents = $this->getUnibetEvents();
             $request->session()->put('unibetStorage', $unibetEvents);

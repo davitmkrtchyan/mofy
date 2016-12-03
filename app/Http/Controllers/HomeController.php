@@ -239,7 +239,6 @@ class HomeController extends Controller
         $model = null;
         $model = $this->apiClientService->getSurebets($request);
 
-        $sliders = DB::table('sliders')->orderBy('created_at', 'desc')->get();
-        return view('welcome')->with('model', $model)->with('sliders', $sliders)->with('surebets',true);
+        return view('pages.surebets')->with('model', $model)->with('surebets',true);
     }
 }
