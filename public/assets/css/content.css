@@ -133,7 +133,39 @@
 }
 
 .nav-list .s97 {
-    background: url(../images/sports/horse-racing.png) 4px no-repeat
+    background: url(../images/sports/horse-racing.png) 4px no-repeat;
+    background-size: 33px;
+}
+
+.nav-list .s98 {
+    background: url(../images/sports/greyhound.png) 4px no-repeat;
+    background-size: 33px;
+}
+
+.nav-list .s99 {
+    background: url(../images/sports/motorsport.png) 4px no-repeat;
+    background-size: 33px;
+}
+
+.nav-list .s100 {
+    background: url(../images/sports/bandy.png) 4px no-repeat;
+    background-size: 45px;
+    background-position: 0px 2px;
+}
+
+.nav-list .s101 {
+    background: url(../images/sports/cycling.png) 4px no-repeat;
+    background-size: 33px;
+}
+
+.nav-list .s102 {
+    background: url(../images/sports/golf.png) 4px no-repeat;
+    background-size: 33px;
+}
+
+.nav-list .s103 {
+    background: url(../images/sports/gallop.png) 4px no-repeat;
+    background-size: 33px;
 }
 
 .sp {

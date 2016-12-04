@@ -39,12 +39,12 @@ class LeftMenu
                 'countryList' => collect([])
             ]),
             'HORSE_RACING' => collect([
-                'logo' => 's50',
+                'logo' => 's97',
                 'name' => 'Horse Racing',
                 'countryList' => collect([])
             ]),
             'GOLF' => collect([
-                'logo' => 's50',
+                'logo' => 's102',
                 'name' => 'Go',
                 'countryList' => collect([])
             ]),
@@ -59,47 +59,47 @@ class LeftMenu
                 'countryList' => collect([])
             ]),
             'CRICKET' => collect([
-                'logo' => 's54',
+                'logo' => 's75',
                 'name' => '',
                 'countryList' => collect([])
             ]),
             'DARTS' => collect([
-                'logo' => 's54',
+                'logo' => 's69',
                 'name' => '',
                 'countryList' => collect([])
             ]),
             'GREYHOUNDS' => collect([
-                'logo' => 's54',
+                'logo' => 's98',
                 'name' => '',
                 'countryList' => collect([])
             ]),
             'GALLOPS' => collect([
-                'logo' => 's54',
+                'logo' => 's103',
                 'name' => '',
                 'countryList' => collect([])
             ]),
             'MOTORSPORTS' => collect([
-                'logo' => 's54',
+                'logo' => 's99',
                 'name' => '',
                 'countryList' => collect([])
             ]),
             'RUGBY_LEAGUE' => collect([
-                'logo' => 's54',
+                'logo' => 's61',
                 'name' => '',
                 'countryList' => collect([])
             ]),
             'BANDY' => collect([
-                'logo' => 's54',
+                'logo' => 's100',
                 'name' => '',
                 'countryList' => collect([])
             ]),
             'CHESS' => collect([
-                'logo' => '66',
+                'logo' => 's66',
                 'name' => '',
                 'countryList' => collect([])
             ]),
             'CYCLING' => collect([
-                'logo' => 's54',
+                'logo' => 's101',
                 'name' => '',
                 'countryList' => collect([])
             ]),
