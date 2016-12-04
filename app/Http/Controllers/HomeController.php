@@ -42,9 +42,9 @@ class HomeController extends Controller
     {
         $model = null;
         $model = $this->apiClientService->getLiveEvents($request);
-
+        $groups = $this->apiClientService->getAllGroups();
         $sliders = DB::table('sliders')->orderBy('created_at', 'desc')->get();
-        return view('welcome')->with('model', $model)->with('sliders', $sliders);
+        return view('welcome')->with('model', $model)->with('sliders', $sliders)->with('groups', $groups);
     }
 
     public function changePassView()
@@ -223,8 +223,9 @@ class HomeController extends Controller
     public function matches(Request $request)
     {
         $model = null;
+        $groups = $this->apiClientService->getAllGroups();
         $model = $this->apiClientService->getLiveEventALL($request);
-        return view('welcome')->with('model', $model);
+        return view('welcome')->with('model', $model)->with('groups', $groups);
     }
 
     public function search(Request $request)
@@ -236,12 +237,17 @@ class HomeController extends Controller
     {
         $model = null;
         $model = $this->apiClientService->getSurebets($request);
-
-        return view('surebets')->with('model', $model)->with('surebets',true);
+        $groups = $this->apiClientService->getAllGroups();
+        return view('surebets')->with('model', $model)->with('groups', $groups)->with('surebets', true);
     }
 
     public function calculator()
     {
         return view('home.calculator');
+    }
+
+    public function loadGroupEvents($id){
+        $groups = $this->apiClientService->getAllGroups();
+       return view('pages.groupGames', $this->apiClientService->loadGroupEvents($id))->with('groups',$groups);
     }
 }

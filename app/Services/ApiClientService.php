@@ -4,8 +4,10 @@ namespace App\Services;
 
 use App\Utils\BetAdoinsUtils;
 use App\Utils\BetAtHomeUtils;
+use App\Utils\Events\GroupEvent;
 use App\Utils\Events\SureBet;
 use App\Utils\Group\SportGroup;
+use App\Utils\LeftMenu;
 use App\Utils\UnibetUtils;
 use App\Utils\Utils;
 use App\Utils\XBetUtils;
@@ -23,6 +25,7 @@ class ApiClientService
 
     static $glob = null;
 
+
     public function getAllGroups()
     {
         $client = new Client();
@@ -34,45 +37,9 @@ class ApiClientService
 
     public function buildAllGroupsModel($groups)
     {
-        $result = ['sportTypes' => collect([
-            'FOOTBALL' => collect([
-                'logo' => 's50',
-                'name' => '',
-                'countryList' => collect([])
-            ]),
-            'TENNIS' => collect([
-                'logo' => 's52',
-                'name' => '',
-                'countryList' => collect([])
-            ]),
-            'BASKETBALL' => collect([
-                'logo' => 's53',
-                'name' => '',
-                'countryList' => collect([])
-            ]),
-            'ICE_HOCKEY' => collect([
-                'logo' => 's51',
-                'name' => '',
-                'countryList' => collect([])
-            ]),
-            'HORSE_RACING' => collect([
-                'logo' => 's50',
-                'name' => 'Horse Racing',
-                'countryList' => collect([])
-            ]),
-            'GOLF' => collect([
-                'logo' => 's50',
-                'name' => 'Go',
-                'countryList' => collect([])
-            ]),
-            'VOLLEYBALL' => collect([
-                'logo' => 's54',
-                'name' => '',
-                'countryList' => collect([])
-            ]),
-        ])];
+        $result = LeftMenu::getGroupsListToFill();
         $groups->each(function ($groupBySportType, $index) use ($result) {
-            if (in_array($groupBySportType->sport, UnibetUtils::$SPORT_TYPES)) {
+            if ( in_array($groupBySportType->sport, $result['sportTypes']->keys()->toArray())) {
                 $result['sportTypes']->get($groupBySportType->sport)->put('name', $groupBySportType->name);
                 if (array_key_exists('groups', $groupBySportType)) {
                     collect($groupBySportType->groups)->each(function ($groupForCountry, $index1) use ($result, $groupBySportType) {
@@ -381,7 +348,38 @@ class ApiClientService
     }
 
 
-    //----------------------------------------------------//
+    //-----------------BY GROUP-----------------------------------//
+
+    public function loadGroupEvents($id){
+        $client = new Client();
+        $res = $client->get(UnibetUtils::buildGroupEventsURL($id));
+        $events = Utils::decodeResponse($res->getBody());
+        return $this->buildEventGroupsModel(collect($events->events));
+    }
+
+    public function buildEventGroupsModel($events){
+        $result=collect(['events'=>collect()]);
+        $events->each(function ($event, $index) use($result){
+            $parsedObject=new GroupEvent();
+            $parsedObject->id=$event->id;
+            $parsedObject->name=$event->name;
+            $parsedObject->group=$event->group;
+            $parsedObject->start=Carbon::parse($event->start);;
+            $parsedObject->homeName=$event->homeName;
+            if(array_key_exists('awayName',$event)){
+                $parsedObject->awayName=$event->awayName;
+            }
+            $parsedObject->oddsFirst='-';
+            $parsedObject->oddsSecond='-';
+            $parsedObject->oddsCross='-';
+            $parsedObject->countryName=$event->path[1]->englishName;
+            $parsedObject->url=UnibetUtils::buildGameURLByID($event->id);
+            $result['events']->push($parsedObject);
+        });
+        return $result;
+    }
+
+    //----------------------------------------------------------//
 
     public function getUnibetEvents()
     {

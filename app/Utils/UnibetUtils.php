@@ -126,4 +126,8 @@ class UnibetUtils
     {
         return "https://www.unibet.com/betting#event/live/" . $eventId;
     }
+
+    public static function buildGroupEventsURL($id){
+        return"http://api.unicdn.net/v1/feeds/sportsbook/event/group/".$id.".json?app_id=71d8f332&app_key=d27be2607640ede866d069010a428842";
+    }
 }
