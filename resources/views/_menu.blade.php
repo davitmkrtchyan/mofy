@@ -29,7 +29,7 @@
                                     <?php $isLeaguesExists=$leagues->count()>0?>
                                 <li class="">
                                     <a href="/" class="dropdown-toggle">
-                                        <b>*</b><i class="menu-icon fa"></i>
+                                        <b></b><i class="menu-icon fa"></i>
                                         {{$countryName}}
                                         @if($isLeaguesExists)
                                         <b class="arrow fa fa-angle-down"></b>
