@@ -6,6 +6,7 @@ use App\Slider;
 use App\User;
 use App\Rating;
 use App\Vote;
+use App\Advertisement;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
@@ -278,6 +279,58 @@ class AdminController extends Controller
 
         File::delete('assets/images/bm/admin-slider/'.$sl->imageName);
         return redirect('/admin/slider');
+    }
+
+    /*===========Advertisement=============*/
+    public function advertisement(){
+
+        $advertisements = DB::table('advertisements')->groupBy('imageName')->orderBy('created_at', 'desc')->get();
+
+        return view('admin.pages.advertisement', [
+            'advertisements' => $advertisements
+        ]);
+    }
+
+    public function advertisementAdd(Request $request){
+
+        $advertisement = new Advertisement;
+
+        if(Input::file('advertisementImg')){
+            $file = array('image' => Input::file('advertisementImg'));
+            // setting up rules
+            $rules = array('image' => 'required',); //mimes:jpeg,bmp,png and for max size max:10000
+            // doing the validation, passing post data, rules and the messages
+            $validator = Validator::make($file, $rules);
+            if ($validator->fails()) {
+                // send back to the page with the input data and errors
+                return Redirect::to('/admin/advertisement')->withInput()->withErrors($validator);
+            }
+            else {
+                // checking file is valid.
+                $destinationPath = 'assets/images/bm/admin-advertisement/'; // upload path
+                $extension = Input::file('advertisementImg')->getClientOriginalExtension(); // getting image extension
+                $fileName = rand(11111,99999).'.'.$extension; // renameing image
+                Input::file('advertisementImg')->move($destinationPath, $fileName); // uploading file to given path
+                // sending back with message
+                $advertisement->imageName = $fileName;
+
+
+            }
+        }
+
+        $advertisement->affLink = $request->affLink;
+
+        $advertisement->save();
+
+        return redirect('/admin/advertisement');
+    }
+
+    public function advertisementDelete($id){
+        $adv =  Advertisement::find($id);
+        Advertisement::findOrFail($id)->delete();
+
+        File::delete('assets/images/bm/admin-advertisement/'.$adv->imageName);
+        return redirect('/admin/advertisement');
     }
 
 }

@@ -82,4 +82,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/slider', 'AdminController@slider');
     Route::post('/slider/add', 'AdminController@sliderAdd');
     Route::delete('/slider/delete/{id}', 'AdminController@sliderDelete');
+
+    Route::get('/advertisement', 'AdminController@advertisement');
+    Route::post('/advertisement/add', 'AdminController@advertisementAdd');
+    Route::delete('/advertisement/delete/{id}', 'AdminController@advertisementDelete');
 });
