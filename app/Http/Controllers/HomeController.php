@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Rating;
 use App\User;
 use App\Vote;
+use App\Advertisement;
 use Carbon\Carbon;
 use Exception;
 use GuzzleHttp\Client;
@@ -31,6 +32,7 @@ class HomeController extends Controller
         $this->apiClientService = app()->make('apiClientService');
         $this->searchService = app()->make('searchService');
 //        $this->middleware('auth');
+        view()->share([ 'advertisement' => Advertisement::all() ]);
     }
 
     /**

@@ -32,13 +32,15 @@
     </h3>
     <div id="adv-content-right">
         <ul class="thumbs">
+            @foreach ($advertisement as $adv)
             <li>
                 <div class="center">
-                    <a target="_blank" href="http://online.titanbet.com/promoRedirect?key=em9uZUlkPTE1NzMyNjAwOTUmbGFuZGluZ1BhZ2VJZD0xNDAzNjc1ODI0JnByb2ZpbGVJZD02MTkwMDI%3D">
-                        <img border="0" title="betting foot" alt="betting foot" src="http://www.bmbets.com/App_Themes/Banners/tbet_Soccer_150x125.gif">
+                    <a target="_blank" href="{{ $adv->affLink }}">
+                        <img border="0" title="betting foot" class="advertisement-image" alt="betting foot" src="{{ URL::asset('/assets/images/bm/admin-advertisement/'.$adv->imageName) }}">
                     </a>
                 </div>
             </li>
+            @endforeach
             <li>
                 <div class="center">
                     <a target="_blank" href="http://imstore.bet365affiliates.com/Tracker.aspx?AffiliateId=35066&amp;AffiliateCode=365_056634&amp;CID=197&amp;DID=156&amp;TID=1&amp;PID=149&amp;LNG=1"><img border="0" src="http://imstore.bet365affiliates.com/?AffiliateCode=365_056634&amp;CID=197&amp;DID=156&amp;TID=1&amp;PID=149&amp;LNG=1"></a>

@@ -1,3 +1,24 @@
+.nav.nav-list{
+    margin-top: 5px !important;
+}
+.sidebar .sidebar-toggle {
+    border-style: solid;
+    border-width: 0 0 1px;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+}
+@media only screen and (min-width: 992px){
+    .sidebar.h-sidebar .nav-list > li > a > .menu-icon {
+        display: block;
+        margin: 1px 0 0px !important;
+        line-height: inherit;
+        width: auto;
+    }
+}
+.advertisement-image{
+    width: 100%;
+}
 @media screen and (max-width: 600px){
     .logo-image{
         width: 100px;

@@ -41,6 +41,11 @@
           <span>Slider</span>
         </a>
       </li>
+      <li class="active">
+        <a href="/admin/advertisement">
+          <span>Advertisement</span>
+        </a>
+      </li>
       {{--<li>--}}
         {{--<a href="#">--}}
           {{--<span>Another Link</span>--}}

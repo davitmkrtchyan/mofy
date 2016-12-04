@@ -73,7 +73,7 @@ $isSureBets = isset($surebets) && $surebets == true
         <td class='odds-col3'>
         <span class="mobile-bet-type">Profit</span>
         <span>
-            <a href="#" onclick="window.open('calculator', 'newwindow', 'width=600, height=350'); return false;">
+            <a href="#" onclick="window.open('calculator', 'newwindow', 'width=650, height=350'); return false;">
                 <i class="fa fa-calculator block"></i>
             </a>
         </span>
