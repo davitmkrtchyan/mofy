@@ -11,7 +11,7 @@ class GolfEvent extends AbstractEvent
             'id' => 'tab-50',
             'role' => 'tab',
             'icon' => 'sp50',
-            'aria-controls' => 'footballTab',
+            'aria-controls' => 'golfTab',
             'tabLabel'=>'Golf'
         ];
 

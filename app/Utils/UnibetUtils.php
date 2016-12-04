@@ -16,7 +16,7 @@ class UnibetUtils
     private static $EVENT_MAIN_PROPERTIES = ['id', 'name', 'group', 'start', 'homeName', 'awayName'];
     private static $EVENT_ODDS_TYPES_MAPPING = ['OT_ONE' => 'oddsFirst', 'OT_CROSS' => 'oddsCross', 'OT_TWO' => 'oddsSecond'];
     public static $GAMES_COUNT_PER_TAB = 5;
-    public static $SPORT_TYPES = ["FOOTBALL", "TENNIS", 'BASKETBALL', 'ICE_HOCKEY', 'HORSE_RACING', 'GOLF', 'VOLLEYBALL'];
+    public static $SPORT_TYPES = ["FOOTBALL", "TENNIS", 'BASKETBALL', 'ICE_HOCKEY', 'HORSE_RACING', 'VOLLEYBALL','GOLF' ];
 
     public static function buildUnibetEventsObjects($model, $useAmericanOdds = true)
     {
