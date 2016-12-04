@@ -126,6 +126,13 @@
             </ul>
         </li>
 
+        <li class="hover">
+            <a href="http://moreoddsforyou.com/blog" target="_blank">
+                <i class="menu-icon fa fa-pencil-square-o"></i>
+                Blog
+            </a>
+        </li>
+
     </ul>
     <!-- /.nav-list -->
     <script type="text/javascript">
