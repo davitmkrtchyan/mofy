@@ -115,7 +115,7 @@ class ApiClientService
                 $xbetFilteredByUnibetGames = collect([]);
 
                 $unibetFilteredByDateListForCurrentSport->each(function ($unibetEventObject) use ($resultListForSport, $xbetEvents, $sportName, $betAtHomeEvents, $betAdoinsEvents, $xbetFilteredByUnibetGames) {
-                    $eventsToCompare = collect(['unibet' => $unibetEventObject, 'xbet' => null, 'betAtHome' => null, 'betAdoins' => null]);
+                    $eventsToCompare = collect(['unibet' => $unibetEventObject, 'xbet' => null, 'betathome' => null, 'betadoins' => null]);
                     if ($xbetEvents['eventsGroups']->get($sportName) != null) {
                         $matchingGame = $xbetEvents['eventsGroups']->get($sportName)->first(function ($index, $xbetEventObject) use ($unibetEventObject) {
                             return $unibetEventObject->equals($xbetEventObject);
@@ -129,7 +129,7 @@ class ApiClientService
                             return $unibetEventObject->equals($betAtHomeEventObject);
                         });
                         if ($matchingGame1 != null) {
-                            $eventsToCompare->put('betAtHome', $matchingGame1);
+                            $eventsToCompare->put('betathome', $matchingGame1);
                         }
                     }
                     if ($betAdoinsEvents['eventsGroups']->get($sportName) != null) {
@@ -137,7 +137,7 @@ class ApiClientService
                             return $unibetEventObject->equals($betAdoinsEventObject);
                         });
                         if ($matchingGame2 != null) {
-                            $eventsToCompare->put('betAdoins', $matchingGame2);
+                            $eventsToCompare->put('betadoins', $matchingGame2);
                         }
                     }
 
