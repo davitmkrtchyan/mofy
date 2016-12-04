@@ -45,34 +45,39 @@ $isSureBets = isset($surebets) && $surebets == true
             <a href="toGameWebsite">
                 <span class="mobile-bet-type">1</span>
                 <!--example: class="b-logo logo-firstName"-->
-                <span class='b-logo logo-unibet'></span>
-                   <p>FirstName</p>
+                @if($isSureBets)
+                <span class='b-logo logo-{{$event->oddsFirstName}}'></span>
+                @endif
+                   <p>{{$event->oddsFirst}}</p>
             </a>
         </td>
         <td class='odds-col3'>
             <a href="toGameWebsite">
                 <span class="mobile-bet-type">X</span>
-                <span class='b-logo logo-xbet'></span>
-                <p>CrossName</p>
+                @if($isSureBets)
+                    <span class='b-logo logo-{{$event->oddsCrossName}}'></span>
+                @endif
+                <p>{{$event->oddsCross}}</p>
             </a>
         </td>
         <td class='odds-col3'>
         <a href="toGameWebsite">
             <span class="mobile-bet-type">2</span>
-            <span class='b-logo logo-betathome'></span>
-                <p>SecondName</p>
+            @if($isSureBets)
+                <span class='b-logo logo-{{$event->oddsSecondName}}'></span>
+            @endif
+                <p>{{$event->oddsSecond}}</p>
         </a>
         </td>
         @if($isSureBets)
         <td class='odds-col3'>
         <span class="mobile-bet-type">Profit</span>
-        <span class='b-logo logo-betadonis'></span>
         <span>
             <a href="#" onclick="window.open('calculator', 'newwindow', 'width=600, height=350'); return false;">
                 <i class="fa fa-calculator block"></i>
             </a>
         </span>
-            <p>Percentage%</p>
+            <p>{{$event->profitPercentage}}%</p>
         </td>
         @endif
     </tr>
