@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@indexMain');
+Route::get('/home', 'HomeController@indexMain');
 
 Route::group(['middleware' => 'throttle:5,1'], function () {
     Route::auth();

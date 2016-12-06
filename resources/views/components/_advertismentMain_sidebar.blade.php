@@ -23,8 +23,8 @@
 
 
 
-    {{--<a class="twitter-timeline" href="https://twitter.com/MoreOddsForYou">Tweets by MoreOddsForYou</a>--}}
-    {{--<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>--}}
+    <a class="twitter-timeline" href="https://twitter.com/MoreOddsForYou">Tweets by MoreOddsForYou</a>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
     <h3 class="header smaller lighter white">
@@ -34,13 +34,13 @@
     <div id="adv-content-right">
         <ul class="thumbs">
             @foreach ($advertisement as $adv)
-            <li>
-                <div class="center">
-                    <a target="_blank" href="{{ $adv->affLink }}">
-                        <img border="0" title="betting foot" class="advertisement-image" alt="betting foot" src="{{ URL::asset('/assets/images/bm/admin-advertisement/'.$adv->imageName) }}">
-                    </a>
-                </div>
-            </li>
+                <li>
+                    <div class="center">
+                        <a target="_blank" href="{{ $adv->affLink }}">
+                            <img border="0" title="betting foot" class="advertisement-image" alt="betting foot" src="{{ URL::asset('/assets/images/bm/admin-advertisement/'.$adv->imageName) }}">
+                        </a>
+                    </div>
+                </li>
             @endforeach
             <li>
                 <div class="center">

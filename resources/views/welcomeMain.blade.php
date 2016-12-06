@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appMain')
 
 @section('content')
     <div id="pagebody">
@@ -190,16 +190,16 @@
                     <div class="widget-box transparent">
                         <div class="alert">
                             <!-- Slideshow 1 -->
-                            {{--<ul class="rslides" id="slider1" style="height: 360px;">--}}
-                                {{--@foreach($sliders as $slider)--}}
-                                    {{--<li>--}}
-                                        {{--<a href="{{$slider->gameLink}}">--}}
-                                            {{--<img src="{{ URL::asset('assets/images/bm/admin-slider/'.$slider->imageName) }}" alt="">--}}
-                                        {{--</a>--}}
-                                    {{--</li>--}}
-                                {{--@endforeach--}}
+                            <ul class="rslides" id="slider1" style="height: 360px;">
+                                @foreach($sliders as $slider)
+                                    <li>
+                                        <a href="{{$slider->gameLink}}">
+                                            <img src="{{ URL::asset('assets/images/bm/admin-slider/'.$slider->imageName) }}" alt="">
+                                        </a>
+                                    </li>
+                                @endforeach
 
-                            {{--</ul>--}}
+                            </ul>
 
                         </div>
 
