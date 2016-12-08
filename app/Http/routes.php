@@ -32,6 +32,7 @@ Route::get('/home/calculator', 'HomeController@calculator');
 
 Route::get('/home', 'HomeController@index');
 Route::get('/home/loadByEventID/{id}', 'HomeController@loadByEventID');
+Route::get('/home/loadByEventIDFromSureBet/{id}', 'HomeController@loadByEventIDFromSureBet');
 Route::get('/home/loadGroupEvents/{id}', 'HomeController@loadGroupEvents');
 Route::get('/home/loadGamesByGroupAndCountry/{sport}/{country}/{group}', 'HomeController@loadGamesByGroupAndCountry');
 Route::get('/home/loadCountForGroups', 'HomeController@loadCountForGroups');

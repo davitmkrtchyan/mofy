@@ -122,12 +122,22 @@ class UnibetUtils
         return "http://api.unicdn.net/v1/feeds/sportsbook/betoffer/live/event/" . $id . ".json?app_id=71d8f332&app_key=d27be2607640ede866d069010a428842&outComeSortBy=lexical&outComeSortDir=asc";
     }
 
-    public static function buildGameURLByID($eventId)
+    public static function buildGameURLByID($eventId,$surebet=false)
     {
-        return "https://www.unibet.com/betting#event/live/" . $eventId;
+        return $surebet?"https://www.unibet.com/betting#event/".$eventId:"https://www.unibet.com/betting#event/live/" . $eventId;
     }
+
+    public static function buildEventDetailsURLFromSurebet($id)
+    {
+        return "http://api.unicdn.net/v1/feeds/sportsbook/betoffer/event/".$id.".json?app_id=71d8f332&app_key=d27be2607640ede866d069010a428842&outComeSortBy=lexical&outComeSortDir=asc";
+    }
+
 
     public static function buildGroupEventsURL($id){
         return"http://api.unicdn.net/v1/feeds/sportsbook/event/group/".$id.".json?app_id=71d8f332&app_key=d27be2607640ede866d069010a428842";
+    }
+
+    public static function buildGameURLForSureBet($id){
+        return url('/home/loadByEventIDFromSureBet',['id'=>$id]);
     }
 }

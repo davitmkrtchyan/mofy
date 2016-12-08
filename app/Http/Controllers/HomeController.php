@@ -218,6 +218,18 @@ class HomeController extends Controller
         }
     }
 
+    public function loadByEventIDFromSureBet($id)
+    {
+        $model = null;
+        $model = $this->apiClientService->getEventByID($id,true);
+        if ($model) {
+            $model['groups'] = $this->apiClientService->getAllGroups();
+            return $model ? view('pages.game', $model) : view('errors.503');
+        } else {
+            return view('errors.503');
+        }
+    }
+
 //    public function loadGamesByGroupAndCountry()
 //    {
 //        return view('testGame', $this->apiClientService->loadGamesByGroupAndCountry(request('sport'), request('country'), request('group')));
