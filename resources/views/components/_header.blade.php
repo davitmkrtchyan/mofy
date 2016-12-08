@@ -133,7 +133,7 @@
                 <form class="form-search" action="#">
                         <span class="input-icon">
                             <input type="search" class="nav-search-input" id="search" name="query" autocomplete="off"
-                                   placeholder="Search ..."/>
+                                   placeholder="Search ..." maxlength="15" onkeydown="cancelEnter(event)"/>
                             <i class="ace-icon fa fa-search nav-search-icon"></i>
                         </span>
                 </form>

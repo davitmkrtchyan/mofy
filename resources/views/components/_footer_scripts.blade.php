@@ -172,9 +172,16 @@
 
         $('.dialogs').ace_scroll({size: 300});
 
-
-
     })
+
+    function cancelEnter(event) {
+        if (event.keyCode === 10 || event.keyCode === 13){
+            event.preventDefault();
+            return false;
+        }else {
+            return true;
+        }
+    }
 </script>
 <script src="{{ URL::asset('assets/js/responsiveslides.min.js') }}"></script>
 <script type="text/javascript">
