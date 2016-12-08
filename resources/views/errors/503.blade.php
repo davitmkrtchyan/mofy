@@ -40,7 +40,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Be right back.</div>
+                <div class="title"><a style="text-decoration: none;" href="{{url('/')}}">Please, try again later. <br>Betting information is updating...</a></div>
             </div>
         </div>
     </body>

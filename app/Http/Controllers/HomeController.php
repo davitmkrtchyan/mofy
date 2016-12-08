@@ -259,9 +259,13 @@ class HomeController extends Controller
 
     public function surebets(Request $request)
     {
+        try{
         $model = null;
         $model = $this->apiClientService->getSurebets($request);
         return view('surebets')->with('model', $model)->with('surebets', true);
+        }catch (\Exception $e){
+            return view('errors.503');
+        }
     }
 
     public function calculator()
