@@ -7,6 +7,7 @@ use App\Rating;
 use App\User;
 use App\Vote;
 use App\Advertisement;
+use App\Advertisementcontent;
 use Carbon\Carbon;
 use Exception;
 use GuzzleHttp\Client;
@@ -34,6 +35,7 @@ class HomeController extends Controller
 //        $this->middleware('auth');
         $groups = $this->apiClientService->getAllGroups();
         view()->share([ 'advertisement' => Advertisement::all() ]);
+        view()->share([ 'advertisementContent' => Advertisementcontent::all() ]);
         view()->share([ 'groups' => $groups ]);
     }
 

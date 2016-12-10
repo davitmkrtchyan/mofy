@@ -90,4 +90,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/advertisement', 'AdminController@advertisement');
     Route::post('/advertisement/add', 'AdminController@advertisementAdd');
     Route::delete('/advertisement/delete/{id}', 'AdminController@advertisementDelete');
+
+    Route::get('/advertisementcontent', 'AdminController@advertisementContent');
+    Route::post('/advertisementcontent/add', 'AdminController@advertisementContentAdd');
+    Route::delete('/advertisementcontent/delete/{id}', 'AdminController@advertisementContentDelete');
 });

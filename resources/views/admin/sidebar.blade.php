@@ -46,6 +46,11 @@
           <span>Advertisement</span>
         </a>
       </li>
+      <li class="active">
+        <a href="/admin/advertisementcontent">
+          <span>Content Advertisement</span>
+        </a>
+      </li>
       {{--<li>--}}
         {{--<a href="#">--}}
           {{--<span>Another Link</span>--}}

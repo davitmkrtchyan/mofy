@@ -29,6 +29,8 @@
             @yield('content')
 
             @include('components._advertismentMain_sidebar')
+
+            @include('components._advertisment_content')
         </div>
     </div>
 

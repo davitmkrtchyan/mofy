@@ -7,6 +7,7 @@ use App\User;
 use App\Rating;
 use App\Vote;
 use App\Advertisement;
+use App\Advertisementcontent;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
@@ -331,6 +332,60 @@ class AdminController extends Controller
 
         File::delete('assets/images/bm/admin-advertisement/'.$adv->imageName);
         return redirect('/admin/advertisement');
+    }
+
+
+    /*Advertisement bottom content*/
+     /*===========Advertisement=============*/
+    public function advertisementContent(){
+
+        $contentAdvertisements = DB::table('advertisementcontents')->groupBy('imageName')->orderBy('created_at', 'desc')->get();
+
+        return view('admin.pages.contentAdvertisement', [
+            'contentAdvertisements' => $contentAdvertisements
+        ]);
+    }
+
+    public function advertisementContentAdd(Request $request){
+
+        $contentAdvertisement = new Advertisementcontent;
+
+        if(Input::file('advertisementContentImg')){
+            $file = array('image' => Input::file('advertisementContentImg'));
+            // setting up rules
+            $rules = array('image' => 'required',); //mimes:jpeg,bmp,png and for max size max:10000
+            // doing the validation, passing post data, rules and the messages
+            $validator = Validator::make($file, $rules);
+            if ($validator->fails()) {
+                // send back to the page with the input data and errors
+                return Redirect::to('/admin/advertisementcontent')->withInput()->withErrors($validator);
+            }
+            else {
+                // checking file is valid.
+                $destinationPath = 'assets/images/bm/admin-advertisement-content/'; // upload path
+                $extension = Input::file('advertisementContentImg')->getClientOriginalExtension(); // getting image extension
+                $fileName = rand(11111,99999).'.'.$extension; // renameing image
+                Input::file('advertisementContentImg')->move($destinationPath, $fileName); // uploading file to given path
+                // sending back with message
+                $contentAdvertisement->imageName = $fileName;
+
+
+            }
+        }
+
+        $contentAdvertisement->affLink = $request->affLink;
+
+        $contentAdvertisement->save();
+
+        return redirect('/admin/advertisementcontent');
+    }
+
+    public function advertisementContentDelete($id){
+        $adv =  Advertisementcontent::find($id);
+        Advertisementcontent::findOrFail($id)->delete();
+
+        File::delete('assets/images/bm/admin-advertisement-content/'.$adv->imageName);
+        return redirect('/admin/advertisementcontent');
     }
 
 }
