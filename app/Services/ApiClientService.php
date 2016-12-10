@@ -187,6 +187,7 @@ class ApiClientService
             $sorted1 = $this->sortByDateAndOdds($unibetEvents, $xbetEvents, $applyRestriction);
             $sorted2 = $this->sortByDateAndOdds($sorted1, $betAtHomeEvents, $applyRestriction);
             $sorted3 = $this->sortByDateAndOdds($sorted2, $betAdoinsEvents, $applyRestriction);
+
             return $sorted3;
         } catch (\Exception $e) {
             return Utils::sliceEventsModel($unibetEvents);
@@ -495,7 +496,6 @@ class ApiClientService
     private function sortByDateAndOdds($unibetEvents, $xbetEvents, $applyRestriction = true)
     {
         $result = collect(['eventsGroups' => collect([])]);
-        if ($applyRestriction) {
             $unibetEvents['eventsGroups']->each(function ($unibetEventsForSport, $sportName) use ($xbetEvents, $result, $applyRestriction) {
                 $resultListForSport = collect([]);
                 $unibetFilteredByDateListForCurrentSport = Utils::sortEventsByDate($unibetEventsForSport, $applyRestriction);
@@ -528,7 +528,6 @@ class ApiClientService
 
                 $result['eventsGroups']->put($sportName, $resultListForSport);
             });
-        }
         return $result;
     }
 

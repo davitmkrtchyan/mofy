@@ -249,6 +249,13 @@ class HomeController extends Controller
     {
         $model = null;
         $model = $this->apiClientService->getLiveEventALL($request);
+        return view('welcome')->with('model', $model)->with('showLiveEventsURL',true);
+    }
+
+    public function liveEvents(Request $request)
+    {
+        $model = null;
+        $model = $this->apiClientService->getLiveEvents($request,false);
         return view('welcome')->with('model', $model);
     }
 

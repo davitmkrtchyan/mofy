@@ -185,6 +185,9 @@
 
             </div><!-- /.page-header -->
             <!-- /.row -->
+            @if(isset($showLiveEventsURL))
+                <a href="{{url('/home/liveEvents')}}">Live Events</a>
+            @endif
             <div class="row">
                 <div class="col-xs-12 col-md-9 widget-container-col ui-sortable">
                     <div class="widget-box transparent">

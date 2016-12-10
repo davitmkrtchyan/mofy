@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('/home/matches', 'HomeController@matches');
 Route::get('/home/surebets', 'HomeController@surebets');
 Route::get('/home/calculator', 'HomeController@calculator');
+Route::get('/home/liveEvents', 'HomeController@liveEvents');
 
 Route::get('/home', 'HomeController@index');
 Route::get('/home/loadByEventID/{id}', 'HomeController@loadByEventID');
