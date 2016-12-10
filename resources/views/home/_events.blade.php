@@ -5,8 +5,9 @@ $isSureBets = isset($surebets) && $surebets == true
     <tr class="match-info">
         <td colspan="2">
             <div class="text-ellipsis">
+                <span class="countryLogo">{{$event->countryName}}>></span>
                 <a href="{{url('/home/loadByEventID',['id'=>$event->id])}}">
-                    <i class="flag flag-br menu-icon fa"></i>{{$event->name}}
+                    <i class="flag menu-icon fa"></i>{{$event->name}}
                 </a>
                 <i class="fa fa-angle-double-right"></i>
                 <a href="{{url('/home/loadByEventID',['id'=>$event->id])}}">{{$event->group}}</a>

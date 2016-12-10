@@ -14,7 +14,7 @@
 
                 <li><a href="#"><i class="sp sp50"></i><span class="hidden-480">{{$sportName}}</span></a>
                 </li>
-                <li><a href="#"><i class="fa flag flag-br"></i><span class="hidden-480">{{$countryName}}</span></a>
+                <li><a href="#"><i class="fa flag"></i><span class="hidden-480 countryLogo">{{$countryName}}</span></a>
                 </li>
                 <li><a href="#">{{$group}}</a></li>
             </ul><!-- /.breadcrumb -->
