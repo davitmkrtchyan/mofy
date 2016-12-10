@@ -9,9 +9,9 @@
             <a href="{{action('HomeController@matches')}}">
                 <i class="menu-icon fa fa-futbol-o"></i>
                 <span class="menu-text">
-                    <a href="{{action('HomeController@matches')}}">
+                    
                         Matches
-                    </a>
+                    
                                 </span>
                 <b class="arrow fa fa-angle-down"></b>
             </a>
@@ -21,20 +21,18 @@
             <a href="{{action('HomeController@surebets')}}">
                 <i class="menu-icon fa fa-calculator"></i>
                 <span class="menu-text">
-                 <a href="{{action('HomeController@surebets')}}">
+                 
                         Surebets
-                    </a>
+                    
                  </span>
             </a>
         </li>
 
         <li class="hover">
-            <a href="/" class="dropdown-toggle">
+            <a href="/bookmakers">
                 <i class="menu-icon fa fa-list"></i>
                 <span class="menu-text">
-                <a href="/bookmakers">
                         Bookmakers
-                    </a>
                 </span>
             </a>
         </li>
@@ -43,9 +41,7 @@
             <a href="http://moreoddsforyou.com/blog">
                 <i class="menu-icon fa fa-pencil-square-o"></i>
                 <span class="menu-text">
-                <a href="http://moreoddsforyou.com/blog" target="_blank">
                 Blog
-            </a>
                 </span>
             </a>
             
