@@ -20,7 +20,7 @@ class ApiClientService
 {
     const UNIBET_LIVE_EVENTS = "http://api.unicdn.net/v1/feeds/sportsbook/event/live.json?app_id=71d8f332&app_key=d27be2607640ede866d069010a428842";
     const XBET_LIVE_EVENTS = "https://betpartpart.com/PartLive/GetAllFeedGames?lng=en";
-    const XBET_MATCH_EVENTS = "https://betpartpart.com/PartLineSite/GetAllFeedGames?lng=en";
+    const XBET_MATCH_EVENTS = "https://part.upnp.xyz/PartLine/GetAllFeedGames?lng=en&tf=300";
     const UNIBET_ALL_GROUPS = "http://api.unicdn.net/v1/feeds/sportsbook/groups.json?app_id=71d8f332&app_key=d27be2607640ede866d069010a428842";
     const BET_AT_HOME__LIVE_EVENTS = "https://www.bet-at-home.com/en/feed/feed?username=Moreoddsforyou&password=Moreoddsforyou58838!&jurisdictionid=1&type=7";
 
@@ -192,6 +192,20 @@ class ApiClientService
         } catch (\Exception $e) {
             return Utils::sliceEventsModel($unibetEvents);
         }
+    }
+
+    public function getMatches($request){
+        try{
+            $client = new Client();
+            $res = $client->get(self::XBET_MATCH_EVENTS);
+            $xbetEvents = Utils::decodeResponse($res->getBody());
+            $events = $this->convertXbetToUnibet(collect($xbetEvents));
+            return $events;
+
+        }catch (\Exception $e){
+            $this->getLiveEventALL($request);
+        }
+
     }
 
     public function getLiveEventALL($request)
@@ -417,15 +431,6 @@ class ApiClientService
         return $events;
     }
 
-    public function getExpectXbetEvents()
-    {
-        $client = new Client();
-        $res = $client->get(self::XBET_MATCH_EVENTS);
-        $xbetEvents = Utils::decodeResponse($res->getBody());
-        $events = $this->convertXbetToUnibet(collect($xbetEvents));
-        return $events;
-    }
-
     public function getBetAtHomeEvents()
     {
         $client = new Client();
@@ -558,8 +563,16 @@ class ApiClientService
     private function convertXbetToUnibet($xbetEvents)
     {
         $post_data = collect([]);
-        $xbetEvents->each(function ($xbetEvent, $key) use ($post_data) {
+        $countChecker=collect();
+        $xbetEvents->each(function ($xbetEvent, $key) use ($post_data,$countChecker) {
             if ($xbetEvent->P == "0" && XBetUtils::sportIsSupported($xbetEvent->S)) {
+                if(!$countChecker->keys()->contains($xbetEvent->S)){
+                    $countChecker->put($xbetEvent->S,1);
+                }else{
+                    $countChecker->put($xbetEvent->S,$countChecker->get($xbetEvent->S)+1);
+                }
+
+              if($countChecker->get($xbetEvent->S)<251){
                 $country = '';
                 $league = '';
                 if (strpos($xbetEvent->C, '.') !== false) {
@@ -593,6 +606,7 @@ class ApiClientService
                     )
                 );
                 $post_data->push($eventJson);
+               }
             }
         });
         return $this->buildEventsModel(collect(Utils::decodeResponse($post_data))->groupBy('event.sport'), false);

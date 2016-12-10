@@ -248,7 +248,7 @@ class HomeController extends Controller
     public function matches(Request $request)
     {
         $model = null;
-        $model = $this->apiClientService->getLiveEventALL($request);
+        $model = $this->apiClientService->getMatches($request);
         return view('welcome')->with('model', $model)->with('showLiveEventsURL',true);
     }
 
