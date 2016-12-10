@@ -6,10 +6,10 @@ $isSureBets = isset($surebets) && $surebets == true
         <td colspan="2">
             <div class="text-ellipsis">
                 <a href="{{$event->url}}">
-                    <i class="flag flag-br menu-icon fa"></i>{{$event->name}}
+                    <i class="flag flag-br menu-icon fa"></i>{{$event->group}}
                 </a>
                 <i class="fa fa-angle-double-right"></i>
-                <a href="{{$event->url}}">{{$event->group}}</a>
+                <a href="{{$event->url}}">{{$event->name}}</a>
             </div>
 
         </td>
