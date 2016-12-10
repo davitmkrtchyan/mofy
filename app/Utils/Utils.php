@@ -151,7 +151,7 @@ class Utils
 
     public static function calculateProfit(SureBet $sureBet)
     {
-        $result = 0;
+        $result = 1;
         if ($sureBet->oddsFirst) {
             $result = 1 / $sureBet->oddsFirst;
             if ($sureBet->oddsSecond) {
@@ -161,6 +161,6 @@ class Utils
                 $result = $result + (1 / $sureBet->oddsCross);
             }
         }
-        return $result != 0 ? $result : 1;
+        return $result != 1 ? $result : 1;
     }
 }

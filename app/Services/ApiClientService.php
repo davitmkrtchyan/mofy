@@ -156,9 +156,11 @@ class ApiClientService
                     $surebet->oddsCrossName = $maxBookmakerByCross;
                     $sumOfOdds= Utils::calculateProfit($surebet);
                     if($sumOfOdds>1){
-                        $surebet->profitPercentage=round(($sumOfOdds-1)*100,2);
-                        $resultListForSport->push($surebet);
+                        $surebet->profitPercentage=-round(($sumOfOdds-1)*100,2);
+                    }else{
+                        $surebet->profitPercentage=round((1-$sumOfOdds)*100,2);
                     }
+                    $resultListForSport->push($surebet);
                 });
                 $result['eventsGroups']->put($sportName, $resultListForSport);
             });
