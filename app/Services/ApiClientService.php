@@ -213,10 +213,10 @@ class ApiClientService
         $result = collect(['eventsGroups' => collect([])]);
         $unibetEvents['eventsGroups']->each(function ($unibetEventsForSport, $sportName) use ($xbetEvents, $result) {
             $resultListForSport = collect([]);
-            $unibetFilteredByDateListForCurrentSport = Utils::sortEventsByDate($unibetEventsForSport);
+            $unibetFilteredByDateListForCurrentSport = Utils::sortEventsByDate($unibetEventsForSport,false);
             $resultListForSport = $resultListForSport->merge($unibetFilteredByDateListForCurrentSport);
 
-            if ($xbetEvents['eventsGroups'][$sportName] != null) {
+            if (sizeof($xbetEvents['eventsGroups'])>0 && $xbetEvents['eventsGroups'][$sportName] != null) {
                 $resultListForSport = $resultListForSport->merge(Utils::sortEventsByDate($xbetEvents['eventsGroups'][$sportName], false));
             }
 
