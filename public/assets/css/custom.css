@@ -1,6 +1,9 @@
 .nav.nav-list{
     margin-top: 5px !important;
 }
+.sign-up{
+    padding-left: 0 !important;
+}
 .sidebar .sidebar-toggle {
     border-style: solid;
     border-width: 0 0 1px;

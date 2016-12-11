@@ -24,13 +24,13 @@
             <!-- /.row -->
             @if(isset($showLiveEventsURL))
             <div class="page-header">
-                <h1 class="text-ellipsis">Upcoming Events.</h1>
+                <h1 class="text-ellipsis">Upcoming Events</h1>
 
             </div>
                 <a href="{{url('/home/liveEvents')}}" class="blue-butt-event">Live Events</a>
             @else
             <div class="page-header">
-                <h1 class="text-ellipsis">Live Events.</h1>
+                <h1 class="text-ellipsis">Live Events</h1>
 
             </div>
                <a href="{{url('/home/matches')}}" class="blue-butt-event">Upcoming Events</a>
