@@ -5,7 +5,18 @@ $isSureBets = isset($surebets) && $surebets == true
     <tr class="match-info">
         <td colspan="2">
             <div class="text-ellipsis">
-                <span class="countryLogo">{{$event->countryName}}>></span>
+            <i class="fa flag">
+                    @if (file_exists(public_path('assets/images/Country/16/'.$event->countryName.'.png')))
+                        <img src="{{URL::asset('assets/images/Country/16/'.$event->countryName.'.png')}}" onError="this.onerror = '';this.style.display='none';" alt="{{$event->countryName}}">
+                                            @else
+                                                
+                                            @endif
+                </i>
+                <span class="countryLogo">
+
+                {{$event->countryName}}
+                <i class="fa fa-angle-double-right"></i>
+                </span>
                 <a href="{{url('/home/loadByEventID',['id'=>$event->id])}}">
                     <i class="flag menu-icon fa"></i>{{$event->name}}
                 </a>
