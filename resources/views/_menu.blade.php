@@ -29,7 +29,14 @@
                                     <?php $isLeaguesExists=$leagues->count()>0?>
                                 <li class="">
                                     <a href="/" class="dropdown-toggle">
-                                        <b></b><i class="menu-icon fa"></i>
+                                        <b></b>
+                                        <i class="menu-icon fa">
+                                            @if (file_exists(public_path('assets/images/Country/16/'.$countryName.'.png')))
+                                                <img src="{{URL::asset('assets/images/Country/16/'.$countryName.'.png')}}" onError="this.onerror = '';this.style.display='none';" alt="{{$countryName}}">
+                                            @else
+                                                
+                                            @endif
+                                        </i>
                                         {{$countryName}}
                                         @if($isLeaguesExists)
                                         <b class="arrow fa fa-angle-down"></b>
