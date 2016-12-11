@@ -282,6 +282,11 @@ class HomeController extends Controller
         return view('home.calculator');
     }
 
+    public function contactus()
+    {
+        return view('pages.contactus');
+    }
+
     public function loadGroupEvents($id){
        return view('pages.groupGames', $this->apiClientService->loadGroupEvents($id));
     }

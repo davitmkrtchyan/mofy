@@ -67,9 +67,8 @@ Route::get('/privacy-policy', function () {
 Route::get('/cookie-policy', function () {
     return view('pages.cookiepolicy');
 });
-Route::get('/contact-us', function () {
-    return view('pages.contactus');
-});
+Route::get('/contact-us', 'HomeController@contactus');
+
 Route::get('/site-notice', function () {
     return view('pages.sitenotice');
 });
