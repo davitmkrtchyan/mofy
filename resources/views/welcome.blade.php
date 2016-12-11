@@ -186,7 +186,9 @@
             </div><!-- /.page-header -->
             <!-- /.row -->
             @if(isset($showLiveEventsURL))
-                <a href="{{url('/home/liveEvents')}}">Live Events</a>
+                <a href="{{url('/home/liveEvents')}}" class="blue-butt-event">Live Events</a>
+            @else
+               <a href="{{url('/home/matches')}}" class="blue-butt-event">Upcoming Events</a>
             @endif
             <div class="row">
                 <div class="col-xs-12 col-md-9 widget-container-col ui-sortable">

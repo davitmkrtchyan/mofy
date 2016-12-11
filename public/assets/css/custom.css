@@ -157,6 +157,24 @@
     width: 100%;
     padding: 10px;
 }
+.blue-butt-event{
+    margin-top: 30px;
+    background: darkblue;
+    color: white !important;
+    border: 0;
+    outline: 0;
+    width: 100%;
+    padding: 10px;
+}
+.blue-butt-event:hover{
+    color: white !important;
+}
+.blue-butt-event:active{
+    color: white !important;
+}
+.blue-butt-event:visited{
+    color: white !important;
+}
 .bookmaker-sort{
     width: 150px !important;
 }
